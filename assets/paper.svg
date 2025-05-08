@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.5 47.5" id="Paper">
+  <defs>
+    <clipPath id="a">
+      <path d="M0 38h38V0H0v38Z" fill="#000000" class="color000000 svgShape"></path>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#a)" transform="matrix(1.25 0 0 -1.25 0 47.5)" fill="#000000" class="color000000 svgShape">
+    <path fill="#9183ff" d="M33 37H11a4 4 0 0 1-4-4V9H5a4 4 0 0 1 0-8h24a4 4 0 0 1 4 4v24a4 4 0 0 1 0 8" class="colorffd983 svgShape"></path>
+    <path fill="#4f3de3" d="M9 27h24v2H11l-2 1v-3Z" class="colore39f3d svgShape"></path>
+    <path fill="#beb6ff" d="M11 37a4 4 0 0 1-4-4V8.445A3.955 3.955 0 0 1 5 9a4 4 0 1 1 4-4v24.555A3.955 3.955 0 0 1 11 29a4 4 0 0 1 0 8" class="colorffe8b6 svgShape"></path>
+    <path fill="#3321c5" d="M13 33a2 2 0 1 0-4.001.001A2 2 0 0 0 13 33M7 5a2 2 0 1 0-4.001.001A2 2 0 0 0 7 5M31 22a1 1 0 0 0-1-1H12a1 1 0 0 0 0 2h18a1 1 0 0 0 1-1M31 18a1 1 0 0 0-1-1H12a1 1 0 1 0 0 2h18a1 1 0 0 0 1-1M31 14a1 1 0 0 0-1-1H12a1 1 0 1 0 0 2h18a1 1 0 0 0 1-1M31 10a1 1 0 0 0-1-1H12a1 1 0 1 0 0 2h18a1 1 0 0 0 1-1" class="colorc1694f svgShape"></path>
+  </g>
+</svg>
