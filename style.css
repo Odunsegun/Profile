@@ -466,12 +466,12 @@ header{
 }
 
 .sidebar li a:hover{
-    background: var(--clr-dark);
+    background: var(--foreground);
 }
 
 .sidebar li a:hover .icon,
 .sidebar li a:hover text{
-    color: var(--foreground);
+    color: var(--background);
 }
 
 .sidebar li .icon{
@@ -759,11 +759,16 @@ body.lightmode .contact-footer::after {
     box-shadow: 0 0 30px var(--primary-glow, #00ff88);
     transition: transform 0.3s;
 }
-  
 .project-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 20px var(--glass-bg);
     border: 1px solid var(--glass-border);
+}
+.project-card:hover .project-info .tech-stack .tech {
+    background: var(--background);
+    border: 2px solid var(--primary-glow);
+    color: var(--foreground);
+
 }
   
 .project-image img {
@@ -814,13 +819,13 @@ body.lightmode .contact-footer::after {
 }
   
 .tech {
-    background: var(--primary-glow, #00ff88);
+    background: var(--primary-glow);
     padding: 0.5rem 1rem;
     border-radius: 999px;
-    color: #000;
+    color: var(--clr-dark);
     font-weight: bold;
     font-size: 1rem;
-    box-shadow: 0 0 10px var(--primary-glow, #00ff88);
+    box-shadow: 0 0 10px var(--primary-glow);
 }
 
 
@@ -1426,7 +1431,7 @@ body.lightmode .contact-footer::after {
     position: absolute;
     top: 8px;
     right: 8px;
-    background: #ff4757; /* red-orange */
+    background: #ff4757; 
     color: var(--clr-secondary);
     padding: 3px 10px;
     font-size: 10px;
@@ -1539,7 +1544,7 @@ body.lightmode .contact-footer::after {
     background: linear-gradient(45deg, #6c5ce7, #a29bfe);
     border-radius: 50%;
     filter: blur(160px);
-    opacity: 0.08; /* very faint */
+    opacity: 0.08;
     transform: translate(-50%, -50%);
     animation: blobMove 20s infinite alternate ease-in-out;
     z-index: 0;
@@ -2016,7 +2021,7 @@ html{
         flex-direction: column;
         align-items: center;
         max-width: 500px;
-        margin: 0 auto; /* Center horizontally */
+        margin: 0 auto; 
         flex-direction: column;
         align-items: center;
     }
@@ -2389,126 +2394,4 @@ html{
 
 
 
-  
-
-
-  
-  
-
-  
-
-
-
-  
-
-
-  
-
-
-
-
-/*SECTION 2*/
-/*
-.section.four {
-    margin: 5vh 0;
-    min-height: 80vh;
-    background-size: cover;
-    background-blend-mode: overlay;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-header h2 {
-    font-size: 4rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(130, 120, 255, 0.7);
-    animation: fadeInUp 1s ease forwards;
-}
-.gallery-header h2 {
-    font-size: 4rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.featured-title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.featured-title h2 {
-  font-size: 4rem;
-  font-weight: bold;
-}
-
-.featured-title p {
-  font-size: 1.5rem;
-  color: #ccc;
-  margin-top: 1rem;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
-}
-
-.card-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
-  height: 100%;
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: #fff;
-  text-align: center;
-}
-
-.card-overlay h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.card-overlay p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  opacity: 0.8;
-}
-
-.tech-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.tech-icons img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) invert(1);
-}
-*/
   
