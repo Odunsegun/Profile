@@ -132,7 +132,7 @@
                         <span id="greeting-text">Hi</span>
                     </div>
                     <h1 class="hero-name">Odunaiya Segun</h1>
-                    <img src="assets/real.png" alt="Profile Image" class="hero-image">
+                    <img src="assets/part4.png" alt="Profile Image" class="hero-image">
                 </div>
         
                 <p class="hero-role">Fullstack Developer | AI & Machine Learning | Data Scientist | Security-Minded Engineer</p>
@@ -151,62 +151,161 @@
                 </div>
 
                 <div class="project-slider">
-                    <button class="arrow left">&#8592;</button>
+                    <!--<button class="arrow left">&#8592;</button>-->
+
+                    <input type="radio" name="radio-btn" id="slide1" checked>
+                    <input type="radio" name="radio-btn" id="slide2">
+                    <input type="radio" name="radio-btn" id="slide3">
+                    <input type="radio" name="radio-btn" id="slide4">
+
+                    
                   
                     <div class="slider-track">
-                        <!-- Project 1 -->
-                        <div class="project-card">
-                            <div class="project-image">
-                            <img src="assets/ML-photos.png" alt="Football tracking AI">
-                            </div>
-                            <div class="project-info">
-                            <h2 class="project-title">AI Football Tracker</h2>
-                            <div class="project-links">
-                                <a href="https://github.com/Odunsegun/football-tracking" target="_blank" class="github-link">
-                                💻 GitHub
-                                </a>
-                            </div>
-                            <p class="project-description">
-                                A computer vision system that uses YOLO and DeepSORT to track players, ball, and referees from match footage. 
-                                Built for performance analysis and event recognition in real-time.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech">Python</span>
-                                <span class="tech">YOLOv8</span>
-                                <span class="tech">OpenCV</span>
-                                <span class="tech">Jupyter</span>
-                            </div>
-                            </div>
-                        </div>
-                  
-              
-                        <!-- Project 2 -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/devseal-page.png" alt="Design Landing Page">
-                            </div>
-                            <div class="project-info">
-                                <h2 class="project-title">Design Landing Page</h2>
+                        <!-- Slide 1 -->
+                        <div class="slide first">
+                            <!-- Project 1 -->
+                            <div class="project-card">
+                                <div class="project-image">
+                                <img src="assets/ML-photos.png" alt="Football tracking AI">
+                                </div>
+                                <div class="project-info">
+                                <h2 class="project-title">AI Football Tracker</h2>
                                 <div class="project-links">
-                                <a href="https://dev-seal-com-clone.vercel.app/" target="_blank" class="live-link">
-                                    🌐 Website
-                                </a> |
-                                <a href="https://github.com/Odunsegun/devSeal.com-clone" target="_blank" class="github-link">
+                                    <a href="https://github.com/Odunsegun/football-tracking/blob/main/output_videos/output_video.avi" target="_blank" class="live-link">
+                                        🌐 Demo
+                                    </a> |
+                                    <a href="https://github.com/Odunsegun/football-tracking" target="_blank" class="github-link">
                                     💻 GitHub
-                                </a>
+                                    </a>
                                 </div>
                                 <p class="project-description">
-                                Responsive landing page using Tailwind and JavaScript for fast prototyping.
+                                    A computer vision system that uses YOLO and DeepSORT to track players, ball, and referees from match footage. 
+                                    Built for performance analysis and event recognition in real-time.
                                 </p>
                                 <div class="tech-stack">
-                                <span class="tech">HTML</span>
-                                <span class="tech">Tailwind</span>
-                                <span class="tech">JavaScript</span>
+                                    <span class="tech">Python</span>
+                                    <span class="tech">YOLOv8</span>
+                                    <span class="tech">OpenCV</span>
+                                    <span class="tech">Jupyter</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <!-- Project 2 -->
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="assets/devseal-page.png" alt="Design Landing Page">
+                                </div>
+                                <div class="project-info">
+                                    <h2 class="project-title">Design Landing Page</h2>
+                                    <div class="project-links">
+                                    <a href="https://dev-seal-com-clone.vercel.app/" target="_blank" class="live-link">
+                                        🌐 Demo
+                                    </a> |
+                                    <a href="https://github.com/Odunsegun/devSeal.com-clone" target="_blank" class="github-link">
+                                        💻 GitHub
+                                    </a>
+                                    </div>
+                                    <p class="project-description">
+                                        Responsive landing page crafted with Tailwind CSS and JavaScript, designed for fast prototyping and smooth cross-device performance.              
+                                    </p>
+                                    <div class="tech-stack">
+                                    <span class="tech">HTML</span>
+                                    <span class="tech">Tailwind</span>
+                                    <span class="tech">JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <!-- Project 3 -->
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="assets/fitness-tracker.png" alt="Azure Fitness Tracker Dashboard">
+                                </div>
+                                <div class="project-info">
+                                    <h2 class="project-title">Azure Fitness Tracker</h2>
+                                    <div class="project-links">
+                                        <a href="https://github.com/Odunsegun/azure-fitness-tracker" target="_blank" class="github-link">
+                                            💻 GitHub
+                                        </a>
+                                        <a href="https://wonderful-forest-08c0abc0f.1.azurestaticapps.net/" target="_blank" class="live-link">
+                                            🌐 Live Demo
+                                        </a>
+                                    </div>
+                                    <p class="project-description">
+                                        A fitness tracking web app with activity logging, charts, and insights.  
+                                        Built with React and Tailwind for the frontend, and integrated with Azure Functions & Cosmos DB for backend APIs and deployed on Azure.
+                                    </p>
+                                    <div class="tech-stack">
+                                        <span class="tech">React</span>
+                                        <span class="tech">Tailwind CSS</span>
+                                        <span class="tech">Azure Functions</span>
+                                        <span class="tech">Cosmos DB</span>
+                                        <span class="tech">Node.js</span>
+                                        <span class="tech">GitHub Actions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <!-- Project 4 -->
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="assets/interstellar-cannon.png" alt="Interstellar Cannon Simulation">
+                                </div>
+                                <div class="project-info">
+                                    <h2 class="project-title">Interstellar Cannon</h2>
+                                    <div class="project-links">
+                                        <a href="https://github.com/Odunsegun/interstellar-cannon" target="_blank" class="github-link">
+                                            💻 GitHub
+                                        </a>
+                                    </div>
+                                    <p class="project-description">
+                                        A physics-based space projectile simulator using RK4 integration and gravitational interactions.  
+                                        Features elastic collisions, disintegration near the Sun, and interactive launch mechanics like Angry Birds.
+                                    </p>
+                                    <div class="tech-stack">
+                                        <span class="tech">Python</span>
+                                        <span class="tech">VPython</span>
+                                        <span class="tech">Physics</span>
+                                        <span class="tech">RK4</span>
+                                        <span class="tech">Pygame</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="arrow right">&#8594;</button>
+
+                    <!-- ARROWS -->
+                   <div class="navigation-arrows">
+                        <!-- When on slide 1 -->
+                        <label class="arrow to4" for="slide4">←</label>
+                        <label class="arrow to2" for="slide2">→</label>
+                        <!-- When on slide 2 -->
+                        <label class="arrow to1" for="slide1">←</label>
+                        <label class="arrow to3" for="slide3">→</label>
+                        <!-- When on slide 3 -->
+                        <label class="arrow to2" for="slide2">←</label>
+                        <label class="arrow to4" for="slide4">→</label>
+                        <!-- When on slide 4 -->
+                        <label class="arrow to3" for="slide3">←</label>
+                        <label class="arrow to1" for="slide1">→</label>
+                    </div>
+
+
+
+                    <!-- MANUAL BUTTONS -->
+                    <div class="navigation-manual">
+                        <label for="slide1" class="manual-btn"></label>
+                        <label for="slide2" class="manual-btn"></label>
+                        <label for="slide3" class="manual-btn"></label>
+                        <label for="slide4" class="manual-btn"></label>
+                    </div>
+
+                    <!--<button class="arrow right">&#8594;</button>-->
                 </div> 
             </div>
         </section>    
@@ -252,83 +351,90 @@
                                     <div class="timeline-icon-circle left-icon-circle">
                                         <img src="assets/rocket.svg" class="timeline-icon-img" alt="Project Icon">
                                     </div>
-                                    
                                     <div class="timeline-text-box">
-                                        <h2>First Project</h2>
+                                        <h2>First Projects & Experience</h2>
                                         <small>2019</small>
-                                        <p>Built a spaceship game using pure JavaScript. This sparked my love for development.</p>
+                                        <p>
+                                            Built a JavaScript spaceship game—my first project.<br>
+                                            Interned at a notable tech company that introduced me to Internet of Things.
+                                        </p>
                                         <span class="left-timeline-container-arrow"></span>
                                     </div>
                                 </div>
-        
+
                                 <div class="timeline-container right-timeline-container">
                                     <div class="timeline-icon-circle right-icon-circle">
                                         <img src="assets/book.svg" class="timeline-icon-img" alt="University Icon">
                                     </div>
                                     <div class="timeline-text-box">
-                                        <h2>University Admission in UOIT</h2>
+                                        <h2>Started BSc in Computer Science</h2>
                                         <small>2021</small>
-                                        <p>Pursued a BSc in Computer Science at Ontario Tech University (UOIT).</p>
+                                        <p>Admitted to Ontario Tech University. Built a strong foundation in CS, math, and logic.</p>
                                         <span class="right-timeline-container-arrow"></span>
                                     </div>
                                 </div>
-        
+
                                 <div class="timeline-container left-timeline-container">
                                     <div class="timeline-icon-circle left-icon-circle">
-                                        <img src="assets/paper.svg" alt="Certification Icon">
+                                        <img src="assets/helping.svg" alt="AI Icon">
                                     </div>
-                                    
                                     <div class="timeline-text-box">
-                                        <h2>Online Certification</h2>
+                                        <h2>Thruliquid AI & Automation Internship</h2>
                                         <small>2022</small>
-                                        <p>Prompt Engineering and Digital Marketing.</p>
+                                        <p>Built automation tools and computer vision systems using Python and OpenCV to enhance SMB efficiency.</p>
                                         <span class="left-timeline-container-arrow"></span>
                                     </div>
                                 </div>
-        
+
                                 <div class="timeline-container right-timeline-container">
                                     <div class="timeline-icon-circle right-icon-circle">
                                         <img src="assets/programmer.svg" alt="Internship Icon">
                                     </div>
-                                    
                                     <div class="timeline-text-box">
-                                        <h2>Internship and Product Development</h2>
+                                        <h2>Fullstack Internship at DevSeal</h2>
                                         <small>2024</small>
-                                        <p>Fullstack Intern at DevSeal: helped ship a client dashboard using React + Node and API.</p>
-                                        <p>Built a mobile app (unreleased) implementing geolocation and Firebase.</p>
+                                        <p>Shipped a production dashboard using React, Node.js, and REST APIs.<br>Also prototyped a geolocation-based mobile app using Firebase.</p>
                                         <span class="right-timeline-container-arrow"></span>
                                     </div>
                                 </div>
-        
+
                                 <div class="timeline-container left-timeline-container">
                                     <div class="timeline-icon-circle left-icon-circle">
-                                        <img src="assets/robot-assistant.svg" alt="AI and Simulation Icon">
+                                        <img src="assets/cloud.svg" alt="Cert Icon">
                                     </div>
-                                   
                                     <div class="timeline-text-box">
-                                        <h2>Scientific Simulations and A.I</h2>
-                                        <small>2025</small>
-                                        <p>Built an AI football tracking system using YOLO & OpenCV.<br>Modeled the solar system and broader universe integrating simulation, physics, and visualization.</p>
+                                        <h2>Cloud & Security Certifications</h2>
+                                        <small>2024–2025</small>
+                                        <p>Completed Microsoft AZ-900, AI-900, DP-900, and SC-900 certifications in cloud, AI, and security fundamentals.</p>
                                         <span class="left-timeline-container-arrow"></span>
                                     </div>
                                 </div>
-        
+
                                 <div class="timeline-container right-timeline-container">
                                     <div class="timeline-icon-circle right-icon-circle">
-                                        <img src="assets/graduation-cap.svg" alt="Education Milestone">
+                                        <img src="assets/robot-assistant.svg" alt="AI Project Icon">
                                     </div>
-                                    
                                     <div class="timeline-text-box">
-                                        <h2>Education Milestone</h2>
+                                        <h2>Major AI & Simulation Projects</h2>
                                         <small>2025</small>
-                                        <p>Learned Algorithms, Data Structures, AI, Fullstack development and security in CS degree.</p>
+                                        <p>Built an AI football tracker using YOLO & OpenCV.<br>Developed a space simulation (Interstellar Cannon) modeling rocket gravity in 3D.</p>
                                         <span class="right-timeline-container-arrow"></span>
                                     </div>
                                 </div>
-        
+
+                                <div class="timeline-container left-timeline-container">
+                                    <div class="timeline-icon-circle left-icon-circle">
+                                        <img src="assets/graduation-cap.svg" alt="Graduation Icon">
+                                    </div>
+                                    <div class="timeline-text-box">
+                                        <h2>Graduated with BSc in CS</h2>
+                                        <small>2025</small>
+                                        <p>Completed courses in Data Structures, Algorithms, Software Engineering, AI, Cybersecurity, and Fullstack Dev.</p>
+                                        <span class="left-timeline-container-arrow"></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-        
                     </div>
                 </div>
             </div>
@@ -923,8 +1029,14 @@
                         <div class="email-actions">
                             <p class="contact-email">israelodunaiya@gmail.com</p>
                             <div class="contact-links">
-                                <a href="mailto:israelodunaiya@gmail.com" class="contact-button">Email Me</a>
-                                <a href="assets/Resume.pdf" class="contact-button" download>Download My Resume</a>
+                                <!-- Email -->
+                                <a href="mailto:israelodunaiya@gmail.com" class="contact-button">📧 Email Me</a>
+
+                                <!-- Resume Download -->
+                                <a href="assets/Resume.pdf" class="contact-button" download>📥 Download My Resume</a>
+
+                                <!-- View Resume -->
+                                <a href="assets/Resume.pdf" target="_blank" class="contact-button" rel="noopener noreferrer">👀 View Resume</a>
                             </div>
                         </div>
                     </div>
@@ -1003,6 +1115,8 @@
           }
         });
     </script>
+
+
       
 
 

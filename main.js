@@ -315,30 +315,7 @@ document.addEventListener('mousemove', (e) => {
 
 /*Sidenav*/
 /*SLIDER */
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
-const sliderTrack = document.querySelector('.slider-track');
 
-function updateArrowVisibility() {
-    const maxScrollLeft = sliderTrack.scrollWidth - sliderTrack.clientWidth;
-  
-    leftArrow.style.display = sliderTrack.scrollLeft > 0 ? 'block' : 'none';
-    rightArrow.style.display = sliderTrack.scrollLeft < maxScrollLeft - 1 ? 'block' : 'none';
-}
-
-leftArrow.addEventListener('click', () => {
-    sliderTrack.scrollBy({ left: -window.innerWidth * 0.9, behavior: 'smooth' });
-});
-  
-
-rightArrow.addEventListener('click', () => {
-    sliderTrack.scrollBy({ left: window.innerWidth * 0.9, behavior: 'smooth' });
-});
-
-sliderTrack.addEventListener('scroll', updateArrowVisibility);
-
-// Initial state
-window.addEventListener('load', updateArrowVisibility);
 
 /* SIDENAVVVVVVVV */
 const sections = document.querySelectorAll('section');
@@ -362,3 +339,64 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+/* ===== Slider logic (radio-driven) ===== */
+const radios = Array.from(document.querySelectorAll('input[name="radio-btn"]'));
+if (radios.length) {
+  const mql = window.matchMedia('(max-width: 768px)');
+  const maxSlides = () => (mql.matches ? 4 : 2);
+
+  const getIndex = () => {
+    const i = radios.findIndex(r => r.checked);
+    return i === -1 ? 0 : i;
+  };
+  const setIndex = (i) => { radios[i].checked = true; };
+
+  const nextSlide = () => {
+    const i = getIndex();
+    setIndex((i + 1) % maxSlides());
+  };
+  const prevSlide = () => {
+    const i = getIndex();
+    const m = maxSlides();
+    setIndex((i - 1 + m) % m);
+  };
+
+  // Auto-rotate
+  let auto = setInterval(nextSlide, 6000);
+
+  // Pause auto-rotate on hover (optional)
+  const sliderTrack = document.querySelector('.slider-track');
+  if (sliderTrack) {
+    sliderTrack.addEventListener('mouseenter', () => clearInterval(auto));
+    sliderTrack.addEventListener('mouseleave', () => (auto = setInterval(nextSlide, 6000)));
+  }
+
+  // Arrow clicks -> change radios
+  const leftArrow  = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+  leftArrow?.addEventListener('click', (e) => { e.preventDefault(); prevSlide(); });
+  rightArrow?.addEventListener('click', (e) => { e.preventDefault(); nextSlide(); });
+
+  // If viewport crosses 768px, clamp to valid page count
+  mql.addEventListener('change', () => {
+    const i = getIndex();
+    if (i >= maxSlides()) setIndex(maxSlides() - 1);
+  });
+}
+
+
+
+// Resume Modal Logic
+const modal = document.getElementById("resumeModal");
+const btn = document.getElementById("viewResumeBtn");
+const closeBtn = document.querySelector(".close");
+
+btn.onclick = () => modal.style.display = "block";
+closeBtn.onclick = () => modal.style.display = "none";
+window.onclick = (e) => {
+  if (e.target === modal) modal.style.display = "none";
+};
+
+
+// ===== Responsive slider regrouping: 2-per-page (desktop) ↔ 1-per-page (mobile) =====
