@@ -17,13 +17,26 @@
   <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.co/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.co/gsap@3/dist/MotionPathPlugin.min.js"></script>
-  
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+  <a href="https://iconscout.com/icons/chat" class="text-underline font-size-sm" target="_blank">Chat</a> by <a href="https://iconscout.com/contributors/saepul-nahwan" class="text-underline font-size-sm">Saepul Nahwan</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
+  <a href="https://iconscout.com/icons/close" class="text-underline font-size-sm" target="_blank">Close</a> by <a href="https://iconscout.com/contributors/unicons" class="text-underline font-size-sm" target="_blank">Unicons Font</a>
+  <a href="https://iconscout.com/icons/astronaut" class="text-underline font-size-sm" target="_blank">astronaut</a> by <a href="https://iconscout.com/contributors/lutfix" class="text-underline font-size-sm" target="_blank">Lutfi Achmad</a>
+  <a href="https://iconscout.com/icons/eclipse" class="text-underline font-size-sm" target="_blank">Eclipse</a> by <a href="https://iconscout.com/contributors/saepul-nahwan" class="text-underline font-size-sm">Saepul Nahwan</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
+  <a href="https://iconscout.com/icons/home-location" class="text-underline font-size-sm" target="_blank">Home Location</a> by <a href="https://iconscout.com/contributors/triangle-squad" class="text-underline font-size-sm">Triangle Squad</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a> 
+  <a href="https://iconscout.com/icons/home-angle" class="text-underline font-size-sm" target="_blank">home angle</a> by <a href="https://iconscout.com/contributors/bharat-icons" class="text-underline font-size-sm">Bharat Design</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
+  <a href="https://iconscout.com/lottie-animations/astronaut" class="text-underline font-size-sm" target="_blank">Astronaut with space shuttle</a> by <a href="https://iconscout.com/contributors/motionstkstudio" class="text-underline font-size-sm">MotionsTK.studio</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
+  <a href="https://iconscout.com/lottie-animations/xmas-star" class="text-underline font-size-sm" target="_blank">Xmas Star</a> by <a href="https://iconscout.com/contributors/victoria-motion" class="text-underline font-size-sm" target="_blank">Victoria Shelest</a>  
 
 
 
-  
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" integrity="sha512-lhK7xTsFM6DPXOtQQyPe+NmpoFEheKDHjM/5QzpFRiE1KySgtBfEzYz4XowvB+CAWcBLBGWinhh41uNaOtrSZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -34,9 +47,37 @@
 </head>
 
 <body class ="body">
+    <!-- Preloader -->
     <div id="preloader">
-        <div class="loader"></div>
+        <div class="loader">
+            <!-- Stars JSON animation -->
+            <lottie-player 
+            src="assets/space-star.json" 
+            background="transparent"  
+            speed="1"  
+            style="width: 200px; height: 200px;"  
+            loop  
+            autoplay>
+            </lottie-player>
+
+            <!-- Astronaut JSON animation -->
+            <lottie-player 
+            src="assets/astronaut-with-space-shuttle.json"  
+            background="transparent"  
+            speed="1"  
+            style="width: 150px; height: 150px; position: absolute; top: 25%; left: 50%; transform: translateX(-50%);"  
+            loop  
+            autoplay>
+            </lottie-player>
+
+            <p>Launching into orbit...</p>
+        </div>
     </div>
+
+    <div class="scroll-progress"></div>
+
+
+
 
     
 
@@ -58,19 +99,20 @@
                 <!-- ul.na-list.nav-list-larger-->
                 <div class="Refresh">
                     <a href="" class="homepage" id="">
-                        <i class='bx bx-home-alt icon' ></i>
+                        <img src="assets/home-angle.svg" alt="Home icon">
                     </a>
                 </div>
                 <ul class="nav-list boxes">
                     <li>
                         <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode">
-                            <svg width="100%" 
+                            <img src="assets/eclipse.svg" alt="Eclipse icon">
+                            <!--<svg width="100%" 
                                 xmlns="http://www.w3.org/2000/svg" 
                                 viewBox="0 0 496 496">
                                 <path fill="currentColor" 
                                 d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" 
                                 transform="translate(-8 -8)"/>
-                            </svg>
+                            </svg>-->
                         </button>
                     </li>
                 </ul>
@@ -172,10 +214,10 @@
                                 <h2 class="project-title">AI Football Tracker</h2>
                                 <div class="project-links">
                                     <a href="https://github.com/Odunsegun/football-tracking/blob/main/output_videos/output_video.avi" target="_blank" class="live-link">
-                                        🌐 Demo
+                                        🌐 Live
                                     </a> |
                                     <a href="https://github.com/Odunsegun/football-tracking" target="_blank" class="github-link">
-                                    💻 GitHub
+                                    💻 Code
                                     </a>
                                 </div>
                                 <p class="project-description">
@@ -201,10 +243,10 @@
                                     <h2 class="project-title">Design Landing Page</h2>
                                     <div class="project-links">
                                     <a href="https://dev-seal-com-clone.vercel.app/" target="_blank" class="live-link">
-                                        🌐 Demo
+                                        🌐 Live
                                     </a> |
                                     <a href="https://github.com/Odunsegun/devSeal.com-clone" target="_blank" class="github-link">
-                                        💻 GitHub
+                                        💻 Code
                                     </a>
                                     </div>
                                     <p class="project-description">
@@ -229,10 +271,10 @@
                                     <h2 class="project-title">Azure Fitness Tracker</h2>
                                     <div class="project-links">
                                         <a href="https://github.com/Odunsegun/azure-fitness-tracker" target="_blank" class="github-link">
-                                            💻 GitHub
+                                            💻 Code
                                         </a>
                                         <a href="https://wonderful-forest-08c0abc0f.1.azurestaticapps.net/" target="_blank" class="live-link">
-                                            🌐 Live Demo
+                                            🌐 Live
                                         </a>
                                     </div>
                                     <p class="project-description">
@@ -260,7 +302,7 @@
                                     <h2 class="project-title">Interstellar Cannon</h2>
                                     <div class="project-links">
                                         <a href="https://github.com/Odunsegun/interstellar-cannon" target="_blank" class="github-link">
-                                            💻 GitHub
+                                            💻 Code
                                         </a>
                                     </div>
                                     <p class="project-description">
@@ -342,7 +384,9 @@
         
                         <div class="history-body">
                             <div class="timeline">
-        
+
+                                <div class="timeline-line"></div>
+
                                 <div class="timeTraveller">
                                     <i class="fa-solid fa-rocket"></i> <!-- Changed plane to rocket for space theme -->
                                 </div>
@@ -446,7 +490,12 @@
                 <div class="stack-title">
                     <h1>My Digital Arsenal </h1>
                 </div>
+                
                 <div class="stack-tabs">
+                    <button class="tab-button" data-tab="alls">
+                        <i class="fa-solid fa-layer-group"></i>
+                        All
+                    </button>
                     <button class="tab-button active" data-tab="languages">
                       <i class="fa-solid fa-code"></i>
                       Languages
@@ -460,558 +509,1589 @@
                       Frameworks
                     </button>
                 </div>
+
+                <!-- Global Filter Bar -->
+                <div class="arsenal-filters">
+                    <button data-filter="all" class="active">All</button>
+                    <button data-filter="frontend">Frontend</button>
+                    <button data-filter="backend">Backend</button>
+                    <button data-filter="database">Database</button>
+                    <button data-filter="ai">AI</button>
+                    <button data-filter="mobile">Mobile</button>
+                    <button data-filter="devops">DevOps</button>
+                    <button data-filter="hosting">Hosting</button>
+                    <button data-filter="datascience">Data Science</button>
+                </div>
                   
                 <div class="stack-content">
-                  <div id="languages" class="stack-tab active">
-                    <div class="header-body-six">
-                        <h2>Languages I use to develop web & software solutions.
-                        </h2>
-                    </div>
 
-                    <div class="language-slider">
-                            <div class="language-track">
-                                <div class="language-cards">
+                    <div id="alls" class="stack-tab">
+                        <div class="header-body-all">
+                            <h2>All Languages, Tools & Frameworks in one place</h2>
+                        </div>
+
+                        <div class="all-slider">
+                            <div class="all-track">
+                                <div class="all-cards">
+
                                     <a target="_blank" class="card-touch">
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag frontend">Frontend</span>
+                                        <div class="all-card frontend">
+                                        <div class="tag-row">
+                                            <span class="tag frontend">Frontend</span>
+                                        </div>
+                                        <span class="badge" title="Used professionally">PRO</span>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/html5.svg" data-hover="assets/html5-original.svg" alt="HTML Logo">
                                             </div>
-                                            <span class="badge" title="Used professionally">PRO</span>
-            
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/html5.svg" data-hover="assets/html5-original.svg" alt="HTML Logo">
+                                            <div class="all-card-text">
+                                            HTML
+                                            <div class="subtext">Since 2021 • 10 Projects • Pro Use</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- CSS -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card frontend">
+                                        <div class="tag-row">
+                                            <span class="tag frontend">Frontend</span>
+                                        </div>
+                                        <div class="badge" title="Used professionally">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/css3.svg" data-hover="assets/css3-original.svg" alt="CSS Logo">
+                                            </div>
+                                            <div class="all-card-text">CSS & Tailwind</div>
+                                        </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Python -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card backend ai datascience">
+                                        <div class="tag-row">
+                                            <span class="tag ai">AI</span>
+                                            <span class="tag datascience">Data</span>
+                                            <span class="tag backend">Backend</span>
+                                        </div>
+                                        <div class="badge" title="Used professionally">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/python.svg" data-hover="assets/python-original.svg" alt="Python Logo">
+                                            </div>
+                                            <div class="all-card-text">Python</div>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!--Github-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card">
+                                            <div class="tag-row">
+                                                <span class="tag DevOps">DevOps</span>
+                                                <span class="tag collab">Collab</span>
+                                            </div>
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/git.svg" data-hover="assets/git-original.svg" alt="GIT Logo">
                                                 </div>
-                                                <div class="language-card-text">
-                                                    HTML
-                                                    <div class="subtext">Since 2021 • 10 Projects • Pro Use</div>
+                                                <div class="all-card-text">Git & GitHub</div>
+                                            </div>
+                                        </div>
+                                    </a>  
+                                    <!-- Azure -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card cloud hosting">
+                                            <div class="tag-row">
+                                                <span class="tag cloud">Cloud</span>
+                                                <span class="tag hosting">Hosting</span>
+                                            </div>
+                                            <div class="badge" title="Certified">Skilled</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg"  alt="Azure Logo">
                                                 </div>
+                                                <div class="all-card-text">Azure</div>
                                             </div>
                                         </div>
                                     </a>
-                                
-                                    <a  target="_blank" class="card-touch">
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag frontend">Frontend</span>
-                                            </div>
-                                            <div class="badge" title="Used professionally">Pro</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/css3.svg" data-hover="assets/css3-original.svg" alt="CSS Logo">
-                                                </div>
-                                                <div class="language-card-text">
-                                                    CSS & Tailwind
-                                                </div>
-                                            </div>
+                                    <!-- Java -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card mobile backend">
+                                        <div class="tag-row">
+                                            <span class="tag mobile">Mobile</span>
+                                            <span class="tag backend">Backend</span>
                                         </div>
-                                    </a>   
-                                    <a  target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag ai" title="Artificial Intelligence">AI</span>
-                                                <span class="tag backend">Backend</span>
+                                        <div class="badge" title="Used professionally">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <div class="logo-swap" data-hover="assets/java-original.svg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="java-logo">
+                                                <path fill="currentColor" d="M47.617 98.12c-19.192 5.362 11.677 16.439 36.115 5.969-4.003-1.556-6.874-3.351-6.874-3.351-10.897 2.06-15.952 2.222-25.844 1.092-8.164-.935-3.397-3.71-3.397-3.71zm33.189-10.46c-14.444 2.779-22.787 2.69-33.354 1.6-8.171-.845-2.822-4.805-2.822-4.805-21.137 7.016 11.767 14.977 41.309 6.336-3.14-1.106-5.133-3.131-5.133-3.131zm11.319-60.575c.001 0-42.731 10.669-22.323 34.187 6.024 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.793 15.634-29.58zm9.998 81.144s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.095.171-4.45-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.952-3.487-32.013 6.85-13.742 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM85 77.896c2.395-1.634 5.703-3.053 5.703-3.053s-9.424 1.685-18.813 2.474c-11.494.964-23.823 1.154-30.012.326-14.652-1.959 8.033-7.348 8.033-7.348s-8.812-.596-19.644 4.644C17.455 81.134 61.958 83.958 85 77.896zm5.609 15.145c-.108.29-.468.616-.468.616 31.273-8.221 19.775-28.979 4.822-23.725-1.312.464-2 1.543-2 1.543s.829-.334 2.678-.72c7.559-1.575 18.389 10.119-5.032 22.286zM64.181 70.069c-4.614-10.429-20.26-19.553.007-35.559C89.459 14.563 76.492 1.587 76.492 1.587c5.23 20.608-18.451 26.833-26.999 39.667-5.821 8.745 2.857 18.142 14.688 28.815zm27.274 51.748c-19.187 3.612-42.854 3.191-56.887.874 0 0 2.874 2.38 17.646 3.331 22.476 1.437 57-.8 57.816-11.436.001 0-1.57 4.032-18.575 7.231z"/>
+                                                </svg>
                                             </div>
-                                            <div class="badge" title="Used professionally">Pro</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/python.svg" data-hover="assets/python-original.svg" alt="Python Logo">
-                                                </div>
-                                                <div class="language-card-text">
-                                                    Pyhton
-                                                </div>
                                             </div>
+                                            <div class="all-card-text">Java</div>
                                         </div>
-                                    </a>   
-                                    <a  target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag mobile">Mobile</span>
-                                                <span class="tag backend">Backend</span>
-                                            </div>
-                                            <div class="badge" title="Used professionally">Pro</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <div class="logo-swap" data-hover="assets/java-original.svg">
-                                                        <svg data-hover="assets/java-original.svg"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="java-logo"><path fill="currentColor" d="M47.617 98.12c-19.192 5.362 11.677 16.439 36.115 5.969-4.003-1.556-6.874-3.351-6.874-3.351-10.897 2.06-15.952 2.222-25.844 1.092-8.164-.935-3.397-3.71-3.397-3.71zm33.189-10.46c-14.444 2.779-22.787 2.69-33.354 1.6-8.171-.845-2.822-4.805-2.822-4.805-21.137 7.016 11.767 14.977 41.309 6.336-3.14-1.106-5.133-3.131-5.133-3.131zm11.319-60.575c.001 0-42.731 10.669-22.323 34.187 6.024 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.793 15.634-29.58zm9.998 81.144s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.095.171-4.45-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.952-3.487-32.013 6.85-13.742 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM85 77.896c2.395-1.634 5.703-3.053 5.703-3.053s-9.424 1.685-18.813 2.474c-11.494.964-23.823 1.154-30.012.326-14.652-1.959 8.033-7.348 8.033-7.348s-8.812-.596-19.644 4.644C17.455 81.134 61.958 83.958 85 77.896zm5.609 15.145c-.108.29-.468.616-.468.616 31.273-8.221 19.775-28.979 4.822-23.725-1.312.464-2 1.543-2 1.543s.829-.334 2.678-.72c7.559-1.575 18.389 10.119-5.032 22.286zM64.181 70.069c-4.614-10.429-20.26-19.553.007-35.559C89.459 14.563 76.492 1.587 76.492 1.587c5.23 20.608-18.451 26.833-26.999 39.667-5.821 8.745 2.857 18.142 14.688 28.815zm27.274 51.748c-19.187 3.612-42.854 3.191-56.887.874 0 0 2.874 2.38 17.646 3.331 22.476 1.437 57-.8 57.816-11.436.001 0-1.57 4.032-18.575 7.231z"/></svg>
-                                                    </div>
-                                                </div>
-                                                <div class="language-card-text">Java</div>
-                                            </div>
                                         </div>
-                                    </a>   
-                                    <a  target="_blank" class="card-touch">    
-                                        <div class="language-card">
+                                    </a>
+
+                                    <!-- React -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card frontend mobile">
+                                        <div class="tag-row">
+                                            <span class="tag frontend">Frontend</span>
+                                            <span class="tag mobile">Mobile</span>
+                                        </div>
+                                        <div class="badge" title="Experienced">Skilled</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/react.svg" data-hover="assets/react-original.svg" alt="React Logo">
+                                            </div>
+                                            <div class="all-card-text">React</div>
+                                        </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- JavaScript -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card frontend backend">
+                                        <div class="tag-row">
+                                            <span class="tag frontend">Frontend</span>
+                                            <span class="tag backend">Backend</span>
+                                        </div>
+                                        <div class="badge" title="Used professionally">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/javascript.svg" data-hover="assets/javascript-original.svg" alt="JS Logo">
+                                            </div>
+                                            <div class="all-card-text">JavaScript</div>
+                                        </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- TypeScript -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card frontend backend">
+                                        <div class="tag-row">
+                                            <span class="tag frontend">Frontend</span>
+                                            <span class="tag backend">Backend</span>
+                                        </div>
+                                        <div class="badge" title="Experienced">Basic</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/typescript.svg" data-hover="assets/typescript-original.svg" alt="TS Logo">
+                                            </div>
+                                            <div class="all-card-text">TypeScript</div>
+                                        </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- SQL -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card database backend">
+                                        <div class="tag-row">
+                                            <span class="tag database">Database</span>
+                                            <span class="tag backend">Backend</span>
+                                        </div>
+                                        <div class="badge" title="Experienced">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/sqlite.svg" data-hover="assets/sqlite-original.svg" alt="SQL Logo">
+                                            </div>
+                                            <div class="all-card-text">SQL</div>
+                                        </div>
+                                        </div>
+                                    </a>
+
+                                   <!-- Linux -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card systems scripting security">
                                             <div class="tag-row">
                                                 <span class="tag systems">Systems</span>
-                                                <span class="tag backend">Backend</span>
+                                                <span class="tag scripting">Scripting</span>
+                                                <span class="tag security">Security</span>
                                             </div>
-                                            <div class="badge" title="Used professionally">Pro</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/cplusplus.svg" data-hover="assets/cplusplus-original.svg" alt="C and C++ logo">
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/linux.svg" data-hover="assets/linux-original.svg" alt="Linux Logo">
                                                 </div>
-                                                <div class="language-card-text">C/C++</div>
+                                                <div class="all-card-text">Linux</div>
                                             </div>
                                         </div>
-                                    </a>   
-                                    <a target="_blank" class="card-touch">    
-                                        <div class="language-card">
+                                    </a>
+                                    <!--Visual Studion-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card ide">
+                                            <div class="tag-row">
+                                                <span class="tag ide">Editor/IDE</span>
+                                            </div>
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/visualstudio-plain.svg" data-hover="assets/vscode-original.svg" alt="VISUAL STUDIO Logo">
+                                                </div>
+                                                <div class="all-card-text">Visual Studio</div>
+                                            </div>
+                                        </div>
+                                    </a> 
+                                    <!-- R -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card datascience documentation">
+                                        <div class="tag-row">
+                                            <span class="tag datascience">Data</span>
+                                            <span class="tag documentation">Docs</span>
+                                        </div>
+                                        <div class="badge" title="Used professionally">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/r.svg" data-hover="assets/r-original.svg" alt="R Logo">
+                                            </div>
+                                            <div class="all-card-text">R</div>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!--Docker-->
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="all-card devops container">
+                                            <div class="tag-row">
+                                                <span class="tag devops">DevOps</span>
+                                                <span class="tag container">Container</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/docker.svg" data-hover="assets/docker-original.svg"alt="HTML Logo">
+                                                </div>
+                                                <div class="all-card-text">Docker</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Dart -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card mobile">
+                                        <div class="tag-row">
+                                            <span class="tag mobile">Mobile</span>
+                                        </div>
+                                        <div class="badge" title="Experienced">Skilled</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/dart.svg" data-hover="assets/dart-original.svg" alt="Dart Logo">
+                                            </div>
+                                            <div class="all-card-text">Dart</div>
+                                        </div>
+                                        </div>
+                                    </a>
+
+                                    <!--PowerShell-->
+                                    <a  target="_blank" class="card-touch">    
+                                            <div class="all-card scripting systems">
+                                                <div class="tag-row">
+                                                    <span class="tag scripting">Script</span>
+                                                    <span class="tag systems">Systems</span>
+                                                </div>
+                                                <div class="badge" title="Experienced">Skilled</div>
+                                                <div class="all-card-content">
+                                                    <div class="all-card-logo">
+                                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-plain.svg" data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg"alt="POWERSHELL LOGO">
+                                                    </div>
+                                                    <div class="all-card-text">Powershell</div>
+                                                </div>
+                                            </div>
+                                    </a> 
+                                    <!--PostgreSQL-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card database">
                                             <div class="tag-row">
                                                 <span class="tag database">Database</span>
                                             </div>
                                             <div class="badge" title="Experienced">Skilled</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/sqlite.svg" data-hover="assets/sqlite-original.svg" alt="SQL LOGO">
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/postgresql.svg" data-hover="assets/postgresql-original.svg" alt="POSTGRESQL Logo">
                                                 </div>
-                                                <div class="language-card-text">SQL</div>
+                                                <div class="all-card-text">PostgreSQL</div>
                                             </div>
                                         </div>
-                                    </a>   
-                                    <a target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag mobile">Mobile</span>
-                                                <span class="tag backend">Backend</span>
-                                            </div>
-                                            <div class="badge" title="Experienced">Skilled</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/kotlin.svg" data-hover="assets/kotlin-original.svg" alt="Kotlin Logo">
-                                                </div>
-                                                <div class="language-card-text">Kotlin</div>
-                                            </div>
+                                    </a>  
+                                    <!-- PyTorch -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card ai">
+                                        <div class="tag-row">
+                                            <span class="tag ai">AI</span>
                                         </div>
-                                    </a>   
-                                    <a  target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag datascience">Data Science</span>
+                                        <div class="badge" title="Experienced">Skilled</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/pytorch.svg" data-hover="assets/pytorch-original.svg" alt="PyTorch Logo">
                                             </div>
-                                            <div class="badge" title="Used Professionally">Pro</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/r.svg" data-hover="assets/r-original.svg"alt="R LOGO">
-                                                </div>
-                                                <div class="language-card-text">R</div>
-                                            </div>
+                                            <div class="all-card-text">PyTorch</div>
+                                        </div>
                                         </div>
                                     </a>
-                                    <a target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag frontend">Frontend</span>
-                                            </div>
-                                            <div class="badge" title="Used Professionally">Pro</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/javascript.svg" data-hover="assets/javascript-original.svg" alt="JAVASCRIPT LOGO">
-                                                </div>
-                                                <div class="language-card-text">JavaScript</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a  target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag frontend">Frontend</span>
-                                            </div>
-                                            <div class="badge" title="Experienced">Skilled</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/typescript.svg" data-hover="assets/typescript-original.svg"alt="TYPESCRIPT LOGO">
-                                                </div>
-                                                <div class="language-card-text">TypeScript</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag mobile">Mobile</span>
-                                            </div>
-                                            <div class="badge" title="Experienced">Skilled</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/dart.svg" data-hover="assets/dart-original.svg"alt="TYPESCRIPT LOGO">
-                                                </div>
-                                                <div class="language-card-text">Dart</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a  target="_blank" class="card-touch">    
-                                        <div class="language-card">
-                                            <div class="tag-row">
-                                                <span class="tag latex">Latex</span>
-                                            </div>
-                                            <div class="badge" title="Experienced">Skilled</div>
-                                            <div class="language-card-content">
-                                                <div class="language-card-logo">
-                                                    <img src="assets/latex.svg" data-hover="assets/latex-original.svg"alt="TYPESCRIPT LOGO">
-                                                </div>
-                                                <div class="language-card-text">Latex</div>
-                                            </div>
-                                        </div>
-                                    </a>          
-                                </div>
-                            </div>
-                    </div>
-                    
-                    
-                  </div>
-          
-                  <div id="tools" class="stack-tab">
-                    <div class="header-body-seven">
-                        <h2>
-                            Essential development tools and platforms I rely on.
-                        </h2>
-                    </div>
-
-                    <div class="tool-slider">
-                        <div class="tool-track">
-                            <div class="tool-cards">
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag version-control">Version Control</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/git.svg" data-hover="assets/git-original.svg" alt="GIT Logo">
-                                            </div>
-                                            <div class="tool-card-text">Git & GitHub</div>
-                                        </div>
-                                    </div>
-                                </a>  
-                                <a  target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag ide">Editor/IDE</span>
-                                        </div>
-                                        <div class="badge" title="Used Professionally">Pro</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/visualstudio-plain.svg" data-hover="assets/vscode-original.svg" alt="VISUAL STUDIO Logo">
-                                            </div>
-                                            <div class="tool-card-text">Visual Studio</div>
-                                        </div>
-                                    </div>
-                                </a> 
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag ide">Editor/IDE</span>
-                                        </div>
-                                        <div class="badge" title="Used Professionally">Pro</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/jupyter.svg" data-hover="assets/jupyter-original.svg" alt="JUPYTER Logo">
-                                            </div>
-                                            <div class="tool-card-text">Jupyter</div>
-                                        </div>
-                                    </div>
-                                </a> 
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag hosting">Hosting</span>
-                                            <span class="tag backend">Backend</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/firebase.svg" data-hover="assets/firebase-original.svg" alt="FIREBASE Logo">
-                                            </div>
-                                            <div class="tool-card-text">Firebase</div>
-                                        </div>
-                                    </div>
-                                </a>  
-                                <a  target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag devops">DevOps</span>
-                                            <span class="tag terminal">Terminal</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/linux.svg" data-hover="assets/linux-original.svg" alt="LINUX Logo">
-                                            </div>
-                                            <div class="tool-card-text">Linux</div>
-                                        </div>
-                                    </div>
-                                </a>  
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag database">Database</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/postgresql.svg" data-hover="assets/postgresql-original.svg" alt="POSTGRESQL Logo">
-                                            </div>
-                                            <div class="tool-card-text">PostgreSQL</div>
-                                        </div>
-                                    </div>
-                                </a>  
-                                <a  target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag devops">DevOps</span>
-                                            <span class="tag container">Container</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/docker.svg" data-hover="assets/docker-original.svg"alt="HTML Logo">
-                                            </div>
-                                            <div class="tool-card-text">Docker</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag mobile">Mobile</span>
-                                            <span class="tag ide">IDE</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/androidstudio.svg" data-hover="assets/androidstudio-original.svg"alt="ANDROID STUDIO Logo">
-                                            </div>
-                                            <div class="tool-card-text">Android Studio</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a  target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag ide">IDE</span>
-                                        </div>
-                                        <div class="badge" title="Used professionally">Pro</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/jetbrains.svg" data-hover="assets/jetbrains-original.svg" alt="JETBRAINS Logo">
-                                            </div>
-                                            <div class="tool-card-text">JetBrains</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag productivity">Productivity</span>
-                                        </div>
-                                        <div class="badge" title="Used professionally">Pro</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/notion.svg" data-hover="assets/notion-original.svg" alt="JETBRAINS Logo">
-                                            </div>
-                                            <div class="tool-card-text">Notion</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag datascience">Data Science</span>
-                                        </div>
-                                        <div class="badge" title="Used professionally">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/anaconda.svg" data-hover="assets/anaconda-original.svg" alt="JETBRAINS Logo">
-                                            </div>
-                                            <div class="tool-card-text">Anaconda</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="tool-card">
-                                        <div class="tag-row">
-                                            <span class="tag hosting">Hosting</span>
-                                        </div>
-                                        <div class="badge" title="Used professionally">Skilled</div>
-                                        <div class="tool-card-content">
-                                            <div class="tool-card-logo">
-                                                <img src="assets/vercel.svg" data-hover="assets/vercel-original.svg" alt="JETBRAINS Logo">
-                                            </div>
-                                            <div class="tool-card-text">Vercel</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                  </div>
-          
-                  <div id="frameworks" class="stack-tab">
-                    <div class="header-body-eight">
-                        <h2>
-                            Various IDE's and more I used in creating my web apps.
-                        </h2>
-                    </div>
-
-                    <div class="framework-slider">
-                        <div class="framework-track">
-                            <div class="framework-cards">
-                                <a target="_blank" class="card-touch">
-                                    <div class="framework-card">
-                                        <div class="tag-row">
-                                            <span class="tag frontend">Frontend</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/react.svg" data-hover="assets/react-original.svg" alt="REACT Logo">
-                                            </div>
-                                            <div class="framework-card-text">
-                                                React
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a  target="_blank" class="card-touch">
-                                    <div class="framework-card">
+                                    <!-- SpringBoot -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card backend">
                                         <div class="tag-row">
                                             <span class="tag backend">Backend</span>
                                         </div>
                                         <div class="badge" title="Experienced">Basic</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/nodedotjs.svg" data-hover="assets/nodejs-original.svg" alt="NODE.JS Logo">
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/springboot.svg" data-hover="assets/spring-original.svg" alt="SpringBoot Logo">
                                             </div>
-                                            <div class="framework-card-text">Node.js & Express</div>
+                                            <div class="all-card-text">SpringBoot</div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="framework-card">
+                                        </div>
+                                    </a>
+                                    <!-- C/C++ -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card systems simulations">
                                         <div class="tag-row">
-                                            <span class="tag ai" title="Artificial Intelligence">AI</span>
+                                            <span class="tag systems">Systems</span>
+                                            <span class="tag simulation">Sims</span>
+                                        </div>
+                                        <div class="badge" title="Used professionally">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/cplusplus.svg" data-hover="assets/cplusplus-original.svg" alt="C and C++ Logo">
+                                            </div>
+                                            <div class="all-card-text">C/C++</div>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!-- Flask -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card backend">
+                                        <div class="tag-row">
+                                            <span class="tag backend">Backend</span>
                                         </div>
                                         <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/pytorch.svg" data-hover="assets/pytorch-original.svg" alt="Pythorch Logo">
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/flask.svg" data-hover="assets/flask-original.svg" alt="Flask Logo">
                                             </div>
-                                            <div class="framework-card-text">Pytorch</div>
+                                            <div class="all-card-text">Flask</div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="framework-card">
+                                        </div>
+                                    </a>
+                                    <!-- Flutter -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card mobile">
+                                        <div class="tag-row">
+                                            <span class="tag mobile">Mobile</span>
+                                        </div>
+                                        <div class="badge" title="Experienced">Skilled</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/flutter.svg" data-hover="assets/flutter-original.svg" alt="Flutter Logo">
+                                            </div>
+                                            <div class="all-card-text">Flutter</div>
+                                        </div>
+                                        </div>
+                                    </a>
+                                     <!-- OpenGL -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card graphics">
                                         <div class="tag-row">
                                             <span class="tag graphics">Graphics</span>
                                         </div>
                                         <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/opengl.svg" data-hover="assets/opengl-original.svg" alt="OpenGL Logo">
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/opengl.svg" data-hover="assets/opengl-original.svg" alt="OpenGL Logo">
                                             </div>
-                                            <div class="framework-card-text">OpenGL</div>
+                                            <div class="all-card-text">OpenGL</div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a  target="_blank" class="card-touch">
-                                    <div class="framework-card">
+                                        </div>
+                                    </a>
+                                    <!-- OpenCV & Tensor -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card ml cv">
                                         <div class="tag-row">
-                                            <span class="tag ml" title="Machine Learning">ML</span>
-                                            <span class="tag ml" title="Computer Vision">CV</span>
+                                            <span class="tag ml">ML</span>
+                                            <span class="tag cv">CV</span>
                                         </div>
                                         <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/opencv.svg" data-hover="assets/opencv-original.svg" alt="OpenCV Logo">
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/opencv.svg" data-hover="assets/opencv-original.svg" alt="OpenCV Logo">
                                             </div>
-                                            <div class="framework-card-text">OpenCV & Tensor</div>
+                                            <div class="all-card-text">OpenCV & Tensor</div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="framework-card">
+                                        </div>
+                                    </a>
+                                    <!-- Node.js -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card backend devops">
                                         <div class="tag-row">
-                                            <span class="tag ml" title="Machine Learning">ML</span>
-                                            <span class="tag ml" title="Computer Vision">CV</span>
+                                            <span class="tag backend">Backend</span>
+                                            <span class="tag devops">DevOps</span>
+                                        </div>
+                                        <div class="badge" title="Learning">Basic</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/nodedotjs.svg" data-hover="assets/nodejs-original.svg" alt="Node.js Logo">
+                                            </div>
+                                            <div class="all-card-text">Node.js & Express</div>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!--Firebase-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card hosting backend">
+                                            <div class="tag-row">
+                                                <span class="tag hosting">Hosting</span>
+                                                <span class="tag backend">Backend</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="alll-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/firebase.svg" data-hover="assets/firebase-original.svg" alt="FIREBASE Logo">
+                                                </div>
+                                                <div class="all-card-text">Firebase</div>
+                                            </div>
+                                        </div>
+                                    </a>  
+                                    <!-- Kotlin -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card mobile backend">
+                                        <div class="tag-row">
+                                            <span class="tag mobile">Mobile</span>
+                                            <span class="tag backend">Backend</span>
                                         </div>
                                         <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/yolo.svg" data-hover="assets/simple-icons--yolo.svg" alt="YOLO Logo">
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/kotlin.svg" data-hover="assets/kotlin-original.svg" alt="Kotlin Logo">
                                             </div>
-                                            <div class="framework-card-text">YOLO</div>
+                                            <div class="all-card-text">Kotlin</div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a  target="_blank" class="card-touch">
-                                    <div class="framework-card">
+                                        </div>
+                                    </a>
+                                    <!--Vercel-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card hosting">
+                                            <div class="tag-row">
+                                                <span class="tag hosting">Hosting</span>
+                                            </div>
+                                            <div class="badge" title="Used professionally">Pro</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/vercel.svg" data-hover="assets/vercel-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="all-card-text">Vercel</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!--Andriod Studio-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card mobile ide">
+                                            <div class="tag-row">
+                                                <span class="tag mobile">Mobile</span>
+                                                <span class="tag ide">IDE</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/androidstudio.svg" data-hover="assets/androidstudio-original.svg"alt="ANDROID STUDIO Logo">
+                                                </div>
+                                                <div class="all-card-text">Android Studio</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Latex -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card documentation datascience">
+                                        <div class="tag-row">
+                                            <span class="tag documentation">Docs</span>
+                                            <span class="tag datascience">Data</span>
+                                        </div>
+                                        <div class="badge" title="Used Professionally">Pro</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/latex.svg" data-hover="assets/latex-original.svg" alt="Latex Logo">
+                                            </div>
+                                            <div class="all-card-text">Latex</div>
+                                        </div>
+                                        </div>
+                                    </a>   
+                                    <!--Jupyter-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card ide">
+                                            <div class="tag-row">
+                                                <span class="tag ide">Editor/IDE</span>
+                                            </div>
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/jupyter.svg" data-hover="assets/jupyter-original.svg" alt="JUPYTER Logo">
+                                                </div>
+                                                <div class="all-card-text">Jupyter</div>
+                                            </div>
+                                        </div>
+                                    </a> 
+
+                                    <!--Bash-->
+                                    <a  target="_blank" class="card-touch">    
+                                            <div class="all-card scripting devops">
+                                                <div class="tag-row">
+                                                    <span class="tag scripting">Script</span>
+                                                    <span class="tag devops">DevOps</span>
+                                                </div>
+                                                <div class="badge" title="Learning">Basic</div>
+                                                <div class="all-card-content">
+                                                    <div class="all-card-logo">
+                                                        <img src="assets/bash.svg" data-hover="assets/bash-original.svg"alt="TYPESCRIPT LOGO">
+                                                    </div>
+                                                    <div class="all-card-text">Bash</div>
+                                                </div>
+                                            </div>
+                                    </a>
+
+                                    <!-- Cosmos DB -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card database cloud">
+                                            <div class="tag-row">
+                                                <span class="tag database">Database</span>
+                                                <span class="tag cloud">Cloud</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cosmosdb/cosmosdb-plain.svg" data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cosmosdb/cosmosdb-original.svg" alt="Cosmos DB Logo">
+                                                </div>
+                                                <div class="all-card-text">Cosmos DB</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- Kubernetes -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card devops cloud">
+                                            <div class="tag-row">
+                                                <span class="tag devops">DevOps</span>
+                                                <span class="tag cloud">Cloud</span>
+                                            </div>
+                                            <div class="badge" title="Learning">Basic</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/kubernetes.svg" data-hover="assets/kubernetes-original.svg" alt="Kubernetes Logo">
+                                                </div>
+                                                <div class="all-card-text">Kubernetes</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- HuggingFace (NLP, AI) -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card nlp ai">
+                                            <div class="tag-row">
+                                                <span class="tag nlp">NLP</span>
+                                                <span class="tag ai">AI</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/huggingface.svg" data-hover="assets/huggingface-original.svg" alt="HuggingFace Logo">
+                                                </div>
+                                                <div class="framework-card-text">HuggingFace</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- FastAPI (Backend, AI) -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card backend ai">
+                                            <div class="tag-row">
+                                                <span class="tag backend">Backend</span>
+                                                <span class="tag ai">AI</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/fastapi.svg" data-hover="assets/fastapi-original.svg" alt="FastAPI Logo">
+                                                </div>
+                                                <div class="framework-card-text">FastAPI</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- YOLO -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card ml cv">
+                                        <div class="tag-row">
+                                            <span class="tag ml">ML</span>
+                                            <span class="tag cv">CV</span>
+                                        </div>
+                                        <div class="badge" title="Experienced">Skilled</div>
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/yolo.svg" data-hover="assets/simple-icons--yolo.svg" alt="YOLO Logo">
+                                            </div>
+                                            <div class="all-card-text">YOLO</div>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!-- AWS -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card cloud hosting">
+                                            <div class="tag-row">
+                                                <span class="tag cloud">Cloud</span>
+                                                <span class="tag hosting">Hosting</span>
+                                            </div>
+                                            <div class="badge" title="Learning">Skilled</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS Logo">
+                                                </div>
+                                                <div class="all-card-text">Amazon Web Services</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!--VPython-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card ai simulation">
+                                            <div class="tag-row">
+                                                <span class="tag ai">AI</span>
+                                                <span class="tag simulation">Simulation</span>
+                                            </div>
+                                            <div class="badge" title="Learning">Basic</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/pytorch.svg" data-hover="assets/pytorch-original.svg" alt="Pythorch Logo">
+                                                </div>
+                                                <div class="all-card-text">VPython</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!--GSAP-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card frontend animation">
+                                            <div class="tag-row">
+                                                <span class="tag frontend">Frontend</span>
+                                                <span class="tag animation">Animation</span>
+                                            </div>
+                                            <div class="badge" title="Learning">Basic</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/gsap.svg" data-hover="assets/gsap-original.svg" alt="GSAP Logo">
+                                                </div>
+                                                <div class="all-card-text">
+                                                    GSAP
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!--Jetbrains-->
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="all-card ide">
+                                            <div class="tag-row">
+                                                <span class="tag ide">IDE</span>
+                                            </div>
+                                            <div class="badge" title="Used professionally">Pro</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/jetbrains.svg" data-hover="assets/jetbrains-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="all-card-text">JetBrains</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <!--Notion-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card productivity">
+                                            <div class="tag-row">
+                                                <span class="tag productivity">Productivity</span>
+                                            </div>
+                                            <div class="badge" title="Used professionally">Pro</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/notion.svg" data-hover="assets/notion-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="all-card-text">Notion</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <!--Anaconda-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card datascience">
+                                            <div class="tag-row">
+                                                <span class="tag datascience">Data Science</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/anaconda.svg" data-hover="assets/anaconda-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="all-card-text">Anaconda</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                   
+
+                                
+
+                                    
+
+                                    
+
+                                    <!-- Bootstrap -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card web">
                                         <div class="tag-row">
                                             <span class="tag web">UI</span>
                                         </div>
                                         <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/bootstrap.svg" data-hover="assets/bootstrap-original.svg"  alt="Bootsrap Logo">
+                                        <div class="all-card-content">
+                                            <div class="all-card-logo">
+                                            <img src="assets/bootstrap.svg" data-hover="assets/bootstrap-original.svg" alt="Bootstrap Logo">
                                             </div>
-                                            <div class="framework-card-text">Bootsrap</div>
+                                            <div class="all-card-text">Bootstrap</div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="framework-card">
-                                        <div class="tag-row">
-                                            <span class="tag backend">Backend</span>
                                         </div>
-                                        <div class="badge" title="Experienced">Basic</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/springboot.svg" data-hover="assets/spring-original.svg" alt="SpringBoot Logo">
+                                    </a>
+
+                                    
+
+                                    
+
+                                    
+                                    <!-- Wireshark -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="all-card security networking">
+                                            <div class="tag-row">
+                                                <span class="tag security">Security</span>
+                                                <span class="tag networking">Networking</span>
                                             </div>
-                                            <div class="framework-card-text">SpringBoot</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="framework-card">
-                                        <div class="tag-row">
-                                            <span class="tag backend">Backend</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Basic</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/flask.svg" data-hover="assets/flask-original.svg" alt="Flask Logo">
+                                            <div class="badge" title="Learning">Basic</div>
+                                            <div class="all-card-content">
+                                                <div class="all-card-logo">
+                                                    <img src="assets/wireshark.svg" data-hover="assets/wireshark-original.svg" alt="Wireshark Logo">
+                                                </div>
+                                                <div class="all-card-text">Wireshark</div>
                                             </div>
-                                            <div class="framework-card-text">Flask</div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a target="_blank" class="card-touch">
-                                    <div class="framework-card">
-                                        <div class="tag-row">
-                                            <span class="tag mobile">Mobile</span>
-                                        </div>
-                                        <div class="badge" title="Experienced">Skilled</div>
-                                        <div class="framework-card-content">
-                                            <div class="framework-card-logo">
-                                                <img src="assets/flutter.svg" data-hover="assets/flutter-original.svg" alt="Flutter Logo">
-                                            </div>
-                                            <div class="framework-card-text">Flutter</div>
-                                        </div>
-                                    </div>
-                                </a>           
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                  </div>
+                
+                    <div id="languages" class="stack-tab active">
+                        <div class="header-body-six">
+                            <h2>Languages I use to develop web & software solutions.
+                            </h2>
+                        </div>
+
+                        <div class="language-slider">
+                                <div class="language-track">
+                                    <div class="language-cards">
+                                        <a target="_blank" class="card-touch">
+                                            <div class="language-card frontend">
+                                                <div class="tag-row">
+                                                    <span class="tag frontend">Frontend</span>
+                                                </div>
+                                                <span class="badge" title="Used professionally">PRO</span>
+                
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/html5.svg" data-hover="assets/html5-original.svg" alt="HTML Logo">
+                                                    </div>
+                                                    <div class="language-card-text">
+                                                        HTML
+                                                        <div class="subtext">Since 2021 • 10 Projects • Pro Use</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    
+                                        <a  target="_blank" class="card-touch">
+                                            <div class="language-card frontend">
+                                                <div class="tag-row">
+                                                    <span class="tag frontend">Frontend</span>
+                                                </div>
+                                                <div class="badge" title="Used professionally">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/css3.svg" data-hover="assets/css3-original.svg" alt="CSS Logo">
+                                                    </div>
+                                                    <div class="language-card-text">
+                                                        CSS & Tailwind
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>   
+                                        <a  target="_blank" class="card-touch">    
+                                            <div class="language-card backend ai datascience">
+                                                <div class="tag-row">
+                                                    <span class="tag ai" title="Artificial Intelligence">AI</span>
+                                                    <span class="tag backend">Backend</span>
+                                                    <span class="tag datascience">Data</span>
+                                                </div>
+                                                <div class="badge" title="Used professionally">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/python.svg" data-hover="assets/python-original.svg" alt="Python Logo">
+                                                    </div>
+                                                    <div class="language-card-text">
+                                                        Pyhton
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>   
+                                        <a  target="_blank" class="card-touch">    
+                                            <div class="language-card mobile backend">
+                                                <div class="tag-row">
+                                                    <span class="tag mobile">Mobile</span>
+                                                    <span class="tag backend">Backend</span>
+                                                </div>
+                                                <div class="badge" title="Used professionally">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <div class="logo-swap" data-hover="assets/java-original.svg">
+                                                            <svg data-hover="assets/java-original.svg"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="java-logo"><path fill="currentColor" d="M47.617 98.12c-19.192 5.362 11.677 16.439 36.115 5.969-4.003-1.556-6.874-3.351-6.874-3.351-10.897 2.06-15.952 2.222-25.844 1.092-8.164-.935-3.397-3.71-3.397-3.71zm33.189-10.46c-14.444 2.779-22.787 2.69-33.354 1.6-8.171-.845-2.822-4.805-2.822-4.805-21.137 7.016 11.767 14.977 41.309 6.336-3.14-1.106-5.133-3.131-5.133-3.131zm11.319-60.575c.001 0-42.731 10.669-22.323 34.187 6.024 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.793 15.634-29.58zm9.998 81.144s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.095.171-4.45-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.952-3.487-32.013 6.85-13.742 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM85 77.896c2.395-1.634 5.703-3.053 5.703-3.053s-9.424 1.685-18.813 2.474c-11.494.964-23.823 1.154-30.012.326-14.652-1.959 8.033-7.348 8.033-7.348s-8.812-.596-19.644 4.644C17.455 81.134 61.958 83.958 85 77.896zm5.609 15.145c-.108.29-.468.616-.468.616 31.273-8.221 19.775-28.979 4.822-23.725-1.312.464-2 1.543-2 1.543s.829-.334 2.678-.72c7.559-1.575 18.389 10.119-5.032 22.286zM64.181 70.069c-4.614-10.429-20.26-19.553.007-35.559C89.459 14.563 76.492 1.587 76.492 1.587c5.23 20.608-18.451 26.833-26.999 39.667-5.821 8.745 2.857 18.142 14.688 28.815zm27.274 51.748c-19.187 3.612-42.854 3.191-56.887.874 0 0 2.874 2.38 17.646 3.331 22.476 1.437 57-.8 57.816-11.436.001 0-1.57 4.032-18.575 7.231z"/></svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="language-card-text">Java</div>
+                                                </div>
+                                            </div>
+                                        </a>   
+                                        <a target="_blank" class="card-touch">    
+                                            <div class="language-card database">
+                                                <div class="tag-row">
+                                                    <span class="tag database">Database</span>
+                                                    <span class="tag backend">Backend</span>
+                                                </div>
+                                                <div class="badge" title="Experienced">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/sqlite.svg" data-hover="assets/sqlite-original.svg" alt="SQL LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">SQL</div>
+                                                </div>
+                                            </div>
+                                        </a> 
+                                        <a target="_blank" class="card-touch">    
+                                            <div class="language-card frontend backend">
+                                                <div class="tag-row">
+                                                    <span class="tag frontend">Frontend</span>
+                                                    <span class="tag backend">Backend</span>
+                                                </div>
+                                                <div class="badge" title="Used Professionally">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/javascript.svg" data-hover="assets/javascript-original.svg" alt="JAVASCRIPT LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">JavaScript</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                         <a  target="_blank" class="card-touch">    
+                                            <div class="language-card frontend backend">
+                                                <div class="tag-row">
+                                                    <span class="tag frontend">Frontend</span>
+                                                    <span class="tag backend">Backend</span>    
+                                                </div>
+                                                <div class="badge" title="Experienced">Skilled</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/typescript.svg" data-hover="assets/typescript-original.svg"alt="TYPESCRIPT LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">TypeScript</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a  target="_blank" class="card-touch">    
+                                            <div class="language-card datascience documentation">
+                                                <div class="tag-row">
+                                                    <span class="tag datascience">Data</span>
+                                                    <span class="tag documentation">Docs</span>
+                                                </div>
+                                                <div class="badge" title="Used Professionally">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/r.svg" data-hover="assets/r-original.svg"alt="R LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">R</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                       <a  target="_blank" class="card-touch">    
+                                            <div class="language-card scripting systems">
+                                                <div class="tag-row">
+                                                    <span class="tag scripting">Script</span>
+                                                    <span class="tag systems">Systems</span>
+                                                </div>
+                                                <div class="badge" title="Experienced">Skilled</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-plain.svg" data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg"alt="POWERSHELL LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">Powershell</div>
+                                                </div>
+                                            </div>
+                                        </a>    
+                                        <a target="_blank" class="card-touch">    
+                                            <div class="language-card mobile">
+                                                <div class="tag-row">
+                                                    <span class="tag mobile">Mobile</span>
+                                                </div>
+                                                <div class="badge" title="Experienced">Skilled</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/dart.svg" data-hover="assets/dart-original.svg"alt="TYPESCRIPT LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">Dart</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a  target="_blank" class="card-touch">    
+                                            <div class="language-card systems backend">
+                                                <div class="tag-row">
+                                                    <span class="tag systems">Systems</span>
+                                                    <span class="tag simulation">Sims</span>
+                                                </div>
+                                                <div class="badge" title="Used professionally">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/cplusplus.svg" data-hover="assets/cplusplus-original.svg" alt="C and C++ logo">
+                                                    </div>
+                                                    <div class="language-card-text">C/C++</div>
+                                                </div>
+                                            </div>
+                                        </a>   
+                                          
+                                        <a target="_blank" class="card-touch">    
+                                            <div class="language-card mobile backend">
+                                                <div class="tag-row">
+                                                    <span class="tag mobile">Mobile</span>
+                                                    <span class="tag backend">Backend</span>
+                                                </div>
+                                                <div class="badge" title="Experienced">Skilled</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/kotlin.svg" data-hover="assets/kotlin-original.svg" alt="Kotlin Logo">
+                                                    </div>
+                                                    <div class="language-card-text">Kotlin</div>
+                                                </div>
+                                            </div>
+                                        </a>   
+                                        
+
+                                        <a  target="_blank" class="card-touch">    
+                                            <div class="language-card documentation datascience">
+                                                <div class="tag-row">
+                                                    <span class="tag documentation">Docs</span>
+                                                    <span class="tag datascience">Data</span>
+                                                </div>
+                                                <div class="badge" title="Used Professionally">Pro</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/latex.svg" data-hover="assets/latex-original.svg"alt="TYPESCRIPT LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">Latex</div>
+                                                </div>
+                                            </div>
+                                        </a> 
+                                        
+                                        <a  target="_blank" class="card-touch">    
+                                            <div class="language-card scripting devops">
+                                                <div class="tag-row">
+                                                    <span class="tag scripting">Script</span>
+                                                    <span class="tag devops">DevOps</span>
+                                                </div>
+                                                <div class="badge" title="Learning">Basic</div>
+                                                <div class="language-card-content">
+                                                    <div class="language-card-logo">
+                                                        <img src="assets/bash.svg" data-hover="assets/bash-original.svg"alt="TYPESCRIPT LOGO">
+                                                    </div>
+                                                    <div class="language-card-text">Bash</div>
+                                                </div>
+                                            </div>
+                                        </a>           
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            
+                    <div id="tools" class="stack-tab">
+                        <div class="header-body-seven">
+                            <h2>
+                                Essential development tools and platforms I rely on.
+                            </h2>
+                        </div>
+
+                        <div class="tool-slider">
+                            <div class="tool-track">
+                                <div class="tool-cards">
+                                    
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card devops collab">
+                                            <div class="tag-row">
+                                                <span class="tag DevOps">DevOps</span>
+                                                <span class="tag collab">Collab</span>
+                                            </div>
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/git.svg" data-hover="assets/git-original.svg" alt="GIT Logo">
+                                                </div>
+                                                <div class="tool-card-text">Git & GitHub</div>
+                                            </div>
+                                        </div>
+                                    </a>  
+                                    <!-- Azure -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card cloud hosting">
+                                            <div class="tag-row">
+                                                <span class="tag cloud">Cloud</span>
+                                                <span class="tag hosting">Hosting</span>
+                                            </div>
+                                            <div class="badge" title="Certified">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg"  alt="Azure Logo">
+                                                </div>
+                                                <div class="tool-card-text">Azure</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- AWS -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card cloud hosting">
+                                            <div class="tag-row">
+                                                <span class="tag cloud">Cloud</span>
+                                                <span class="tag hosting">Hosting</span>
+                                            </div>
+                                            <div class="badge" title="Learning">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS Logo">
+                                                </div>
+                                                <div class="tool-card-text">Amazon Web Services</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Kubernetes -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card devops cloud">
+                                            <div class="tag-row">
+                                                <span class="tag devops">DevOps</span>
+                                                <span class="tag cloud">Cloud</span>
+                                            </div>
+                                            <div class="badge" title="Learning">Basic</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/kubernetes.svg" data-hover="assets/kubernetes-original.svg" alt="Kubernetes Logo">
+                                                </div>
+                                                <div class="tool-card-text">Kubernetes</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Linux -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card systems scripting security">
+                                            <div class="tag-row">
+                                                <span class="tag systems">Systems</span>
+                                                <span class="tag scripting">Scripting</span>
+                                                <span class="tag security">Security</span>
+                                            </div>
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/linux.svg" data-hover="assets/linux-original.svg" alt="Linux Logo">
+                                                </div>
+                                                <div class="tool-card-text">Linux</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Cosmos DB -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card database cloud">
+                                            <div class="tag-row">
+                                                <span class="tag database">Database</span>
+                                                <span class="tag cloud">Cloud</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cosmosdb/cosmosdb-plain.svg" data-hover="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cosmosdb/cosmosdb-original.svg" alt="Cosmos DB Logo">
+                                                </div>
+                                                <div class="tool-card-text">Cosmos DB</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+
+
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="tool-card ide">
+                                            <div class="tag-row">
+                                                <span class="tag ide">Editor/IDE</span>
+                                            </div>
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/visualstudio-plain.svg" data-hover="assets/vscode-original.svg" alt="VISUAL STUDIO Logo">
+                                                </div>
+                                                <div class="tool-card-text">Visual Studio</div>
+                                            </div>
+                                        </div>
+                                    </a> 
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card ide">
+                                            <div class="tag-row">
+                                                <span class="tag ide">Editor/IDE</span>
+                                            </div>
+                                            <div class="badge" title="Used Professionally">Pro</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/jupyter.svg" data-hover="assets/jupyter-original.svg" alt="JUPYTER Logo">
+                                                </div>
+                                                <div class="tool-card-text">Jupyter</div>
+                                            </div>
+                                        </div>
+                                    </a> 
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card hosting backend">
+                                            <div class="tag-row">
+                                                <span class="tag hosting">Hosting</span>
+                                                <span class="tag backend">Backend</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/firebase.svg" data-hover="assets/firebase-original.svg" alt="FIREBASE Logo">
+                                                </div>
+                                                <div class="tool-card-text">Firebase</div>
+                                            </div>
+                                        </div>
+                                    </a>  
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card database">
+                                            <div class="tag-row">
+                                                <span class="tag database">Database</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/postgresql.svg" data-hover="assets/postgresql-original.svg" alt="POSTGRESQL Logo">
+                                                </div>
+                                                <div class="tool-card-text">PostgreSQL</div>
+                                            </div>
+                                        </div>
+                                    </a>  
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="tool-card devops container">
+                                            <div class="tag-row">
+                                                <span class="tag devops">DevOps</span>
+                                                <span class="tag container">Container</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/docker.svg" data-hover="assets/docker-original.svg"alt="HTML Logo">
+                                                </div>
+                                                <div class="tool-card-text">Docker</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card mobile ide">
+                                            <div class="tag-row">
+                                                <span class="tag mobile">Mobile</span>
+                                                <span class="tag ide">IDE</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/androidstudio.svg" data-hover="assets/androidstudio-original.svg"alt="ANDROID STUDIO Logo">
+                                                </div>
+                                                <div class="tool-card-text">Android Studio</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="tool-card ide">
+                                            <div class="tag-row">
+                                                <span class="tag ide">IDE</span>
+                                            </div>
+                                            <div class="badge" title="Used professionally">Pro</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/jetbrains.svg" data-hover="assets/jetbrains-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="tool-card-text">JetBrains</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card productivity">
+                                            <div class="tag-row">
+                                                <span class="tag productivity">Productivity</span>
+                                            </div>
+                                            <div class="badge" title="Used professionally">Pro</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/notion.svg" data-hover="assets/notion-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="tool-card-text">Notion</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card datascience">
+                                            <div class="tag-row">
+                                                <span class="tag datascience">Data Science</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/anaconda.svg" data-hover="assets/anaconda-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="tool-card-text">Anaconda</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="tool-card hosting">
+                                            <div class="tag-row">
+                                                <span class="tag hosting">Hosting</span>
+                                            </div>
+                                            <div class="badge" title="Used professionally">Pro</div>
+                                            <div class="tool-card-content">
+                                                <div class="tool-card-logo">
+                                                    <img src="assets/vercel.svg" data-hover="assets/vercel-original.svg" alt="JETBRAINS Logo">
+                                                </div>
+                                                <div class="tool-card-text">Vercel</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+            
+                    <div id="frameworks" class="stack-tab">
+                        <div class="header-body-eight">
+                            <h2>
+                                Various IDE's and more I used in creating my web apps.
+                            </h2>
+                        </div>
+
+                        <div class="framework-slider">
+                            <div class="framework-track">
+                                <div class="framework-cards">
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card frontend mobile">
+                                            <div class="tag-row">
+                                                <span class="tag frontend">Frontend</span>
+                                                <span class="tag mobile">Mobile</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/react.svg" data-hover="assets/react-original.svg" alt="REACT Logo">
+                                                </div>
+                                                <div class="framework-card-text">
+                                                    React
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card ai">
+                                            <div class="tag-row">
+                                                <span class="tag ai">AI</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/pytorch.svg" data-hover="assets/pytorch-original.svg" alt="Pythorch Logo">
+                                                </div>
+                                                <div class="framework-card-text">Pytorch</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                     <a target="_blank" class="card-touch">
+                                        <div class="framework-card backend">
+                                            <div class="tag-row">
+                                                <span class="tag backend">Backend</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Basic</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/springboot.svg" data-hover="assets/spring-original.svg" alt="SpringBoot Logo">
+                                                </div>
+                                                <div class="framework-card-text">SpringBoot</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card backend">
+                                            <div class="tag-row">
+                                                <span class="tag backend">Backend</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/flask.svg" data-hover="assets/flask-original.svg" alt="Flask Logo">
+                                                </div>
+                                                <div class="framework-card-text">Flask</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card mobile">
+                                            <div class="tag-row">
+                                                <span class="tag mobile">Mobile</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/flutter.svg" data-hover="assets/flutter-original.svg" alt="Flutter Logo">
+                                                </div>
+                                                <div class="framework-card-text">Flutter</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card graphics">
+                                            <div class="tag-row">
+                                                <span class="tag graphics">Graphics</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/opengl.svg" data-hover="assets/opengl-original.svg" alt="OpenGL Logo">
+                                                </div>
+                                                <div class="framework-card-text">OpenGL</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="framework-card ml cv">
+                                            <div class="tag-row">
+                                                <span class="tag ml" title="Machine Learning">ML</span>
+                                                <span class="tag cv" title="Computer Vision">CV</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/opencv.svg" data-hover="assets/opencv-original.svg" alt="OpenCV Logo">
+                                                </div>
+                                                <div class="framework-card-text">OpenCV & Tensor</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="framework-card backend devops">
+                                            <div class="tag-row">
+                                                <span class="tag backend">Backend</span>
+                                                <span class="tag devops">DevOps</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Basic</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/nodedotjs.svg" data-hover="assets/nodejs-original.svg" alt="NODE.JS Logo">
+                                                </div>
+                                                <div class="framework-card-text">Node.js & Express</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                     <!-- HuggingFace -->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card nlp ai">
+                                            <div class="tag-row">
+                                                <span class="tag nlp">NLP</span>
+                                                <span class="tag ai">AI</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/huggingface.svg" data-hover="assets/huggingface-original.svg" alt="HuggingFace Logo">
+                                                </div>
+                                                <div class="framework-card-text">HuggingFace</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- FastAPI-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card backend ai">
+                                            <div class="tag-row">
+                                                <span class="tag backend">Backend</span>
+                                                <span class="tag ai">AI</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/fastapi.svg" data-hover="assets/fastapi-original.svg" alt="FastAPI Logo">
+                                                </div>
+                                                <div class="framework-card-text">FastAPI</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card ml cv">
+                                            <div class="tag-row">
+                                                <span class="tag ml" title="Machine Learning">ML</span>
+                                                <span class="tag cv" title="Computer Vision">CV</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/yolo.svg" data-hover="assets/simple-icons--yolo.svg" alt="YOLO Logo">
+                                                </div>
+                                                <div class="framework-card-text">YOLO</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!--VPython-->
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card ai simulation">
+                                            <div class="tag-row">
+                                                <span class="tag ai">AI</span>
+                                                <span class="tag simulation">Simulation</span>
+                                            </div>
+                                            <div class="badge" title="Learning">Basic</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/pytorch.svg" data-hover="assets/pytorch-original.svg" alt="Pythorch Logo">
+                                                </div>
+                                                <div class="framework-card-text">VPython</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a target="_blank" class="card-touch">
+                                        <div class="framework-card frontend animation">
+                                            <div class="tag-row">
+                                                <span class="tag frontend">Frontend</span>
+                                                <span class="tag animation">Animation</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Basic</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/gsap.svg" data-hover="assets/gsap-original.svg" alt="GSAP Logo">
+                                                </div>
+                                                <div class="framework-card-text">
+                                                    GSAP
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    
+                                    <a  target="_blank" class="card-touch">
+                                        <div class="framework-card web">
+                                            <div class="tag-row">
+                                                <span class="tag web">UI</span>
+                                            </div>
+                                            <div class="badge" title="Experienced">Skilled</div>
+                                            <div class="framework-card-content">
+                                                <div class="framework-card-logo">
+                                                    <img src="assets/bootstrap.svg" data-hover="assets/bootstrap-original.svg"  alt="Bootsrap Logo">
+                                                </div>
+                                                <div class="framework-card-text">Bootsrap</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                   
+                                    
+                                   
+
+                                   
+                                        
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
+
               </div>
             </div>
         </div>   
+
+        <section class=" chatbot-section" id="chatbot">
+            
+
+            <div id="chatbox" class="chatbox hidden">
+                <div class="chatbox-header">
+                    <div class="chatbox-header-left">
+                        <img src="assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+                        <span>Insight</span>
+                    </div>
+                    <div class="chatbox-controls">
+                        <button id="chat-reset" aria-label="Reset Chat">
+                            <img src="assets/reset.svg" alt="Reset Icon">
+                        </button>
+                        <button id="chat-close" aria-label="Close Chat">
+                            <img src="assets/close2.svg" alt="Close Icon">
+                        </button>
+                    </div>
+                </div>
+
+                <div id="chat-messages" class="chatbox-messages">
+                    <!-- Welcome card (always stays) -->
+                    <div id="welcome-card" class="welcome-card">
+                        <img src="assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+                        <h3>Insight</h3>
+                        <p>Your personal AI assistant. Ask me about Israel’s projects, skills, or experience!</p>
+                    </div>
+                </div>
+
+
+                <form id="chat-form" class="chatbox-form">
+                    <input
+                    type="text"
+                    id="chat-input"
+                    placeholder="Right here..."
+                    required
+                    />
+                    <button type="submit" id="chat-send">➤</button>
+                </form>
+            </div>
+            
+            <div id="chat-toggle" class="chat-toggle">
+                <img src="assets/chat.svg" alt="chat Icon">
+            </div>
+            
+            <!-- Reset Confirmation Modal -->
+            <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+                <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+                    <div class="reset-modal-header">
+                        <span id="reset-title">Restart Conversation</span>
+                        <button id="reset-close" class="reset-close" type="button">✖</button>
+                    </div>
+                    <p>Are you sure you want to restart a new conversation?</p>
+                    <div class="reset-modal-actions">
+                        <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
         
         <section class="section contact-footer" id="contact">
             <div class="container contact-container">
@@ -1051,9 +2131,9 @@
                                 <p class="expanding-subtext">Currently expanding my knowledge in</p>
                                 <h3 class="expanding-title">Advanced Machine Learning, Cloud Architecture & Web3</h3>
                                 <div class="expanding-tags">
-                                    <span class="expanding-tag green">● Cloud Computing</span>
-                                    <span class="expanding-tag blue">● AWS Solutions</span>
-                                    <span class="expanding-tag purple">● Deep Learning</span>
+                                    <span class="expanding-tag green">● Cybersecurity</span>
+                                    <span class="expanding-tag blue">● AI/ML Solutions</span>
+                                    <span class="expanding-tag purple">● LLM</span>
                                     <span class="expanding-tag yellow">● Dev Ops</span>
                                 </div>
                             </div>
@@ -1104,17 +2184,18 @@
 
    
     
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <script>
         window.addEventListener('load', () => {
-          const preloader = document.getElementById('preloader');
-          if (preloader) {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
             preloader.style.opacity = '0';
             preloader.style.pointerEvents = 'none';
             setTimeout(() => preloader.remove(), 500); // remove it after fade-out
-          }
+            }
         });
     </script>
+
 
 
       

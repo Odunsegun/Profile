@@ -1,0 +1,148 @@
+{
+  "bio": "I’m a 21-year-old Computer Science graduate from UOIT in Canada, with a major in Computer Science and a minor in Physics. I’m passionate about AI, security, and web development, and I enjoy building simulations and computer vision projects. I’m aiming to grow into a career in AI/ML Security, software development and Cloud Security. I’m also very interested in physics, how, what and why things work in the universe. I've applied physics/astronomy concepts in practical ways, from galaxy simulations and RK4 models to N-body experiments. Outside of tech, I’m very active — I play sports, mostly football⚽, train calisthenics, cycle, I also love games with strategies like Chess ..., — all which reflects my discipline and drive for long-term goals. Originally from Nigeria and presently in Canada, I’ve adapted to new environments and thrive on continuous learning, collaboration, and building impactful solutions. I am currently taking cybersecurity courses while alsoplaying with AI.",
+  "skills": [
+    {   "name": "Python",
+        "level": "Advanced", 
+        "description": "Strongest language and foundation with over 5+ years experience. Multiple projects including simulations, data analysis, and AI models all in my github. Multiple leetcode problems with Python. Although I mostly do all my work in python, I am still a master in other languages",
+        "link": "https://github.com/Odunsegun/football-tracking",
+        "libraries": ["NumPy", "Pandas", "Matplotlib", "SciPy", "Scikit-learn", "TensorFlow", "PyTorch", "OpenCV", "Flask"]
+
+    },
+
+    {   "name": "React",
+        "level": "Intermediate",
+        "link": "https://azure-fitness-tracker-icqm.vercel.app/",
+        "libraries": ["React Router", "Redux", "TailwindCSS"],
+        "description": "Built multiple web apps and dashboards, with focus on clean UI and interactive components. My latest React project is my Azure fitness project I built from scratch." 
+    },
+
+    {
+        "name": "Machine Learning & AI",
+        "level": "Intermediate-Advanced",
+        "description": "Broad and practical knowledge across multiple aspects of AI and ML. Hands-on with computer vision (YOLO object detection, OpenCV, OCR pipelines), generative AI (LLMs, transformers, text-to-text models), and neural networks (CNNs, RNNs, attention mechanisms). Experienced in training, evaluation, and fine-tuning models for sports analytics, adaptive quiz generation, and physics-based simulations. Strong understanding of core ML concepts including optimization, Laplacian algorithms, dimensionality reduction, and statistical learning theory. Knowledge of AI safety, security, and compliance from certifications (AI-900, SC-900). Familiar with modern GenAI applications, prompt engineering, and integrating APIs into real-world systems.",
+        "libraries": ["YOLO", "OpenCV", "TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face", "Tesseract OCR", "NumPy", "Pandas"],
+        "link": "https://github.com/Odunsegun/football-tracking"
+    },
+
+    {
+        "name": "Azure",
+        "level": "Intermediate",
+        "description": "Practical experience with Azure Functions, Cosmos DB, and multiple Microsoft certifications.",
+        "libraries": ["Azure Functions", "Cosmos DB", "Azure Key Vault"]
+    },
+
+    {
+        "name": "Security",
+        "level": "Developing",
+        "description": "Focused on IAM concepts, SC-900 content, and building CTF web challenges.",
+        "libraries": ["Burp Suite", "Wireshark", "Nmap"]
+    },
+
+    {
+        "name": "JavaScript",
+        "level": "Intermediate",
+        "description": "Used in pair with most of my demo web apps. Used for interactive UI and chatbot integration."
+    },
+
+    {
+        "name": "SQL",
+        "level": "Intermediate",
+        "description": "Applied for structured queries in projects and labs.",
+        "libraries": ["MySQL", "PostgreSQL", "SQLite", "KQL"]
+    }
+  ],
+
+
+  "projects": [
+    {
+      "name": "Case Dashboard",
+      "description": "A responsive smart home dashboard UI built with HTML, CSS, and JavaScript. Provides a clean and modern interface to monitor and control smart devices across multiple rooms.",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "link": "https://github.com/Odunsegun/Case-dashboard"
+    },
+    {
+      "name": "Grammar Corrector",
+      "description": "An AI-powered web app for grammar correction, spell checking, and text summarization. It integrates multiple NLP tools (TextBlob, LanguageTool, HuggingFace Transformers) under a Flask backend, providing ensemble-based corrections for better accuracy. The app also supports contextual rephrasing, making it suitable for both casual users and academic writing. Real-time feedback and a clean UI ensure smooth user experience.",
+      "technologies": ["Python", "Flask", "TextBlob", "LanguageTool", "Transformers"],
+      "link": "https://github.com/Odunsegun/Grammar-corrector"
+    },
+    {
+      "name": "AI Learning Tutor",
+      "description": "An adaptive quiz platform built with Flask and JavaScript, designed to mimic a personalized tutor. It dynamically generates topic-based multiple-choice questions, tracks learner performance, and adjusts difficulty using adaptive algorithms. The tutor also features analytics dashboards with performance graphs, teacher mode for manual question management, and GPT-powered quiz generation for on-demand practice.",
+      "technologies": ["HTML", "JavaScript", "Python", "Flask"],
+      "link": "https://github.com/Odunsegun/AI-learning-Tutor"
+    },
+    {
+      "name": "R Internet Analysis",
+      "description": "A data science project analyzing global internet usage and broadband penetration using R. The workflow includes cleaning messy datasets, conducting exploratory data analysis (EDA), and creating statistical visualizations with ggplot2. The analysis highlights disparities in connectivity between regions, correlates internet adoption with GDP growth, and draws actionable insights for policymakers and researchers.",
+      "technologies": ["R"],
+      "link": "https://github.com/Odunsegun/R-Internet-Analysis"
+    },
+    {
+      "name": "Vacation Finder App",
+      "description": "A Flutter mobile app acting as a trip planner with Firebase backend. It integrates Google Maps API for geolocation and allows users to save travel spots, share trip recommendations, and discover trips from others. Features include authentication via Firebase, cloud storage for user posts, and map clustering for optimized navigation. Built with a responsive and material-inspired UI.",
+      "technologies": ["Dart", "Flutter", "Firebase", "Google Maps API"],
+      "link": "https://github.com/Odunsegun/Vaction-Finder-App"
+    },
+    {
+      "name": "Hotel Management System",
+      "description": "A Spring Boot–based web application for hotel operations. It provides modules for room booking, customer information management, employee tracking, and billing/invoice generation. The project emphasizes modular OOP design, REST APIs for front–back communication, and secure role-based authentication for admins and employees. Built to mimic enterprise-level architecture.",
+      "technologies": ["Java", "Spring Boot", "HTML", "CSS"],
+      "link": "https://github.com/Odunsegun/Hotel-Management-System"
+    },
+    {
+      "name": "CTF Web Security Challenge",
+      "description": "A Capture the Flag project simulating real-world web vulnerabilities. Challenges include cache poisoning, encoded localStorage flags, history manipulation, and script exploitation. It trains users to think like attackers and defenders by digging through browser internals. Built to test medium-to-hard web exploitation skills and can be hosted in a cloud sandbox for competitions.",
+      "technologies": ["HTML", "JavaScript", "Web Security"],
+      "link": "https://github.com/Odunsegun/Capture-The-Flag-CTF-Web-Security-Challenge"
+    },
+    {
+      "name": "Azure Fitness Tracker",
+      "description": "A cloud-native fitness tracker built with React frontend and Azure Functions backend. It logs activities, calories, active minutes, and visualizes progress through responsive D3/Chart.js graphs. Features streak counters, achievement badges, and Cosmos DB integration for scalable storage. Deployed on Azure Static Web Apps, making it serverless and production-ready.",
+      "technologies": ["React", "JavaScript", "Azure Functions", "Cosmos DB"],
+      "link": "https://github.com/Odunsegun/azure-fitness-tracker"
+    },
+    {
+      "name": "Football Tracking",
+      "description": "A computer vision system for analyzing football games using YOLOv8, OpenCV, and DeepSORT. It performs player and ball detection, interpolates ball position during occlusion, assigns possession automatically, and estimates formations over time. Extended goals include tactical heatmaps, player distance/speed metrics, and perspective correction for accurate field scaling. Built for real-time video feeds but extensible to full analytics dashboards.",
+      "technologies": ["Python", "YOLO", "OpenCV", "DeepSORT"],
+      "link": "https://github.com/Odunsegun/football-tracking"
+    },
+    {
+      "name": "Interstellar Cannon",
+      "description": "A physics-heavy Python/VPython simulation of rocket trajectories in space. It implements RK4 numerical integration for stable orbit calculations under multiple gravitational bodies. Includes interactive 'slingshot' mechanics inspired by Angry Birds, elastic collisions with certain bodies, randomized asteroid fragmentation, and conditional rocket disintegration near the Sun. Built for both educational visualization and playful experimentation.",
+      "technologies": ["Python", "VPython", "SciPy"],
+      "link": "https://github.com/Odunsegun/Interstellar-Cannon"
+    },
+    {
+      "name": "Profile Website",
+      "description": "A polished personal portfolio showcasing projects, skills, and certifications. It features a custom 3D GSAP-powered rotating image gallery, a responsive featured projects slider, animated timelines, dark/light mode toggles, and an integrated AI chatbot assistant that can answer questions about my background and work. Designed to highlight both my frontend craft and backend/AI skills in one place.",
+      "technologies": ["HTML", "CSS", "JavaScript", "GSAP"],
+      "link": "https://github.com/Odunsegun/Profile"
+    }
+  ],
+
+  "certifications": [
+    {
+        "name": "AI-900: Microsoft Azure AI Fundamentals",
+        "description": "Covers the basics of Artificial Intelligence (AI) and Machine Learning (ML) on Azure. Topics include computer vision, natural language processing, conversational AI, and responsible AI. Demonstrates knowledge of Azure AI services such as Cognitive Services, Azure Machine Learning, and conversational AI workloads."
+    },
+    {
+        "name": "DP-900: Microsoft Azure Data Fundamentals",
+        "description": "Focuses on core data concepts in Azure. Covers relational and non-relational data models, modern data warehouse solutions, big data analytics, and fundamentals of data services such as Azure SQL Database, Azure Cosmos DB, and Azure Synapse Analytics. Shows an understanding of data storage, ingestion, and visualization."
+    },
+    {
+        "name": "AZ-900: Microsoft Azure Fundamentals",
+        "description": "Provides foundational knowledge of cloud services and Azure. Includes core cloud concepts, Azure services (compute, networking, storage, and databases), Azure pricing and support models, and governance tools. Validates general cloud literacy and how Azure fits into business and technical environments."
+    },
+    {
+        "name": "SC-900: Microsoft Security, Compliance, and Identity Fundamentals",
+        "description": "Introduces security, compliance, and identity (SCI) concepts across Microsoft services. Topics include basic security principles, identity as the control plane, Microsoft Entra ID, Microsoft Defender, compliance management, and zero trust. Provides a foundation for security awareness and regulatory compliance in the cloud."
+    },
+    {
+        "name": "SC-300: Microsoft Identity and Access Administrator",
+        "description": "An advanced certification focusing on identity and access management. Covers managing Microsoft Entra ID, authentication and access management, identity governance, and protecting identities in hybrid environments. Validates expertise in designing, implementing, and operating identity solutions, including Conditional Access, Privileged Identity Management (PIM), and identity lifecycle automation."
+    }
+    ]
+
+}

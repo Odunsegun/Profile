@@ -1,3 +1,15 @@
+document.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrolled = (scrollTop / docHeight) * 100;
+
+  const progressBar = document.querySelector(".scroll-progress");
+  progressBar.style.width = scrolled + "%";
+
+  // Brightness increases as you scroll down
+  const brightness = 0.6 + (scrolled / 100) * 0.8; // 0.6 → 1.4
+  progressBar.style.filter = `brightness(${brightness})`;
+});
 
 
 let darkMode = localStorage.getItem("darkMode");
@@ -13,6 +25,7 @@ const abledDarkMode = () => {
     //update darkMode in localstorage
     localStorage.setItem('darkMode', 'abled')
 };
+
 const disabledDarkMode = () => {
     //add class darkmode
     document.body.classList.remove('darkmode');
@@ -21,11 +34,12 @@ const disabledDarkMode = () => {
     localStorage.setItem('darkMode', 'disabled')
 };
 
-if (darkMode === 'abled') {
+if (darkMode === 'abled' || darkMode===null) {
     abledDarkMode();
 } else {
     disabledDarkMode(); 
 }
+
 darkModeToggle.addEventListener("click", () => {
     darkMode = localStorage.getItem("darkMode");
     if (darkMode != 'abled'){
@@ -75,6 +89,188 @@ document.addEventListener("DOMContentLoaded", () => {
     handleScroll();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const chatToggle  = document.getElementById("chat-toggle");
+  const chatbox     = document.getElementById("chatbox");
+  const chatClose   = document.getElementById("chat-close");
+  const chatForm    = document.getElementById("chat-form");
+  const chatInput   = document.getElementById("chat-input");
+  const chatMessages= document.getElementById("chat-messages");
+  const typing      = document.getElementById("typing-indicator");
+
+  // NEW: modal elements
+  const resetBtn    = document.getElementById("chat-reset");
+  const resetModal  = document.getElementById("reset-modal");
+  const resetClose  = document.getElementById("reset-close");
+  const resetConfirm= document.getElementById("reset-confirm");
+
+  let chatHistory = []; // ← same scope used by submit & reset
+
+  // helpers
+  function showTyping() {
+    let typingIndicator = document.getElementById("typing-indicator");
+    if (!typingIndicator) {
+      typingIndicator = document.createElement("div");
+      typingIndicator.id = "typing-indicator";
+      typingIndicator.className = "typing-indicator";
+      typingIndicator.innerHTML = `
+        <img src="assets/avatar.svg" class="msg-avatar" alt="Insight AI">
+        <div class="msg bot">
+          <lottie-player 
+            src="assets/chat.json"  
+            background="transparent"  
+            speed="1"  
+            style="width: 40px; height: 40px;"  
+            loop  
+            autoplay>
+          </lottie-player>
+        </div>
+      `;
+      chatMessages.appendChild(typingIndicator);
+    }
+  }
+
+  function hideTyping() {
+    const typingIndicator = document.getElementById("typing-indicator");
+    if (typingIndicator) typingIndicator.remove();
+  }
+
+
+  function addMessage(role, text) {
+    const msgWrapper = document.createElement("div");
+    msgWrapper.className = `msg-wrapper ${role}`;
+
+    if (role === "bot") {
+      const avatar = document.createElement("img");
+      avatar.src = "assets/avatar.svg";
+      avatar.alt = "Insight AI";
+      avatar.className = "msg-avatar";
+      msgWrapper.appendChild(avatar);
+    }
+
+    const msg = document.createElement("div");
+    msg.className = `msg ${role}`;
+    msg.textContent = text;
+
+    msgWrapper.appendChild(msg);
+    chatMessages.appendChild(msgWrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+
+
+  // open / close
+  chatToggle?.addEventListener("click", () => {
+    chatbox.classList.toggle("hidden");
+    if (!chatbox.classList.contains("hidden") && !chatMessages.children.length) {
+      // Add welcome card first
+      const welcome = document.createElement("div");
+      welcome.className = "welcome-card";
+      welcome.innerHTML = `
+        <img src="assets/avatar.svg" alt="Insight Avatar">
+        <h3>Insight</h3>
+        <p>Your personal AI assistant. Ask me about Israel’s projects, skills, or experience!</p>
+      `;
+      chatMessages.appendChild(welcome);
+
+      // Then the first bot message
+      addMessage("bot", "What can I do for you today?");
+    }
+  });
+  chatClose?.addEventListener("click", () => chatbox.classList.add("hidden"));
+
+  // submit → backend (you already have this wired; keep your fetch)
+  chatForm?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const text = chatInput.value.trim();
+    if (!text) return;
+    addMessage("user", text);
+    chatHistory.push({ role: "user", content: text });
+    chatInput.value = "";
+    try {
+      showTyping();
+      const resp = await fetch("http://localhost:3000/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text, history: chatHistory })
+      });
+      const data = await resp.json();
+      hideTyping();
+      const reply = data.reply || "⚠️ Sorry, I couldn’t generate a reply.";
+      addMessage("bot", reply);
+      chatHistory.push({ role: "assistant", content: reply });
+    } catch (err) {
+      hideTyping();
+      console.error("Chat error:", err);
+      addMessage("bot", "⚠️ There was an error. Please try again.");
+    }
+  });
+
+  // —— RESET MODAL LOGIC ——
+  const openResetModal  = () => resetModal?.classList.remove("hidden");
+  const closeResetModal = () => resetModal?.classList.add("hidden");
+
+  // show modal
+  resetBtn?.addEventListener("click", openResetModal);
+
+  // close modal by X
+  resetClose?.addEventListener("click", closeResetModal);
+
+  // click outside dialog closes
+  resetModal?.addEventListener("click", (e) => {
+    if (e.target === resetModal) closeResetModal();
+  });
+
+  // Esc key closes
+  document.addEventListener("keydown", (e) => {
+    if (!resetModal.classList.contains("hidden") && e.key === "Escape") {
+      closeResetModal();
+    }
+  });
+
+  // confirm restart
+  resetConfirm?.addEventListener("click", () => {
+    chatHistory.length = 0;           // clear array in-place
+    document.querySelectorAll("#chat-messages .msg-wrapper").forEach(el => el.remove());
+    addMessage("bot", "What can I do for you today?");
+    closeResetModal();
+  });
+
+
+
+  const filterButtons = document.querySelectorAll(".arsenal-filters button");
+
+  // All the inner “card” DIVs we use for matching
+  const allCards = document.querySelectorAll(
+    ".language-card, .tool-card, .framework-card, .all-card"
+  );
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
+      // active button UI
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      allCards.forEach(card => {
+        // THIS is the flex item in your layout:
+        const flexItem = card.closest(".card-touch") || card;
+
+        // show/hide the WHOLE flex item
+        if (filter === "all" || card.classList.contains(filter)) {
+          flexItem.classList.remove("hidden");
+        } else {
+          flexItem.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+});
+
+
+
 document.addEventListener("scroll", () => {
     const timeline = document.querySelector('.timeline');
     const timelineHeight = timeline.scrollHeight; // Full height of the timeline
@@ -85,16 +281,14 @@ document.addEventListener("scroll", () => {
     const scrolledPercentage = Math.min(1, Math.max(0, (viewportHeight - timelineTop) / timelineHeight));
 
     // Dynamically set the height of the line
-    const line = timeline.querySelector('::after'); // CSS ::after pseudo-element
+    const line = timeline.querySelector('.timeline-line'); // CSS ::after pseudo-element
+    line.style.height = `${scrolledPercentage * 100}%`;
     timeline.style.setProperty('--line-height', `${scrolledPercentage * 100}%`);
 });
 
 
 
-
-
 //GALLERY
-
 window.onload = function () {
     const gallery = document.querySelector(".gallery");
     const previewImage = document.querySelector(".preview-img img");
@@ -250,7 +444,7 @@ setInterval(() => {
 
 //Hover card
 document.querySelectorAll(
-    '.language-card, .tool-card, .framework-card'
+    '.language-card, .tool-card, .framework-card, .all-card'
   ).forEach(card => {
     const img = card.querySelector('img');
     const originalSrc = img?.getAttribute('src');
@@ -312,9 +506,6 @@ document.addEventListener('mousemove', (e) => {
     satellite.style.transform = `translateY(${scrollY * 0.1}px) rotate(${scrollY * 0.05}deg)`;
     planet.style.transform = `translateY(-${scrollY * 0.1}px) rotate(-${scrollY * 0.05}deg)`;
   });
-
-/*Sidenav*/
-/*SLIDER */
 
 
 /* SIDENAVVVVVVVV */
@@ -399,4 +590,13 @@ window.onclick = (e) => {
 };
 
 
-// ===== Responsive slider regrouping: 2-per-page (desktop) ↔ 1-per-page (mobile) =====
+
+
+
+
+
+
+
+
+
+
