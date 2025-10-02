@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatForm    = document.getElementById("chat-form");
   const chatInput   = document.getElementById("chat-input");
   const chatMessages= document.getElementById("chat-messages");
-  const typing      = document.getElementById("typing-indicator");
 
   // NEW: modal elements
   const resetBtn    = document.getElementById("chat-reset");
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetClose  = document.getElementById("reset-close");
   const resetConfirm= document.getElementById("reset-confirm");
 
-  let chatHistory = []; // ← same scope used by submit & reset
+  let chatHistory = [];
 
   // helpers
   function showTyping() {
@@ -135,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typingIndicator) typingIndicator.remove();
   }
 
-
   function addMessage(role, text) {
     const msgWrapper = document.createElement("div");
     msgWrapper.className = `msg-wrapper ${role}`;
@@ -157,13 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
-
-
   // open / close
   chatToggle?.addEventListener("click", () => {
     chatbox.classList.toggle("hidden");
     if (!chatbox.classList.contains("hidden") && !chatMessages.children.length) {
-      // Add welcome card first
       const welcome = document.createElement("div");
       welcome.className = "welcome-card";
       welcome.innerHTML = `
@@ -173,23 +168,24 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       chatMessages.appendChild(welcome);
 
-      // Then the first bot message
       addMessage("bot", "What can I do for you today?");
     }
   });
   chatClose?.addEventListener("click", () => chatbox.classList.add("hidden"));
 
-  // submit → backend (you already have this wired; keep your fetch)
+  // submit → backend
   chatForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const text = chatInput.value.trim();
     if (!text) return;
+
     addMessage("user", text);
     chatHistory.push({ role: "user", content: text });
     chatInput.value = "";
+
     try {
       showTyping();
-      const resp = await fetch("http://localhost:3000/api/chat", {
+      const resp = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text, history: chatHistory })
@@ -206,58 +202,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // —— RESET MODAL LOGIC ——
+  // —— RESET MODAL LOGIC —— 
   const openResetModal  = () => resetModal?.classList.remove("hidden");
   const closeResetModal = () => resetModal?.classList.add("hidden");
 
-  // show modal
   resetBtn?.addEventListener("click", openResetModal);
-
-  // close modal by X
   resetClose?.addEventListener("click", closeResetModal);
+  resetModal?.addEventListener("click", (e) => { if (e.target === resetModal) closeResetModal(); });
+  document.addEventListener("keydown", (e) => { if (!resetModal.classList.contains("hidden") && e.key === "Escape") closeResetModal(); });
 
-  // click outside dialog closes
-  resetModal?.addEventListener("click", (e) => {
-    if (e.target === resetModal) closeResetModal();
-  });
-
-  // Esc key closes
-  document.addEventListener("keydown", (e) => {
-    if (!resetModal.classList.contains("hidden") && e.key === "Escape") {
-      closeResetModal();
-    }
-  });
-
-  // confirm restart
   resetConfirm?.addEventListener("click", () => {
-    chatHistory.length = 0;           // clear array in-place
+    chatHistory.length = 0;
     document.querySelectorAll("#chat-messages .msg-wrapper").forEach(el => el.remove());
     addMessage("bot", "What can I do for you today?");
     closeResetModal();
   });
 
-
-
+  // arsenal filter logic
   const filterButtons = document.querySelectorAll(".arsenal-filters button");
-
-  // All the inner “card” DIVs we use for matching
-  const allCards = document.querySelectorAll(
-    ".language-card, .tool-card, .framework-card, .all-card"
-  );
+  const allCards = document.querySelectorAll(".language-card, .tool-card, .framework-card, .all-card");
 
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const filter = btn.getAttribute("data-filter");
-
-      // active button UI
       filterButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
       allCards.forEach(card => {
-        // THIS is the flex item in your layout:
         const flexItem = card.closest(".card-touch") || card;
-
-        // show/hide the WHOLE flex item
         if (filter === "all" || card.classList.contains(filter)) {
           flexItem.classList.remove("hidden");
         } else {
@@ -266,8 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-
 });
+
 
 
 
@@ -588,15 +560,4 @@ closeBtn.onclick = () => modal.style.display = "none";
 window.onclick = (e) => {
   if (e.target === modal) modal.style.display = "none";
 };
-
-
-
-
-
-
-
-
-
-
-
 
