@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interstellar Cannon | Israel Odunaiya</title>
+  <meta name="description" content="Interstellar Cannon case study: an interactive VPython simulation combining mouse-directed launch input, multi-body gravity, RK4 integration, and collision outcomes.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/avatar.svg">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <style>
+    .cannon-run-image,
+    .cannon-evidence-image {
+      aspect-ratio: 1454 / 634 !important;
+      object-fit: contain !important;
+      background: #000;
+    }
+
+    .cannon-feature-system {
+      width: 100%;
+      min-height: 31rem;
+    }
+
+    .cannon-feature-system__state {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cannon-feature-system__state .project-story-system__node {
+      min-height: 7.5rem;
+    }
+
+    .cannon-evidence-shot {
+      padding-bottom: 0;
+    }
+
+    @media (max-width: 720px) {
+      .cannon-feature-system {
+        min-height: 0;
+      }
+    }
+  </style>
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="interstellar-cannon">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class='bx bx-menu' aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="cannon-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">Interstellar Cannon</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">Simulation &middot; Computational Physics</p>
+            <p class="project-status project-status--documented">
+              <span aria-hidden="true"></span>
+              Documented
+            </p>
+          </div>
+
+          <h1 id="cannon-project-title">Interstellar Cannon</h1>
+          <p class="project-story__summary">
+            An interactive 3D course simulation that launches a rocket from Earth and visualizes how simplified multi-body gravity and collision rules change its path.
+            Mouse input, numerical integration, scene state, and feedback are combined in one VPython experience.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies and method">
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bxl-python"></i></span>Python</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-cube-alt"></i></span>VPython</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-math"></i></span>NumPy</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-git-branch"></i></span>Custom RK4</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://github.com/Odunsegun/Interstellar-Cannon" target="_blank" rel="noopener noreferrer" aria-label="View the Interstellar Cannon repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Main developer</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>3D course simulation</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Gravity, launch &amp; collisions</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>VPython simulation run</span>
+              <i class="bx bx-orbit"></i>
+            </div>
+            <img class="cannon-run-image" src="../../assets/interstellar-cannon.png" width="1454" height="634" alt="Interstellar Cannon VPython scene showing the Sun, labelled planets and Plastikos, a field of asteroids, the launched rocket with a dotted trail, and a live speed readout." fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>The existing portfolio capture is consistent with the project&rsquo;s VPython scene. It shows labelled bodies, the asteroid field, a rocket trail, and the live speed display.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="cannon-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="cannon-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Motivation</p>
+              <p>The project turns orbital motion from separate formulas into something visible and interactive: launch a rocket from Earth, then watch its state evolve among a simplified set of celestial bodies.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>As the main developer, I brought the launch controls, gravitational updates, collision logic, visual effects, camera behavior, and runtime feedback together in the main simulation.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>The VPython scene contains a stationary Sun, six Solar System planets, the fictional Plastikos, and 200 randomly initialized asteroids. A rocket launches from Earth, leaves a point trail, reports its speed, and follows different code paths for near-Sun disintegration and object collisions.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Implemented simulation capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-mouse"></i></span>Project a mouse drag onto Earth&rsquo;s orbital plane and use the arrow as the launch direction and power input.</li>
+            <li><span aria-hidden="true"><i class="bx bx-camera"></i></span>Move through the 3D scene, follow the launched rocket, and keep labelled bodies visible.</li>
+            <li><span aria-hidden="true"><i class="bx bx-broadcast"></i></span>Show a retained point trail and speed readout while collision and heat outcomes update the scene.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-mouse" aria-hidden="true"></i> Mouse-directed launch</span>
+            <small>Source-accurate interaction model</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <div class="project-story-system cannon-feature-system" aria-label="Mouse-directed rocket launch workflow">
+              <div class="project-story-system__lane">
+                <p>Actual input sequence</p>
+                <div class="project-story-system__flow">
+                  <div class="project-story-system__node">
+                    <i class="bx bx-target-lock" aria-hidden="true"></i>
+                    <strong>Press in the scene</strong>
+                    <span>Project the pointer onto Earth&rsquo;s XY orbital plane</span>
+                  </div>
+                  <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                  <div class="project-story-system__node">
+                    <i class="bx bx-move" aria-hidden="true"></i>
+                    <strong>Drag the arrow</strong>
+                    <span>Preview direction while arrow length supplies power</span>
+                  </div>
+                  <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                  <div class="project-story-system__node">
+                    <i class="bx bx-rocket" aria-hidden="true"></i>
+                    <strong>Release to launch</strong>
+                    <span>Offset from the projected press point and set velocity</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-story-system__divider" aria-hidden="true"><span>Release state</span></div>
+
+              <div class="project-story-system__flow cannon-feature-system__state">
+                <div class="project-story-system__node">
+                  <i class="bx bx-vector" aria-hidden="true"></i>
+                  <strong>Rocket velocity = Earth velocity + drag vector</strong>
+                  <span>The source scales drag length into launch power; there is no slider-based parameter panel.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The production interaction uses a mouse-drawn vector, not angle, mass, or velocity sliders. Drag length is scaled into launch power and Earth&rsquo;s current velocity is added on release.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="cannon-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="cannon-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Interface</dt>
+              <dd>VPython renders spheres, labels, arrows, trails, the follow-camera button, and the keyboard and mouse event surface.</dd>
+            </div>
+            <div>
+              <dt>Bodies</dt>
+              <dd>NumPy supports trigonometry and the square-root calculations used to initialize tangential planet and asteroid velocities.</dd>
+            </div>
+            <div>
+              <dt>Physics</dt>
+              <dd>Each non-Sun body sums point-mass gravitational acceleration from the other bodies before a custom four-stage RK4 update advances velocity and position.</dd>
+            </div>
+            <div>
+              <dt>Outcomes</dt>
+              <dd>A distance-and-speed threshold handles near-Sun disintegration. Separate sphere-overlap checks route collisions to an impulse response, asteroid fragments, or an impact mark.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="cannon-decision-title">
+            <p class="project-story__label">Engineering decision</p>
+            <h3 id="cannon-decision-title">Keep the numerical step separate from the scene effects</h3>
+            <p>The RK4 routine lives in its own physics module and evaluates the source&rsquo;s summed-gravity relationship, <code>a += (G * mass / distance^3) * r</code>. VPython remains responsible for rendering and input. The repository contains no convergence study, so this is an inspectable implementation choice rather than an accuracy claim.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Simulation loop</span>
+            <small>Verified from the Python source</small>
+          </div>
+          <div class="project-story-system" aria-label="Interstellar Cannon simulation workflow">
+            <div class="project-story-system__lane">
+              <p>Input and numerical update</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-mouse" aria-hidden="true"></i>
+                  <strong>Drag vector</strong>
+                  <span>Project mouse input onto Earth&rsquo;s XY plane</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-rocket" aria-hidden="true"></i>
+                  <strong>Launch state</strong>
+                  <span>Offset from the press point and add Earth&rsquo;s velocity</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-orbit" aria-hidden="true"></i>
+                  <strong>Gravity + RK4</strong>
+                  <span>Sum acceleration and advance every non-Sun body</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-story-system__divider" aria-hidden="true"><span>Then evaluate proximity and overlap</span></div>
+
+            <div class="project-story-system__lane">
+              <p>Outcome and visual feedback</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-sun" aria-hidden="true"></i>
+                  <strong>Heat threshold</strong>
+                  <span>Fade and shrink a fast rocket near the Sun</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-shape-circle" aria-hidden="true"></i>
+                  <strong>Collision branch</strong>
+                  <span>Bounce, fragment, or leave an impact mark</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-show" aria-hidden="true"></i>
+                  <strong>Render feedback</strong>
+                  <span>Refresh labels, camera, trail, and speed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The current model starts the bodies in one plane, holds the Sun stationary, uses a fixed timestep, and reuses rendered sphere radii for collision overlap. It is an educational simulation, not a validated trajectory predictor.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="cannon-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="cannon-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>My main challenge was combining the individual physics equations into one simulation: gravitational acceleration, the four RK4 stages, launch state, and collision response all had to participate in the same continuous update loop.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How I addressed it</p>
+              <p>I separated constants, entities, physics, effects, and input helpers into focused modules, then used the main loop to coordinate body updates, proximity checks, collision outcomes, labels, and camera feedback.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Specific takeaway</p>
+              <p>A working physics expression is only one layer of a simulation. Update ordering, shared state, timestep choices, collision boundaries, and visible feedback determine whether the combined system behaves coherently.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>I would centralize the duplicated runtime state, separate display scale from collision radius, and add repeatable trajectory and timestep-convergence checks before making any numerical-accuracy claim.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-pulse" aria-hidden="true"></i> Observed runtime evidence</span>
+            <small>Existing portfolio capture</small>
+          </div>
+
+          <div class="project-story-feature-shot cannon-evidence-shot">
+            <img class="cannon-evidence-image" src="../../assets/interstellar-cannon.png" width="1454" height="634" loading="lazy" decoding="async" alt="Interstellar Cannon runtime capture showing the live rocket-speed text, labelled celestial bodies, and rocket trail.">
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>01</code><span>Speed output</span><small>The scene reports the rocket&rsquo;s current speed.</small></div>
+            <div><code>02</code><span>Scene labels</span><small>The capture identifies the bodies represented in the scene.</small></div>
+            <div><code>03</code><span>Motion trail</span><small>Retained points make the rocket&rsquo;s recent path visible.</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> The repository has no automated tests, benchmark, convergence report, or stored comparison run. This capture documents rendered behavior, not physical accuracy.</p>
+          <figcaption>The same existing runtime capture is annotated here as implementation evidence. A future validation pass should compare repeatable initial conditions across timesteps and record the resulting trajectories.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/enterprise-network-security-lab/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Enterprise Network Security Lab</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/hotel-management-system/" rel="next">
+          <span><small>Next project</small><strong>Hotel Management System</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." aria-label="Ask the portfolio assistant" required>
+        <button type="submit" id="chat-send" aria-label="Send message">&#10148;</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button" aria-label="Close reset confirmation">&#10006;</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications | Israel Odunaiya</title>
+  <meta name="description" content="Credentials Vault — earned Microsoft certifications and credentials currently in preparation.">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/shell.css">
+  <link rel="stylesheet" href="../css/certifications-archive.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || (m !== 'disabled' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="certifications">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    var dark = m === 'abled' || (m !== 'disabled' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.body.classList.toggle('darkmode', dark);
+    document.body.classList.toggle('lightmode', !dark);
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link" aria-current="page">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true">
+          <img src="../assets/eclipse.svg" alt="">
+        </button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu">
+          <i class='bx bx-menu' aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/" aria-current="page">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+
+  <main id="main-content" class="certs-archive-page">
+    <div class="certs-archive__inner">
+      <div class="certs-archive__intro">
+        <span class="certs-archive__scan" aria-hidden="true"></span>
+        <span class="certs-archive__constellation" aria-hidden="true"></span>
+        <p class="certs-archive__eyebrow"><span class="certs-archive__dot" aria-hidden="true"></span> Credentials Vault</p>
+        <h1 class="certifications-title">Certifications</h1>
+        <p class="certs-archive__subtitle">Verified credentials and the technical paths I’m currently pursuing.</p>
+        <ul class="certs-archive__legend" aria-label="Credential status legend">
+          <li><span class="certs-archive__legend-dot certs-archive__legend-dot--earned" aria-hidden="true"></span>Earned</li>
+          <li><i class="bx bx-lock-alt" aria-hidden="true"></i>In preparation</li>
+        </ul>
+      </div>
+
+      <section class="certs-archive__section" aria-labelledby="earned-heading">
+        <h2 class="certs-archive__heading" id="earned-heading">Earned Credentials</h2>
+        <div class="earned-credentials-grid" id="earned-credentials"></div>
+      </section>
+
+      <section class="certs-archive__section" aria-labelledby="prep-heading">
+        <h2 class="certs-archive__heading" id="prep-heading">In Preparation</h2>
+        <div class="preparation-grid" id="preparation-credentials"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden" role="dialog" aria-labelledby="chatbox-title" aria-hidden="true">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span id="chatbox-title">Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" type="button" aria-label="Reset chat"><img src="../assets/reset.svg" alt=""></button>
+          <button id="chat-close" type="button" aria-label="Close chat"><img src="../assets/close2.svg" alt=""></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages" role="log" aria-live="polite" aria-relevant="additions text">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." aria-label="Message Insight" required>
+        <button type="submit" id="chat-send" aria-label="Send message">➤</button>
+      </form>
+    </div>
+    <button id="chat-toggle" class="chat-toggle" type="button" aria-label="Open portfolio assistant" aria-controls="chatbox" aria-expanded="false">
+      <img src="../assets/chat.svg" alt="">
+    </button>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button" aria-label="Close restart confirmation">✖</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/certifications-data.js" defer></script>
+  <script src="../js/certifications.js" defer></script>
+  <script src="../js/cursor.js" defer></script>
+  <script src="../main.js" defer></script>
+</body>
+</html>

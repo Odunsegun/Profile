@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Management System | Israel Odunaiya</title>
+  <meta name="description" content="Hotel Management System case study: a Spring Boot and Thymeleaf staff portal with booking validation, operational dashboard data, and printable invoices.">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="hotel-management-system">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class='bx bx-menu' aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="hotel-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">Hotel Management System</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">Software &middot; Web Application</p>
+            <p class="project-status project-status--documented">
+              <span aria-hidden="true"></span>
+              Documented
+            </p>
+          </div>
+
+          <h1 id="hotel-project-title">Hotel Management System</h1>
+          <p class="project-story__summary">
+            A server-rendered staff portal for managing rooms, customers, services, and reservations in one workflow.
+            It validates stay dates and room conflicts, calculates room and add-on charges, and produces printable itemized invoices.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies">
+            <li><img src="../../assets/java-original.svg" alt="" width="18" height="18">Java 17</li>
+            <li><img src="../../assets/springboot.svg" alt="" width="18" height="18">Spring Boot 3.2</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-code-alt"></i></span>Thymeleaf</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-data"></i></span>H2</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://github.com/Odunsegun/Hotel-Management-System" target="_blank" rel="noopener noreferrer" aria-label="View the Hotel Management System repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Full-stack redevelopment</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>Staff operations portal</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Booking integrity</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>Operations data overview</span>
+              <i class="bx bx-lock-alt"></i>
+            </div>
+            <svg viewBox="0 0 1316 741" width="1316" height="741" style="display:block;width:100%;height:auto" role="img" aria-labelledby="hotel-hero-visual-title hotel-hero-visual-desc">
+              <title id="hotel-hero-visual-title">Hotel application demo-data overview</title>
+              <desc id="hotel-hero-visual-desc">A code-native dashboard showing six seeded rooms, four customers, three optional services, three booking records, room-type distribution, booking status, and the runtime dashboard queries implemented by the application.</desc>
+              <defs>
+                <linearGradient id="hotel-hero-bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#07111f"></stop>
+                  <stop offset="1" stop-color="#10162a"></stop>
+                </linearGradient>
+                <linearGradient id="hotel-hero-card" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#12243a"></stop>
+                  <stop offset="1" stop-color="#0b1728"></stop>
+                </linearGradient>
+              </defs>
+              <rect width="1316" height="741" fill="url(#hotel-hero-bg)"></rect>
+              <rect x="0" y="0" width="220" height="741" fill="#091525"></rect>
+              <line x1="220" y1="0" x2="220" y2="741" stroke="#29425c"></line>
+
+              <g font-family="Inter, Arial, sans-serif">
+                <g transform="translate(28 38)">
+                  <rect width="40" height="40" rx="11" fill="#7458f5"></rect>
+                  <path d="M10 26h20M13 26V15h14v11M17 15v-4h6v4M17 20h2M22 20h2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <text x="54" y="17" fill="#f7f9fc" font-size="17" font-weight="750">Hotel</text>
+                  <text x="54" y="38" fill="#91a8bd" font-size="13">Management System</text>
+                </g>
+
+                <g fill="#91a8bd" font-size="16">
+                  <rect x="18" y="113" width="184" height="48" rx="10" fill="#23315f"></rect>
+                  <text x="49" y="143" fill="#f7f9fc" font-weight="700">Dashboard</text>
+                  <text x="49" y="198">Bookings</text>
+                  <text x="49" y="246">Customers</text>
+                  <text x="49" y="294">Rooms</text>
+                  <text x="49" y="342">Services</text>
+                </g>
+                <g fill="#6ddde6">
+                  <circle cx="34" cy="137" r="5"></circle>
+                  <circle cx="34" cy="192" r="5"></circle>
+                  <circle cx="34" cy="240" r="5"></circle>
+                  <circle cx="34" cy="288" r="5"></circle>
+                  <circle cx="34" cy="336" r="5"></circle>
+                </g>
+
+                <text x="258" y="58" fill="#f7f9fc" font-size="28" font-weight="800">Seeded demo overview</text>
+                <text x="258" y="88" fill="#91a8bd" font-size="15">Repository-backed records &middot; not production usage metrics</text>
+
+                <g transform="translate(258 118)">
+                  <g>
+                    <rect width="226" height="112" rx="14" fill="url(#hotel-hero-card)" stroke="#2f536e"></rect>
+                    <text x="20" y="34" fill="#91a8bd" font-size="14" letter-spacing="1">ROOMS</text>
+                    <text x="20" y="82" fill="#f7f9fc" font-size="42" font-weight="800">6</text>
+                    <text x="69" y="80" fill="#54dbe8" font-size="14">seeded</text>
+                  </g>
+                  <g transform="translate(244 0)">
+                    <rect width="226" height="112" rx="14" fill="url(#hotel-hero-card)" stroke="#2f536e"></rect>
+                    <text x="20" y="34" fill="#91a8bd" font-size="14" letter-spacing="1">CUSTOMERS</text>
+                    <text x="20" y="82" fill="#f7f9fc" font-size="42" font-weight="800">4</text>
+                    <text x="69" y="80" fill="#54dbe8" font-size="14">seeded</text>
+                  </g>
+                  <g transform="translate(488 0)">
+                    <rect width="226" height="112" rx="14" fill="url(#hotel-hero-card)" stroke="#2f536e"></rect>
+                    <text x="20" y="34" fill="#91a8bd" font-size="14" letter-spacing="1">SERVICES</text>
+                    <text x="20" y="82" fill="#f7f9fc" font-size="42" font-weight="800">3</text>
+                    <text x="69" y="80" fill="#54dbe8" font-size="14">seeded</text>
+                  </g>
+                  <g transform="translate(732 0)">
+                    <rect width="226" height="112" rx="14" fill="url(#hotel-hero-card)" stroke="#2f536e"></rect>
+                    <text x="20" y="34" fill="#91a8bd" font-size="14" letter-spacing="1">BOOKINGS</text>
+                    <text x="20" y="82" fill="#f7f9fc" font-size="42" font-weight="800">3</text>
+                    <text x="69" y="80" fill="#54dbe8" font-size="14">seeded</text>
+                  </g>
+                </g>
+
+                <g transform="translate(258 258)">
+                  <rect width="566" height="430" rx="16" fill="#0b1829" stroke="#29425c"></rect>
+                  <text x="24" y="42" fill="#f7f9fc" font-size="19" font-weight="750">Room catalog distribution</text>
+                  <text x="24" y="67" fill="#91a8bd" font-size="13">Six records loaded by the demo seed</text>
+
+                  <g font-size="15">
+                    <text x="24" y="132" fill="#cbd8e5">Standard</text>
+                    <rect x="145" y="113" width="330" height="24" rx="8" fill="#15263a"></rect>
+                    <rect x="145" y="113" width="330" height="24" rx="8" fill="#43d6df"></rect>
+                    <text x="500" y="132" fill="#f7f9fc" font-weight="750">2</text>
+
+                    <text x="24" y="198" fill="#cbd8e5">Deluxe</text>
+                    <rect x="145" y="179" width="330" height="24" rx="8" fill="#15263a"></rect>
+                    <rect x="145" y="179" width="330" height="24" rx="8" fill="#5aa5ff"></rect>
+                    <text x="500" y="198" fill="#f7f9fc" font-weight="750">2</text>
+
+                    <text x="24" y="264" fill="#cbd8e5">Suite</text>
+                    <rect x="145" y="245" width="330" height="24" rx="8" fill="#15263a"></rect>
+                    <rect x="145" y="245" width="165" height="24" rx="8" fill="#8f74ff"></rect>
+                    <text x="500" y="264" fill="#f7f9fc" font-weight="750">1</text>
+
+                    <text x="24" y="330" fill="#cbd8e5">Presidential</text>
+                    <rect x="145" y="311" width="330" height="24" rx="8" fill="#15263a"></rect>
+                    <rect x="145" y="311" width="165" height="24" rx="8" fill="#c884ff"></rect>
+                    <text x="500" y="330" fill="#f7f9fc" font-weight="750">1</text>
+                  </g>
+
+                  <rect x="24" y="366" width="518" height="42" rx="10" fill="#11243a"></rect>
+                  <text x="44" y="392" fill="#91a8bd" font-size="14">Room prices and categories remain editable from the staff portal.</text>
+                </g>
+
+                <g transform="translate(848 258)">
+                  <rect width="410" height="430" rx="16" fill="#0b1829" stroke="#29425c"></rect>
+                  <text x="24" y="42" fill="#f7f9fc" font-size="19" font-weight="750">Booking records</text>
+                  <text x="24" y="67" fill="#91a8bd" font-size="13">Seed status &amp; runtime dashboard queries</text>
+
+                  <rect x="24" y="94" width="362" height="62" rx="11" fill="#10253a"></rect>
+                  <text x="42" y="120" fill="#cbd8e5" font-size="14">Confirmed</text>
+                  <text x="42" y="145" fill="#54dbe8" font-size="24" font-weight="800">2</text>
+                  <rect x="24" y="170" width="362" height="62" rx="11" fill="#1b2037"></rect>
+                  <text x="42" y="196" fill="#cbd8e5" font-size="14">Cancelled</text>
+                  <text x="42" y="221" fill="#b59aff" font-size="24" font-weight="800">1</text>
+
+                  <text x="24" y="276" fill="#f7f9fc" font-size="16" font-weight="700">Calculated when the dashboard loads</text>
+                  <g fill="#91a8bd" font-size="14">
+                    <circle cx="34" cy="312" r="5" fill="#54dbe8"></circle>
+                    <text x="50" y="317">Active bookings for today</text>
+                    <circle cx="34" cy="350" r="5" fill="#54dbe8"></circle>
+                    <text x="50" y="355">Check-ins scheduled today</text>
+                    <circle cx="34" cy="388" r="5" fill="#54dbe8"></circle>
+                    <text x="50" y="393">Check-outs scheduled today</text>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <figcaption>The visual uses the repository's seeded record counts and implemented dashboard queries; it does not represent production hotel activity.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="hotel-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="hotel-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Problem &amp; motivation</p>
+              <p>Reservation data becomes unreliable when customers, rooms, dates, and charges are managed separately. The application brings those records into one authenticated workflow while preventing conflicting confirmed stays for the same room.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>I completed the current full-stack redevelopment across the Thymeleaf screens, Spring MVC controllers, service-layer rules, JPA repositories, security configuration, and self-contained demo environment.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>An authenticated staff portal with an operational dashboard, management screens for customers, rooms, and optional services, booking creation and editing, cancellation, and printable invoices.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Core project capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-building-house"></i></span>Maintain customer, room, and optional-service records.</li>
+            <li><span aria-hidden="true"><i class="bx bx-calendar-check"></i></span>Create and edit bookings with date and room-conflict validation.</li>
+            <li><span aria-hidden="true"><i class="bx bx-receipt"></i></span>Calculate room charges, selected service costs, and the final invoice total.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-calendar-check" aria-hidden="true"></i> Booking workflow</span>
+            <small>Source-confirmed rules</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <svg viewBox="0 0 920 520" width="920" height="520" style="display:block;width:100%;height:auto" role="img" aria-labelledby="hotel-feature-visual-title hotel-feature-visual-desc">
+              <title id="hotel-feature-visual-title">Booking validation and invoice workflow</title>
+              <desc id="hotel-feature-visual-desc">Customer, room, date, and service selections move through required-field, date-order, and room-overlap validation before a confirmed booking and itemized invoice are produced.</desc>
+              <defs>
+                <linearGradient id="hotel-feature-bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#07111f"></stop>
+                  <stop offset="1" stop-color="#11172b"></stop>
+                </linearGradient>
+                <marker id="hotel-feature-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#54dbe8"></path>
+                </marker>
+              </defs>
+              <rect x="16" y="16" width="888" height="488" rx="22" fill="url(#hotel-feature-bg)" stroke="#28435b" stroke-width="2"></rect>
+
+              <g font-family="Inter, Arial, sans-serif">
+                <text x="46" y="58" fill="#91a8bd" font-size="17" letter-spacing="2">RESERVATION INPUT</text>
+                <g transform="translate(46 82)">
+                  <rect width="176" height="74" rx="13" fill="#10283a" stroke="#3fd4df"></rect>
+                  <text x="88" y="31" text-anchor="middle" fill="#f7f9fc" font-size="18" font-weight="750">Customer</text>
+                  <text x="88" y="55" text-anchor="middle" fill="#91a8bd" font-size="14">Required record</text>
+                </g>
+                <g transform="translate(236 82)">
+                  <rect width="176" height="74" rx="13" fill="#12263b" stroke="#5aa5ff"></rect>
+                  <text x="88" y="31" text-anchor="middle" fill="#f7f9fc" font-size="18" font-weight="750">Room</text>
+                  <text x="88" y="55" text-anchor="middle" fill="#91a8bd" font-size="14">Required record</text>
+                </g>
+                <g transform="translate(426 82)">
+                  <rect width="176" height="74" rx="13" fill="#1a2139" stroke="#8f74ff"></rect>
+                  <text x="88" y="31" text-anchor="middle" fill="#f7f9fc" font-size="18" font-weight="750">Stay dates</text>
+                  <text x="88" y="55" text-anchor="middle" fill="#91a8bd" font-size="14">Check-in + check-out</text>
+                </g>
+                <g transform="translate(616 82)">
+                  <rect width="176" height="74" rx="13" fill="#242039" stroke="#c884ff"></rect>
+                  <text x="88" y="31" text-anchor="middle" fill="#f7f9fc" font-size="18" font-weight="750">Services</text>
+                  <text x="88" y="55" text-anchor="middle" fill="#91a8bd" font-size="14">Optional selections</text>
+                </g>
+
+                <line x1="134" y1="176" x2="134" y2="220" stroke="#54dbe8" stroke-width="3"></line>
+                <line x1="324" y1="176" x2="324" y2="220" stroke="#54dbe8" stroke-width="3"></line>
+                <line x1="514" y1="176" x2="514" y2="220" stroke="#54dbe8" stroke-width="3"></line>
+                <line x1="704" y1="176" x2="704" y2="220" stroke="#54dbe8" stroke-width="3"></line>
+                <line x1="134" y1="220" x2="704" y2="220" stroke="#54dbe8" stroke-width="3"></line>
+                <line x1="419" y1="220" x2="419" y2="250" stroke="#54dbe8" stroke-width="3" marker-end="url(#hotel-feature-arrow)"></line>
+
+                <g transform="translate(277 266)">
+                  <rect width="284" height="104" rx="16" fill="#11283a" stroke="#42d7df" stroke-width="2"></rect>
+                  <text x="142" y="31" text-anchor="middle" fill="#f7f9fc" font-size="20" font-weight="800">Service validation</text>
+                  <text x="142" y="57" text-anchor="middle" fill="#91a8bd" font-size="14">Required selections &middot; date order</text>
+                  <text x="142" y="80" text-anchor="middle" fill="#91a8bd" font-size="14">Confirmed-room overlap query</text>
+                </g>
+
+                <line x1="561" y1="318" x2="630" y2="318" stroke="#54dbe8" stroke-width="3" marker-end="url(#hotel-feature-arrow)"></line>
+                <g transform="translate(648 266)">
+                  <rect width="216" height="104" rx="16" fill="#17243a" stroke="#8f74ff" stroke-width="2"></rect>
+                  <text x="108" y="36" text-anchor="middle" fill="#f7f9fc" font-size="19" font-weight="800">Saved booking</text>
+                  <text x="108" y="64" text-anchor="middle" fill="#91a8bd" font-size="14">Confirmed by default</text>
+                  <text x="108" y="84" text-anchor="middle" fill="#91a8bd" font-size="14">May later be cancelled</text>
+                </g>
+
+                <line x1="756" y1="384" x2="756" y2="414" stroke="#54dbe8" stroke-width="3" marker-end="url(#hotel-feature-arrow)"></line>
+                <g transform="translate(486 430)">
+                  <rect width="378" height="50" rx="12" fill="#241f39" stroke="#c884ff"></rect>
+                  <text x="189" y="31" text-anchor="middle" fill="#f7f9fc" font-size="16" font-weight="700">Nights &times; room rate + selected services = invoice total</text>
+                </g>
+
+                <g transform="translate(46 276)">
+                  <rect width="188" height="82" rx="14" fill="#1f1726" stroke="#bd6270"></rect>
+                  <text x="94" y="31" text-anchor="middle" fill="#f7f9fc" font-size="17" font-weight="750">Rejected request</text>
+                  <text x="94" y="56" text-anchor="middle" fill="#d7a4ad" font-size="13">Validation message returned</text>
+                </g>
+                <line x1="277" y1="318" x2="250" y2="318" stroke="#bd6270" stroke-width="3" marker-end="url(#hotel-feature-arrow)"></line>
+              </g>
+            </svg>
+          </div>
+          <figcaption>Booking rules reject missing selections, invalid date order, and overlapping confirmed reservations before saving the record.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="hotel-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="hotel-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Interface</dt>
+              <dd>Thymeleaf renders the dashboard, management forms, booking tables, and printable invoice on the server.</dd>
+            </div>
+            <div>
+              <dt>Application</dt>
+              <dd>Spring MVC controllers receive form requests while service classes apply booking rules and coordinate related records.</dd>
+            </div>
+            <div>
+              <dt>Data</dt>
+              <dd>Spring Data JPA maps customers, rooms, services, and bookings to H2. Seed records make the demo immediately reviewable, and the in-memory data resets on restart.</dd>
+            </div>
+            <div>
+              <dt>Security</dt>
+              <dd>Spring Security requires authentication for operational routes and BCrypt-encodes the two in-memory demo-account passwords.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="hotel-decision-title">
+            <p class="project-story__label">Engineering decision</p>
+            <h3 id="hotel-decision-title">Keep the demonstration self-contained</h3>
+            <p>An in-memory H2 database and seed script remove external database setup from the review path. The tradeoff is explicit: records reset whenever the application restarts, so this is a demonstration environment rather than persistent production storage.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Application &amp; data flow</span>
+            <small>Source-confirmed layers</small>
+          </div>
+
+          <div class="project-story-system">
+            <div class="project-story-system__lane">
+              <p>Request &amp; rules</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-window-alt" aria-hidden="true"></i>
+                  <strong>Thymeleaf UI</strong>
+                  <span>Forms &amp; server views</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/springboot.svg" alt="" width="32" height="32">
+                  <strong>MVC controllers</strong>
+                  <span>Mapped form routes</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-check-shield" aria-hidden="true"></i>
+                  <strong>Service rules</strong>
+                  <span>Validation &amp; totals</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-story-system__divider" aria-hidden="true"><span>Validated entities move through persistence</span></div>
+
+            <div class="project-story-system__lane">
+              <p>Persistence &amp; response</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-layer" aria-hidden="true"></i>
+                  <strong>JPA repositories</strong>
+                  <span>Queries &amp; relationships</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-data" aria-hidden="true"></i>
+                  <strong>H2 database</strong>
+                  <span>In-memory demo records</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-file" aria-hidden="true"></i>
+                  <strong>Rendered result</strong>
+                  <span>Dashboard, lists or invoice</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Bookings join one customer and one room, connect to optional services, and return through the same server-rendered MVC workflow.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="hotel-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="hotel-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>Date conflicts must be detected during both booking creation and editing. A simple room lookup can miss partial overlaps or incorrectly reject a reservation being edited.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How it was addressed</p>
+              <p>The repository checks confirmed stays whose start is before the requested end and whose end is after the requested start, while excluding the current booking ID during edits.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Specific takeaway</p>
+              <p>Data-integrity rules belong below the form because every request must follow the same constraints, regardless of which screen or action submitted it.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>Add payment gateway integration. The current application calculates and prints invoice totals but does not collect or process payments.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-file-find" aria-hidden="true"></i> Implemented safeguards</span>
+            <small>Source evidence</small>
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>DATES</code><span>Check-out must follow check-in</span><small>Missing dates and reversed or zero-length stays are rejected</small></div>
+            <div><code>OVERLAP</code><span>Confirmed room conflicts are blocked</span><small>The edited booking is excluded from its own conflict query</small></div>
+            <div><code>STATUS</code><span>Cancellation preserves the record</span><small>Cancelled bookings no longer block the room's date range</small></div>
+            <div><code>TOTAL</code><span>Room stay + selected services</span><small>Nights multiply the room rate before add-on prices are included</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> These are implemented source paths, not automated PASS results. The current test source contains only a Spring context-load check.</p>
+          <figcaption>The evidence panel describes rules and calculations present in the current source without inventing test coverage or user outcomes.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/interstellar-cannon/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Interstellar Cannon</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/vacation-finder/" rel="next">
+          <span><small>Next project</small><strong>Vacation Finder</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." required>
+        <button type="submit" id="chat-send">➤</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button">✖</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

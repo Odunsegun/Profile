@@ -2,3 +2,4 @@
 .env.local
 server.js
 .vercel
+node_modules

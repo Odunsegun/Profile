@@ -19,7 +19,7 @@ body {
     color: var(--foreground);
     scroll-snap-type: none;
     overflow-x: hidden;
-    cursor: url('assets/rocket-left-svgrepo-com_resized.png') 10 10, auto;
+    cursor: auto;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
    
@@ -610,7 +610,8 @@ header{
 /*HERO SECTION*/
 
 .hero {
-    height: 100vh;
+    min-height: 100svh;
+    height: auto;
     background-color: #1e1e1e;
     color: white;
     display: flex;
@@ -620,7 +621,7 @@ header{
     flex-direction: column;
     position: relative;
     background: radial-gradient(circle, #1e1e1e, #111);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero::before {
@@ -786,14 +787,15 @@ body.lightmode .contact-footer::after {
 
 /*FEATURED PROJECTS*/
 .featured-projects {
-    height: 120vh;
+    min-height: auto;
+    height: auto;
     background-size: 70px 70px;
     padding: 8rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     color: var(--foreground);
 }
 
@@ -1523,7 +1525,7 @@ body.lightmode .contact-footer::after {
 /*TECH ITEMSSSSSSSS*/
 .section.six{
     height: auto;
-    min-height: 60vh;
+    min-height: auto;
     max-height: none;
 }
 
@@ -1896,27 +1898,26 @@ body.lightmode .contact-footer::after {
 /* === Chat Toggle Button === */
 .chat-toggle {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 65px;
-  height: 65px;
-  background: none;
-  border: 5px solid transparent; /* must be transparent first */
-  border-image: linear-gradient(135deg, var(--clr-highlight), var(--clr-accent-alt)) 1;
+    bottom: 20px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
+  background: transparent;
+  border: 1px solid var(--shell-border, rgba(255,255,255,0.15));
+  border-radius: 10px;
   color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  box-shadow: none;
   z-index: 10001;
+  padding: 0;
 }
 
-
-.chat-toggle img{
-    height: 45px;
+.chat-toggle img {
+    width: 44px;
+    height: 44px;
+    display: block;
 }
 /* === Chatbox Container === */
 .chatbox {
@@ -2279,7 +2280,8 @@ body.lightmode .contact-footer::after {
 
 /*FOOTERRRRRRRR*/
 .contact-footer {
-    height: 94vh;
+    min-height: auto;
+    height: auto;
     background: var(--background);
     color: var(--foreground);
     padding: 4rem 2rem;
@@ -3415,7 +3417,7 @@ html{
         font-size: 1.2rem;
     }
     .section.six{
-        max-height: 130vh;
+        max-height: none;
     }
     .language-cards,
     .tool-cards,

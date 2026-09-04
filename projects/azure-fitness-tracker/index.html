@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure Fitness Tracker | Israel Odunaiya</title>
+  <meta name="description" content="Azure Fitness Tracker case study: a React and Tailwind activity dashboard with streaks, progress views, and a repository-backed Azure Functions API.">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="azure-fitness-tracker">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class='bx bx-menu' aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="azure-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">Azure Fitness Tracker</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">Full-stack &middot; Cloud</p>
+            <p class="project-status project-status--deployed">
+              <span aria-hidden="true"></span>
+              Deployed
+            </p>
+          </div>
+
+          <h1 id="azure-project-title">Azure Fitness Tracker</h1>
+          <p class="project-story__summary">
+            FitTrack is a responsive activity dashboard for logging workouts and turning them into streaks,
+            weekly context, and progress summaries. Its repository pairs the React interface with a Python
+            Azure Functions API; the live demo currently keeps activity data in the browser.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies">
+            <li><img src="../../assets/react-original.svg" alt="" width="18" height="18">React</li>
+            <li><img src="../../assets/tailwindcss.svg" alt="" width="18" height="18">Tailwind CSS</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-line-chart"></i></span>Recharts</li>
+            <li><img src="../../assets/azure-original.svg" alt="" width="18" height="18">Azure Functions</li>
+            <li><img src="../../assets/cosmosdb-original.svg" alt="" width="18" height="18">Cosmos DB</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://azure-fitness-tracker-icqm.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the live Azure Fitness Tracker demo in a new tab">
+              <i class="bx bx-link-external" aria-hidden="true"></i>
+              <span>Live Demo</span>
+            </a>
+            <a class="project-story__action" href="https://github.com/Odunsegun/azure-fitness-tracker" target="_blank" rel="noopener noreferrer" aria-label="View the Azure Fitness Tracker repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Full-stack developer</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>Cloud web application</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Workout logging &amp; progress</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>FitTrack Dashboard</span>
+              <i class="bx bx-lock-alt"></i>
+            </div>
+            <img src="../../assets/fitness-tracker.png" alt="FitTrack dashboard showing activity streaks, calorie totals, active minutes, sessions, and seven-day history" width="1316" height="741" fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>Dashboard overview with streak and recent-activity summaries.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="azure-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="azure-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Problem &amp; motivation</p>
+              <p>Daily logs become more useful when they reveal patterns. FitTrack brings workouts, streaks, missed days, and summary views together so consistency is visible at a glance.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>I built the React and Tailwind interface, its browser-based activity workflows and chart views, and the Python Azure Functions endpoints kept in the same repository.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>Four routed views&mdash;Dashboard, Log Activity, Summary, and Profile&mdash;plus Functions for creating, reading, summarizing, updating, and deleting activity records.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Core project capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-check-circle"></i></span>Capture activity type, duration, intensity, location, and notes.</li>
+            <li><span aria-hidden="true"><i class="bx bx-flame"></i></span>Track streaks and missed days against a Monday-to-Sunday week.</li>
+            <li><span aria-hidden="true"><i class="bx bx-bar-chart-alt-2"></i></span>Review calorie, active-minute, and session summaries with Recharts.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-list-plus" aria-hidden="true"></i> Activity workflow</span>
+            <small>Live interface</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <img src="../../assets/projects/azure-fitness-tracker/activity-logging.png" alt="FitTrack Log Activity screen with workout form fields and a Recent Logs table containing demo entries" width="1440" height="900" loading="lazy" decoding="async">
+          </div>
+          <figcaption>The deployed Log Activity route combines structured input with recent records. The entries shown are seeded demo data, not user or outcome metrics.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="azure-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="azure-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Interface</dt>
+              <dd>React organizes the dashboard routes and interactions, Tailwind CSS provides the presentation layer, and Recharts renders progress views.</dd>
+            </div>
+            <div>
+              <dt>API</dt>
+              <dd>Python Azure Functions define focused routes for creating, reading, summarizing, updating, and deleting activity records.</dd>
+            </div>
+            <div>
+              <dt>Data</dt>
+              <dd>The deployed dashboard persists activity and demo state in local storage. The backend separately implements Cosmos DB document operations.</dd>
+            </div>
+            <div>
+              <dt>Testing</dt>
+              <dd>Testing Library setup is present, but the repository contains no project test files or published results, so no pass claims are shown.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="azure-decision-title">
+            <p class="project-story__label">Engineering decision</p>
+            <h3 id="azure-decision-title">Scope activity records by user</h3>
+            <p>The API writes a <code>userId</code> to every activity, filters reads by it, and requires it as the Cosmos partition key for deletes. That keeps each operation aligned with the backend's user-based data boundary.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Repository system map</span>
+            <small>Verified code paths</small>
+          </div>
+
+          <div class="project-story-system">
+            <div class="project-story-system__lane">
+              <p>Dashboard path</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <img src="../../assets/react-original.svg" alt="" width="32" height="32">
+                  <strong>React</strong>
+                  <span>Routes &amp; UI</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-data" aria-hidden="true"></i>
+                  <strong>Local storage</strong>
+                  <span>Activities &amp; demo state</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-line-chart" aria-hidden="true"></i>
+                  <strong>Recharts</strong>
+                  <span>Progress views</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-story-system__divider" aria-hidden="true"><span>Separate source paths</span></div>
+
+            <div class="project-story-system__lane">
+              <p>Backend path</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <img src="../../assets/rest-api-original.svg" alt="" width="32" height="32">
+                  <strong>HTTP routes</strong>
+                  <span>Activity operations</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/azure-original.svg" alt="" width="32" height="32">
+                  <strong>Azure Functions</strong>
+                  <span>Validation &amp; summaries</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/cosmosdb-original.svg" alt="" width="32" height="32">
+                  <strong>Cosmos DB</strong>
+                  <span>Backend documents</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The deployed pages use the browser path. The Functions client still targets localhost, so this diagram does not claim a live connection between the two lanes.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="azure-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="azure-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>Streak and missed-day views needed to agree on what counted as a calendar day, including around local date boundaries.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How it was addressed</p>
+              <p>The date fixes replaced UTC-derived keys with one local <code>YYYY-MM-DD</code> formatter, normalized dates to local midnight, and anchored both views to Monday.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Specific takeaway</p>
+              <p>Calendar features need a single date convention. Mixing UTC serialization with local labels makes streak logic fragile at day boundaries.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>Connect the deployed React workflows to the Functions API and Cosmos-backed persistence; the current demo stores activities locally and its API helper still targets localhost.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-file-find" aria-hidden="true"></i> Implementation evidence</span>
+            <small>Repository-defined routes</small>
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>POST</code><span>/api/log-activity</span><small>Validate input and create an activity</small></div>
+            <div><code>GET</code><span>/api/activities/{userId}</span><small>Read user-scoped activities</small></div>
+            <div><code>GET</code><span>/api/activities/summary/{userId}</span><small>Aggregate totals with optional filters</small></div>
+            <div><code>PUT</code><span>/api/activities/{activityId}</span><small>Replace permitted activity fields</small></div>
+            <div><code>DELETE</code><span>/api/activities/{activityId}?userId=</span><small>Delete with the user partition key</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> Testing Library setup exists, but project test files, captured responses, coverage, and pass results are not published.</p>
+          <figcaption>Five Python Functions routes confirmed in source; payloads, performance metrics, and test outcomes are intentionally not inferred.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/interstellar-cannon/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Interstellar Cannon</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/football-tracking/" rel="next">
+          <span><small>Next project</small><strong>Football Tracking</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." required>
+        <button type="submit" id="chat-send">➤</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button">✖</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web CTF | Israel Odunaiya</title>
+  <meta name="description" content="Web CTF case study: a collaborative Node.js and Express course project exploring broken access control and other web-security mistakes in a local educational challenge.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/avatar.svg">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="web-ctf">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class='bx bx-menu' aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="webctf-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">Web CTF</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">Web Security &middot; Educational CTF</p>
+            <p class="project-status project-status--documented">
+              <span aria-hidden="true"></span>
+              Documented
+            </p>
+          </div>
+
+          <h1 id="webctf-project-title">Web CTF</h1>
+          <p class="project-story__summary">
+            A five-person course project that turns intentionally vulnerable Node.js and Express behavior into local web-security challenges.
+            I authored and documented a broken-access-control scenario built around an exposed test surface and server trust in client-controlled request data.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies">
+            <li><img src="../../assets/nodejs-original.svg" alt="" width="18" height="18">Node.js</li>
+            <li><img src="../../assets/express-original.svg" alt="" width="18" height="18">Express</li>
+            <li><img src="../../assets/html5-original.svg" alt="" width="18" height="18">HTML5</li>
+            <li><img src="../../assets/javascript-original.svg" alt="" width="18" height="18">JavaScript</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://github.com/Odunsegun/Capture-The-Flag-CTF-Web-Security-Challenge" target="_blank" rel="noopener noreferrer" aria-label="View the Web CTF repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Challenge author &amp; developer</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>Five-person course project</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Access-control boundaries</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>Web CTF &middot; Sanitized challenge workspace</span>
+              <i class="bx bx-shield-quarter"></i>
+            </div>
+            <svg viewBox="0 0 1316 741" width="1316" height="741" style="display:block;width:100%;height:auto" role="img" aria-labelledby="webctf-hero-title webctf-hero-desc">
+              <title id="webctf-hero-title">Sanitized Web CTF challenge workspace</title>
+              <desc id="webctf-hero-desc">A source-backed reconstruction with a challenge navigator, a non-operational code review surface, and a browser response panel. All routes, values, credentials, and request details are deliberately omitted.</desc>
+              <defs>
+                <linearGradient id="webctf-hero-background" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#06121d"></stop>
+                  <stop offset="0.55" stop-color="#081b28"></stop>
+                  <stop offset="1" stop-color="#15162b"></stop>
+                </linearGradient>
+                <linearGradient id="webctf-hero-accent" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#35d7db"></stop>
+                  <stop offset="1" stop-color="#8c78ff"></stop>
+                </linearGradient>
+                <linearGradient id="webctf-hero-panel" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#102536"></stop>
+                  <stop offset="1" stop-color="#091420"></stop>
+                </linearGradient>
+                <filter id="webctf-hero-shadow" x="-25%" y="-25%" width="150%" height="150%">
+                  <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.3"></feDropShadow>
+                </filter>
+              </defs>
+
+              <rect width="1316" height="741" fill="url(#webctf-hero-background)"></rect>
+              <circle cx="120" cy="82" r="230" fill="#35d7db" opacity="0.055"></circle>
+              <circle cx="1200" cy="670" r="300" fill="#8c78ff" opacity="0.07"></circle>
+
+              <g font-family="Inter, Arial, sans-serif">
+                <g transform="translate(34 28)">
+                  <rect width="345" height="42" rx="21" fill="#0a3038" stroke="#35d7db" stroke-opacity="0.72"></rect>
+                  <circle cx="23" cy="21" r="6" fill="#35d7db"></circle>
+                  <text x="41" y="27" fill="#c8f5f5" font-size="14" font-weight="700" letter-spacing="1.6">SANITIZED RECONSTRUCTION</text>
+                </g>
+
+                <g transform="translate(34 91)" filter="url(#webctf-hero-shadow)">
+                  <rect width="224" height="606" rx="20" fill="#08131f" stroke="#29475b" stroke-width="2"></rect>
+                  <text x="24" y="43" fill="#f5f8fc" font-size="18" font-weight="800">Challenge workspace</text>
+                  <text x="24" y="68" fill="#7d98aa" font-size="12" letter-spacing="1.4">LOCAL EDUCATIONAL LAB</text>
+
+                  <g transform="translate(16 96)">
+                    <rect width="192" height="54" rx="12" fill="#10343d" stroke="#35d7db"></rect>
+                    <circle cx="27" cy="27" r="14" fill="#15505a"></circle>
+                    <path d="M 21 27 h12 M 27 21 v12" stroke="#68e5e6" stroke-width="2" stroke-linecap="round"></path>
+                    <text x="53" y="24" fill="#effcfc" font-size="14" font-weight="700">Brief</text>
+                    <text x="53" y="42" fill="#9bc3c8" font-size="11">Purpose + boundaries</text>
+                  </g>
+                  <g transform="translate(16 160)">
+                    <rect width="192" height="54" rx="12" fill="#0d1d2b" stroke="#29475b"></rect>
+                    <circle cx="27" cy="27" r="14" fill="#172b40"></circle>
+                    <path d="M 22 22 h10 v10 h-10 Z" fill="none" stroke="#6fa4c7" stroke-width="2"></path>
+                    <text x="53" y="24" fill="#dce8ef" font-size="14" font-weight="700">Observe</text>
+                    <text x="53" y="42" fill="#8099aa" font-size="11">Client-side surface</text>
+                  </g>
+                  <g transform="translate(16 224)">
+                    <rect width="192" height="54" rx="12" fill="#0d1d2b" stroke="#29475b"></rect>
+                    <circle cx="27" cy="27" r="14" fill="#172b40"></circle>
+                    <path d="M 20 31 L 26 23 L 32 31" fill="none" stroke="#6fa4c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <text x="53" y="24" fill="#dce8ef" font-size="14" font-weight="700">Analyze</text>
+                    <text x="53" y="42" fill="#8099aa" font-size="11">Trust boundary</text>
+                  </g>
+                  <g transform="translate(16 288)">
+                    <rect width="192" height="54" rx="12" fill="#0d1d2b" stroke="#29475b"></rect>
+                    <circle cx="27" cy="27" r="14" fill="#172b40"></circle>
+                    <path d="M 20 27 l5 5 l10 -11" fill="none" stroke="#6fa4c7" stroke-width="2" stroke-linecap="round"></path>
+                    <text x="53" y="24" fill="#dce8ef" font-size="14" font-weight="700">Validate</text>
+                    <text x="53" y="42" fill="#8099aa" font-size="11">Local challenge only</text>
+                  </g>
+
+                  <g transform="translate(16 482)">
+                    <rect width="192" height="96" rx="14" fill="#0b252d" stroke="#2d6f75"></rect>
+                    <text x="17" y="27" fill="#57dce0" font-size="11" font-weight="800" letter-spacing="1.2">DISCLOSURE GUARD</text>
+                    <text x="17" y="50" fill="#b5d3d6" font-size="12">Values withheld</text>
+                    <text x="17" y="69" fill="#b5d3d6" font-size="12">Routes withheld</text>
+                    <text x="17" y="88" fill="#b5d3d6" font-size="12">No reusable payload</text>
+                  </g>
+                </g>
+
+                <g transform="translate(278 91)" filter="url(#webctf-hero-shadow)">
+                  <rect width="568" height="606" rx="20" fill="url(#webctf-hero-panel)" stroke="#326077" stroke-width="2"></rect>
+                  <rect x="20" y="20" width="528" height="52" rx="12" fill="#07121d" stroke="#29475b"></rect>
+                  <circle cx="45" cy="46" r="9" fill="#35d7db"></circle>
+                  <text x="65" y="43" fill="#f3f8fb" font-size="15" font-weight="800">Challenge review surface</text>
+                  <text x="65" y="61" fill="#819eae" font-size="11">Non-operational source summary</text>
+
+                  <g transform="translate(20 92)">
+                    <rect width="528" height="310" rx="14" fill="#07111b" stroke="#213a4c"></rect>
+                    <g font-family="Consolas, monospace" font-size="13">
+                      <text x="22" y="36" fill="#47657a">01</text>
+                      <text x="60" y="36" fill="#8baabd">release_surface</text>
+                      <text x="205" y="36" fill="#56dadd">exposed test reference</text>
+                      <text x="22" y="73" fill="#47657a">02</text>
+                      <text x="60" y="73" fill="#8baabd">client_context</text>
+                      <text x="205" y="73" fill="#a899ff">request metadata</text>
+                      <text x="22" y="110" fill="#47657a">03</text>
+                      <text x="60" y="110" fill="#8baabd">server_check</text>
+                      <text x="205" y="110" fill="#ffbd61">insufficient authorization</text>
+                      <text x="22" y="147" fill="#47657a">04</text>
+                      <text x="60" y="147" fill="#8baabd">result</text>
+                      <text x="205" y="147" fill="#f1768e">protected branch reached</text>
+                    </g>
+
+                    <line x1="36" y1="182" x2="492" y2="182" stroke="#20394a"></line>
+                    <g transform="translate(26 208)">
+                      <rect width="476" height="70" rx="12" fill="#101a2a" stroke="#4e4a79"></rect>
+                      <circle cx="37" cy="35" r="17" fill="#282655"></circle>
+                      <path d="M 29 35 h16 M 37 27 v16" stroke="#aa9cff" stroke-width="2" stroke-linecap="round"></path>
+                      <text x="69" y="30" fill="#f0effb" font-size="14" font-weight="700">Sensitive challenge mechanics removed</text>
+                      <text x="69" y="51" fill="#aaa9c0" font-size="12">No endpoint, token, header, cookie or request body</text>
+                    </g>
+                  </g>
+
+                  <g transform="translate(20 425)">
+                    <text x="0" y="17" fill="#88a6b6" font-size="11" font-weight="700" letter-spacing="1.5">SECURITY LESSON</text>
+                    <rect y="34" width="528" height="118" rx="14" fill="#0a2028" stroke="#2f6870"></rect>
+                    <g transform="translate(22 56)">
+                      <path d="M 25 0 L 48 10 V 30 C 48 46 37 57 25 63 C 13 57 2 46 2 30 V 10 Z" fill="#123d45" stroke="#4cdbdd" stroke-width="2"></path>
+                      <path d="M 16 30 l7 7 l13 -16" fill="none" stroke="#6ce9e8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <text x="78" y="20" fill="#f0fafa" font-size="17" font-weight="800">Authorization belongs on the server</text>
+                      <text x="78" y="45" fill="#a4c0c4" font-size="13">Hidden controls and client values are not access policy.</text>
+                    </g>
+                  </g>
+                </g>
+
+                <g transform="translate(866 91)" filter="url(#webctf-hero-shadow)">
+                  <rect width="416" height="606" rx="20" fill="#0b1623" stroke="#3f536e" stroke-width="2"></rect>
+                  <rect width="416" height="52" rx="20" fill="#182536"></rect>
+                  <circle cx="24" cy="26" r="6" fill="#ff7065"></circle>
+                  <circle cx="44" cy="26" r="6" fill="#ffbd45"></circle>
+                  <circle cx="64" cy="26" r="6" fill="#3fce78"></circle>
+                  <rect x="98" y="15" width="232" height="23" rx="11" fill="#0d1925"></rect>
+                  <text x="214" y="31" text-anchor="middle" fill="#7892a5" font-size="10">local challenge &middot; details withheld</text>
+
+                  <g transform="translate(24 82)">
+                    <rect width="368" height="208" rx="16" fill="#f5f7fa"></rect>
+                    <circle cx="184" cy="53" r="27" fill="#d9e1e8"></circle>
+                    <circle cx="184" cy="47" r="9" fill="#263849"></circle>
+                    <path d="M 166 72 C 168 57 200 57 202 72" fill="#263849"></path>
+                    <text x="184" y="101" text-anchor="middle" fill="#152537" font-size="18" font-weight="800">Challenge sign-in</text>
+                    <rect x="55" y="120" width="258" height="31" rx="7" fill="#ffffff" stroke="#c5d0d9"></rect>
+                    <text x="70" y="140" fill="#7b8995" font-size="11">Credentials withheld</text>
+                    <rect x="121" y="164" width="126" height="28" rx="7" fill="#18243a"></rect>
+                    <text x="184" y="183" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">Enter workspace</text>
+                  </g>
+
+                  <g transform="translate(24 315)">
+                    <rect width="368" height="126" rx="15" fill="#08131f" stroke="#2e475d"></rect>
+                    <text x="18" y="27" fill="#88a6b6" font-size="11" font-weight="700" letter-spacing="1.4">OBSERVATION</text>
+                    <g transform="translate(18 45)">
+                      <rect width="332" height="62" rx="10" fill="#102131"></rect>
+                      <circle cx="25" cy="31" r="13" fill="#17384a"></circle>
+                      <path d="M 19 31 l4 4 l8 -9" fill="none" stroke="#54dce0" stroke-width="2" stroke-linecap="round"></path>
+                      <text x="49" y="26" fill="#edf5f8" font-size="13" font-weight="700">Access boundary observed</text>
+                      <text x="49" y="45" fill="#93a9b7" font-size="11">Challenge result withheld</text>
+                    </g>
+                  </g>
+
+                  <g transform="translate(24 466)">
+                    <rect width="368" height="104" rx="15" fill="#17192e" stroke="#57517d"></rect>
+                    <text x="18" y="28" fill="#b7afff" font-size="11" font-weight="700" letter-spacing="1.4">DOCUMENTATION</text>
+                    <text x="18" y="55" fill="#f1effd" font-size="15" font-weight="800">Manual walkthrough recorded</text>
+                    <text x="18" y="78" fill="#ada9c2" font-size="12">No live target or automated test claim</text>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <figcaption>A source-backed interface reconstruction. The real write-up and repository were used as evidence, while challenge routes, credentials, request values, and completion data remain withheld.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="webctf-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="webctf-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Problem &amp; motivation</p>
+              <p>Access-control mistakes can hide behind an ordinary interface. This local course project turns those mistakes into educational challenges so the security lesson can be observed without pointing at a real service.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>I authored and integrated one challenge across the static interface and Express server, worked through follow-up route changes, and produced a personal walkthrough documenting the completed local exercise.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>The five-person project serves static HTML, CSS, and JavaScript through Express and groups several deliberately vulnerable web exercises. Confirmed team topics include browser-cache handling, exposed development content, client-controlled request data, and unsafe information boundaries.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Core project capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-window-alt"></i></span>Present local challenge pages and clues through a browser-based interface.</li>
+            <li><span aria-hidden="true"><i class="bx bx-transfer-alt"></i></span>Connect client observations to intentionally weak Express request handling.</li>
+            <li><span aria-hidden="true"><i class="bx bx-notepad"></i></span>Document the security lesson with a manual walkthrough and sanitized evidence.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-search-alt" aria-hidden="true"></i> Challenge reasoning flow</span>
+            <small>High level &middot; non-operational</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <svg viewBox="0 0 920 520" width="920" height="520" style="display:block;width:100%;height:auto" role="img" aria-labelledby="webctf-feature-title webctf-feature-desc">
+              <title id="webctf-feature-title">High-level Web CTF challenge reasoning flow</title>
+              <desc id="webctf-feature-desc">Five steps move from reading the brief through observing the client, tracing the trust boundary, validating the issue locally, and documenting remediation. No exploit steps or reusable request data are shown.</desc>
+              <defs>
+                <linearGradient id="webctf-feature-background" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#06131f"></stop>
+                  <stop offset="1" stop-color="#12172c"></stop>
+                </linearGradient>
+                <linearGradient id="webctf-feature-line" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#35d7db"></stop>
+                  <stop offset="1" stop-color="#8c78ff"></stop>
+                </linearGradient>
+                <marker id="webctf-feature-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#55dce0"></path>
+                </marker>
+              </defs>
+
+              <rect x="8" y="8" width="904" height="504" rx="24" fill="url(#webctf-feature-background)" stroke="#29485c" stroke-width="2"></rect>
+              <g font-family="Inter, Arial, sans-serif">
+                <text x="38" y="49" fill="#91adbd" font-size="13" font-weight="700" letter-spacing="2">EDUCATIONAL WORKFLOW</text>
+
+                <g transform="translate(34 91)">
+                  <rect width="144" height="214" rx="18" fill="#0b2730" stroke="#38ced3" stroke-width="2"></rect>
+                  <circle cx="72" cy="55" r="29" fill="#12414a"></circle>
+                  <path d="M 58 48 h28 M 58 57 h22 M 58 66 h18" stroke="#64e1e2" stroke-width="3" stroke-linecap="round"></path>
+                  <text x="72" y="114" text-anchor="middle" fill="#f2fafa" font-size="17" font-weight="800">Read</text>
+                  <text x="72" y="139" text-anchor="middle" fill="#a0bec2" font-size="12">Purpose</text>
+                  <text x="72" y="158" text-anchor="middle" fill="#a0bec2" font-size="12">Scope</text>
+                  <text x="72" y="177" text-anchor="middle" fill="#a0bec2" font-size="12">Boundaries</text>
+                </g>
+
+                <line x1="185" y1="198" x2="208" y2="198" stroke="url(#webctf-feature-line)" stroke-width="4" marker-end="url(#webctf-feature-arrow)"></line>
+
+                <g transform="translate(219 91)">
+                  <rect width="144" height="214" rx="18" fill="#0e2235" stroke="#4d9bd4" stroke-width="2"></rect>
+                  <circle cx="72" cy="55" r="29" fill="#193a55"></circle>
+                  <circle cx="66" cy="50" r="12" fill="none" stroke="#78b9e8" stroke-width="3"></circle>
+                  <path d="M 75 60 l13 13" stroke="#78b9e8" stroke-width="4" stroke-linecap="round"></path>
+                  <text x="72" y="114" text-anchor="middle" fill="#f2f7fb" font-size="17" font-weight="800">Observe</text>
+                  <text x="72" y="139" text-anchor="middle" fill="#a1b7c7" font-size="12">Interface</text>
+                  <text x="72" y="158" text-anchor="middle" fill="#a1b7c7" font-size="12">Test surface</text>
+                  <text x="72" y="177" text-anchor="middle" fill="#a1b7c7" font-size="12">Behavior</text>
+                </g>
+
+                <line x1="370" y1="198" x2="393" y2="198" stroke="url(#webctf-feature-line)" stroke-width="4" marker-end="url(#webctf-feature-arrow)"></line>
+
+                <g transform="translate(404 91)">
+                  <rect width="144" height="214" rx="18" fill="#171f39" stroke="#7770d4" stroke-width="2"></rect>
+                  <circle cx="72" cy="55" r="29" fill="#2b2a58"></circle>
+                  <rect x="52" y="39" width="40" height="31" rx="6" fill="none" stroke="#a497ff" stroke-width="3"></rect>
+                  <path d="M 59 49 h26 M 59 58 h18" stroke="#a497ff" stroke-width="2" stroke-linecap="round"></path>
+                  <text x="72" y="114" text-anchor="middle" fill="#f4f2fd" font-size="17" font-weight="800">Trace</text>
+                  <text x="72" y="139" text-anchor="middle" fill="#b4afca" font-size="12">Client input</text>
+                  <text x="72" y="158" text-anchor="middle" fill="#b4afca" font-size="12">Server trust</text>
+                  <text x="72" y="177" text-anchor="middle" fill="#b4afca" font-size="12">Access boundary</text>
+                </g>
+
+                <line x1="555" y1="198" x2="578" y2="198" stroke="url(#webctf-feature-line)" stroke-width="4" marker-end="url(#webctf-feature-arrow)"></line>
+
+                <g transform="translate(589 91)">
+                  <rect width="144" height="214" rx="18" fill="#162535" stroke="#4ba6a6" stroke-width="2"></rect>
+                  <circle cx="72" cy="55" r="29" fill="#1d4145"></circle>
+                  <path d="M 55 56 l11 11 l23 -28" fill="none" stroke="#66d4d1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <text x="72" y="114" text-anchor="middle" fill="#f0fafa" font-size="17" font-weight="800">Validate</text>
+                  <text x="72" y="139" text-anchor="middle" fill="#a6c1c3" font-size="12">Local exercise</text>
+                  <text x="72" y="158" text-anchor="middle" fill="#a6c1c3" font-size="12">Boundary failure</text>
+                  <text x="72" y="177" text-anchor="middle" fill="#a6c1c3" font-size="12">Outcome withheld</text>
+                </g>
+
+                <line x1="740" y1="198" x2="763" y2="198" stroke="url(#webctf-feature-line)" stroke-width="4" marker-end="url(#webctf-feature-arrow)"></line>
+
+                <g transform="translate(774 91)">
+                  <rect width="112" height="214" rx="18" fill="#251d38" stroke="#8c78ff" stroke-width="2"></rect>
+                  <circle cx="56" cy="55" r="29" fill="#392b61"></circle>
+                  <path d="M 44 40 h24 v30 H 44 Z M 49 49 h14 M 49 57 h14 M 49 65 h9" fill="none" stroke="#b3a7ff" stroke-width="2" stroke-linecap="round"></path>
+                  <text x="56" y="114" text-anchor="middle" fill="#f5f2ff" font-size="16" font-weight="800">Document</text>
+                  <text x="56" y="139" text-anchor="middle" fill="#bfb4cf" font-size="11">Finding</text>
+                  <text x="56" y="158" text-anchor="middle" fill="#bfb4cf" font-size="11">Impact</text>
+                  <text x="56" y="177" text-anchor="middle" fill="#bfb4cf" font-size="11">Remediation</text>
+                </g>
+
+                <g transform="translate(34 348)">
+                  <rect width="852" height="112" rx="16" fill="#091622" stroke="#2a4355"></rect>
+                  <circle cx="42" cy="56" r="22" fill="#102f39"></circle>
+                  <path d="M 42 40 L 57 47 V 59 C 57 70 50 78 42 82 C 34 78 27 70 27 59 V 47 Z" fill="none" stroke="#4fd9dc" stroke-width="2"></path>
+                  <text x="83" y="45" fill="#edf8f9" font-size="16" font-weight="800">The diagram intentionally stops before execution detail</text>
+                  <text x="83" y="70" fill="#9fb7bd" font-size="13">It communicates the reasoning model without exposing a route, request body, credential, challenge value or reusable payload.</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <figcaption>The walkthrough is summarized as a defensive reasoning process rather than an exploitation recipe.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="webctf-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="webctf-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Interface</dt>
+              <dd>Static HTML, CSS, and browser JavaScript provide the challenge pages, test surface, and team-authored clues.</dd>
+            </div>
+            <div>
+              <dt>Server</dt>
+              <dd>Node.js and Express serve the interface and implement the intentionally weak request branches used by the local exercises.</dd>
+            </div>
+            <div>
+              <dt>State</dt>
+              <dd><code>cookie-parser</code>, browser Cache API usage, headers, queries, and form data create several deliberate trust-boundary lessons across the team project.</dd>
+            </div>
+            <div>
+              <dt>Analysis</dt>
+              <dd>My walkthrough uses Burp Suite to observe the local request flow. No captured request values or operational payloads are reproduced here.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="webctf-decision-title">
+            <p class="project-story__label">Challenge-design decision</p>
+            <h3 id="webctf-decision-title">Make the lesson cross the client/server boundary</h3>
+            <p>The authored scenario starts with evidence in an exposed test interface, but the meaningful failure sits in the server's acceptance of client-controlled debug context. That separation turns a hidden UI clue into a lesson about enforcing authorization on the server.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Trust boundary &amp; remediation</span>
+            <small>Sanitized architecture</small>
+          </div>
+
+          <div class="project-story-system">
+            <div class="project-story-system__lane">
+              <p>Educational vulnerable path</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-window-alt" aria-hidden="true"></i>
+                  <strong>Test interface</strong>
+                  <span>Exposes a client-side clue</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-transfer-alt" aria-hidden="true"></i>
+                  <strong>Client context</strong>
+                  <span>Request data crosses trust boundary</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-error-circle" aria-hidden="true"></i>
+                  <strong>Weak server check</strong>
+                  <span>Protected branch can be reached</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-story-system__divider" aria-hidden="true"><span>Defensive context below &middot; not implemented in the challenge repository</span></div>
+
+            <div class="project-story-system__lane">
+              <p>Recommended hardening path</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-code-block" aria-hidden="true"></i>
+                  <strong>Release cleanup</strong>
+                  <span>Remove test and debug surfaces</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-user-check" aria-hidden="true"></i>
+                  <strong>Server identity</strong>
+                  <span>Use validated session state</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-shield-quarter" aria-hidden="true"></i>
+                  <strong>Policy decision</strong>
+                  <span>Deny unauthorized access</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The upper lane summarizes the intentional challenge weakness. The lower lane is remediation guidance, not a claim about code already implemented in the repository.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="webctf-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="webctf-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>The exercise needed to be discoverable through careful observation while still teaching a real client/server trust failure instead of ending at a hidden visual control.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How it was addressed</p>
+              <p>I connected an exposed test surface to an intentionally weak Express branch, integrated the related pages into the evolving team application, and documented the reasoning in a personal walkthrough.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Specific takeaway</p>
+              <p>Client-side visibility is never authorization. Sensitive branches need server-side identity and policy checks even when their controls or routes are absent from the normal interface.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>Run each challenge in a disposable environment, generate challenge values per session, remove debug surfaces from release builds, and add negative authorization tests for the remediated version.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-file-find" aria-hidden="true"></i> Contribution evidence</span>
+            <small>Repository history &middot; sanitized</small>
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>SOURCE</code><span>Client + Express challenge path</span><small>Authored changes span the interface, supporting scripts, routes, and local challenge flow</small></div>
+            <div><code>HISTORY</code><span>Integration follow-ups recorded</span><small>Subsequent commits adjust the server and connected challenge pages</small></div>
+            <div><code>WRITEUP</code><span>Personal walkthrough committed</span><small>The documented solve includes four embedded images; sensitive request details remain excluded here</small></div>
+            <div><code>REVIEW</code><span>Manual completion documented</span><small>The evidence supports the educational outcome without publishing the challenge answer</small></div>
+            <div><code>TESTS</code><span>No automated test suite</span><small>The repository's test command reports that no test is configured</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> Challenge values, credentials, debug metadata, cookies, endpoints, request bodies, and raw interception captures are intentionally omitted.</p>
+          <figcaption>This panel separates source and walkthrough evidence from claims the repository cannot support: there is no live deployment, automated PASS result, or completed remediation suite.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/vacation-finder/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Vacation Finder</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/r-internet-analysis/" rel="next">
+          <span><small>Next project</small><strong>R Internet Analysis</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." required>
+        <button type="submit" id="chat-send">&#10148;</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button">&#10006;</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

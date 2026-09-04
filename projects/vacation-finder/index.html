@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacation Finder | Israel Odunaiya</title>
+  <meta name="description" content="Vacation Finder case study: a collaborative Flutter and Dart university prototype combining interactive maps, place details, directions, localization, and Firestore-backed post workflows.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/avatar.svg">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="vacation-finder">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class='bx bx-menu' aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="vacation-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">Vacation Finder</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">Mobile &middot; Travel Prototype</p>
+            <p class="project-status project-status--documented">
+              <span aria-hidden="true"></span>
+              Documented
+            </p>
+          </div>
+
+          <h1 id="vacation-project-title">Vacation Finder</h1>
+          <p class="project-story__summary">
+            Vacation Finder is a collaborative university Flutter and Dart prototype that brings interactive maps,
+            place details, directions, and travel-post data into one mobile project. I worked as a mobile developer
+            on Firestore-backed post and location flows, post integration, English/French localization,
+            and integration issues across the shared codebase.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies">
+            <li><img src="../../assets/flutter-original.svg" alt="" width="18" height="18">Flutter</li>
+            <li><img src="../../assets/dart-original.svg" alt="" width="18" height="18">Dart</li>
+            <li><img src="../../assets/firebase-original.svg" alt="" width="18" height="18">Cloud Firestore</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-map"></i></span>OpenStreetMap</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://github.com/Odunsegun/Vacation-Finder-App" target="_blank" rel="noopener noreferrer" aria-label="View the Vacation Finder repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Mobile developer</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>University team prototype</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Post &amp; location integration</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>Vacation Finder &middot; Interface map</span>
+              <i class="bx bx-mobile-alt"></i>
+            </div>
+            <svg viewBox="0 0 1316 741" width="1316" height="741" style="display:block;width:100%;height:auto" role="img" aria-labelledby="vacation-hero-visual-title vacation-hero-visual-desc">
+              <title id="vacation-hero-visual-title">Vacation Finder source-backed interface illustration</title>
+              <desc id="vacation-hero-visual-desc">A code-native mobile workspace combining OpenStreetMap rendering, place and direction context, travel post data, Cloud Firestore, and partial English and French localization.</desc>
+              <defs>
+                <linearGradient id="vacation-hero-background" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#071723"></stop>
+                  <stop offset="0.55" stop-color="#0b2130"></stop>
+                  <stop offset="1" stop-color="#15172f"></stop>
+                </linearGradient>
+                <linearGradient id="vacation-hero-phone" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#132b3b"></stop>
+                  <stop offset="1" stop-color="#0a1524"></stop>
+                </linearGradient>
+                <linearGradient id="vacation-hero-accent" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#3dd7dd"></stop>
+                  <stop offset="1" stop-color="#8d78ff"></stop>
+                </linearGradient>
+                <filter id="vacation-hero-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.32"></feDropShadow>
+                </filter>
+                <marker id="vacation-hero-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#55dbe6"></path>
+                </marker>
+              </defs>
+
+              <rect width="1316" height="741" fill="url(#vacation-hero-background)"></rect>
+              <circle cx="117" cy="91" r="230" fill="#31cbd5" opacity="0.06"></circle>
+              <circle cx="1210" cy="638" r="280" fill="#8d78ff" opacity="0.08"></circle>
+
+              <g font-family="Inter, Arial, sans-serif">
+                <g transform="translate(42 34)">
+                  <rect width="346" height="42" rx="21" fill="#0b2d38" stroke="#3dd7dd" stroke-opacity="0.65"></rect>
+                  <circle cx="23" cy="21" r="6" fill="#3dd7dd"></circle>
+                  <text x="41" y="27" fill="#bdeff1" font-size="14" font-weight="700" letter-spacing="1.7">SOURCE-BACKED ILLUSTRATION</text>
+                </g>
+
+                <g transform="translate(42 99)" filter="url(#vacation-hero-shadow)">
+                  <rect width="773" height="590" rx="28" fill="#0a1b28" stroke="#2b5369" stroke-width="2"></rect>
+                  <rect x="24" y="24" width="725" height="542" rx="20" fill="#102a33"></rect>
+
+                  <path d="M 34 177 C 146 111 198 219 303 167 S 489 77 594 139 S 694 164 738 121" fill="none" stroke="#6d93a1" stroke-width="13" opacity="0.27"></path>
+                  <path d="M 53 476 C 154 381 221 439 325 382 S 496 299 565 347 S 682 452 736 391" fill="none" stroke="#728aa8" stroke-width="9" opacity="0.25"></path>
+                  <path d="M 107 42 C 139 144 107 237 173 319 S 277 447 264 553" fill="none" stroke="#5b7f8c" stroke-width="7" opacity="0.28"></path>
+                  <path d="M 447 37 C 414 147 466 211 435 302 S 367 441 402 558" fill="none" stroke="#68808f" stroke-width="7" opacity="0.24"></path>
+                  <path d="M 625 33 C 576 132 634 232 611 317 S 564 446 640 555" fill="none" stroke="#7b739c" stroke-width="8" opacity="0.25"></path>
+
+                  <path d="M 143 423 C 235 338 355 354 444 255 S 584 172 661 215" fill="none" stroke="url(#vacation-hero-accent)" stroke-width="6" stroke-linecap="round" stroke-dasharray="13 12" marker-end="url(#vacation-hero-arrow)"></path>
+
+                  <g transform="translate(120 391)">
+                    <path d="M 23 0 C 10 0 0 10 0 23 C 0 40 23 65 23 65 C 23 65 46 40 46 23 C 46 10 36 0 23 0 Z" fill="#8d78ff"></path>
+                    <circle cx="23" cy="23" r="8" fill="#f7f8ff"></circle>
+                  </g>
+                  <g transform="translate(639 182)">
+                    <path d="M 23 0 C 10 0 0 10 0 23 C 0 40 23 65 23 65 C 23 65 46 40 46 23 C 46 10 36 0 23 0 Z" fill="#3dd7dd"></path>
+                    <circle cx="23" cy="23" r="8" fill="#071723"></circle>
+                  </g>
+
+                  <g transform="translate(48 48)">
+                    <rect width="246" height="62" rx="15" fill="#07141f" stroke="#2f5c70"></rect>
+                    <circle cx="34" cy="31" r="16" fill="#153b47"></circle>
+                    <path d="M 26 31 h16 M 34 23 v16" stroke="#55dbe6" stroke-width="2" stroke-linecap="round"></path>
+                    <text x="61" y="27" fill="#f4f7fb" font-size="16" font-weight="700">Map + place context</text>
+                    <text x="61" y="47" fill="#9db5c2" font-size="13">flutter_map &middot; OpenStreetMap</text>
+                  </g>
+
+                  <g transform="translate(460 457)">
+                    <rect width="252" height="75" rx="16" fill="#07141f" stroke="#4d4c78"></rect>
+                    <text x="22" y="28" fill="#f4f7fb" font-size="16" font-weight="700">Directions context</text>
+                    <text x="22" y="51" fill="#aab2cd" font-size="13">Service data enters the app flow</text>
+                  </g>
+                </g>
+
+                <g transform="translate(850 48)" filter="url(#vacation-hero-shadow)">
+                  <rect width="422" height="641" rx="42" fill="#050b13" stroke="#59647f" stroke-width="3"></rect>
+                  <rect x="18" y="18" width="386" height="605" rx="30" fill="url(#vacation-hero-phone)"></rect>
+                  <rect x="149" y="8" width="124" height="22" rx="11" fill="#050b13"></rect>
+
+                  <text x="42" y="72" fill="#f7f9fc" font-size="25" font-weight="800">Vacation Finder</text>
+                  <g transform="translate(294 45)">
+                    <rect width="43" height="31" rx="15" fill="#123943" stroke="#3dd7dd"></rect>
+                    <text x="21.5" y="21" text-anchor="middle" fill="#c8f4f5" font-size="12" font-weight="700">EN</text>
+                    <rect x="48" width="43" height="31" rx="15" fill="#1b203b" stroke="#766de1"></rect>
+                    <text x="69.5" y="21" text-anchor="middle" fill="#dcd9ff" font-size="12" font-weight="700">FR</text>
+                  </g>
+
+                  <g transform="translate(38 106)">
+                    <rect width="346" height="132" rx="20" fill="#0a1724" stroke="#2c566b"></rect>
+                    <rect x="18" y="18" width="102" height="96" rx="16" fill="#11323b"></rect>
+                    <path d="M 43 86 C 57 63 73 72 86 50 S 105 42 109 34" fill="none" stroke="#4fd8df" stroke-width="4" stroke-linecap="round"></path>
+                    <circle cx="47" cy="82" r="6" fill="#8d78ff"></circle>
+                    <circle cx="108" cy="34" r="6" fill="#3dd7dd"></circle>
+                    <text x="141" y="48" fill="#f5f7fb" font-size="17" font-weight="700">Place details</text>
+                    <text x="141" y="74" fill="#9bb1c2" font-size="13">Places service data</text>
+                    <text x="141" y="98" fill="#9bb1c2" font-size="13">Location context</text>
+                  </g>
+
+                  <g transform="translate(38 258)">
+                    <rect width="346" height="132" rx="20" fill="#0a1724" stroke="#4c4c78"></rect>
+                    <circle cx="58" cy="66" r="30" fill="#20234a"></circle>
+                    <path d="M 47 66 h22 M 58 55 v22" stroke="#9a8cff" stroke-width="4" stroke-linecap="round"></path>
+                    <text x="106" y="50" fill="#f5f7fb" font-size="17" font-weight="700">Travel post</text>
+                    <text x="106" y="76" fill="#abb1c9" font-size="13">Post + location integration</text>
+                    <text x="106" y="100" fill="#abb1c9" font-size="13">Shared project data flow</text>
+                  </g>
+
+                  <g transform="translate(38 410)">
+                    <rect width="346" height="132" rx="20" fill="#0a1724" stroke="#725d45"></rect>
+                    <path d="M 29 42 C 29 29 49 20 70 20 C 91 20 111 29 111 42 V 91 C 111 104 91 113 70 113 C 49 113 29 104 29 91 Z" fill="#3a2f20" stroke="#f4bc45" stroke-width="2"></path>
+                    <ellipse cx="70" cy="42" rx="41" ry="22" fill="#624c24" stroke="#f4bc45" stroke-width="2"></ellipse>
+                    <text x="132" y="54" fill="#f5f7fb" font-size="17" font-weight="700">Cloud Firestore</text>
+                    <text x="132" y="80" fill="#b8b0a0" font-size="13">Post/location records</text>
+                  </g>
+
+                  <rect x="133" y="582" width="156" height="7" rx="3.5" fill="#6d768c"></rect>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <figcaption>A source-backed, code-native illustration of the repository's map, place, post, Firestore, and localization surfaces&mdash;not a screenshot or runtime capture.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="vacation-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="vacation-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Problem &amp; motivation</p>
+              <p>Travel information often arrives through separate map, place, route, and post data sources. The prototype explores how those inputs can meet in one mobile project without presenting the result as a deployed product.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>As a mobile developer on the university team, I handled Firestore-backed post and location flows, integrated the post work, contributed English/French localization, and worked on integration issues across shared code.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>The repository combines Flutter screens with OpenStreetMap rendering, device location, Google place/detail/direction services, cloud-backed post data, and local persistence dependencies. Service configuration is still required before treating those paths as runtime-verified.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Core project capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-map-alt"></i></span>Render map context with <code>flutter_map</code> and OpenStreetMap, with Geolocator available for device position.</li>
+            <li><span aria-hidden="true"><i class="bx bx-map-pin"></i></span>Bring Places, place-detail, and direction service data into the Flutter project.</li>
+            <li><span aria-hidden="true"><i class="bx bx-message-square-detail"></i></span>Connect post and location data to Firestore while contributing partial English/French localization.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-merge" aria-hidden="true"></i> Post + location integration</span>
+            <small>Source-backed flow</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <svg viewBox="0 0 920 520" width="920" height="520" style="display:block;width:100%;height:auto" role="img" aria-labelledby="vacation-feature-title vacation-feature-desc">
+              <title id="vacation-feature-title">Vacation Finder post and location integration</title>
+              <desc id="vacation-feature-desc">Location context and external place information enter the Flutter integration layer before post and location records are represented in Cloud Firestore, with English and French resources and local persistence alongside the main flow.</desc>
+              <defs>
+                <linearGradient id="vacation-feature-background" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#071522"></stop>
+                  <stop offset="1" stop-color="#13182e"></stop>
+                </linearGradient>
+                <linearGradient id="vacation-feature-line" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#42d5de"></stop>
+                  <stop offset="1" stop-color="#8f7dff"></stop>
+                </linearGradient>
+                <marker id="vacation-feature-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#59dce4"></path>
+                </marker>
+              </defs>
+
+              <rect x="8" y="8" width="904" height="504" rx="24" fill="url(#vacation-feature-background)" stroke="#29465d" stroke-width="2"></rect>
+              <g font-family="Inter, Arial, sans-serif">
+                <text x="40" y="52" fill="#9cb5c7" font-size="14" font-weight="700" letter-spacing="2">IMPLEMENTED INTEGRATION SURFACES</text>
+
+                <g transform="translate(38 88)">
+                  <rect width="184" height="190" rx="18" fill="#0b2630" stroke="#3ed2da" stroke-width="2"></rect>
+                  <circle cx="92" cy="53" r="28" fill="#123f48"></circle>
+                  <path d="M 92 34 C 81 34 73 42 73 53 C 73 67 92 86 92 86 C 92 86 111 67 111 53 C 111 42 103 34 92 34 Z" fill="none" stroke="#5be1e6" stroke-width="3"></path>
+                  <circle cx="92" cy="53" r="5" fill="#5be1e6"></circle>
+                  <text x="92" y="112" text-anchor="middle" fill="#f4f7fb" font-size="18" font-weight="700">Location context</text>
+                  <text x="92" y="138" text-anchor="middle" fill="#9eb7c3" font-size="13">Device position</text>
+                  <text x="92" y="160" text-anchor="middle" fill="#9eb7c3" font-size="13">Map interaction</text>
+                </g>
+
+                <line x1="235" y1="183" x2="270" y2="183" stroke="url(#vacation-feature-line)" stroke-width="4" marker-end="url(#vacation-feature-arrow)"></line>
+
+                <g transform="translate(282 88)">
+                  <rect width="184" height="190" rx="18" fill="#10243a" stroke="#579fe8" stroke-width="2"></rect>
+                  <circle cx="92" cy="53" r="28" fill="#193552"></circle>
+                  <path d="M 75 58 C 82 43 96 39 109 47 M 75 58 C 83 66 95 70 109 62" fill="none" stroke="#74b7f5" stroke-width="3" stroke-linecap="round"></path>
+                  <circle cx="74" cy="58" r="4" fill="#74b7f5"></circle>
+                  <circle cx="110" cy="46" r="4" fill="#74b7f5"></circle>
+                  <circle cx="110" cy="63" r="4" fill="#74b7f5"></circle>
+                  <text x="92" y="112" text-anchor="middle" fill="#f4f7fb" font-size="18" font-weight="700">Google services</text>
+                  <text x="92" y="138" text-anchor="middle" fill="#a8bbcd" font-size="13">Places + details</text>
+                  <text x="92" y="160" text-anchor="middle" fill="#a8bbcd" font-size="13">Directions data</text>
+                </g>
+
+                <line x1="479" y1="183" x2="514" y2="183" stroke="url(#vacation-feature-line)" stroke-width="4" marker-end="url(#vacation-feature-arrow)"></line>
+
+                <g transform="translate(526 88)">
+                  <rect width="184" height="190" rx="18" fill="#1d203b" stroke="#8f7dff" stroke-width="2"></rect>
+                  <circle cx="92" cy="53" r="28" fill="#302c5c"></circle>
+                  <path d="M 76 42 h32 v25 H 92 l-11 9 v-9 h-5 Z" fill="none" stroke="#a89cff" stroke-width="3" stroke-linejoin="round"></path>
+                  <text x="92" y="112" text-anchor="middle" fill="#f4f7fb" font-size="18" font-weight="700">Flutter integration</text>
+                  <text x="92" y="138" text-anchor="middle" fill="#bbb6d4" font-size="13">Post data mapping</text>
+                  <text x="92" y="160" text-anchor="middle" fill="#bbb6d4" font-size="13">Shared app code</text>
+                </g>
+
+                <line x1="723" y1="183" x2="758" y2="183" stroke="url(#vacation-feature-line)" stroke-width="4" marker-end="url(#vacation-feature-arrow)"></line>
+
+                <g transform="translate(770 88)">
+                  <rect width="112" height="190" rx="18" fill="#322718" stroke="#e9ad3a" stroke-width="2"></rect>
+                  <ellipse cx="56" cy="50" rx="29" ry="15" fill="#665022" stroke="#f2bc49" stroke-width="2"></ellipse>
+                  <path d="M 27 50 V 82 C 27 90 40 97 56 97 C 72 97 85 90 85 82 V 50" fill="#49391d" stroke="#f2bc49" stroke-width="2"></path>
+                  <text x="56" y="124" text-anchor="middle" fill="#f7f4ed" font-size="16" font-weight="700">Cloud</text>
+                  <text x="56" y="145" text-anchor="middle" fill="#f7f4ed" font-size="16" font-weight="700">Firestore</text>
+                  <text x="56" y="170" text-anchor="middle" fill="#c8bca5" font-size="11">Post/location data</text>
+                </g>
+
+                <g transform="translate(38 321)">
+                  <rect width="844" height="142" rx="18" fill="#091523" stroke="#2a4056"></rect>
+                  <text x="25" y="32" fill="#93aabd" font-size="13" font-weight="700" letter-spacing="1.5">ADJACENT PROJECT DEPENDENCIES</text>
+
+                  <g transform="translate(24 53)">
+                    <rect width="238" height="63" rx="13" fill="#10262f" stroke="#2d6571"></rect>
+                    <text x="20" y="27" fill="#eaf8f8" font-size="15" font-weight="700">EN / FR resources</text>
+                    <text x="20" y="48" fill="#9cb4bd" font-size="12">Partial localization coverage</text>
+                  </g>
+                  <g transform="translate(303 53)">
+                    <rect width="238" height="63" rx="13" fill="#172039" stroke="#485980"></rect>
+                    <text x="20" y="27" fill="#f0f3fb" font-size="15" font-weight="700">SharedPreferences</text>
+                    <text x="20" y="48" fill="#abb4cb" font-size="12">Local persistence dependency</text>
+                  </g>
+                  <g transform="translate(582 53)">
+                    <rect width="238" height="63" rx="13" fill="#211d37" stroke="#605281"></rect>
+                    <text x="20" y="27" fill="#f2effc" font-size="15" font-weight="700">SQLite</text>
+                    <text x="20" y="48" fill="#b7adc9" font-size="12">Local data dependency</text>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <figcaption>This diagram summarizes confirmed repository integrations and dependencies. It does not claim that external services were configured or exercised during this portfolio review.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="vacation-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="vacation-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Interface</dt>
+              <dd>Flutter and Dart form the shared mobile prototype in which the post integration and cross-screen fixes were made.</dd>
+            </div>
+            <div>
+              <dt>Mapping</dt>
+              <dd><code>flutter_map</code> renders OpenStreetMap tiles, while Geolocator is included for device-location context.</dd>
+            </div>
+            <div>
+              <dt>Services</dt>
+              <dd>Google Places, place details, and directions provide external location and route data; their runtime behavior depends on valid local configuration.</dd>
+            </div>
+            <div>
+              <dt>Persistence</dt>
+              <dd>Cloud Firestore supports post and location data paths, with SharedPreferences and SQLite also present as local persistence dependencies.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="vacation-decision-title">
+            <p class="project-story__label">Integration decision</p>
+            <h3 id="vacation-decision-title">Work through the shared data paths</h3>
+            <p>Rather than isolate the post work as a separate demo, I connected it to the collaborative Flutter codebase and worked through the localization and integration points around it. Because cloud and local persistence coexist, this case study names each dependency without implying one unified storage model.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Mobile integration map</span>
+            <small>Confirmed source paths</small>
+          </div>
+
+          <div class="project-story-system">
+            <div class="project-story-system__lane">
+              <p>Map context</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-current-location" aria-hidden="true"></i>
+                  <strong>Geolocator</strong>
+                  <span>Device position context</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/flutter-original.svg" alt="" width="32" height="32">
+                  <strong>flutter_map</strong>
+                  <span>Flutter map layer</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-map-alt" aria-hidden="true"></i>
+                  <strong>OpenStreetMap</strong>
+                  <span>Rendered map tiles</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-story-system__divider" aria-hidden="true"><span>Confirmed dependencies meet in the Flutter project</span></div>
+
+            <div class="project-story-system__lane">
+              <p>Place &amp; post data</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-map-pin" aria-hidden="true"></i>
+                  <strong>Google services</strong>
+                  <span>Places, details &amp; directions</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/dart-original.svg" alt="" width="32" height="32">
+                  <strong>Post integration</strong>
+                  <span>Dart data flow</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/firebase-original.svg" alt="" width="32" height="32">
+                  <strong>Cloud Firestore</strong>
+                  <span>Post/location records</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>A simplified map of confirmed code dependencies. The arrows organize source relationships; they do not represent a deployed or runtime-verified end-to-end session.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="vacation-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="vacation-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>Post and location work had to fit a shared mobile codebase that combined external map services, Firestore, local persistence, and localization resources.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How it was addressed</p>
+              <p>I concentrated on the Firestore-backed post/location flow, integrated the post work with the team project, contributed to English/French localization coverage, and worked on issues where those pieces met.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Specific takeaway</p>
+              <p>Mobile integrations are easier to reason about when external configuration, cloud data, local persistence, and user-facing language resources have clear boundaries.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>Move service configuration out of source, replace the custom credential flow with a maintained authentication solution, consolidate post persistence, complete localization coverage, and replace the stale template test with project-relevant automated tests.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-file-find" aria-hidden="true"></i> Repository evidence map</span>
+            <small>Source, not test output</small>
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>MAP</code><span>flutter_map + OpenStreetMap</span><small>Map-rendering dependencies represented in the mobile source</small></div>
+            <div><code>API</code><span>Places + details + directions</span><small>External location-service integrations present in the project</small></div>
+            <div><code>POST</code><span>Firestore-backed location data</span><small>Post and location flow handled during the collaboration</small></div>
+            <div><code>I18N</code><span>English + French resources</span><small>Localization work is present, with incomplete coverage acknowledged</small></div>
+            <div><code>LOCAL</code><span>SharedPreferences + SQLite</span><small>Local persistence dependencies coexist with the cloud path</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> No screenshot, deployment, automated test result, or runtime verification is presented. This panel summarizes repository code and declared dependencies only.</p>
+          <figcaption>The evidence view identifies implemented source surfaces without inventing destinations, user activity, recommendations, test coverage, or product outcomes.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/hotel-management-system/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Hotel Management System</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/web-ctf/" rel="next">
+          <span><small>Next project</small><strong>Web CTF</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." required>
+        <button type="submit" id="chat-send">&#10148;</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button">&#10006;</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

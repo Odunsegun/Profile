@@ -1,0 +1,453 @@
+/* Stop 7 — Homepage credentials orbit */
+
+@media (min-width: 900px) {
+  #certifications.home-chapter {
+    min-height: 100svh;
+    max-height: 100svh;
+    padding-top: calc(var(--top-nav-height) + 16px);
+    padding-bottom: 2.4rem;
+  }
+}
+
+.credentials-chapter {
+  width: 100%;
+  max-width: min(1100px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.25rem, 2.4vh, 2rem);
+  min-height: calc(100svh - var(--top-nav-height) - 56px);
+}
+
+.credentials-header {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.credentials-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+body.lightmode .credentials-kicker {
+  color: var(--foreground);
+}
+
+.credentials-kicker__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--shell-accent, #00d8e7);
+  box-shadow: 0 0 10px var(--shell-accent, #00d8e7);
+  flex-shrink: 0;
+}
+
+.credentials-title {
+  font-size: clamp(3.6rem, 5.5vw, 5.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0;
+  color: #e8eef4;
+  background: linear-gradient(180deg, #ffffff 0%, #c5cdd6 55%, #9aa3ad 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.lightmode .credentials-title {
+  background: linear-gradient(180deg, #1a2230 0%, #4a5568 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.credentials-orbit {
+  --orbit-cx: 50%;
+  --orbit-cy: 50%;
+  --orbit-rx: 41%;
+  --orbit-ry: 35%;
+  position: relative;
+  flex: 1 1 auto;
+  width: min(760px, 100%);
+  max-height: min(50svh, 420px);
+  aspect-ratio: 8 / 5;
+  height: auto;
+  margin: 0 auto;
+}
+
+.credentials-orbit__rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.credentials-orbit__ellipse {
+  fill: none;
+  stroke: rgba(0, 216, 231, 0.22);
+  stroke-width: 1;
+  stroke-dasharray: 6 10;
+}
+
+.credentials-orbit__ellipse--inner {
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-dasharray: 4 8;
+}
+
+.credentials-orbit__node {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--shell-accent, #00d8e7);
+  box-shadow: 0 0 8px rgba(0, 216, 231, 0.6);
+  z-index: 1;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.credentials-orbit__node--1 {
+  top: calc(var(--orbit-cy) - var(--orbit-ry));
+  left: var(--orbit-cx);
+}
+
+.credentials-orbit__node--2 {
+  top: calc(var(--orbit-cy) - 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) - 0.866 * var(--orbit-rx));
+}
+
+.credentials-orbit__node--3 {
+  top: calc(var(--orbit-cy) - 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) + 0.866 * var(--orbit-rx));
+}
+
+.credentials-orbit__node--4 {
+  top: calc(var(--orbit-cy) + 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) - 0.866 * var(--orbit-rx));
+}
+
+.credentials-orbit__node--5 {
+  top: calc(var(--orbit-cy) + 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) + 0.866 * var(--orbit-rx));
+}
+
+.credentials-orbit__node--6 {
+  top: calc(var(--orbit-cy) + var(--orbit-ry));
+  left: var(--orbit-cx);
+}
+
+.credential-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  width: 102px;
+  min-height: 0;
+  padding: 0.55rem 0.4rem 0.45rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 216, 231, 0.45);
+  background: rgba(8, 18, 28, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 14px rgba(0, 216, 231, 0.12),
+    inset 0 0 18px rgba(0, 216, 231, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.credential-card:hover,
+.credential-card:focus-within {
+  z-index: 4;
+  border-color: rgba(0, 216, 231, 0.75);
+  box-shadow:
+    0 0 22px rgba(0, 216, 231, 0.22),
+    inset 0 0 18px rgba(0, 216, 231, 0.06);
+  outline: none;
+}
+
+body.lightmode .credential-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(10, 174, 208, 0.35);
+}
+
+.credentials-orbit__card {
+  translate: -50% -50%;
+}
+
+.credentials-orbit__card--1 {
+  top: calc(var(--orbit-cy) - 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) - 0.866 * var(--orbit-rx));
+}
+
+.credentials-orbit__card--2 {
+  top: calc(var(--orbit-cy) - 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) + 0.866 * var(--orbit-rx));
+}
+
+.credentials-orbit__card--3 {
+  top: calc(var(--orbit-cy) - var(--orbit-ry));
+  left: var(--orbit-cx);
+}
+
+.credentials-orbit__card--4 {
+  top: calc(var(--orbit-cy) + var(--orbit-ry));
+  left: var(--orbit-cx);
+}
+
+.credentials-orbit__card--5 {
+  top: calc(var(--orbit-cy) + 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) - 0.866 * var(--orbit-rx));
+}
+
+.credentials-orbit__card--6 {
+  top: calc(var(--orbit-cy) + 0.5 * var(--orbit-ry));
+  left: calc(var(--orbit-cx) + 0.866 * var(--orbit-rx));
+}
+
+.credential-card--locked {
+  border-color: rgba(151, 173, 200, 0.22);
+  box-shadow: none;
+  opacity: 0.78;
+}
+
+.credential-card--locked:hover,
+.credential-card--locked:focus-within {
+  border-color: rgba(151, 173, 200, 0.4);
+  box-shadow: 0 0 12px rgba(151, 173, 200, 0.08);
+}
+
+.credential-card--locked .credential-card__shield {
+  background: linear-gradient(160deg, #6b7280 0%, #9ca3af 100%);
+  box-shadow: none;
+  filter: grayscale(1) brightness(0.85);
+}
+
+.credential-card--locked .credential-card__status {
+  color: rgba(200, 210, 220, 0.7);
+}
+
+body.lightmode .credential-card--locked {
+  border-color: rgba(62, 73, 126, 0.22);
+}
+
+body.lightmode .credential-card--locked .credential-card__status {
+  color: rgba(62, 73, 126, 0.7);
+}
+
+.credential-card__badge {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.credential-card__lock {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.credential-card--locked .credential-card__code {
+  font-size: 1.05rem;
+}
+
+.credential-card__shield {
+  display: block;
+  width: 24px;
+  height: 28px;
+  background: linear-gradient(
+    160deg,
+    var(--shell-violet, #8069ff) 0%,
+    #5b8cff 45%,
+    var(--shell-accent, #00d8e7) 100%
+  );
+  clip-path: polygon(50% 0%, 100% 18%, 100% 62%, 50% 100%, 0% 62%, 0% 18%);
+  box-shadow: 0 3px 10px rgba(128, 105, 255, 0.35);
+}
+
+.credential-card__code {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.credential-card__name {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.4rem);
+  translate: -50% 0;
+  width: max-content;
+  max-width: 16rem;
+  margin: 0;
+  padding: 0.4rem 0.65rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  font-weight: 500;
+  text-align: center;
+  color: var(--foreground);
+  background: rgba(8, 18, 28, 0.94);
+  border: 1px solid rgba(0, 216, 231, 0.28);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+body.lightmode .credential-card__name {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.credential-card:hover .credential-card__name,
+.credential-card:focus-within .credential-card__name {
+  opacity: 1;
+  visibility: visible;
+}
+
+.credentials-orbit__card--4 .credential-card__name {
+  top: auto;
+  bottom: calc(100% + 0.4rem);
+}
+
+.credential-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--shell-accent, #00d8e7);
+}
+
+.credential-card__status i {
+  font-size: 1rem;
+}
+
+.credentials-cta {
+  text-align: center;
+  margin-top: 0;
+  flex-shrink: 0;
+  padding-top: 0.5rem;
+}
+
+.credentials-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: min(100%, 300px);
+  padding: 0.6rem 1.8rem;
+  border-radius: 999px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #5b8cff 0%, var(--shell-accent, #00d8e7) 100%);
+  border: 1px solid transparent;
+  box-shadow: 0 8px 28px rgba(0, 216, 231, 0.2);
+  transition: filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.credentials-cta a:hover,
+.credentials-cta a:focus-visible {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 32px rgba(0, 216, 231, 0.28);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  #certifications.home-chapter {
+    max-height: none;
+  }
+
+  .credentials-chapter {
+    min-height: 0;
+    justify-content: flex-start;
+  }
+
+  .credentials-orbit {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    padding: 0 0.25rem;
+  }
+
+  .credentials-orbit__rings,
+  .credentials-orbit__node {
+    display: none;
+  }
+
+  .credential-card,
+  .credentials-orbit__card--1,
+  .credentials-orbit__card--2,
+  .credentials-orbit__card--3,
+  .credentials-orbit__card--4,
+  .credentials-orbit__card--5,
+  .credentials-orbit__card--6 {
+    position: relative;
+    width: 100%;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    translate: none;
+  }
+
+  .credential-card__name {
+    position: static;
+    translate: none;
+    width: auto;
+    max-width: none;
+    margin-top: 0.2rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .credentials-orbit {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .credential-card {
+    transition: none;
+  }
+}

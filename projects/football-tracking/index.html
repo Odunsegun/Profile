@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Tracking | Israel Odunaiya</title>
+  <meta name="description" content="Football Tracking case study: an offline Python computer-vision pipeline using YOLO, OpenCV, and ByteTrack to annotate match footage with tracking and movement information.">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="football-tracking">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class='bx bx-menu' aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="football-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">Football Tracking</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">AI &middot; Computer Vision</p>
+            <p class="project-status project-status--documented">
+              <span aria-hidden="true"></span>
+              Documented
+            </p>
+          </div>
+
+          <h1 id="football-project-title">Football Tracking</h1>
+          <p class="project-story__summary">
+            An offline computer-vision pipeline that processes Spain&ndash;France match footage into an
+            annotated video. It detects players, referees, and the ball, maintains track identities,
+            and layers possession, camera movement, speed, and distance onto the output.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies">
+            <li><img src="../../assets/python-original.svg" alt="" width="18" height="18">Python</li>
+            <li><img src="../../assets/simple-icons--yolo.svg" alt="" width="18" height="18">YOLO</li>
+            <li><img src="../../assets/opencv-original.svg" alt="" width="18" height="18">OpenCV</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-transfer-alt"></i></span>ByteTrack</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://github.com/Odunsegun/football-tracking" target="_blank" rel="noopener noreferrer" aria-label="View the Football Tracking repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Developer</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>Offline CV pipeline</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Detection &amp; tracking</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>Annotated match output</span>
+              <i class="bx bx-video-recording"></i>
+            </div>
+            <img src="../../assets/ML-photo.png" alt="Annotated Spain versus France match frame showing player track IDs, team-colored markers, camera movement, and speed and distance overlays" width="1125" height="748" fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>A real output frame from the repository's Spain&ndash;France processing workflow.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="football-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="football-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Problem &amp; motivation</p>
+              <p>Broadcast footage contains the action, but not reusable movement data. The project turns match frames into visible identities, ball state, possession context, and player movement overlays.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>I assembled the modular Python workflow for detection, identity tracking, camera compensation, team assignment, possession, movement estimates, and annotated video export.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>A repeatable batch pipeline that reads a local match video, applies the trained detector and tracking stages, enriches the resulting positions, and writes an annotated AVI for review.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Core project capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-scan"></i></span>Detect players, referees, and the ball while maintaining player and referee track IDs.</li>
+            <li><span aria-hidden="true"><i class="bx bx-football"></i></span>Group player kit colors into two teams and stabilize ball-possession changes across frames.</li>
+            <li><span aria-hidden="true"><i class="bx bx-line-chart"></i></span>Adjust positions for camera motion and perspective before adding speed and distance overlays.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-target-lock" aria-hidden="true"></i> Tracking detail</span>
+            <small>Verified output crop</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <svg viewBox="245 150 640 420" width="640" height="420" style="display: block; width: 100%; height: auto;" role="img" aria-labelledby="football-feature-visual-title football-feature-visual-desc" preserveAspectRatio="xMidYMid slice">
+              <title id="football-feature-visual-title">Tracked players and ball cue</title>
+              <desc id="football-feature-visual-desc">Detail from the verified match output showing player identifiers, team-colored tracking marks, a ball cue, and movement values.</desc>
+              <image href="../../assets/ML-photo.png" x="0" y="0" width="1125" height="748"></image>
+            </svg>
+          </div>
+          <figcaption>This is a focused detail of the same verified hero frame, highlighting identities, team markers, and the visible ball cue.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="football-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="football-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Input</dt>
+              <dd>OpenCV reads the Spain&ndash;France MP4 into frames and later writes the annotated XVID output.</dd>
+            </div>
+            <div>
+              <dt>Detection</dt>
+              <dd>A fine-tuned Ultralytics YOLO model detects the football classes; goalkeeper detections are normalized into the player class for later analysis.</dd>
+            </div>
+            <div>
+              <dt>Tracking</dt>
+              <dd>Supervision ByteTrack maintains player and referee identities, while missing ball boxes are interpolated and backfilled with Pandas.</dd>
+            </div>
+            <div>
+              <dt>Analysis</dt>
+              <dd>Optical flow estimates camera motion, a perspective transform adjusts positions, and KMeans kit colors support team and possession overlays.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="football-decision-title">
+            <p class="project-story__label">Engineering decision</p>
+            <h3 id="football-decision-title">Cache the expensive stages</h3>
+            <p>The main workflow reads serialized tracking and camera-motion stubs by default. That makes it possible to refine downstream position, team, and overlay logic without repeating detection and camera estimation on every run.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Processing pipeline</span>
+            <small>Source-confirmed stages</small>
+          </div>
+
+          <div class="project-story-system">
+            <div class="project-story-system__lane">
+              <p>Detection &amp; identity</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-video" aria-hidden="true"></i>
+                  <strong>Match video</strong>
+                  <span>OpenCV frames</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/simple-icons--yolo.svg" alt="" width="32" height="32">
+                  <strong>YOLO</strong>
+                  <span>Object detections</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-transfer-alt" aria-hidden="true"></i>
+                  <strong>ByteTrack</strong>
+                  <span>Player &amp; referee IDs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-story-system__divider" aria-hidden="true"><span>Tracked positions feed spatial analysis</span></div>
+
+            <div class="project-story-system__lane">
+              <p>Analysis &amp; output</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-camera-movie" aria-hidden="true"></i>
+                  <strong>Position correction</strong>
+                  <span>Camera &amp; perspective</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-stats" aria-hidden="true"></i>
+                  <strong>Match context</strong>
+                  <span>Teams, ball &amp; movement</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-film" aria-hidden="true"></i>
+                  <strong>Annotated AVI</strong>
+                  <span>Visible analysis output</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The source processes a local video through detection and identity tracking before camera-adjusted analysis and annotated export.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="football-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="football-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>The ball is small, fast, and not detected reliably in every frame, so isolated detections leave gaps in its position and can make possession switch abruptly.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How it was addressed</p>
+              <p>Missing ball boxes are interpolated and backfilled, the overlay keeps a short trail, and the last assigned team is retained when a frame has no valid player assignment.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Specific takeaway</p>
+              <p>Frame-by-frame detection was only the starting point. Stable match information required temporal state, smoothing, and camera-aware position handling.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>Move the frame rate, calibration points, paths, thresholds, and ID overrides into per-video configuration, then evaluate detection and tracking against labeled sequences.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-file-find" aria-hidden="true"></i> Observed pipeline output</span>
+            <small>Repository artifacts</small>
+          </div>
+
+          <div class="project-story-feature-shot">
+            <svg viewBox="0 0 850 455" width="850" height="455" style="display: block; width: 100%; height: auto;" role="img" aria-labelledby="football-evidence-visual-title football-evidence-visual-desc" preserveAspectRatio="xMidYMid slice">
+              <title id="football-evidence-visual-title">Camera and movement overlays</title>
+              <desc id="football-evidence-visual-desc">Detail from the verified match output showing camera movement values and player speed and distance labels.</desc>
+              <image href="../../assets/ML-photo.png" x="0" y="0" width="1125" height="748"></image>
+            </svg>
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>INPUT</code><span>input_videos/Spain_vs_France 2024.mp4</span><small>Raw match footage read by the pipeline</small></div>
+            <div><code>TRACKS</code><span>stubs/track_stubs.pkl</span><small>Cached object detections and identities</small></div>
+            <div><code>CAMERA</code><span>stubs/camera_movement_stub.pkl</span><small>Cached optical-flow camera estimates</small></div>
+            <div><code>OUTPUT</code><span>output_videos/output_video.avi</span><small>Annotated video written by the main workflow</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> No automated test suite or quantitative accuracy results are published. This visual documents a real output frame and committed execution artifacts, not a measured performance claim.</p>
+          <figcaption>This is a second crop of the same verified output frame, focused on camera movement and speed/distance overlays.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/azure-fitness-tracker/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Azure Fitness Tracker</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/enterprise-network-security-lab/" rel="next">
+          <span><small>Next project</small><strong>Enterprise Network Security Lab</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." required>
+        <button type="submit" id="chat-send">➤</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button">✖</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

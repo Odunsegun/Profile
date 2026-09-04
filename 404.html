@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-asset-prefix="/">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Israel Odunaiya</title>
+  <meta name="description" content="This page drifted out of orbit. Return home or continue through the project archive.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/shell.css">
+  <link rel="stylesheet" href="/css/error.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="404">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="/assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true">
+          <img src="/assets/eclipse.svg" alt="">
+        </button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu">
+          <i class="bx bx-menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="/assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+
+  <main id="main-content" class="error-page">
+    <div class="error-page__background" aria-hidden="true"></div>
+
+    <section class="error-page__inner" aria-labelledby="error-title">
+      <div class="error-page__content">
+        <p class="error-page__eyebrow"><span aria-hidden="true"></span> Navigation Anomaly</p>
+        <p class="error-page__code" aria-hidden="true">404</p>
+        <h1 class="error-page__title" id="error-title">
+          <span class="sr-only">404. </span>
+          This page drifted out of orbit.
+        </h1>
+        <p class="error-page__description">
+          The route you followed doesn’t exist, may have moved, or hasn’t launched yet. Return to mission control or continue exploring the archive.
+        </p>
+
+        <p class="error-route">
+          <span>Unmapped route:</span>
+          <code id="requested-route"></code>
+        </p>
+
+        <div class="error-page__actions">
+          <a
+            class="error-page__button error-page__button--primary"
+            href="/"
+            title="Recalculate route to mission control"
+          >
+            <i class="bx bx-home-alt" aria-hidden="true"></i>
+            Return Home
+            <span class="error-page__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="error-page__button error-page__button--secondary" href="/projects/">
+            View Projects
+            <span class="error-page__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <a class="error-page__tertiary" href="/experience/">View Experience →</a>
+
+        <p class="error-page__destinations">
+          <span>Popular destinations</span>
+          <a href="/projects/">Projects</a>
+          ·
+          <a href="/experience/">Experience</a>
+          ·
+          <a href="/certifications/">Certifications</a>
+          ·
+          <a href="/#contact">Contact</a>
+        </p>
+      </div>
+
+      <div class="error-page__visual" aria-hidden="true">
+        <div class="error-planet"></div>
+        <span class="error-pin"></span>
+        <svg class="error-orbit" viewBox="0 0 560 480" fill="none">
+          <path class="error-orbit__line" d="M12 250 C 90 120, 210 70, 310 150 S 430 250, 390 210"></path>
+          <path class="error-orbit__fade" d="M390 210 C 450 250, 500 330, 530 430"></path>
+          <circle class="error-orbit__beacon" cx="392" cy="208" r="4.5"></circle>
+          <circle cx="86" cy="168" r="2" fill="currentColor" opacity="0.55"></circle>
+          <circle cx="248" cy="96" r="1.6" fill="currentColor" opacity="0.45"></circle>
+          <circle cx="470" cy="140" r="1.8" fill="currentColor" opacity="0.4"></circle>
+        </svg>
+        <svg class="error-astronaut" viewBox="0 0 180 220" fill="none">
+          <ellipse cx="92" cy="208" rx="28" ry="6" fill="#000" opacity="0.22"/>
+          <path d="M108 96c18 10 32 34 28 58-18 8-40 10-60 4-6-22 4-48 18-62 4 2 10 2 14 0Z" fill="#c5d0dc"/>
+          <path d="M70 128c-16 8-28 24-30 40 14 8 30 10 46 6 2-16-2-32 4-46-8 2-14 0-20 0Z" fill="#d7dee8"/>
+          <rect x="78" y="118" width="28" height="38" rx="7" fill="#5d6b7c"/>
+          <rect x="84" y="126" width="16" height="6" rx="2" fill="#16dce5" opacity="0.8"/>
+          <rect x="84" y="136" width="11" height="4" rx="1.5" fill="#8062ff" opacity="0.85"/>
+          <path d="M118 132c18 4 34 2 44-10 2 12-4 28-16 36-12 6-24 8-34 6 4-10 6-22 6-32Z" fill="#cfd8e4"/>
+          <circle cx="148" cy="118" r="8" fill="#d7dee8" stroke="#9aa7b8" stroke-width="2"/>
+          <path d="M62 86c-4 20 6 38 22 48 10 4 22 4 32-2 14-12 22-32 16-50-6-20-24-34-38-34s-28 16-32 38Z" fill="#e8eef4"/>
+          <ellipse cx="86" cy="92" rx="28" ry="32" fill="#0b1724"/>
+          <path d="M68 88c10-14 32-16 44-2 1 6-4 10-12 13-12 4-24 3-34-2-6-3-8-7-2-9Z" fill="#7ad7e8" opacity="0.28"/>
+          <path d="M72 82c10-8 28-8 38 2" stroke="#9be7f2" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+          <path d="M58 140c-16 18-22 38-16 48 10-2 20-12 26-24 2-8-2-16-10-24Z" fill="#c5d0dc"/>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="/assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="/assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="/assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="/assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Looks like that route isn’t mapped. I can help you find a project, experience record, or certification.</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." required>
+        <button type="submit" id="chat-send">➤</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="/assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button">✖</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/error.js" defer></script>
+  <script src="/js/cursor.js" defer></script>
+  <script src="/main.js" defer></script>
+</body>
+</html>

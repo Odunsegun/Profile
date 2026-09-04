@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Network Security Lab | Israel Odunaiya</title>
+  <meta name="description" content="Enterprise Network Security Lab case study: implementing and troubleshooting Cisco VLAN segmentation, FortiGate gateways, DHCP, and client validation in EVE-NG.">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="enterprise-network-security-lab">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class='bx bx-menu' aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="enterprise-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">Enterprise Network Security Lab</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">Network &middot; Security</p>
+            <p class="project-status project-status--documented">
+              <span aria-hidden="true"></span>
+              Documented
+            </p>
+          </div>
+
+          <h1 id="enterprise-project-title">Enterprise Network Security Lab</h1>
+          <p class="project-story__summary">
+            An EVE-NG enterprise lab where I configured and troubleshot a provided multi-site topology.
+            This case study follows the verified HQ path: departmental VLANs across Cisco switching,
+            FortiGate gateway and DHCP services, and client connectivity checks.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies">
+            <li><img src="../../assets/eveng-original.svg" alt="" width="18" height="18">EVE-NG</li>
+            <li><img src="../../assets/cisco-original.svg" alt="" width="18" height="18">Cisco IOS</li>
+            <li><img src="../../assets/fortigate-original.svg" alt="" width="18" height="18">FortiGate</li>
+            <li><img src="../../assets/paloalto-original.svg" alt="" width="18" height="18">Palo Alto</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://github.com/Odunsegun/enterprise-network-security-lab" target="_blank" rel="noopener noreferrer" aria-label="View the Enterprise Network Security Lab repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Implementation &amp; troubleshooting</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>Multi-vendor EVE-NG lab</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Segmentation &amp; validation</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>Sanitized EVE-NG topology</span>
+              <i class="bx bx-network-chart"></i>
+            </div>
+            <img src="../../assets/projects/enterprise-network-security-lab/topology-overview-sanitized.png" alt="Sanitized overview of the EVE-NG lab showing HQ, branch, and partner network zones with Cisco switching and multiple firewall platforms" width="1680" height="936" fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>A publication-safe topology overview derived from the real lab canvas; operational results are documented separately below.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="enterprise-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="enterprise-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Problem &amp; motivation</p>
+              <p>A drawn enterprise topology is only a starting point. The practical goal was to turn its HQ access layer into a segmented network with consistent switching, gateway, addressing, and validation behavior.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>I implemented and troubleshot the provided topology: assigning Cisco access ports and trunks, configuring FortiGate VLAN interfaces and DHCP, and tracing faults across both sides of the link.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>The verified HQ phase separates Sales, Marketing, HR, and Admin into VLANs 5&ndash;8. Each department has a FortiGate gateway and DHCP scope, with two clients per VLAN used for local gateway validation.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Core lab capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-layer"></i></span>Separate four HQ departments at Layer 2 with dedicated access VLANs.</li>
+            <li><span aria-hidden="true"><i class="bx bx-transfer"></i></span>Carry the departmental VLANs over an 802.1Q path between Cisco switching and FortiGate.</li>
+            <li><span aria-hidden="true"><i class="bx bx-check-shield"></i></span>Issue the expected client addressing and verify each client against its local gateway.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-layer" aria-hidden="true"></i> HQ segmentation</span>
+            <small>Verified VLAN scope</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <svg viewBox="0 0 920 520" width="920" height="520" style="display: block; width: 100%; height: auto;" role="img" aria-labelledby="enterprise-feature-title enterprise-feature-desc">
+              <title id="enterprise-feature-title">HQ departmental VLAN segmentation</title>
+              <desc id="enterprise-feature-desc">Sales, Marketing, HR, and Admin VLANs converge through Cisco switching and an 802.1Q trunk to FortiGate gateway and DHCP services.</desc>
+              <defs>
+                <linearGradient id="enterprise-switch-panel" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#122a3d"></stop>
+                  <stop offset="1" stop-color="#132038"></stop>
+                </linearGradient>
+                <linearGradient id="enterprise-firewall-panel" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#351c2a"></stop>
+                  <stop offset="1" stop-color="#172439"></stop>
+                </linearGradient>
+                <marker id="enterprise-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#54dbe8"></path>
+                </marker>
+              </defs>
+
+              <rect x="18" y="22" width="884" height="476" rx="22" fill="#07111f" stroke="#24435b" stroke-width="2"></rect>
+              <text x="50" y="64" fill="#9cb2c5" font-size="18" font-family="Inter, Arial, sans-serif" letter-spacing="2">DEPARTMENT ACCESS</text>
+
+              <g font-family="Inter, Arial, sans-serif">
+                <g transform="translate(48 94)">
+                  <rect width="220" height="76" rx="13" fill="#0c2631" stroke="#37d5df" stroke-width="2"></rect>
+                  <circle cx="28" cy="27" r="9" fill="#37d5df"></circle>
+                  <text x="49" y="32" fill="#f3f7fb" font-size="20" font-weight="700">Sales</text>
+                  <text x="49" y="57" fill="#9cb2c5" font-size="16">VLAN 5 &middot; 2 clients</text>
+                </g>
+                <g transform="translate(48 184)">
+                  <rect width="220" height="76" rx="13" fill="#12243a" stroke="#5aa5ff" stroke-width="2"></rect>
+                  <circle cx="28" cy="27" r="9" fill="#5aa5ff"></circle>
+                  <text x="49" y="32" fill="#f3f7fb" font-size="20" font-weight="700">Marketing</text>
+                  <text x="49" y="57" fill="#9cb2c5" font-size="16">VLAN 6 &middot; 2 clients</text>
+                </g>
+                <g transform="translate(48 274)">
+                  <rect width="220" height="76" rx="13" fill="#1e2037" stroke="#9c7cff" stroke-width="2"></rect>
+                  <circle cx="28" cy="27" r="9" fill="#9c7cff"></circle>
+                  <text x="49" y="32" fill="#f3f7fb" font-size="20" font-weight="700">HR</text>
+                  <text x="49" y="57" fill="#9cb2c5" font-size="16">VLAN 7 &middot; 2 clients</text>
+                </g>
+                <g transform="translate(48 364)">
+                  <rect width="220" height="76" rx="13" fill="#252332" stroke="#d58cff" stroke-width="2"></rect>
+                  <circle cx="28" cy="27" r="9" fill="#d58cff"></circle>
+                  <text x="49" y="32" fill="#f3f7fb" font-size="20" font-weight="700">Admin</text>
+                  <text x="49" y="57" fill="#9cb2c5" font-size="16">VLAN 8 &middot; 2 clients</text>
+                </g>
+              </g>
+
+              <path d="M 286 132 C 340 132 326 230 374 230" fill="none" stroke="#37d5df" stroke-width="3"></path>
+              <path d="M 286 222 C 332 222 340 242 374 242" fill="none" stroke="#5aa5ff" stroke-width="3"></path>
+              <path d="M 286 312 C 332 312 340 254 374 254" fill="none" stroke="#9c7cff" stroke-width="3"></path>
+              <path d="M 286 402 C 340 402 326 266 374 266" fill="none" stroke="#d58cff" stroke-width="3"></path>
+
+              <g transform="translate(374 178)">
+                <rect width="190" height="140" rx="18" fill="url(#enterprise-switch-panel)" stroke="#3b7597" stroke-width="2"></rect>
+                <image href="../../assets/cisco-original.svg" x="66" y="22" width="58" height="58"></image>
+                <text x="95" y="104" text-anchor="middle" fill="#f3f7fb" font-size="20" font-weight="700" font-family="Inter, Arial, sans-serif">Cisco switching</text>
+                <text x="95" y="127" text-anchor="middle" fill="#9cb2c5" font-size="15" font-family="Inter, Arial, sans-serif">Access + trunk path</text>
+              </g>
+
+              <line x1="580" y1="248" x2="667" y2="248" stroke="#54dbe8" stroke-width="4" marker-end="url(#enterprise-arrow)"></line>
+              <text x="623" y="222" text-anchor="middle" fill="#54dbe8" font-size="16" font-family="Inter, Arial, sans-serif">802.1Q</text>
+
+              <g transform="translate(685 164)">
+                <rect width="184" height="168" rx="18" fill="url(#enterprise-firewall-panel)" stroke="#c66264" stroke-width="2"></rect>
+                <image href="../../assets/fortigate-original.svg" x="64" y="21" width="56" height="56"></image>
+                <text x="92" y="103" text-anchor="middle" fill="#f3f7fb" font-size="20" font-weight="700" font-family="Inter, Arial, sans-serif">FortiGate</text>
+                <text x="92" y="129" text-anchor="middle" fill="#9cb2c5" font-size="15" font-family="Inter, Arial, sans-serif">VLAN gateways</text>
+                <text x="92" y="151" text-anchor="middle" fill="#9cb2c5" font-size="15" font-family="Inter, Arial, sans-serif">DHCP services</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>The focused HQ scope keeps four department VLANs distinct while sharing one tagged path to FortiGate gateway and DHCP services.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="enterprise-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="enterprise-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Access</dt>
+              <dd>Cisco client-facing ports were assigned to the intended departmental VLAN instead of relying on the default VLAN.</dd>
+            </div>
+            <div>
+              <dt>Trunking</dt>
+              <dd>An 802.1Q path carries VLANs 5&ndash;8 from the switching layer to matching FortiGate subinterfaces.</dd>
+            </div>
+            <div>
+              <dt>Services</dt>
+              <dd>FortiGate provides the local gateway and DHCP scope for each department in the verified HQ phase.</dd>
+            </div>
+            <div>
+              <dt>Validation</dt>
+              <dd>Two clients in every department received the expected scope, mask, and gateway, then reached their local gateway.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="enterprise-decision-title">
+            <p class="project-story__label">Engineering decision</p>
+            <h3 id="enterprise-decision-title">Recover the path before restoring redundancy</h3>
+            <p>The initial LACP aggregate remained suspended and left return traffic without a usable path. After checking port-channel state, MAC learning, and FortiGate-side behavior, I restored service with one explicit 802.1Q trunk and kept the second link inactive rather than present an unverified aggregate as working.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Addressing &amp; validation path</span>
+            <small>Recorded working flow</small>
+          </div>
+
+          <div class="project-story-system">
+            <div class="project-story-system__lane">
+              <p>Client request</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <i class="bx bx-desktop" aria-hidden="true"></i>
+                  <strong>VPCS client</strong>
+                  <span>Department endpoint</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <img src="../../assets/cisco-original.svg" alt="" width="32" height="32">
+                  <strong>Access VLAN</strong>
+                  <span>Correct port membership</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-transfer" aria-hidden="true"></i>
+                  <strong>802.1Q trunk</strong>
+                  <span>VLAN tag preserved</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-story-system__divider" aria-hidden="true"><span>FortiGate returns service on the same VLAN path</span></div>
+
+            <div class="project-story-system__lane">
+              <p>Service &amp; proof</p>
+              <div class="project-story-system__flow">
+                <div class="project-story-system__node">
+                  <img src="../../assets/fortigate-original.svg" alt="" width="32" height="32">
+                  <strong>VLAN interface</strong>
+                  <span>Gateway + DHCP</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-id-card" aria-hidden="true"></i>
+                  <strong>Client lease</strong>
+                  <span>Scope, mask &amp; gateway</span>
+                </div>
+                <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                <div class="project-story-system__node">
+                  <i class="bx bx-check-circle" aria-hidden="true"></i>
+                  <strong>Gateway check</strong>
+                  <span>Local reachability</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The verified path follows a client from access-port membership through the tagged trunk to FortiGate addressing and back to a successful gateway check.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="enterprise-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="enterprise-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>A suspended EtherChannel prevented a reliable return path. A separate client also learned on VLAN 1, so its DHCP traffic never reached the intended departmental scope.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How it was addressed</p>
+              <p>I compared switch port-channel, trunk, MAC, and FortiGate interface behavior, simplified the uplink to one working trunk, corrected the client access VLAN, and refreshed its network state.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Specific takeaway</p>
+              <p>Firewall troubleshooting still begins at Layer 2. Verifying port membership, tags, MAC learning, and both traffic directions prevents a policy change from masking a switching fault.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>Add sanitized current-state captures for policy enforcement, routing, HA, SD-WAN, Palo Alto, and ASA phases so every broader enterprise claim has matching operational evidence.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-check-shield" aria-hidden="true"></i> Recorded HQ validation</span>
+            <small>Eight client checks</small>
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>VLAN 5</code><span>Sales &middot; 2 clients</span><small>Expected DHCP scope and local gateway reached</small></div>
+            <div><code>VLAN 6</code><span>Marketing &middot; 2 clients</span><small>Expected DHCP scope and local gateway reached</small></div>
+            <div><code>VLAN 7</code><span>HR &middot; 2 clients</span><small>Expected DHCP scope and local gateway reached</small></div>
+            <div><code>VLAN 8</code><span>Admin &middot; 2 clients</span><small>Expected DHCP scope and local gateway reached</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> This visual summarizes the recorded lab validation without recreating CLI output. A sanitized console capture can be added later as direct visual evidence.</p>
+          <figcaption>The lab record confirms correct addressing and local-gateway reachability for two clients in each of the four HQ departments.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/football-tracking/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Football Tracking</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/interstellar-cannon/" rel="next">
+          <span><small>Next project</small><strong>Interstellar Cannon</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." required>
+        <button type="submit" id="chat-send">➤</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button">✖</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

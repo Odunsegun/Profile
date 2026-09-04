@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-asset-prefix="../../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Internet Analysis | Israel Odunaiya</title>
+  <meta name="description" content="R Internet Analysis case study: an R Markdown exploration of global internet access, fixed-broadband adoption, economic context, and the limits of mixed-source data.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/avatar.svg">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../css/shell.css">
+  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="stylesheet" href="../../css/project-detail.css">
+  <style>
+    .ranalysis-chart {
+      aspect-ratio: 7 / 5 !important;
+      object-fit: contain !important;
+    }
+
+    .ranalysis-system-mobile {
+      display: none;
+    }
+
+    @media (max-width: 780px) {
+      .ranalysis-system-desktop {
+        display: none !important;
+      }
+
+      .ranalysis-system-mobile {
+        display: grid;
+        width: 100%;
+        min-height: 0;
+      }
+
+      .ranalysis-system-mobile .project-story-system__flow {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .ranalysis-system-mobile .project-story-system__node {
+        min-height: 8.5rem;
+      }
+
+      .ranalysis-system-mobile .project-story-system__arrow {
+        justify-self: center;
+        transform: rotate(90deg);
+      }
+    }
+  </style>
+  <script>
+    (function () {
+      var m = localStorage.getItem('darkMode');
+      var dark = m === 'abled' || m === null;
+      document.documentElement.classList.add(dark ? 'theme-dark' : 'theme-light');
+    })();
+  </script>
+</head>
+<body class="body darkmode" data-page="projects" data-project-slug="r-internet-analysis">
+<script>
+  (function () {
+    var m = localStorage.getItem('darkMode');
+    if (m === 'disabled') {
+      document.body.classList.remove('darkmode');
+      document.body.classList.add('lightmode');
+    }
+  })();
+</script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-topnav" aria-label="Primary navigation">
+      <a href="/" class="site-topnav__brand" data-nav-home="true">
+        <span class="site-topnav__mark" aria-hidden="true">IO</span>
+        <span class="site-topnav__name">Israel Odunaiya</span>
+      </a>
+      <ul class="site-topnav__links">
+        <li><a href="/" class="site-topnav__link" data-nav-home="true">Home</a></li>
+        <li><a href="/projects/" class="site-topnav__link" aria-current="page">Projects</a></li>
+        <li><a href="/experience/" class="site-topnav__link">Experience</a></li>
+        <li><a href="/certifications/" class="site-topnav__link">Certifications</a></li>
+        <li><a href="/#about" class="site-topnav__link">About</a></li>
+        <li><a href="/#contact" class="site-topnav__link">Contact</a></li>
+      </ul>
+      <div class="site-topnav__actions">
+        <a href="../../assets/Portfolio_Resume.pdf" class="site-topnav__cv" target="_blank" rel="noopener noreferrer">CV</a>
+        <button type="button" id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Switch to light mode" aria-pressed="true"><img src="../../assets/eclipse.svg" alt=""></button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu"><i class="bx bx-menu" aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="mobile-menu-panel" id="mobile-menu-panel" role="dialog" aria-label="Site menu">
+      <a href="/" data-nav-home="true">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/experience/">Experience</a>
+      <a href="/certifications/">Certifications</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="../../assets/Portfolio_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </header>
+
+  <main id="main-content" class="project-detail-page project-detail-page--story">
+    <article class="project-story" aria-labelledby="ranalysis-project-title">
+      <nav class="project-story__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/projects/">Projects</a></li>
+          <li aria-current="page">R Internet Analysis</li>
+        </ol>
+      </nav>
+
+      <header class="project-story__hero">
+        <div class="project-story__hero-copy">
+          <div class="project-story__eyebrow-row">
+            <p class="project-story__eyebrow">Data Analysis &middot; R Markdown</p>
+            <p class="project-status project-status--documented">
+              <span aria-hidden="true"></span>
+              Documented
+            </p>
+          </div>
+
+          <h1 id="ranalysis-project-title">R Internet Analysis</h1>
+          <p class="project-story__summary">
+            A descriptive R Markdown study of how internet access and fixed-broadband adoption vary across countries, regions, and economic contexts.
+            Multiple public datasets and geographic boundaries are prepared, joined, visualized, and published as a knitted HTML report.
+          </p>
+
+          <ul class="project-story__stack" aria-label="Project technologies">
+            <li><img src="../../assets/r-original.svg" alt="" width="18" height="18">R</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-file"></i></span>R Markdown</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-bar-chart-alt-2"></i></span>ggplot2</li>
+            <li><span class="project-story__stack-icon" aria-hidden="true"><i class="bx bx-map-alt"></i></span>sf</li>
+          </ul>
+
+          <div class="project-story__actions">
+            <a class="project-story__action project-story__action--primary" href="https://github.com/Odunsegun/R-Internet-Analysis" target="_blank" rel="noopener noreferrer" aria-label="View the R Internet Analysis repository on GitHub in a new tab">
+              <i class="bx bxl-github" aria-hidden="true"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+
+          <dl class="project-story__facts" aria-label="Project facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Analyst &amp; report author</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>R Markdown study</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Internet access &amp; broadband</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--hero" data-visual-slot="hero">
+          <div class="project-story-browser">
+            <div class="project-story-browser__bar" aria-hidden="true">
+              <span class="project-story-browser__dots"><i></i><i></i><i></i></span>
+              <span>Global access map</span>
+              <i class="bx bx-map"></i>
+            </div>
+            <img class="ranalysis-chart" src="../../assets/projects/r-internet-analysis/internet-penetration-map.png" width="1344" height="960" alt="World choropleth from the knitted R report, shading matched countries by percentage of the population using the internet." fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>The original choropleth maps internet-use percentage, not user totals. Its baked-in title says 2021&ndash;2024, but the source contains two 2020 records; gray areas indicate missing or unmatched country names rather than zero access.</figcaption>
+        </figure>
+      </header>
+
+      <section class="project-story__section project-story__section--overview" aria-labelledby="ranalysis-overview-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">01</span>
+            <h2 id="ranalysis-overview-title">Overview</h2>
+          </div>
+
+          <div class="project-story__prose-grid">
+            <div class="project-story__prose-block">
+              <p class="project-story__label">Analysis question</p>
+              <p>How do internet use and fixed-broadband adoption vary across countries, regions, and economic contexts, and what patterns appear in a separate labelled platform-sentiment sample? The report brings several public sources into one descriptive view of those questions.</p>
+            </div>
+            <div class="project-story__prose-block">
+              <p class="project-story__label">My role</p>
+              <p>I assembled the datasets, prepared and joined their fields in R, built the visualizations, interpreted the visible patterns, and authored the final R Markdown report.</p>
+            </div>
+            <div class="project-story__prose-block project-story__prose-block--wide">
+              <p class="project-story__label">What was built</p>
+              <p>The knitted report combines country-level internet observations, fixed-broadband history, income and GDP tables, Gapminder variables, a labelled sentiment sample, and Natural Earth geometry. Its outputs include maps, distributions, time-based summaries, regional comparisons, and exploratory relationship plots.</p>
+            </div>
+          </div>
+
+          <ul class="project-story__features" aria-label="Core analysis capabilities">
+            <li><span aria-hidden="true"><i class="bx bx-world"></i></span>Map matched country observations to show the geographic spread of internet access.</li>
+            <li><span aria-hidden="true"><i class="bx bx-line-chart"></i></span>Summarize fixed-broadband records by year and region for descriptive comparison.</li>
+            <li><span aria-hidden="true"><i class="bx bx-scatter-chart"></i></span>Explore income, GDP, urbanization, and sentiment patterns without presenting them as causal results.</li>
+          </ul>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--feature" data-visual-slot="feature">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-line-chart" aria-hidden="true"></i> Broadband over time</span>
+            <small>Original ggplot2 output</small>
+          </div>
+          <div class="project-story-browser">
+            <img class="ranalysis-chart" src="../../assets/projects/r-internet-analysis/broadband-growth.png" width="1344" height="960" loading="lazy" decoding="async" alt="Scatter plot of fixed-broadband subscriptions per 100 people with annual arithmetic averages connected by a blue line.">
+          </div>
+          <figcaption>The source spans 1998&ndash;2019 and the displayed viewport begins at 2000. It also zooms the y-axis to 0&ndash;40, leaving 87 higher observations outside the visible panel. The blue line connects annual arithmetic means and is not a fitted regression.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--build" aria-labelledby="ranalysis-build-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">02</span>
+            <h2 id="ranalysis-build-title">Inside the Build</h2>
+          </div>
+
+          <dl class="project-story__build-list">
+            <div>
+              <dt>Sources</dt>
+              <dd>CSV inputs cover internet users, fixed broadband, income groups, GDP, Gapminder variables, and labelled sentiment; Natural Earth supplies country geometry.</dd>
+            </div>
+            <div>
+              <dt>Prepare</dt>
+              <dd><code>readr</code>, <code>dplyr</code>, and <code>tidyr</code> import data, rename inconsistent fields, trim labels, filter missing rows, and prepare grouped summaries.</dd>
+            </div>
+            <div>
+              <dt>Join</dt>
+              <dd>Country-code and exact-name joins connect regional, economic, internet, and geographic records. Unmatched names are retained as an explicit limitation.</dd>
+            </div>
+            <div>
+              <dt>Visualize</dt>
+              <dd><code>ggplot2</code>, <code>sf</code>, <code>viridis</code>, and <code>ggalluvial</code> produce the charts and map before R Markdown knits the report to HTML.</dd>
+            </div>
+          </dl>
+
+          <aside class="project-story__decision" aria-labelledby="ranalysis-decision-title">
+            <p class="project-story__label">Analysis decision</p>
+            <h3 id="ranalysis-decision-title">Use logarithmic scale for the GDP comparison</h3>
+            <p>GDP per capita covers a wide numeric range, so the report uses a log-scaled x-axis while color identifies region and point size represents 2021 population. This improves legibility, but the chart remains descriptive because the paired internet observations use mixed years.</p>
+          </aside>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--system" data-visual-slot="system">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-git-branch" aria-hidden="true"></i> Analysis workflow</span>
+            <small>Verified from the R Markdown source</small>
+          </div>
+          <div class="project-story-feature-shot">
+            <svg class="ranalysis-system-desktop" viewBox="0 0 920 480" width="920" height="480" style="display:block;width:100%;height:auto" role="img" aria-labelledby="ranalysis-system-title ranalysis-system-desc">
+              <title id="ranalysis-system-title">R Internet Analysis data workflow</title>
+              <desc id="ranalysis-system-desc">Four stages move from CSV and Natural Earth inputs through preparation, joining and summarization, then ggplot2 and sf visualizations in a knitted HTML report. A parallel sentiment branch trims labels, maps them into manual categories, and compares platform shares; no sentiment model is trained.</desc>
+              <defs>
+                <linearGradient id="ranalysis-system-bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#06141f"></stop>
+                  <stop offset="1" stop-color="#11162a"></stop>
+                </linearGradient>
+                <linearGradient id="ranalysis-system-line" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#38d5d7"></stop>
+                  <stop offset="1" stop-color="#8f7cff"></stop>
+                </linearGradient>
+                <marker id="ranalysis-system-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#60dce0"></path>
+                </marker>
+              </defs>
+
+              <rect x="8" y="8" width="904" height="464" rx="24" fill="url(#ranalysis-system-bg)" stroke="#29495b" stroke-width="2"></rect>
+              <g font-family="Inter, Arial, sans-serif">
+                <text x="38" y="49" fill="#8caebc" font-size="15" font-weight="700" letter-spacing="2">FROM SOURCE FILES TO A KNITTED REPORT</text>
+
+                <g transform="translate(32 88)">
+                  <rect width="184" height="226" rx="18" fill="#0a2730" stroke="#37cdd0" stroke-width="2"></rect>
+                  <circle cx="92" cy="56" r="31" fill="#103f49"></circle>
+                  <path d="M 72 44 h40 v26 H72z M78 50 h7 M91 50 h15 M78 58 h7 M91 58 h15 M78 66 h7 M91 66 h15" fill="none" stroke="#67e0e1" stroke-width="2" stroke-linecap="round"></path>
+                  <text x="92" y="112" text-anchor="middle" fill="#f1fafb" font-size="20" font-weight="800">Sources</text>
+                  <text x="92" y="141" text-anchor="middle" fill="#a5bdc1" font-size="16">CSV datasets</text>
+                  <text x="92" y="164" text-anchor="middle" fill="#a5bdc1" font-size="16">Natural Earth shapes</text>
+                  <text x="92" y="187" text-anchor="middle" fill="#a5bdc1" font-size="16">Mixed source years</text>
+                </g>
+
+                <line x1="224" y1="201" x2="246" y2="201" stroke="url(#ranalysis-system-line)" stroke-width="4" marker-end="url(#ranalysis-system-arrow)"></line>
+
+                <g transform="translate(254 88)">
+                  <rect width="184" height="226" rx="18" fill="#0d2235" stroke="#4c9bd2" stroke-width="2"></rect>
+                  <circle cx="92" cy="56" r="31" fill="#183954"></circle>
+                  <path d="M 73 39 h38 v34 H73z M80 48 h24 M80 56 h18 M80 64 h21" fill="none" stroke="#7bbce9" stroke-width="3" stroke-linecap="round"></path>
+                  <text x="92" y="112" text-anchor="middle" fill="#f1f7fb" font-size="20" font-weight="800">Prepare</text>
+                  <text x="92" y="141" text-anchor="middle" fill="#a7bac8" font-size="16">Rename fields</text>
+                  <text x="92" y="164" text-anchor="middle" fill="#a7bac8" font-size="16">Trim labels</text>
+                  <text x="92" y="187" text-anchor="middle" fill="#a7bac8" font-size="16">Align field names</text>
+                </g>
+
+                <line x1="446" y1="201" x2="468" y2="201" stroke="url(#ranalysis-system-line)" stroke-width="4" marker-end="url(#ranalysis-system-arrow)"></line>
+
+                <g transform="translate(476 88)">
+                  <rect width="184" height="226" rx="18" fill="#171f39" stroke="#7770d4" stroke-width="2"></rect>
+                  <circle cx="92" cy="56" r="31" fill="#2b2a58"></circle>
+                  <circle cx="78" cy="56" r="12" fill="none" stroke="#aa9fff" stroke-width="3"></circle>
+                  <circle cx="106" cy="56" r="12" fill="none" stroke="#aa9fff" stroke-width="3"></circle>
+                  <path d="M90 56 h4" stroke="#aa9fff" stroke-width="4" stroke-linecap="round"></path>
+                  <text x="92" y="112" text-anchor="middle" fill="#f4f2fd" font-size="20" font-weight="800">Analyze</text>
+                  <text x="92" y="141" text-anchor="middle" fill="#b6b0cb" font-size="16">Join records</text>
+                  <text x="92" y="164" text-anchor="middle" fill="#b6b0cb" font-size="16">Group &amp; summarize</text>
+                  <text x="92" y="187" text-anchor="middle" fill="#b6b0cb" font-size="16">Inspect missingness</text>
+                </g>
+
+                <line x1="668" y1="201" x2="690" y2="201" stroke="url(#ranalysis-system-line)" stroke-width="4" marker-end="url(#ranalysis-system-arrow)"></line>
+
+                <g transform="translate(698 88)">
+                  <rect width="190" height="226" rx="18" fill="#211d38" stroke="#917dff" stroke-width="2"></rect>
+                  <circle cx="95" cy="56" r="31" fill="#362b60"></circle>
+                  <path d="M75 69 l13 -14 l11 8 l16 -23 M76 72 h40" fill="none" stroke="#b4a8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <text x="95" y="112" text-anchor="middle" fill="#f5f2ff" font-size="20" font-weight="800">Publish</text>
+                  <text x="95" y="141" text-anchor="middle" fill="#beb6d0" font-size="16">ggplot2 + sf</text>
+                  <text x="95" y="164" text-anchor="middle" fill="#beb6d0" font-size="16">Charts + map</text>
+                  <text x="95" y="187" text-anchor="middle" fill="#beb6d0" font-size="16">Knitted HTML</text>
+                </g>
+
+                <g transform="translate(32 350)">
+                  <rect width="856" height="82" rx="15" fill="#091722" stroke="#2a4554"></rect>
+                  <circle cx="40" cy="41" r="20" fill="#11313a"></circle>
+                  <path d="M31 41 h18 M40 32 v18" stroke="#58d8da" stroke-width="2.5" stroke-linecap="round"></path>
+                  <text x="75" y="34" fill="#edf8f9" font-size="18" font-weight="800">Parallel sentiment branch</text>
+                  <text x="75" y="59" fill="#9eb6bc" font-size="15">Trim labels &rarr; manual case_when categories &rarr; compare platform shares; no model is trained.</text>
+                </g>
+              </g>
+            </svg>
+
+            <div class="project-story-system ranalysis-system-mobile" aria-label="R Internet Analysis mobile data workflow">
+              <div class="project-story-system__lane">
+                <p>From source files to a knitted report</p>
+                <div class="project-story-system__flow">
+                  <div class="project-story-system__node">
+                    <i class="bx bx-data" aria-hidden="true"></i>
+                    <strong>Sources</strong>
+                    <span>CSV datasets and Natural Earth geometry</span>
+                  </div>
+                  <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                  <div class="project-story-system__node">
+                    <i class="bx bx-list-check" aria-hidden="true"></i>
+                    <strong>Prepare</strong>
+                    <span>Rename fields and trim labelled sentiment</span>
+                  </div>
+                  <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                  <div class="project-story-system__node">
+                    <i class="bx bx-git-merge" aria-hidden="true"></i>
+                    <strong>Analyze</strong>
+                    <span>Join records, group observations, and summarize</span>
+                  </div>
+                  <i class="bx bx-right-arrow-alt project-story-system__arrow" aria-hidden="true"></i>
+                  <div class="project-story-system__node">
+                    <i class="bx bx-bar-chart-alt-2" aria-hidden="true"></i>
+                    <strong>Publish</strong>
+                    <span>Build ggplot2 and sf outputs, then knit HTML</span>
+                  </div>
+                </div>
+                <div class="project-story-system__divider"><span>Parallel sentiment branch</span></div>
+                <div class="project-story-system__node">
+                  <i class="bx bx-category-alt" aria-hidden="true"></i>
+                  <strong>Manual label grouping</strong>
+                  <span>Trim labels, map them with <code>case_when</code>, and compare platform shares; no sentiment model is trained.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The workflow reflects the completed R Markdown source. Country identifiers are joined by a mix of codes and exact names, while a separate branch manually groups supplied sentiment labels; no sentiment model is trained.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-story__section project-story__section--reflection" aria-labelledby="ranalysis-reflection-title">
+        <div class="project-story__section-copy">
+          <div class="project-story__section-heading">
+            <span aria-hidden="true">03</span>
+            <h2 id="ranalysis-reflection-title">Challenges &amp; Takeaways</h2>
+          </div>
+
+          <div class="project-story__reflection-grid">
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Technical challenge</p>
+              <p>Country identifiers differ across sources, and the internet observations do not share one uniform year. The exact-name map join leaves 52 of 215 internet records unmatched. A separate income branch substitutes 10 for 37 missing 2022 values, so those charts are not featured here.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">How it was addressed</p>
+              <p>Column names were normalized, code- and name-based joins were applied, missing regions were filtered where required, and unmatched countries were inspected. The remaining gaps are disclosed rather than interpreted as measured values.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Observed finding &amp; takeaway</p>
+              <p>The connected annual fixed-broadband means rise across the displayed source period, while the pooled regional output differs substantially. Join quality, time alignment, and missing-value treatment shape that story; the charts do not establish why the patterns occur.</p>
+            </div>
+            <div class="project-story__reflection-item">
+              <p class="project-story__label">Future improvement</p>
+              <p>Use a documented ISO-country crosswalk, align measurements to a common year, preserve missing values instead of substituting constants, and publish the data manifest and package versions needed to knit the report from a clean clone.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="project-story-visual project-story-visual--evidence" data-visual-slot="evidence">
+          <div class="project-story-visual__heading">
+            <span><i class="bx bx-table" aria-hidden="true"></i> Rendered regional output</span>
+            <small>3,148 matched records &middot; 1998&ndash;2019</small>
+          </div>
+
+          <div class="project-story-evidence">
+            <div><code>20.5</code><span>Europe</span><small>Average fixed-broadband subscriptions per 100 people</small></div>
+            <div><code>10.0</code><span>Americas</span><small>Average fixed-broadband subscriptions per 100 people</small></div>
+            <div><code>6.43</code><span>Asia</span><small>Average fixed-broadband subscriptions per 100 people</small></div>
+            <div><code>6.11</code><span>Oceania</span><small>Average fixed-broadband subscriptions per 100 people</small></div>
+            <div><code>1.05</code><span>Africa</span><small>Average fixed-broadband subscriptions per 100 people</small></div>
+          </div>
+
+          <p class="project-story-evidence__note"><i class="bx bx-info-circle" aria-hidden="true"></i> These are unweighted means across matched country-year records pooled over the full source period. They are not current regional rates, statistical significance results, or evidence of causation.</p>
+          <figcaption>The values are reproduced from the knitted report's printed broadband summary and retain the original unit: fixed subscriptions per 100 people.</figcaption>
+        </figure>
+      </section>
+
+      <nav class="project-story__dock" aria-label="Project navigation">
+        <a class="project-story__dock-link project-story__dock-link--previous" href="/projects/web-ctf/" rel="prev">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+          <span><small>Previous project</small><strong>Web CTF</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--archive" href="/projects/">
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-grid-alt"></i></span>
+          <span><small>All Projects</small><strong>Browse the archive</strong></span>
+        </a>
+        <a class="project-story__dock-link project-story__dock-link--next" href="/projects/azure-fitness-tracker/" rel="next">
+          <span><small>Next project</small><strong>Azure Fitness Tracker</strong></span>
+          <span class="project-story__dock-icon" aria-hidden="true"><i class="bx bx-right-arrow-alt"></i></span>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <section class="chatbot-section" id="chatbot">
+    <div id="chatbox" class="chatbox hidden">
+      <div class="chatbox-header">
+        <div class="chatbox-header-left">
+          <img src="../../assets/avatar.svg" alt="Insight Avatar" class="header-avatar">
+          <span>Insight</span>
+        </div>
+        <div class="chatbox-controls">
+          <button id="chat-reset" aria-label="Reset Chat"><img src="../../assets/reset.svg" alt="Reset Icon"></button>
+          <button id="chat-close" aria-label="Close Chat"><img src="../../assets/close2.svg" alt="Close Icon"></button>
+        </div>
+      </div>
+      <div id="chat-messages" class="chatbox-messages">
+        <div id="welcome-card" class="welcome-card">
+          <img src="../../assets/avatar.svg" class="welcome-avatar" alt="Insight Avatar">
+          <h3>Insight</h3>
+          <p>Your personal AI assistant. Ask me about Israel's projects, skills, or experience!</p>
+        </div>
+      </div>
+      <form id="chat-form" class="chatbox-form">
+        <input type="text" id="chat-input" placeholder="Right here..." aria-label="Ask the portfolio assistant" required>
+        <button type="submit" id="chat-send" aria-label="Send message">&#10148;</button>
+      </form>
+    </div>
+    <div id="chat-toggle" class="chat-toggle" role="button" tabindex="0" aria-label="Open portfolio assistant">
+      <img src="../../assets/chat.svg" alt="">
+    </div>
+    <div id="reset-modal" class="reset-modal hidden" aria-hidden="true">
+      <div class="reset-modal-content" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="reset-modal-header">
+          <span id="reset-title">Restart Conversation</span>
+          <button id="reset-close" class="reset-close" type="button" aria-label="Close reset confirmation">&#10006;</button>
+        </div>
+        <p>Are you sure you want to restart a new conversation?</p>
+        <div class="reset-modal-actions">
+          <button id="reset-confirm" class="reset-confirm" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="../../js/theme.js" defer></script>
+  <script src="../../js/nav.js" defer></script>
+  <script src="../../js/cursor.js" defer></script>
+  <script src="../../main.js" defer></script>
+</body>
+</html>

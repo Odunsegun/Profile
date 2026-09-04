@@ -1,0 +1,437 @@
+/* Stop 6 — Experience journey + evidence trays */
+
+#experience .timeline-header h2 {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+}
+
+#experience .timeline-header p {
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+#experience .w-layout-blockcontainer.container,
+#experience .w-container,
+#experience .timeline {
+  width: 100%;
+  max-width: min(1200px, 100%);
+}
+
+#experience .history-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#experience .timeline {
+  --timeline-progress: 0%;
+  --spine-x: 50%;
+  padding-bottom: 1rem;
+  overflow: visible;
+}
+
+#experience .timeline-entry {
+  opacity: 1;
+  transform: none;
+  padding: 1.15rem 40px 1.25rem;
+}
+
+#experience .timeline-text-box {
+  position: relative;
+  z-index: 2;
+  max-width: none;
+  padding: 1.35rem 1.6rem;
+}
+
+#experience .timeline-text-box:hover {
+  transform: none;
+}
+
+#experience .left-timeline-container-arrow,
+#experience .right-timeline-container-arrow {
+  display: none;
+}
+
+#experience .timeline-entry--stage-break {
+  margin-top: clamp(1rem, 3vh, 2rem);
+}
+
+/* Thin center spine — behind waypoint discs */
+#experience .timeline-line {
+  left: var(--spine-x);
+  width: 2px;
+  transform: translateX(-50%);
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--shell-violet, #8069ff),
+    var(--shell-accent, #00d8e7)
+  );
+  box-shadow: 0 0 8px rgba(0, 216, 231, 0.28);
+}
+
+/* Sleek dashed waypoint icons, vertically centered on the card */
+#experience .timeline-icon-circle {
+  width: 36px;
+  height: 36px;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background-color: var(--background);
+  border: 1.5px dashed var(--shell-accent, #00d8e7);
+  box-shadow: 0 0 10px rgba(0, 216, 231, 0.28);
+}
+
+#experience .left-icon-circle {
+  left: 100%;
+}
+
+#experience .right-icon-circle {
+  left: 0;
+}
+
+#experience .timeline-icon-circle::before {
+  width: 44px;
+  height: 44px;
+  background: radial-gradient(circle, rgba(0, 216, 231, 0.16), transparent 70%);
+}
+
+#experience .timeline-container img,
+#experience .left-timeline-container img,
+#experience .right-timeline-container img,
+#experience .timeline-icon-img {
+  position: static;
+  left: auto;
+  right: auto;
+  top: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  object-fit: contain;
+  filter: invert(78%) sepia(42%) saturate(1200%) hue-rotate(130deg) brightness(1.05);
+}
+
+#experience .timeline-icon-circle img:hover {
+  animation: none;
+}
+
+/* Thin connector from card edge to the spine */
+#experience .timeline-text-box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 1px;
+  background: rgba(151, 173, 200, 0.4);
+  pointer-events: none;
+}
+
+#experience .left-timeline-container .timeline-text-box::after {
+  right: -40px;
+}
+
+#experience .right-timeline-container .timeline-text-box::after {
+  left: -40px;
+}
+
+#experience .timeline-text-box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--shell-accent, #00d8e7);
+  box-shadow: 0 0 8px var(--shell-accent, #00d8e7);
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+#experience .left-timeline-container .timeline-text-box::before {
+  right: -4px;
+}
+
+#experience .right-timeline-container .timeline-text-box::before {
+  left: -4px;
+}
+
+/* Rocket stays on the spine; JS pins it to viewport mid while scrolling */
+#experience .timeTraveller {
+  position: absolute;
+  left: var(--spine-x);
+  top: 0;
+  z-index: 5;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--shell-accent, #00d8e7);
+  text-shadow: none;
+  filter: drop-shadow(0 0 6px #c084fc) drop-shadow(0 0 2px var(--shell-accent, #00d8e7));
+  transform: translate(-50%, -50%) rotate(90deg);
+  pointer-events: none;
+}
+
+.timeline-evidence__note {
+  margin-top: 0.75rem;
+  opacity: 0.8;
+  font-size: 1.05rem;
+}
+
+#experience .timeline-entry.is-active .timeline-text-box {
+  border-color: rgba(0, 216, 231, 0.45);
+  box-shadow: 0 0 18px rgba(128, 105, 255, 0.28);
+}
+
+.timeline-entry__org {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--shell-accent, #00d8e7);
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.timeline-text-box .timeline-entry__role {
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-entry__bullets {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 1.35rem;
+  line-height: 1.55;
+  color: var(--foreground);
+}
+
+.timeline-entry__bullets li {
+  margin-bottom: 0.35rem;
+}
+
+.timeline-evidence {
+  display: none;
+}
+
+.timeline-evidence-mobile {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.timeline-evidence-mobile summary {
+  cursor: pointer;
+  color: var(--shell-accent, #00d8e7);
+  font-weight: 600;
+  list-style: none;
+}
+
+.timeline-evidence-mobile summary::-webkit-details-marker {
+  display: none;
+}
+
+.timeline-evidence__panel {
+  margin-top: 0.65rem;
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 216, 231, 0.2);
+  background: rgba(4, 14, 22, 0.55);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  opacity: 0.75;
+}
+
+body.lightmode .timeline-evidence__panel {
+  background: rgba(240, 248, 255, 0.85);
+}
+
+.timeline-evidence__panel--placeholder {
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+  min-height: 120px;
+  text-align: center;
+  opacity: 0.65;
+  font-style: italic;
+}
+
+.timeline-evidence__panel--placeholder i {
+  font-size: 2rem;
+  color: var(--shell-accent, #00d8e7);
+  font-style: normal;
+}
+
+.timeline-evidence__certs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.timeline-evidence__certs li {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #7ee8f7;
+  border: 1px solid rgba(0, 216, 231, 0.5);
+  background: rgba(0, 40, 55, 0.5);
+}
+
+.timeline-evidence__topics {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.timeline-cta {
+  width: 100%;
+  text-align: center;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  padding-bottom: 1rem;
+}
+
+.timeline-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--shell-violet, #8069ff), #5b8cff);
+  border: 1px solid transparent;
+  transition: filter 0.2s ease;
+}
+
+.timeline-cta a:hover,
+.timeline-cta a:focus-visible {
+  filter: brightness(1.08);
+  outline: none;
+}
+
+@media (min-width: 769px) {
+  #experience .timeline-entry {
+    position: relative;
+  }
+
+  #experience .timeline-entry:hover,
+  #experience .timeline-entry:focus-within {
+    z-index: 6;
+  }
+
+  .timeline-evidence {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: min(100% - 24px, 380px);
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(calc(-50% + 10px)) scale(0.98);
+    transition:
+      opacity 280ms ease,
+      visibility 280ms ease,
+      transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .timeline-evidence__panel {
+    opacity: 1;
+    filter: none;
+    margin-top: 0;
+  }
+
+  .left-timeline-container .timeline-evidence {
+    left: calc(100% + 40px);
+  }
+
+  .right-timeline-container .timeline-evidence {
+    right: calc(100% + 40px);
+  }
+
+  .timeline-entry:hover .timeline-evidence,
+  .timeline-entry:focus-within .timeline-evidence {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) scale(1);
+  }
+
+  .timeline-entry:hover .timeline-evidence__panel,
+  .timeline-entry:focus-within .timeline-evidence__panel {
+    border-color: rgba(0, 216, 231, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 216, 231, 0.12);
+  }
+
+  .timeline-evidence-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #experience .timeline {
+    --spine-x: 1.25rem;
+  }
+
+  #experience .timeline-entry {
+    width: 100% !important;
+    left: 0 !important;
+    padding: 1.35rem 1rem 1.35rem 3.6rem;
+  }
+
+  #experience .timeline-icon-circle,
+  #experience .left-icon-circle,
+  #experience .right-icon-circle {
+    left: var(--spine-x) !important;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #experience .timeline-line,
+  #experience .timeTraveller {
+    left: var(--spine-x);
+  }
+
+  #experience .left-timeline-container .timeline-text-box::after,
+  #experience .right-timeline-container .timeline-text-box::after {
+    left: auto;
+    right: 100%;
+    width: 1.6rem;
+  }
+
+  #experience .left-timeline-container .timeline-text-box::before,
+  #experience .right-timeline-container .timeline-text-box::before {
+    left: -4px;
+    right: auto;
+  }
+
+  .timeline-evidence {
+    display: none !important;
+  }
+
+  .timeline-evidence-mobile {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-evidence {
+    transition: none;
+  }
+
+  .timeline-entry:hover .timeline-evidence,
+  .timeline-entry:focus-within .timeline-evidence {
+    transform: translateY(-50%);
+  }
+}

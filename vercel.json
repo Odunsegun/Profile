@@ -1,0 +1,17 @@
+{
+  "headers": [
+    {
+      "source": "/assets/Portfolio_Resume.pdf",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        { "key": "Content-Disposition", "value": "inline; filename=\"Israel_Odunaiya_Resume.pdf\"" }
+      ]
+    },
+    {
+      "source": "/404.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    }
+  ]
+}
