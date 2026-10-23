@@ -600,3 +600,22 @@ body.lightmode .credential-card__status i {
     transition: none;
   }
 }
+
+/* Keep official badge lettering readable in both themes. */
+.credential-card__badge-link {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff;
+}
+.credential-card__badge-link:focus-visible {
+  outline: 3px solid var(--shell-accent, #13dce7);
+  outline-offset: 3px;
+}
+.credential-card__badge-image {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+}

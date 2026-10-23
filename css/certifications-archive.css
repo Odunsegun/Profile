@@ -862,3 +862,8 @@ body[data-page="certifications"] .chatbox-form input:focus-visible {
     filter: none;
   }
 }
+
+.certs-vault-card__badge-img[src$="/ccna.png"] {
+  background: #fff;
+  border-radius: 8px;
+}
