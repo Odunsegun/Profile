@@ -67,11 +67,27 @@ body.lightmode .credentials-kicker {
   -webkit-text-fill-color: transparent;
 }
 
+.credentials-intro {
+  display: none;
+}
+
 body.lightmode .credentials-title {
-  background: linear-gradient(180deg, #1a2230 0%, #4a5568 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary-text, #0c1936);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+body.lightmode .credentials-kicker {
+  color: var(--secondary-text, #43536d);
+}
+
+body.lightmode .credentials-intro {
+  display: block;
+  max-width: 56ch;
+  margin: 0.85rem auto 0;
+  color: var(--secondary-text, #43536d);
+  font-size: clamp(1.3rem, 1.45vw, 1.5rem);
+  line-height: 1.5;
 }
 
 .credentials-orbit {
@@ -107,6 +123,15 @@ body.lightmode .credentials-title {
 .credentials-orbit__ellipse--inner {
   stroke: rgba(255, 255, 255, 0.12);
   stroke-dasharray: 4 8;
+}
+
+body.lightmode .credentials-orbit__ellipse {
+  stroke: rgba(7, 139, 172, 0.38);
+  stroke-width: 1.15;
+}
+
+body.lightmode .credentials-orbit__ellipse--inner {
+  stroke: rgba(65, 105, 232, 0.3);
 }
 
 .credentials-orbit__node {
@@ -184,8 +209,20 @@ body.lightmode .credentials-title {
 }
 
 body.lightmode .credential-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(10, 174, 208, 0.35);
+  color: var(--primary-text, #0c1936);
+  background: var(--surface-strong, rgba(255, 255, 255, 0.94));
+  border-color: rgba(7, 139, 172, 0.48);
+  box-shadow:
+    0 9px 24px rgba(35, 78, 139, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+body.lightmode .credential-card:hover,
+body.lightmode .credential-card:focus-within {
+  border-color: rgba(7, 139, 172, 0.78);
+  box-shadow:
+    0 12px 28px rgba(35, 78, 139, 0.19),
+    0 0 18px rgba(65, 105, 232, 0.1);
 }
 
 .credentials-orbit__card {
@@ -245,11 +282,15 @@ body.lightmode .credential-card {
 }
 
 body.lightmode .credential-card--locked {
-  border-color: rgba(62, 73, 126, 0.22);
+  color: var(--locked-text, #667087);
+  background: rgba(226, 235, 247, 0.9);
+  border-color: rgba(40, 78, 135, 0.32);
+  box-shadow: 0 7px 18px rgba(35, 68, 116, 0.1);
+  opacity: 1;
 }
 
 body.lightmode .credential-card--locked .credential-card__status {
-  color: rgba(62, 73, 126, 0.7);
+  color: var(--locked-text, #667087);
 }
 
 .credential-card__badge {
@@ -260,6 +301,45 @@ body.lightmode .credential-card--locked .credential-card__status {
   height: 30px;
 }
 
+.credential-card__badge-icon {
+  display: none !important;
+}
+
+body.lightmode .credential-card__shield {
+  display: none;
+}
+
+body.lightmode .credential-card__badge-icon {
+  display: block !important;
+  color: var(--accent-blue, #4169e8);
+  font-size: 2.7rem;
+  filter: drop-shadow(0 3px 6px rgba(65, 105, 232, 0.18));
+}
+
+body.lightmode .credentials-orbit__card--1 .credential-card__badge-icon {
+  color: #4169e8;
+}
+
+body.lightmode .credentials-orbit__card--2 .credential-card__badge-icon {
+  color: #078bac;
+}
+
+body.lightmode .credentials-orbit__card--3 .credential-card__badge-icon {
+  color: #6753d8;
+}
+
+body.lightmode .credentials-orbit__card--4 .credential-card__badge-icon {
+  color: #148f72;
+}
+
+body.lightmode .credentials-orbit__card--5 .credential-card__badge-icon {
+  color: #5c68a7;
+}
+
+body.lightmode .credentials-orbit__card--6 .credential-card__badge-icon {
+  color: #4966ad;
+}
+
 .credential-card__lock {
   position: absolute;
   inset: 0;
@@ -268,6 +348,18 @@ body.lightmode .credential-card--locked .credential-card__status {
   color: #fff;
   font-size: 1rem;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+body.lightmode .credential-card__lock {
+  inset: auto -0.3rem -0.3rem auto;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  color: #fff;
+  background: #667087;
+  font-size: 1rem;
+  text-shadow: none;
+  box-shadow: 0 2px 6px rgba(35, 68, 116, 0.22);
 }
 
 .credential-card--locked .credential-card__code {
@@ -322,7 +414,10 @@ body.lightmode .credential-card--locked .credential-card__status {
 }
 
 body.lightmode .credential-card__name {
-  background: rgba(255, 255, 255, 0.96);
+  color: var(--primary-text, #0c1936);
+  background: var(--surface-strong, rgba(255, 255, 255, 0.94));
+  border-color: rgba(7, 139, 172, 0.28);
+  box-shadow: 0 8px 20px rgba(35, 68, 116, 0.16);
 }
 
 .credential-card:hover .credential-card__name,
@@ -348,6 +443,20 @@ body.lightmode .credential-card__name {
 
 .credential-card__status i {
   font-size: 1rem;
+}
+
+body.lightmode .credential-card__code {
+  color: var(--primary-text, #0c1936);
+  font-size: 1.55rem;
+}
+
+body.lightmode .credential-card__status {
+  color: var(--accent-cyan, #078bac);
+  font-size: 1.2rem;
+}
+
+body.lightmode .credential-card__status i {
+  font-size: 1.25rem;
 }
 
 .credentials-cta {
@@ -380,6 +489,32 @@ body.lightmode .credential-card__name {
   filter: brightness(1.08);
   box-shadow: 0 10px 32px rgba(0, 216, 231, 0.28);
   outline: none;
+}
+
+@media (min-width: 769px) {
+  body.lightmode .credentials-chapter {
+    gap: clamp(1rem, 1.8vh, 1.6rem);
+  }
+
+  body.lightmode .credentials-orbit {
+    width: min(980px, 100%);
+    max-height: min(58svh, 520px);
+  }
+
+  body.lightmode .credential-card {
+    width: 138px;
+    padding: 0.7rem 0.55rem 0.65rem;
+  }
+
+  body.lightmode .credential-card__badge {
+    width: 40px;
+    height: 40px;
+  }
+
+  body.lightmode .credential-card__name {
+    max-width: 19rem;
+    font-size: 1.15rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -437,6 +572,20 @@ body.lightmode .credential-card__name {
     opacity: 1;
     visibility: visible;
     font-size: 0.95rem;
+  }
+
+  body.lightmode .credential-card {
+    padding: 1rem 0.8rem;
+  }
+
+  body.lightmode .credential-card__badge {
+    width: 40px;
+    height: 40px;
+  }
+
+  body.lightmode .credential-card__name {
+    color: var(--secondary-text, #43536d);
+    font-size: 1.1rem;
   }
 }
 

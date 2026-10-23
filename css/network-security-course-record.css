@@ -687,3 +687,53 @@ body.lightmode.network-security-record .network-lab-figure {
     transition: none;
   }
 }
+
+/* Readable course diagrams and evidence copy at normal browser zoom. */
+.network-panel__title,
+.network-prep-card h3 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.network-path__step strong,
+.network-scope-list strong,
+.network-check strong,
+.network-concept__node strong,
+.network-department strong,
+.network-device strong,
+.network-boundary strong,
+.network-incident__stage strong {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.network-path__step small,
+.network-scope-list span,
+.network-check small,
+.network-concept__node small,
+.network-device small,
+.network-boundary span,
+.network-lab-figure figcaption,
+.network-incident__stage small,
+.network-prep-card p,
+.network-prep-card li {
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.network-record-link {
+  font-size: 14px;
+}
+
+.network-department code,
+.network-department small,
+.network-path-label,
+.network-boundary small,
+.network-lab-meta span,
+.network-incident__number,
+.network-prep-card__status,
+.network-prep-card__mark span,
+.network-prep-card__mark small {
+  font-size: 12.5px;
+  line-height: 1.4;
+}

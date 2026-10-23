@@ -106,10 +106,10 @@ window.CERTIFICATIONS = [
     skills: []
   },
   {
-    id: "sc-500",
-    code: "SC-500",
-    name: "Microsoft Certified: Cloud and AI Security Engineer Associate",
-    shortName: "Cloud and AI Security Engineer Associate",
+    id: "az-500",
+    code: "AZ-500",
+    name: "Microsoft Certified: Azure Security Engineer Associate",
+    shortName: "Azure Security Engineer Associate",
     issuer: "Microsoft",
     status: "in-preparation",
     badge: null,
@@ -121,7 +121,7 @@ window.CERTIFICATIONS = [
     credentialUrl: null,
     studyPathUrl: null,
     studyPathLabel: null,
-    focus: "Cloud and AI security across Azure and hybrid environments.",
+    focus: "Azure security engineering and operations.",
     skills: []
   }
 ];

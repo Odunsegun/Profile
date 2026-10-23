@@ -4,8 +4,10 @@
   --contact-text-strong: #e8eef4;
   --contact-text-body: rgba(232, 238, 244, 0.88);
   --contact-surface: rgba(12, 21, 31, 0.72);
-  --contact-border: rgba(151, 173, 200, 0.2);
-  --contact-font-display: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --contact-border: rgba(151, 190, 210, 0.34);
+  --contact-field-border: rgba(157, 199, 220, 0.42);
+  --contact-label: #dce9f1;
+  --contact-font-display: "Barlow Condensed", system-ui, "Segoe UI", sans-serif;
   --contact-font-body: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -13,7 +15,9 @@ body.lightmode {
   --contact-text-strong: #10162f;
   --contact-text-body: #2a3350;
   --contact-surface: rgba(255, 255, 255, 0.82);
-  --contact-border: rgba(73, 84, 141, 0.18);
+  --contact-border: rgba(73, 84, 141, 0.26);
+  --contact-field-border: rgba(64, 78, 132, 0.34);
+  --contact-label: #202945;
 }
 
 @media (min-width: 900px) {
@@ -24,14 +28,23 @@ body.lightmode {
     padding:
       calc(var(--top-nav-height) + 32px)
       var(--section-inline)
-      42px;
+      24px;
     overflow: visible;
+    background: transparent;
   }
 }
 
 .contact-chapter {
   width: 100%;
   font-family: var(--contact-font-body);
+}
+
+@media (min-width: 900px) {
+  .contact-chapter {
+    min-height: calc(100svh - var(--top-nav-height) - 80px);
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .contact-layout {
@@ -63,9 +76,9 @@ body.lightmode {
 .contact-title {
   margin: 0 0 0.75rem;
   font-family: var(--contact-font-display);
-  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-size: clamp(4.8rem, 4vw, 5.6rem);
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   line-height: 1.05;
   color: var(--contact-text-strong);
@@ -73,16 +86,18 @@ body.lightmode {
 
 .contact-intro__text {
   margin: 0 0 1.25rem;
-  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-size: clamp(1.45rem, 1.2vw, 1.65rem);
   line-height: 1.55;
   color: var(--contact-text-body);
-  max-width: 28rem;
+  max-width: 33rem;
 }
 
 .contact-links {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .contact-link {
@@ -91,14 +106,15 @@ body.lightmode {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 54px;
+  min-height: 60px;
   padding: 10px 14px;
   border-radius: 12px;
   border: 1px solid var(--contact-border);
   background: var(--contact-surface);
   color: var(--contact-text-strong);
+  margin: 0;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.4rem;
   font-weight: 500;
   transition:
     transform 170ms cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -114,7 +130,7 @@ body.lightmode {
   place-items: center;
   flex-shrink: 0;
   border-radius: 9px;
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   color: var(--link-accent);
   background: color-mix(in srgb, var(--link-accent) 10%, transparent);
   border: 1px solid color-mix(in srgb, var(--link-accent) 25%, transparent);
@@ -154,21 +170,71 @@ body.lightmode {
   position: relative;
   display: grid;
   place-items: center;
+  align-self: stretch;
+  align-items: end;
+  min-height: 510px;
   min-width: 0;
   z-index: 1;
   pointer-events: none;
+  isolation: isolate;
 }
 
-.contact-visual img {
-  width: min(100%, 320px);
+.contact-visual::before,
+.contact-visual::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.contact-visual::before {
+  left: 50%;
+  bottom: -1%;
+  width: 130%;
+  height: 55%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center bottom, rgba(0, 216, 231, 0.28), rgba(0, 216, 231, 0.08) 38%, transparent 72%);
+  filter: blur(18px);
+  opacity: 0.7;
+}
+
+.contact-visual::after {
+  top: 4%;
+  left: 42%;
+  width: min(130%, 440px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 46px, rgba(0, 216, 231, 0.17) 47px 48px, transparent 49px 74px);
+  mask-image: linear-gradient(to top right, transparent 24%, #000 53%, transparent 82%);
+  -webkit-mask-image: linear-gradient(to top right, transparent 24%, #000 53%, transparent 82%);
+  opacity: 0.72;
+}
+
+.contact-visual__art {
+  display: block;
+  width: min(132%, 470px);
+  max-width: none;
   height: auto;
-  opacity: 0.92;
-  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.35));
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0.98;
+  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.46)) drop-shadow(0 0 18px rgba(0, 216, 231, 0.14));
 }
 
-body.lightmode .contact-visual img {
-  opacity: 0.85;
-  filter: drop-shadow(0 12px 28px rgba(15, 23, 42, 0.12));
+.contact-visual__art--light {
+  display: none;
+}
+
+body.lightmode .contact-visual__art--dark {
+  display: none;
+}
+
+body.lightmode .contact-visual__art--light {
+  display: block;
+  opacity: 0.96;
+  filter: drop-shadow(0 16px 28px rgba(15, 23, 42, 0.18)) drop-shadow(0 0 16px rgba(10, 174, 208, 0.13));
 }
 
 .contact-form-wrap {
@@ -193,7 +259,7 @@ body.lightmode .contact-visual img {
 .contact-form--locked .contact-form__title,
 .contact-form--locked .form-field label,
 .contact-form--locked .contact-form__note {
-  color: rgba(200, 210, 220, 0.7);
+  color: rgba(224, 235, 243, 0.82);
 }
 
 .contact-form--locked .contact-form__title i {
@@ -203,7 +269,7 @@ body.lightmode .contact-visual img {
 
 .contact-form--locked :is(input, textarea) {
   cursor: not-allowed;
-  border-color: rgba(151, 173, 200, 0.16);
+  border-color: var(--contact-field-border);
   background: rgba(80, 91, 103, 0.18);
 }
 
@@ -224,7 +290,7 @@ body.lightmode .contact-form--locked :is(input, textarea) {
 body.lightmode .contact-form--locked .contact-form__title,
 body.lightmode .contact-form--locked .form-field label,
 body.lightmode .contact-form--locked .contact-form__note {
-  color: rgba(62, 73, 126, 0.7);
+  color: rgba(32, 41, 69, 0.82);
 }
 
 body.lightmode .contact-form {
@@ -234,7 +300,7 @@ body.lightmode .contact-form {
 .contact-form__title {
   margin: 0 0 1rem;
   font-family: var(--contact-font-body);
-  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  font-size: clamp(1.7rem, 1.5vw, 2rem);
   font-weight: 600;
   color: var(--contact-text-strong);
 }
@@ -246,20 +312,20 @@ body.lightmode .contact-form {
 .form-field label {
   display: block;
   margin-bottom: 0.35rem;
-  font-size: 0.82rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--contact-text-body);
+  color: var(--contact-label);
 }
 
 .contact-form :is(input, textarea) {
   width: 100%;
   padding: 0.65rem 0.75rem;
   border-radius: 10px;
-  border: 1px solid var(--contact-border);
+  border: 1px solid var(--contact-field-border);
   background: rgba(4, 10, 18, 0.45);
   color: var(--contact-text-strong);
   font-family: var(--contact-font-body);
-  font-size: 0.92rem;
+  font-size: 1.35rem;
   line-height: 1.4;
   transition: border-color 170ms ease, box-shadow 170ms ease;
 }
@@ -277,10 +343,10 @@ body.lightmode .contact-form :is(input, textarea) {
   border-color: rgba(151, 173, 200, 0.35);
 }
 
-.contact-form :is(input, textarea):focus {
+.contact-form :is(input, textarea):focus-visible {
   outline: none;
   border-color: var(--shell-accent, #00d8e7);
-  box-shadow: 0 0 0 3px rgba(0, 216, 231, 0.12);
+  box-shadow: 0 0 0 3px rgba(0, 216, 231, 0.2), 0 0 18px rgba(0, 216, 231, 0.09);
 }
 
 .contact-form textarea {
@@ -301,16 +367,23 @@ body.lightmode .contact-form :is(input, textarea) {
   border: none;
   border-radius: 12px;
   font-family: var(--contact-font-body);
-  font-size: 0.95rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
-  background: linear-gradient(135deg, var(--shell-violet, #8069ff), var(--shell-accent, #00d8e7));
-  transition: opacity 170ms ease, transform 170ms ease;
+  background: linear-gradient(110deg, var(--shell-accent, #00d8e7), var(--shell-violet, #8069ff));
+  box-shadow: 0 10px 24px rgba(69, 97, 238, 0.2);
+  transition: opacity 170ms ease, transform 170ms ease, box-shadow 170ms ease;
 }
 
 .contact-form__submit:hover:not(:disabled) {
   transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(69, 97, 238, 0.3);
+}
+
+.contact-form__submit:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--shell-accent, #00d8e7) 72%, white);
+  outline-offset: 3px;
 }
 
 .contact-form__submit:disabled {
@@ -360,7 +433,7 @@ body.lightmode .contact-form :is(input, textarea) {
   column-gap: clamp(1.5rem, 4vw, 4rem);
   row-gap: 1.5rem;
   width: min(1260px, 100%);
-  margin: clamp(1.75rem, 3.5vh, 2.5rem) auto 0;
+  margin: auto auto 0;
   padding-top: clamp(1.5rem, 3vh, 2rem);
   border-top: 1px solid var(--contact-border);
   color: var(--contact-text-body);
@@ -469,7 +542,7 @@ body.lightmode .site-footer__mark {
     z-index: 0;
   }
 
-  .contact-visual img {
+  .contact-visual__art {
     width: min(70vw, 400px);
   }
 
@@ -504,7 +577,7 @@ body.lightmode .site-footer__mark {
 @media (max-width: 760px) {
   body[data-page="home"] #contact.home-chapter.contact-section {
     min-height: 0;
-    padding-bottom: max(48px, calc(76px + env(safe-area-inset-bottom, 0px)));
+    padding-bottom: max(28px, calc(52px + env(safe-area-inset-bottom, 0px)));
   }
 
   .contact-layout {
@@ -512,25 +585,42 @@ body.lightmode .site-footer__mark {
     gap: 1.25rem;
   }
 
-  .contact-visual {
-    position: static;
-    transform: none;
-    opacity: 0.35;
-    order: 3;
-    margin: 0.5rem 0;
+  .contact-intro {
+    order: 1;
+    grid-column: 1;
   }
 
-  .contact-visual img {
-    width: min(220px, 60vw);
+  .contact-title {
+    font-size: clamp(3.6rem, 12vw, 4.8rem);
+  }
+
+  .contact-visual {
+    position: absolute;
+    right: -18%;
+    bottom: 0;
+    left: auto;
+    top: auto;
+    width: min(78vw, 340px);
+    min-height: 0;
+    transform: none;
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  .contact-visual__art {
+    width: 100%;
+    max-height: none;
   }
 
   .contact-form-wrap {
-    order: 4;
+    order: 2;
+    grid-column: 1;
   }
 
   .site-footer {
     grid-template-columns: 1fr;
     width: 100%;
+    margin-top: 2.4rem;
   }
 
   .site-footer__blurb {

@@ -1162,3 +1162,83 @@ body.lightmode .record-method--post {
     transform: none;
   }
 }
+
+/* Typography and readability pass for detailed experience records. */
+.experience-page--record .experience-record__back,
+.experience-record-nav__item,
+.experience-record-nav__item--all,
+.experience-record-nav__label,
+.experience-record-nav__title {
+  font-size: 14px;
+}
+
+.experience-page--record .experience-record__eyebrow,
+.record-evidence__eyebrow,
+.record-evidence__badge,
+.record-evidence__tools > span,
+.record-evidence__privacy {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.experience-page--record .experience-record__sub {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.experience-page--record .experience-notice,
+.record-evidence__loading,
+.record-evidence__intro,
+.record-scope__context p,
+.record-verification__grid p,
+.record-debugging__notes p,
+.experience-takeaway p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.experience-page--record .experience-accordion__title,
+.experience-takeaways__title,
+.experience-takeaway h3 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.experience-page--record .experience-accordion__panel p,
+.experience-page--record .experience-accordion__panel li {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.experience-page--record .exp-badge,
+.record-verification__tool,
+.record-workflow__details li,
+.record-evidence__tools li,
+.record-request__topline code,
+.record-request__topline > span:last-child,
+.record-method,
+.record-request pre,
+.record-contract-list dt,
+.record-contract-list dd {
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.record-evidence__head h2 {
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.record-flow__step h3,
+.record-scope__context span,
+.record-request__body h3,
+.record-verification__grid h3,
+.record-workflow__details h3 {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.record-flow__step p {
+  font-size: 13.5px;
+  line-height: 1.55;
+}

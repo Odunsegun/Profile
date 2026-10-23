@@ -484,3 +484,38 @@ body.lightmode .about-btn--secondary {
     transform: none;
   }
 }
+
+/* Typography and readability pass. */
+.about-eyebrow {
+  font-size: 13px;
+}
+
+.about-block-heading h3 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.about-content-block p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-tag {
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.about-capability {
+  width: 82px;
+  padding: 8px 5px;
+}
+
+.about-capability__label,
+.about-hobby {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.about-btn {
+  font-size: 14px;
+}

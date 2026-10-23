@@ -39,7 +39,7 @@ body.lightmode .project-detail-page {
   background:
     radial-gradient(1100px 640px at 82% 18%, rgba(186, 230, 253, 0.42), transparent 58%),
     radial-gradient(800px 480px at 8% 78%, rgba(221, 214, 254, 0.28), transparent 55%),
-    #f4f7fb;
+    var(--page-background, #edf4ff);
 }
 
 body.lightmode .project-detail-page::before {
@@ -1487,4 +1487,75 @@ body.lightmode .project-detail-page--story {
   .project-story__dock-link--next:focus-visible .project-story__dock-icon i {
     transform: none;
   }
+}
+
+/* Typography and readability pass. Layout and theme values remain unchanged. */
+body[data-page="projects"][data-project-slug] :is(.site-topnav__link, .site-topnav__name, .site-topnav__cv),
+.project-detail__btn,
+.project-detail__next a,
+.project-story__action,
+.project-story__dock-link strong {
+  font-size: 14px;
+}
+
+.project-detail__eyebrow,
+.project-detail__tags li,
+.project-story__eyebrow,
+.project-story__eyebrow-row .project-status,
+.project-story__facts dt,
+.project-story__label,
+.project-story__section-heading > span,
+.project-story__build-list dt,
+.project-story-system__lane > p,
+.project-story-visual__heading small,
+.project-story-visual figcaption,
+.project-story-evidence span,
+.project-story-evidence small,
+.project-story-evidence__note {
+  font-size: 13px;
+}
+
+.project-story__stack li,
+.project-story-evidence code,
+.project-story-system__divider,
+.project-story__dock-link small,
+.project-story-browser__bar {
+  font-size: 12.5px;
+}
+
+.project-detail__card h2,
+.project-story__decision h3,
+.project-story-visual__heading > span {
+  font-size: 18px;
+}
+
+.project-detail__card li,
+.project-detail__card p,
+.project-story__features li,
+.project-story__build-list dd {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.project-story-system__node strong {
+  font-size: 14px;
+}
+
+.project-story-system__node span {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.project-story__summary,
+.project-story__prose-block > p:last-child,
+.project-story__decision > p:last-child,
+.project-story__reflection-item > p:last-child {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.project-story svg text[font-size="10"],
+.project-story svg text[font-size="11"],
+.project-story svg text[font-size="12"] {
+  font-size: 13px;
 }

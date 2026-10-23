@@ -54,7 +54,7 @@ body.lightmode[data-page="projects"]:not([data-project-slug]) .projects-archive-
   background:
     radial-gradient(1100px 620px at 82% 12%, rgba(186, 230, 253, 0.4), transparent 58%),
     radial-gradient(820px 480px at 8% 78%, rgba(221, 214, 254, 0.28), transparent 55%),
-    #f4f7fb;
+    var(--page-background, #edf4ff);
 }
 
 body.lightmode[data-page="projects"]:not([data-project-slug]) .projects-archive-page::before {

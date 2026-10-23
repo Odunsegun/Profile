@@ -69,14 +69,17 @@
   function renderVerify(cert) {
     const credentialUrl = safeExternalUrl(cert.credentialUrl);
     if (!credentialUrl) return "";
+    const label = cert.credentialActionLabel || "View credential";
+    const accessibleLabel = cert.credentialActionLabel ||
+      `View credential for ${cert.code} ${cert.shortName}`;
 
     return `<a
       class="certs-vault-card__verify"
       href="${escapeHtml(credentialUrl)}"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="View credential for ${escapeHtml(cert.code)} ${escapeHtml(cert.shortName)}"
-    >View credential <i class="bx bx-link-external" aria-hidden="true"></i></a>`;
+      aria-label="${escapeHtml(accessibleLabel)}"
+    >${escapeHtml(label)} <i class="bx bx-link-external" aria-hidden="true"></i></a>`;
   }
 
   function renderEarned(cert, index) {

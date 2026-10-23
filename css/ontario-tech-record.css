@@ -375,3 +375,50 @@ body.lightmode.ontario-record .ontario-studio-card__preview { background: #e9f0f
   .ontario-studio-card__preview:hover img,
   .ontario-studio-card__preview:focus-visible img { transform: none; }
 }
+
+/* Readable labels and evidence copy without changing the evidence layout. */
+.ontario-map__core strong,
+.ontario-studio-card__head span,
+.ontario-artifact__body strong,
+.ontario-synthesis__grid strong {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.ontario-map__grid strong {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ontario-studio-card p,
+.ontario-artifact__body > span,
+.ontario-synthesis__grid p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ontario-map__core small,
+.ontario-map__grid span,
+.ontario-map__timeline,
+.ontario-feature__media figcaption {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ontario-studio-card__head small,
+.ontario-studio-card pre,
+.ontario-studio-card a,
+.ontario-feature__link,
+.ontario-studio-card__preview span,
+.ontario-writing-preview code,
+.ontario-mini-flow span,
+.ontario-studio-card__note,
+.ontario-process strong,
+.ontario-synthesis__path strong,
+.ontario-process small,
+.ontario-synthesis__path small,
+.ontario-artifact__body small,
+.ontario-artifact__body em {
+  font-size: 12.5px;
+  line-height: 1.45;
+}

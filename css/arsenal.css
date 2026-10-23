@@ -275,6 +275,17 @@ body.lightmode .arsenal-tech:focus-visible {
   background: color-mix(in srgb, var(--tech-brand) 10%, rgba(255, 255, 255, 0.94));
 }
 
+body.lightmode .arsenal-tech {
+  border-color: var(--border, rgba(40, 78, 135, 0.22));
+  box-shadow: 0 3px 9px rgba(35, 68, 116, 0.08);
+}
+
+body.lightmode .arsenal-tech img,
+body.lightmode .arsenal-tech svg {
+  opacity: 0.72;
+  filter: grayscale(0.78) saturate(0.38) contrast(1.06);
+}
+
 .arsenal-tech:hover img,
 .arsenal-tech:hover svg,
 .arsenal-tech:focus-visible img,

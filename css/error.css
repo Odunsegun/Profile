@@ -25,7 +25,7 @@
 }
 
 body.lightmode {
-  --error-page-bg: #f5f6fb;
+  --error-page-bg: var(--page-background, #edf4ff);
   --error-text: #111a35;
   --error-muted: #5d687c;
   --error-cyan: #087f91;
