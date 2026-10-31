@@ -1,4 +1,10 @@
 {
+  "functions": {
+    "api/chat.js": {
+      "includeFiles": "profile.json",
+      "maxDuration": 30
+    }
+  },
   "headers": [
     {
       "source": "/assets/Portfolio_Resume.pdf",

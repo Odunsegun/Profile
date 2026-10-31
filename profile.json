@@ -1,5 +1,6 @@
 {
   "name": "Odunaiya Israel Oluwasegun",
+  "preferredName": "Israel",
   "headline": "New-grad Software Engineer (2025)",
   "location": "Pickering, ON",
   "email": "israelodunaiya@gmail.com",
@@ -28,7 +29,7 @@
       "company": "HomeBuilder (Constellation Software)",
       "title": "Software Developer Intern",
       "dates": "Jan 2026 – Aug 2026",
-      "summary": "Working on ERP-related APIs, automated tests, and developer tooling in an enterprise software environment."
+      "summary": "Worked on ERP-related APIs, automated tests, and developer tooling in an enterprise software environment."
     },
     {
       "company": "Devseal",
@@ -147,8 +148,8 @@
     },
     {
       "name": "Football Tracking",
-      "description": "Computer vision pipeline using YOLOv8, OpenCV, and DeepSORT to track players and ball from match footage.",
-      "technologies": ["Python", "YOLO", "OpenCV", "DeepSORT"],
+      "description": "Computer vision pipeline using YOLOv8, OpenCV, and ByteTrack to track players and ball from match footage.",
+      "technologies": ["Python", "YOLO", "OpenCV", "ByteTrack"],
       "link": "https://github.com/Odunsegun/football-tracking"
     }
   ],
@@ -183,41 +184,50 @@
   "certifications": [
     {
       "name": "Microsoft Certified: Identity and Access Administrator Associate (SC-300)",
-      "description": "Identity and access management with Microsoft Entra ID, Conditional Access, and governance."
+      "description": "Identity and access management with Microsoft Entra ID, Conditional Access, and governance.",
+      "status": "earned"
     },
     {
       "name": "Microsoft Certified: Azure Fundamentals (AZ-900)",
-      "description": "Core Azure cloud concepts, services, and governance."
+      "description": "Core Azure cloud concepts, services, and governance.",
+      "status": "earned"
     },
     {
       "name": "Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900)",
-      "description": "Security, compliance, and identity fundamentals across Microsoft cloud services."
+      "description": "Security, compliance, and identity fundamentals across Microsoft cloud services.",
+      "status": "earned"
     },
     {
       "name": "Microsoft Certified: Azure AI Fundamentals (AI-900)",
-      "description": "Foundational Azure AI and responsible AI concepts."
+      "description": "Foundational Azure AI and responsible AI concepts.",
+      "status": "earned"
     },
     {
       "name": "Microsoft Certified: Azure Data Fundamentals (DP-900)",
-      "description": "Core Azure data storage, analytics, and data services concepts."
+      "description": "Core Azure data storage, analytics, and data services concepts.",
+      "status": "earned"
+    },
+    {
+      "name": "Cisco Certified Network Associate (CCNA 200-301)",
+      "description": "Networking fundamentals and infrastructure.",
+      "status": "earned",
+      "credentialUrl": "https://www.credly.com/badges/c1f20475-a393-41e4-a4c4-476701bb523f/public_url"
+    }
+  ],
+
+  "plannedCertifications": [
+    {
+      "name": "Microsoft Certified: Azure Security Engineer Associate (AZ-500)",
+      "description": "Azure security engineering and operations.",
+      "status": "in-preparation"
     }
   ],
 
   "notes": [
     "Thruliquid was a brief unofficial collaboration with a manager there, not a listed internship.",
     "Maroof Ltd. was mentorship / course-style network and security training with a professional, not employment. The enterprise network security lab is the portfolio project from that work.",
-    "Physics minor at Ontario Tech, in addition to the Computer Science major. That includes astrophysics simulations (N-body / galaxy-style models) as well as Interstellar Cannon.",
-    "Preferred name: Israel. Full name: Odunaiya Israel Oluwasegun. GitHub: Odunsegun. School is Ontario Tech University, never UOIT.",
-    "Languages: English (fluent), French (intermediate), Yoruba (intermediate). Originally from Nigeria, now in Pickering, ON.",
-    "Vacation Finder GitHub is Vacation-Finder-App, not Vaction-Finder-App.",
-    "Fitness live demo is the Azure Static Web Apps URL. Charts use Recharts. Azure Key Vault and Redux were used on that app.",
-    "Only Fitness has a public live demo among featured projects unless a live URL is listed.",
     "C was used at Devseal; not a C specialist.",
-    "LangChain has been used in AI/app work. Insight on this site currently answers from profile.json; it does not use RAG unless that is implemented later.",
     "Case Dashboard and clone landing pages are not featured work.",
-    "Certs held: SC-300, AZ-900, SC-900, AI-900, DP-900. Do not add CCNA unless listed as earned or exam-scheduled.",
-    "MTN IT Support Intern was in 2019, not 2023.",
-    "LaTeX used for technical write-ups and papers at Ontario Tech; listed on the homepage Arsenal Languages card as an extra.",
     "Outside work hobbies include football, cycling, and reading — mentioned on the About section of the homepage."
   ]
 }
