@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     newMessage.hidden = true;
   }
   function grow() {
+    input.rows = 1;
     input.style.height = "auto";
     const style = getComputedStyle(input);
     const line = parseFloat(style.lineHeight);
@@ -188,6 +189,35 @@ document.addEventListener("DOMContentLoaded", () => {
   function addRichReply(data) {
     const row = addMessage("bot", data.reply);
     const body = row.querySelector(".insight-message-text");
+    // Small text-only Markdown subset; never inject model output as HTML.
+    body.replaceChildren();
+    function inline(parent, text) {
+      for (const part of text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\(https?:\/\/[^\s)]+\))/g)) {
+        const link = part.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/);
+        if (link) parent.append(cardLink(link[1], link[2]) || document.createTextNode(link[1]));
+        else if (part.startsWith("**") && part.endsWith("**")) {
+          const strong = document.createElement("strong");
+          strong.textContent = part.slice(2, -2);
+          parent.append(strong);
+        } else parent.append(document.createTextNode(part));
+      }
+    }
+    let list;
+    for (const block of data.reply.split(/\n\s*\n/)) {
+      for (const line of block.split("\n")) {
+        const bullet = line.match(/^\s*[-*]\s+(.+)/);
+        const heading = line.match(/^#{1,6}\s+(.+)/);
+        if (bullet) {
+          if (!list) { list = document.createElement("ul"); body.append(list); }
+          const item = document.createElement("li"); inline(item, bullet[1]); list.append(item);
+        } else {
+          list = null;
+          const element = document.createElement(heading ? "h3" : "p");
+          inline(element, heading ? heading[1] : line); body.append(element);
+        }
+      }
+      list = null;
+    }
     const content = document.createElement("div");
     content.className = "insight-answer";
     body.replaceWith(content);
