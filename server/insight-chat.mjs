@@ -190,6 +190,15 @@ function retryWait(error, limits) {
   return Number.isFinite(ms) && ms >= 0 && ms <= limits.maxRetryDelayMs ? ms : null;
 }
 function providerError(error) {
+  const mapped = mapProviderError(error);
+  mapped.diagnostic = error?.code === 'insufficient_quota' ? 'provider_quota_exhausted'
+    : error?.status === 401 ? 'provider_authentication_failed'
+    : error?.status === 403 ? 'provider_access_denied'
+    : error?.status === 404 ? 'provider_model_not_found'
+    : 'provider_request_failed';
+  return mapped;
+}
+function mapProviderError(error) {
   if (error?.name === 'APIConnectionTimeoutError' || error?.name === 'AbortError') return timedOut();
   if (error?.status === 401 || error?.status === 403 || error?.status === 404 || error?.code === 'insufficient_quota') return unavailable();
   if (error?.status === 429) return new ChatError(429, 'throttled', 'Insight is busy. Please wait a moment before retrying.', 30);
@@ -232,7 +241,7 @@ function sendError(res, error) {
   if (safe.retryAfter) res.setHeader('Retry-After', String(safe.retryAfter));
   return res.status(safe.status).json({ error: safe.message, code: safe.code });
 }
-export function createChatHandler({ env, loadProfile, makeClient, timing = {} }) {
+export function createChatHandler({ env, loadProfile, makeClient, timing = {}, reportError = () => {} }) {
   const limits = { ...LIMITS, ...timing };
   return async function handler(req, res) {
     res.setHeader('Cache-Control', 'no-store');
@@ -252,23 +261,36 @@ export function createChatHandler({ env, loadProfile, makeClient, timing = {} })
     });
     const disconnect = () => { if (!res.writableEnded) controller.abort(new ChatError(499, 'client_closed', 'The request was cancelled.')); };
     res.on?.('close', disconnect);
+    let stage = 'request_validation';
     try {
       const work = async () => {
         const input = validatePayload(await readJsonBody(req, limits.bodyMs));
         const config = env();
         // Fail closed until an operator configures the WAF and explicitly enables chat.
         // This kill switch is NOT proof that a distributed limiter exists.
-        if (config.INSIGHT_CHAT_ENABLED !== 'true' || !text(config.OPENAI_API_KEY)) throw unavailable();
+        stage = 'chat_disabled';
+        if (config.INSIGHT_CHAT_ENABLED !== 'true') throw unavailable();
+        stage = 'api_key_missing';
+        if (!text(config.OPENAI_API_KEY)) throw unavailable();
+        stage = 'profile_load_failed';
         const profile = await loadProfile();
         controller.signal.throwIfAborted();
+        stage = 'client_initialization_failed';
         const client = makeClient(config.OPENAI_API_KEY);
+        stage = 'catalog_build_failed';
         const catalog = createCatalog(profile);
+        stage = 'model_reply_failed';
         return modelReply(client, buildMessages(profile, input, catalog), catalog, deadline, controller.signal, limits);
       };
       // Also bounds a stalled mocked/upstream client that ignores AbortSignal.
       const reply = await Promise.race([work(), deadlinePromise]);
       if (!res.destroyed) return res.status(200).json(reply);
     } catch (error) {
+      // Emit only locally defined labels, never raw errors, keys, prompts, or replies.
+      if (!(error instanceof ChatError) || error.status >= 500) {
+        try { reportError({ event: 'insight_chat_failure', reason: error instanceof ChatError ? error.diagnostic || stage : stage }); }
+        catch { /* Logging must not interfere with the response. */ }
+      }
       if (!res.destroyed) return sendError(res, error);
     } finally {
       clearTimeout(timer);

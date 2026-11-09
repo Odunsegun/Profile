@@ -11,6 +11,7 @@ let clientKey;
 export default createChatHandler({
   env: () => process.env,
   loadProfile,
+  reportError: diagnostic => console.error(JSON.stringify(diagnostic)),
   makeClient(apiKey) {
     if (!client || clientKey !== apiKey) {
       client = new OpenAI({ apiKey, maxRetries: 0, timeout: 10000, logLevel: 'off' });

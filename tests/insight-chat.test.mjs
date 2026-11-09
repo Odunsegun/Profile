@@ -42,6 +42,7 @@ function fixture(options = {}) {
       } } } };
     },
     timing: { retryDelayMs: 0, ...options.timing },
+    reportError: options.reportError,
   });
   async function run(body = valid, settings = {}) {
     const raw = settings.raw ?? Buffer.from(JSON.stringify(body));
@@ -58,6 +59,30 @@ function assertSafe(response) {
   assert.equal(response.headers['cache-control'], 'no-store');
   assert.doesNotMatch(JSON.stringify(response.body), /PRIVATE_TEST_MARKER|mock-key-not-a-credential/);
 }
+
+test('server diagnostics distinguish failures without exposing secrets or changing public errors', async () => {
+  const cases = [
+    [{ env: () => ({ ...enabled, INSIGHT_CHAT_ENABLED: 'false' }) }, 'chat_disabled'],
+    [{ env: () => ({ INSIGHT_CHAT_ENABLED: 'true' }) }, 'api_key_missing'],
+    [{ loadProfile: () => { throw new Error('PRIVATE_TEST_MARKER'); } }, 'profile_load_failed'],
+    ...[[401, undefined, 'provider_authentication_failed'], [403, undefined, 'provider_access_denied'],
+      [404, undefined, 'provider_model_not_found'], [429, 'insufficient_quota', 'provider_quota_exhausted']]
+      .map(([status, code, reason]) => [{ complete: () => { throw Object.assign(new Error('PRIVATE_TEST_MARKER'), { status, code }); } }, reason]),
+  ];
+  for (const [options, reason] of cases) {
+    const logs = [];
+    const response = await fixture({ ...options, reportError: entry => logs.push(entry) }).run();
+    assert.equal(response.statusCode, 503);
+    assert.equal(response.body.code, 'unavailable');
+    assert.deepEqual(logs, [{ event: 'insight_chat_failure', reason }]);
+    assertSafe(response);
+  }
+});
+
+test('diagnostic sink failure does not prevent an error response', async () => {
+  const response = await fixture({ env: () => ({}), reportError: () => { throw new Error('logging failed'); } }).run();
+  assert.equal(response.statusCode, 503);
+});
 
 test('POST-only contract sets Allow and makes no model/profile calls', async () => {
   for (const method of ['GET', 'HEAD', 'PUT', 'DELETE', 'OPTIONS']) {
