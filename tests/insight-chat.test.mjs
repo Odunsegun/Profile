@@ -74,7 +74,10 @@ test('server diagnostics distinguish failures without exposing secrets or changi
     const response = await fixture({ ...options, reportError: entry => logs.push(entry) }).run();
     assert.equal(response.statusCode, 503);
     assert.equal(response.body.code, 'unavailable');
-    assert.deepEqual(logs, [{ event: 'insight_chat_failure', reason }]);
+    assert.equal(logs.length, 1);
+    assert.equal(logs[0].event, 'insight_chat_failure');
+    assert.equal(logs[0].reason, reason);
+    assert.doesNotMatch(JSON.stringify(logs), /PRIVATE_TEST_MARKER|mock-key-not-a-credential/);
     assertSafe(response);
   }
 });
@@ -82,6 +85,47 @@ test('server diagnostics distinguish failures without exposing secrets or changi
 test('diagnostic sink failure does not prevent an error response', async () => {
   const response = await fixture({ env: () => ({}), reportError: () => { throw new Error('logging failed'); } }).run();
   assert.equal(response.statusCode, 503);
+});
+
+test('429 diagnostics preserve useful limits but exclude raw provider data', async () => {
+  const logs = [];
+  const headers = new Headers({
+    'x-ratelimit-limit-tokens': '2000000',
+    'x-ratelimit-remaining-tokens': '0',
+    'x-ratelimit-reset-tokens': '1m30.5s',
+    'retry-after': '30',
+    'authorization': 'Bearer PRIVATE_TEST_MARKER',
+    'x-ratelimit-limit-requests': 'PRIVATE_TEST_MARKER',
+  });
+  const response = await fixture({
+    reportError: entry => logs.push(entry),
+    complete: () => { throw Object.assign(new Error('PRIVATE_TEST_MARKER'), {
+      status: 429, code: 'rate_limit_exceeded', type: 'tokens', headers,
+      error: { message: 'PRIVATE_TEST_MARKER' },
+    }); },
+  }).run();
+  assert.equal(response.statusCode, 429);
+  assert.equal(response.body.code, 'throttled');
+  assert.deepEqual(logs, [{ event: 'insight_chat_failure', reason: 'provider_rate_limited',
+    provider: { status: 429, model: MODEL, code: 'rate_limit_exceeded', type: 'tokens', headers: {
+      'retry-after': '30', 'x-ratelimit-limit-tokens': '2000000',
+      'x-ratelimit-remaining-tokens': '0', 'x-ratelimit-reset-tokens': '1m30.5s',
+    } },
+  }]);
+  assert.doesNotMatch(JSON.stringify(response.body), /provider|2000000/);
+});
+
+test('429 diagnostics sanitize unknown codes and log once after retry exhaustion', async () => {
+  const logs = [];
+  const f = fixture({ reportError: entry => logs.push(entry), complete: () => {
+    throw { status: 429, code: 'PRIVATE_TEST_MARKER', type: 'PRIVATE_TEST_MARKER' };
+  } });
+  assert.equal((await f.run()).statusCode, 429);
+  assert.equal(f.calls.length, 2);
+  assert.equal(logs.length, 1);
+  assert.equal(logs[0].provider.code, 'unrecognized');
+  assert.equal(logs[0].provider.type, 'unrecognized');
+  assert.doesNotMatch(JSON.stringify(logs), /PRIVATE_TEST_MARKER/);
 });
 
 test('POST-only contract sets Allow and makes no model/profile calls', async () => {

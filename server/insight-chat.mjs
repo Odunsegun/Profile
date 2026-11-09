@@ -189,13 +189,38 @@ function retryWait(error, limits) {
   const ms = Number.isFinite(seconds) ? seconds * 1000 : Date.parse(raw) - Date.now();
   return Number.isFinite(ms) && ms >= 0 && ms <= limits.maxRetryDelayMs ? ms : null;
 }
+// Allowlist metadata instead of logging SDK errors, which may contain secrets
+// or request/response content. Unknown codes remain visible as "unrecognized".
+function rateLimitDetails(error) {
+  const codes = new Set(['rate_limit_exceeded', 'insufficient_quota',
+    'organization_usage_limit_exceeded', 'billing_hard_limit_reached',
+    'billing_not_active', 'usage_limit_reached']);
+  const types = new Set(['tokens', 'requests', 'rate_limit_error',
+    'rate_limit_exceeded', 'insufficient_quota', 'invalid_request_error']);
+  const label = (value, allowed) => value == null ? 'not_provided'
+    : allowed.has(value) ? value : 'unrecognized';
+  const headers = {};
+  for (const name of ['retry-after', 'retry-after-ms',
+    'x-ratelimit-limit-requests', 'x-ratelimit-limit-tokens',
+    'x-ratelimit-remaining-requests', 'x-ratelimit-remaining-tokens',
+    'x-ratelimit-reset-requests', 'x-ratelimit-reset-tokens']) {
+    const value = error?.headers?.get?.(name);
+    // Counts, numeric delays, and durations such as 1m30s or 250ms only.
+    if (typeof value === 'string' && value.length <= 64 &&
+        /^(?:\d+(?:\.\d+)?|(?:\d+(?:\.\d+)?(?:ms|s|m|h|d))+)$/.test(value)) headers[name] = value;
+  }
+  return { status: 429, model: MODEL,
+    code: label(error?.code, codes), type: label(error?.type, types), headers };
+}
 function providerError(error) {
   const mapped = mapProviderError(error);
   mapped.diagnostic = error?.code === 'insufficient_quota' ? 'provider_quota_exhausted'
     : error?.status === 401 ? 'provider_authentication_failed'
     : error?.status === 403 ? 'provider_access_denied'
     : error?.status === 404 ? 'provider_model_not_found'
+    : error?.status === 429 ? 'provider_rate_limited'
     : 'provider_request_failed';
+  if (error?.status === 429) mapped.provider = rateLimitDetails(error);
   return mapped;
 }
 function mapProviderError(error) {
@@ -287,8 +312,9 @@ export function createChatHandler({ env, loadProfile, makeClient, timing = {}, r
       if (!res.destroyed) return res.status(200).json(reply);
     } catch (error) {
       // Emit only locally defined labels, never raw errors, keys, prompts, or replies.
-      if (!(error instanceof ChatError) || error.status >= 500) {
-        try { reportError({ event: 'insight_chat_failure', reason: error instanceof ChatError ? error.diagnostic || stage : stage }); }
+      if (!(error instanceof ChatError) || error.status >= 500 || error.status === 429) {
+        try { reportError({ event: 'insight_chat_failure', reason: error instanceof ChatError ? error.diagnostic || stage : stage,
+          ...(error instanceof ChatError && error.provider ? { provider: error.provider } : {}) }); }
         catch { /* Logging must not interfere with the response. */ }
       }
       if (!res.destroyed) return sendError(res, error);
