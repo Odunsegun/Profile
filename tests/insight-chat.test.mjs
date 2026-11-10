@@ -309,6 +309,8 @@ test('public profile allowlist drops unexpected fields at every object level', (
   value.internalRecords = 'PRIVATE_TEST_MARKER';
   value.experience[0].privateApiKey = 'PRIVATE_TEST_MARKER';
   value.projects[0].customerData = 'PRIVATE_TEST_MARKER';
+  value.workExamples[0].privateInterviewNotes = 'PRIVATE_TEST_MARKER';
+  assert.deepEqual(publicProfile(value).workExamples, rawProfile.workExamples);
   assert.doesNotMatch(JSON.stringify(publicProfile(value)), /PRIVATE_TEST_MARKER/);
 });
 
@@ -342,9 +344,9 @@ test('approved credential status, employment, language, and project facts surviv
   assert.ok(profile.certifications.some(c => c.name.includes('CCNA') && c.status === 'earned'));
   assert.equal(profile.plannedCertifications[0].status, 'in-preparation');
   assert.ok(profile.plannedCertifications[0].name.includes('AZ-500'));
-  assert.equal(profile.experience[0].dates, 'Jan 2026 – Aug 2026');
+  assert.equal(profile.experience[0].dates, 'Jan 2026 – Sep 2026');
   assert.equal(profile.experience[0].title, 'Software Developer Intern');
-  assert.match(profile.experience[0].summary, /^Worked on/);
+  assert.match(profile.experience[0].summary, /NestJS\/TypeScript/);
   assert.deepEqual(profile.languages.map(l => l.level), ['Fluent', 'Intermediate', 'Intermediate']);
   assert.match(profile.notes.join(' '), /Maroof.*not employment/);
   assert.match(profile.notes.join(' '), /Thruliquid.*not a listed internship/);
@@ -437,7 +439,8 @@ test('SDK integration uses a mocked transport and one request', async () => {
     fetch: async (_url, init) => {
       requests++;
       const payload = JSON.parse(init.body);
-      assert.equal(payload.model, 'gpt-4o-mini');
+      assert.equal(payload.model, 'gpt-5.4-mini');
+      assert.equal(payload.reasoning_effort, 'none');
       assert.equal(payload.max_completion_tokens, 750);
       return new Response(JSON.stringify(success()), { headers: { 'content-type': 'application/json' } });
     },

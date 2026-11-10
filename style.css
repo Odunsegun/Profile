@@ -2094,8 +2094,12 @@ body.lightmode .contact-footer::after {
 #chatbox .insight-answer a:focus-visible { outline: 2px solid var(--insight-accent); outline-offset: 2px; border-radius: 4px; }
 #chatbox .insight-message--user .insight-message-text { max-width: 88%; color: #fff; background: #175bdf; border-color: transparent; }
 #chatbox #typing-indicator .insight-message-text { display: flex; align-items: center; gap: 8px; color: var(--insight-muted); font-size: 14px; }
-#chatbox #typing-indicator lottie-player { display: block; width: 32px; height: 32px; background: #e9f5ff; border-radius: 8px; padding: 3px; }
-#chatbox #typing-indicator lottie-player:not(:defined) { display: none; }
+#chatbox #typing-indicator .insight-message-text { padding: 16px 18px; border-radius: 18px; }
+#chatbox .insight-typing-dots { display: flex; align-items: center; gap: 6px; height: 12px; }
+#chatbox .insight-typing-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--insight-muted); animation: insight-dot 1.3s ease-in-out infinite; }
+#chatbox .insight-typing-dots span:nth-child(2) { animation-delay: .15s; }
+#chatbox .insight-typing-dots span:nth-child(3) { animation-delay: .3s; }
+@keyframes insight-dot { 0%, 60%, 100% { opacity: .4; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
 #chatbox #chat-feedback { display: flex; gap: 10px; align-items: center; font-size: 13px; color: var(--insight-muted); padding-bottom: 10px; }
 #chatbox #chat-retry { border: 1px solid var(--insight-line); border-radius: 8px; padding: 8px 12px; min-height: 44px; }
 #chatbox #chat-new-message { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); background: #175bdf; color: #fff; padding: 8px 14px; border-radius: 20px; font-size: 13px; min-height: 40px; box-shadow: 0 3px 12px #0003; }

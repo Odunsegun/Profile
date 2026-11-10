@@ -28,14 +28,14 @@
     {
       "company": "HomeBuilder (Constellation Software)",
       "title": "Software Developer Intern",
-      "dates": "Jan 2026 – Aug 2026",
-      "summary": "Worked on ERP-related APIs, automated tests, and developer tooling in an enterprise software environment."
+      "dates": "Jan 2026 – Sep 2026",
+      "summary": "Developed and standardized NestJS/TypeScript administration REST APIs within an existing ERP platform, including user roles, ERP users, security groups and configuration resources. Integrated API handlers with legacy Breeze persistence and hierarchical permissions. Wrote Jest unit tests and Playwright API/UI checks, extended existing automation with reusable Notes and user-defined-field suites, and prepared Swagger evidence and QA documentation. Created reusable Cursor rules and workflows for API development and testing. Later investigated spreadsheet import/export compatibility. This was scoped implementation and verification within an established product, not ownership of the entire ERP."
     },
     {
       "company": "Devseal",
-      "title": "Full-stack Intern",
-      "dates": "2024",
-      "summary": "Shipped dashboard and web features with React and REST APIs; also wrote C for parts of the stack."
+      "title": "Full Stack Developer Intern",
+      "dates": "Jan 2024 – Dec 2024",
+      "summary": "Contributed to an existing service-request portal using React/JavaScript, Python/Django REST Framework and PostgreSQL. Built filtering, pagination and bulk-status interfaces and supporting APIs; addressed stale search results and reduced unnecessary list-query data. Worked on partner-event ingestion with database uniqueness and atomic writes, plus scoped C#/ASP.NET Core internal integration endpoints. Maintained Docker development configuration, updated GitHub Actions lint/test checks and dependency caching, and investigated stale staging assets behind Cloudflare. Applied existing authentication and team review practices rather than building the entire product or authentication system."
     },
     {
       "company": "MTN",
@@ -130,7 +130,7 @@
     },
     {
       "name": "AI Learning Tutor",
-      "description": "Adaptive quiz platform with topic-based questions, performance tracking, and a teacher mode.",
+      "description": "Local Flask and JavaScript learning prototype with saved question banks and learner progress in JSON files. Selects questions using topic performance and generates custom-topic quizzes through the OpenAI API. Validates question count, four distinct options and matching correct answers before presentation; not a large production education platform.",
       "technologies": ["Python", "Flask", "JavaScript", "HTML"],
       "link": "https://github.com/Odunsegun/AI-learning-Tutor"
     },
@@ -223,10 +223,56 @@
     }
   ],
 
+  "workExamples": [
+    {
+      "topic": "Time pressure and prioritization",
+      "context": "Final year at university; four project deliverables in the same month alongside astrophysics, software security, simulations and computer vision coursework. Some projects were individual and others involved teammates.",
+      "actions": "Separated core requirements from optional polish, coordinated group dependencies first, reserved focused blocks for difficult tasks and communicated blockers early.",
+      "outcome": "Completed all four projects and met their core requirements. No grade, time-saving metric or employer deadline is claimed."
+    },
+    {
+      "topic": "CHS permission hierarchy",
+      "context": "User-role APIs needed to preserve parent/child permission intent while integrating with legacy persistence.",
+      "actions": "Separated merging requested changes, preserving explicit false selections, cascading hierarchy changes, reconciling parents, applying dependencies and building the backend save representation.",
+      "outcome": "Implemented the documented permission-processing design. The tri-state UI display and backend save representation were separate concerns; no universal correctness or performance metric is claimed."
+    },
+    {
+      "topic": "CHS integration debugging",
+      "context": "A session-termination operation received HTML where JSON was expected.",
+      "actions": "Compared the request URL and path with existing client behavior and investigated the integration path instead of changing the JSON parser alone.",
+      "outcome": "The work record describes a dedicated client-compatible handler successfully terminating the session in a shared environment. The exact infrastructure root cause is not established."
+    },
+    {
+      "topic": "CHS teamwork and design feedback",
+      "context": "Discussed adding an extra confirmation step for destructive API operations with a senior developer.",
+      "actions": "Explained the accidental-deletion concern, listened to the tradeoffs for technical users and the wider application, and aligned with the agreed approach after understanding its rationale.",
+      "outcome": "Learned to weigh intended users, implementation effort and system consistency alongside individual feature ideas. This is a specific design discussion, not a general argument against safety checks."
+    },
+    {
+      "topic": "Devseal frontend reliability",
+      "context": "Rapid ticket-filter changes produced overlapping requests and stale results when responses arrived out of order.",
+      "actions": "Debounced search input and cancelled obsolete requests in the React portal.",
+      "outcome": "More predictable filtering in the service-request workflow; no measured latency improvement or guarantee covering every race condition is claimed."
+    },
+    {
+      "topic": "Devseal webhook and database reliability",
+      "context": "Retried partner events could create duplicate records, while reporting queries added load to request processing.",
+      "actions": "Investigated logs, added event-ID uniqueness and atomic writes in PostgreSQL, and moved reporting aggregation into a scheduled Django command and summary table.",
+      "outcome": "Improved duplicate-event handling and reporting stability. No exactly-once distributed-delivery guarantee or quantified speedup is claimed."
+    },
+    {
+      "topic": "Learning Azure through a personal project",
+      "context": "Built Azure Fitness Tracker to apply cloud knowledge to a working application.",
+      "actions": "Started with a small HTTP endpoint, then connected React, Python Azure Functions and Cosmos DB, testing layers incrementally. Used Azure Static Web Apps, GitHub Actions and Application Insights for deployment and troubleshooting.",
+      "outcome": "Built and deployed the application. Current live availability must be checked separately from the implemented integration."
+    }
+  ],
   "notes": [
     "Thruliquid was a brief unofficial collaboration with a manager there, not a listed internship.",
     "Maroof Ltd. was mentorship / course-style network and security training with a professional, not employment. The enterprise network security lab is the portfolio project from that work.",
-    "C was used at Devseal; not a C specialist.",
+    "Devseal's recorded internal integration work used C# and ASP.NET Core, distinct from C. The main portal backend used Django/DRF; Flask belongs to personal projects. No broad Devseal Cloudflare security administration or measured performance improvement is claimed.",
+    "CHS work included AI-assisted development with Cursor and validation through code review, Jest, Playwright and Swagger; this does not establish a deployed employer RAG, fine-tuning or AI product.",
+    "LocalTradePros was a collaborative frontend tradespeople-directory project covering search, business profiles, messaging-style screens, About and Contact pages; not ownership of a complete production marketplace backend.",
     "Case Dashboard and clone landing pages are not featured work.",
     "Outside work hobbies include football, cycling, and reading — mentioned on the About section of the homepage."
   ]

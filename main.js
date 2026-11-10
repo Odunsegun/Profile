@@ -321,15 +321,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = addMessage("bot", "Thinking…");
     row.id = "typing-indicator";
     row.setAttribute("aria-hidden", "true");
-    if (!reducedMotion.matches) {
-      const animation = document.createElement("lottie-player");
-      animation.setAttribute("src", assetPath("assets/chat.json"));
-      animation.setAttribute("background", "transparent");
-      animation.setAttribute("speed", "1");
-      animation.setAttribute("loop", "");
-      animation.setAttribute("autoplay", "");
-      row.querySelector(".insight-message-text").prepend(animation);
-    }
+    const dots = document.createElement("span");
+    dots.className = "insight-typing-dots";
+    for (let index = 0; index < 3; index++) dots.append(document.createElement("span"));
+    row.querySelector(".insight-message-text").replaceChildren(dots);
   }
   reducedMotion.addEventListener("change", () => { const follow = nearBottom(); typing(); if (follow) bottom(); });
   function controls() {

@@ -39,7 +39,7 @@ test('computer vision fixture resolves the real football asset, ByteTrack and su
 test('CHS fixture resolves only public internship information and no made-up thumbnail', () => {
   const reply = resolveReply(structured('The internship involved ERP-related APIs and testing.', ['experience:constellation-software']), catalog);
   assert.equal(reply.cards[0].image, null);
-  assert.match(reply.cards[0].summary, /Software Developer Intern, Jan 2026 – Aug 2026/);
+  assert.match(reply.cards[0].summary, /Software Developer Intern, Jan 2026 – Sep 2026/);
   assert.equal(reply.sources[0].url, '/experience/constellation-software/');
   assert.doesNotMatch(JSON.stringify(reply), /customer data|internal code|%/);
 });
