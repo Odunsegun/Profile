@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "/projects/enterprise-network-security-lab/", "/projects/interstellar-cannon/",
     "/projects/hotel-management-system/", "/projects/vacation-finder/",
     "/projects/web-ctf/", "/projects/r-internet-analysis/",
-    "/experience/constellation-software/", "/profile.json"
+    "/experience/constellation-software/", "/certifications/"
   ]);
   const cardImages = new Set(["/assets/fitness-tracker.png", "/assets/ML-photo.png", "/assets/interstellar-cannon.png"]);
   const externalLinks = new Set([
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://wonderful-forest-08c0abc0f.1.azurestaticapps.net/"
   ]);
   const recordIds = new Map([...recordPaths].map(url => [
-    url === "/profile.json" ? "profile:certifications"
+    url === "/certifications/" ? "profile:certifications"
       : (url.startsWith("/projects/") ? "project:" : "experience:") + url.split("/")[2], url
   ]));
   const safeText = (value, maximum) => typeof value === "string" && value.trim() && value.length <= maximum;
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!card || seenCards.has(card.id) || recordIds.get(card.id) !== card.detailUrl ||
           !["project", "experience", "credentials"].includes(card.type) ||
           !safeText(card.title, 200) || !safeText(card.summary, 2000)) continue;
-      const action = cardLink(card.type === "project" ? "View project ↗" : "View record ↗", card.detailUrl, true);
+      const action = cardLink(card.type === "project" ? "View project ↗" : card.type === "credentials" ? "View certifications ↗" : "View experience ↗", card.detailUrl, true);
       if (!action) continue;
       seenCards.add(card.id);
       const article = document.createElement("article");

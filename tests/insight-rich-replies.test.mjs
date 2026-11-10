@@ -48,7 +48,8 @@ test('credential fixture preserves AZ-900, earned CCNA, and separately planned A
   const reply = resolveReply(structured('There are six earned credentials and one in preparation.', ['profile:certifications']), catalog);
   assert.match(reply.cards[0].summary, /Earned:.*AZ-900.*CCNA/);
   assert.match(reply.cards[0].summary, /Preparation\/plans: AZ-500 \(in-preparation\)/);
-  assert.equal(reply.sources[0].url, '/profile.json');
+  assert.equal(reply.sources[0].url, '/certifications/');
+  assert.equal(reply.cards[0].detailUrl, '/certifications/');
   assert.deepEqual(reply.cards[0].links, []);
 });
 

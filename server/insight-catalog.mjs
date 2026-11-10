@@ -15,7 +15,7 @@ const PROJECTS = [
 ];
 const INTERNAL = new Set([
   ...PROJECTS.map(item => `/projects/${item.slug}/`),
-  '/experience/constellation-software/', '/profile.json',
+  '/experience/constellation-software/', '/certifications/',
 ]);
 const IMAGES = new Set(PROJECTS.flatMap(item => item.image ? [item.image.src] : []));
 const EXTERNAL = new Set([
@@ -68,8 +68,7 @@ export function createCatalog(profile) {
     id: 'profile:certifications', type: 'credentials', title: 'Credentials & preparation',
     summary: `Earned: ${earned.map(credentialLabel).join(', ')}.${planned.length ? ` Preparation/plans: ${planned.map(item => `${credentialLabel(item)} (${item.status})`).join(', ')}.` : ''}`,
     tags: [`${earned.length} earned`, `${planned.length} in preparation/planned`],
-    // This public record includes AZ-900; the certifications page currently does not.
-    detailUrl: '/profile.json', image: null, links: [], section: 'credentials', order: 10,
+    detailUrl: '/certifications/', image: null, links: [], section: 'credentials', order: 10,
   });
   return records;
 }

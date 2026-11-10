@@ -4,6 +4,19 @@
 // Supply actual badge paths (relative to the site root) and credential URLs when available.
 window.CERTIFICATIONS = [
   {
+    "id": "az-900",
+    "code": "AZ-900",
+    "name": "Microsoft Certified: Azure Fundamentals",
+    "shortName": "Azure Fundamentals",
+    "issuer": "Microsoft",
+    "status": "earned",
+    "badge": null,
+    "badgeAlt": "Microsoft Certified Azure Fundamentals badge",
+    "icon": "bx-cloud",
+    "credentialUrl": null,
+    "skills": ["Core Azure cloud concepts", "Azure services", "Governance"]
+  },
+  {
     "id": "dp-900",
     "code": "DP-900",
     "name": "Microsoft Certified: Azure Data Fundamentals",
