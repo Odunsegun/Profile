@@ -1,0 +1,21 @@
+{
+  "azure.svg": "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg",
+  "cosmosdb.svg": "https://raw.githubusercontent.com/devicons/devicon/master/icons/cosmosdb/cosmosdb-original.svg",
+  "powershell.svg": "https://raw.githubusercontent.com/devicons/devicon/master/icons/powershell/powershell-original.svg",
+  "tensorflow.svg": "https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg",
+  "langchain.svg": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/langchain.svg",
+  "openai.svg": "https://raw.githubusercontent.com/simple-icons/simple-icons/13.21.0/icons/openai.svg",
+  "c.svg": "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
+  "DEVICON-LICENSE": "https://raw.githubusercontent.com/devicons/devicon/master/LICENSE",
+  "cisco.svg": "https://brand-assets.security.cisco.com/cisco-light.svg",
+  "paloalto.png": "https://www.paloaltonetworks.com/etc/clientlibs/pan/img/favicons2020/apple-touch-icon-120x120.png",
+  "eveng.png": "https://www.eve-ng.net/wp-content/uploads/2019/11/Logo_EVE_Color-100x100.png",
+  "SIMPLE-ICONS-LICENSE": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/LICENSE.md",
+  "keyvault.svg": "https://arch-center.azureedge.net/icons/Azure_Public_Service_Icons_V25.zip#Azure_Public_Service_Icons/Icons/security/10245-icon-service-Key-Vaults.svg",
+  "staticwebapps.svg": "https://arch-center.azureedge.net/icons/Azure_Public_Service_Icons_V25.zip#Azure_Public_Service_Icons/Icons/web/01007-icon-service-Static-Apps.svg",
+  "fortigate.svg": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/fortinet.svg",
+  "tailwind.svg": "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
+  "mysql.svg": "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg",
+  "burpsuite.svg": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/burpsuite.svg",
+  "entra-id.svg": "https://download.microsoft.com/download/3/1/a/31a56038-856a-4489-88e4-ee5a1c4352be/Microsoft%20Entra%20architecture%20icons%20-%20Oct%202023.zip#Microsoft Entra architecture icons - Oct 2023/Microsoft Entra color icons SVG/Microsoft Entra ID color icon.svg"
+}

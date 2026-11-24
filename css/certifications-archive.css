@@ -1,33 +1,31 @@
 /* Stop 14 — Certifications archive / Credentials Vault */
 
-.darkmode {
-  --credential-surface: rgba(5, 14, 24, 0.88);
-  --credential-surface-hover: rgba(7, 22, 34, 0.95);
-  --credential-border: rgba(124, 165, 188, 0.24);
-  --credential-text: #f4f7fb;
-  --credential-muted: #a1acb9;
+body[data-page="certifications"].darkmode {
+  --credential-surface: rgba(8, 20, 32, 0.94);
+  --credential-surface-hover: #0b1c2b;
+  --credential-badge-surface: #102437;
+  --credential-border: #2e4357;
+  --credential-text: #f8fbff;
+  --credential-muted: #c6d3e1;
   --credential-cyan: #13dce7;
   --credential-violet: #a38cff;
   --credential-earned: #2fdda2;
   --credential-hover-border: rgba(20, 219, 224, 0.58);
-  --credential-hover-shadow:
-    0 18px 42px rgba(0, 0, 0, 0.38),
-    0 0 24px rgba(20, 219, 224, 0.09);
+  --credential-hover-shadow: 0 10px 24px rgb(0 0 0 / 24%);
 }
 
-body.lightmode {
+body[data-page="certifications"].lightmode {
   --credential-surface: rgba(255, 255, 255, 0.88);
   --credential-surface-hover: rgba(255, 255, 255, 0.98);
-  --credential-border: rgba(47, 65, 110, 0.16);
-  --credential-text: #101932;
-  --credential-muted: #5d687d;
+  --credential-badge-surface: #eaf2fb;
+  --credential-border: #c4d3e2;
+  --credential-text: #101d2e;
+  --credential-muted: #42546a;
   --credential-cyan: #087f91;
   --credential-violet: #654de6;
   --credential-earned: #08745f;
   --credential-hover-border: rgba(27, 158, 174, 0.44);
-  --credential-hover-shadow:
-    0 18px 40px rgba(49, 59, 92, 0.14),
-    0 0 0 1px rgba(101, 77, 230, 0.05);
+  --credential-hover-shadow: 0 10px 24px rgb(29 54 87 / 12%);
 }
 
 body[data-page="certifications"] {
@@ -60,6 +58,7 @@ body[data-page="certifications"] .sidebar {
 }
 
 .certs-archive-page {
+  --credential-badge-size: 90px;
   min-height: 100svh;
   padding:
     28px
@@ -198,7 +197,7 @@ body.lightmode .certs-archive-page::after {
   height: 8px;
   border-radius: 50%;
   background: var(--credential-cyan);
-  box-shadow: 0 0 8px var(--credential-cyan);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--credential-cyan) 35%, transparent);
 }
 
 .certifications-title {
@@ -231,7 +230,7 @@ body.lightmode .certs-archive-page::after {
   padding: 0;
   list-style: none;
   color: var(--credential-muted);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .certs-archive__legend li {
@@ -253,7 +252,6 @@ body.lightmode .certs-archive-page::after {
 
 .certs-archive__legend-dot--earned {
   background: var(--credential-earned);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--credential-earned) 70%, transparent);
 }
 
 .certs-archive__section {
@@ -262,7 +260,7 @@ body.lightmode .certs-archive-page::after {
 
 .certs-archive__heading {
   margin: 0 0 1rem;
-  font-size: 1.7rem;
+  font-size: 2.3rem;
   font-weight: 700;
   color: var(--credential-text);
 }
@@ -290,7 +288,7 @@ body.lightmode .certs-archive-page::after {
   align-items: center;
   text-align: center;
   height: 100%;
-  padding: 1.15rem 1rem 1.1rem;
+  padding: 1.6rem 1rem 1.1rem;
   border-radius: 20px;
   border: 1px solid var(--credential-border);
   background: var(--credential-surface);
@@ -330,15 +328,22 @@ body.lightmode .certs-archive-page::after {
   outline-offset: 3px;
 }
 
-.certs-vault-card__badge {
+.certs-vault-card__badge,
+.certs-locked-card__icon {
   display: grid;
   place-items: center;
-  width: 88px;
-  height: 88px;
-  margin-bottom: 0.7rem;
-  transition:
-    transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    filter 220ms ease;
+  width: var(--credential-badge-size);
+  height: var(--credential-badge-size);
+  border: 1px solid var(--credential-border);
+  border-radius: 12px;
+  background: var(--credential-badge-surface);
+  color: var(--credential-cyan);
+  font-size: 4rem;
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.certs-vault-card__badge {
+  margin-bottom: 1rem;
 }
 
 .certs-vault-card:focus-within .certs-vault-card__badge {
@@ -352,48 +357,36 @@ body.lightmode .certs-archive-page::after {
 }
 
 .certs-vault-card__badge-img {
-  width: 88px;
-  height: 88px;
+  display: block;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
   object-fit: contain;
 }
 
-.certs-vault-card__badge-placeholder {
-  width: 88px;
-  height: 88px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  border: 1px dashed color-mix(in srgb, var(--credential-cyan) 45%, transparent);
-  border-radius: 14px;
-  color: var(--credential-muted);
-  background: color-mix(in srgb, var(--credential-cyan) 5%, transparent);
-  font-size: 0.9rem;
-  line-height: 1.1;
-  text-align: center;
+.certs-vault-card__badge:has(img[src$="/cisco-ccna-badge.png"]) {
+  background: #fff;
 }
 
-.certs-vault-card__badge-placeholder i {
-  color: var(--credential-cyan);
-  font-size: 2rem;
-}
-
-.certs-vault-card__code {
+.certs-vault-card__code,
+.certs-locked-card__code {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.9rem;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  line-height: 1.2;
   color: var(--credential-text);
 }
 
-.certs-vault-card__name {
+.certs-vault-card__name,
+.certs-locked-card__name {
   margin: 0.35rem 0 0;
-  font-size: 1.18rem;
-  line-height: 1.35;
-  color: var(--credential-muted);
-  min-height: 4.1em;
-  overflow-wrap: anywhere;
+  font-size: 1.65rem;
+  line-height: 1.38;
+  color: var(--credential-text);
+  overflow-wrap: break-word;
+}
+
+.certs-vault-card__name {
+  min-height: 3lh;
 }
 
 .certs-vault-card__meta,
@@ -402,14 +395,14 @@ body.lightmode .certs-archive-page::after {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 0.65rem;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
 }
 
 .certs-vault-card__issuer,
 .certs-locked-card__issuer {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.45rem;
   font-weight: 650;
   letter-spacing: 0.02em;
   color: var(--credential-cyan);
@@ -421,15 +414,19 @@ body.lightmode .certs-archive-page::after {
   color: var(--credential-muted);
 }
 
-.certs-vault-card__status {
+.certs-vault-card__status,
+.certs-locked-card__status {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
   margin: 0;
-  padding: 0.22rem 0.65rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 999px;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 700;
+}
+
+.certs-vault-card__status {
   color: var(--credential-earned);
   border: 1px solid color-mix(in srgb, var(--credential-earned) 45%, transparent);
   background: color-mix(in srgb, var(--credential-earned) 12%, transparent);
@@ -440,13 +437,12 @@ body.lightmode .certs-archive-page::after {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.45rem;
-  margin: 0.75rem 0 0;
+  margin: 1rem 0;
   padding: 0;
-  margin-bottom: 0.75rem;
   max-width: 100%;
   list-style: none;
-  font-size: 1.05rem;
-  line-height: 1.25;
+  font-size: 1.35rem;
+  line-height: 1.35;
   color: var(--credential-muted);
 }
 
@@ -456,20 +452,18 @@ body.lightmode .certs-archive-page::after {
   align-self: flex-start;
   padding: 0.35rem 0.65rem;
   border: 1px solid var(--credential-border);
-  border-radius: 7px;
+  border-radius: 999px;
   background: color-mix(in srgb, var(--credential-cyan) 4%, transparent);
   transition:
     color 180ms ease,
     border-color 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
+    background-color 180ms ease;
 }
 
 .certs-vault-card:focus-within .certs-vault-card__skills li {
   color: var(--credential-text);
   border-color: color-mix(in srgb, var(--credential-cyan) 58%, var(--credential-violet));
   background: color-mix(in srgb, var(--credential-cyan) 10%, transparent);
-  box-shadow: 0 0 12px color-mix(in srgb, var(--credential-cyan) 10%, transparent);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -477,7 +471,6 @@ body.lightmode .certs-archive-page::after {
     color: var(--credential-text);
     border-color: color-mix(in srgb, var(--credential-cyan) 58%, var(--credential-violet));
     background: color-mix(in srgb, var(--credential-cyan) 10%, transparent);
-    box-shadow: 0 0 12px color-mix(in srgb, var(--credential-cyan) 10%, transparent);
   }
 }
 
@@ -495,13 +488,11 @@ body.lightmode .certs-archive-page::after {
   gap: 0.45rem;
   padding: 0.7rem 1rem;
   border-top: 1px solid var(--credential-border);
-}
-
-.certs-vault-card__verify {
   color: var(--credential-cyan);
-  font-size: 1.28rem;
+  font-size: 1.6rem;
   font-weight: 650;
   text-decoration: none;
+  text-shadow: none;
 }
 
 .certs-vault-card:focus-within .certs-vault-card__verify {
@@ -522,7 +513,8 @@ body.lightmode .certs-archive-page::after {
 
 .certs-locked-card {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
+  grid-template-columns: 118px minmax(0, 1fr);
+  column-gap: 1.4rem;
   align-items: center;
   min-height: 150px;
   padding: 1.2rem 1.4rem;
@@ -530,9 +522,6 @@ body.lightmode .certs-archive-page::after {
   cursor: default;
   opacity: 1;
   text-align: left;
-  background:
-    radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--credential-violet) 14%, transparent), transparent 46%),
-    var(--credential-surface);
   transition:
     transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
     border-color 220ms ease,
@@ -540,11 +529,8 @@ body.lightmode .certs-archive-page::after {
 }
 
 .certs-locked-card__visual {
-  position: relative;
   display: grid;
   place-items: center;
-  width: 140px;
-  min-height: 116px;
 }
 
 .certs-locked-card__content {
@@ -555,93 +541,31 @@ body.lightmode .certs-archive-page::after {
 
 .certs-locked-card:focus-within {
   transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--credential-violet) 55%, var(--credential-cyan) 45%);
-  box-shadow: 0 12px 28px rgba(129, 100, 255, 0.12);
+  border-color: color-mix(in srgb, var(--credential-violet) 55%, var(--credential-border));
+  box-shadow: var(--credential-hover-shadow);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .certs-locked-card:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--credential-violet) 55%, var(--credential-cyan) 45%);
-  box-shadow: 0 12px 28px rgba(129, 100, 255, 0.12);
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--credential-violet) 55%, var(--credential-border));
+    box-shadow: var(--credential-hover-shadow);
   }
 }
 
-.certs-locked-card__orbit {
-  position: absolute;
-  inset: 18% -4% auto;
-  height: 72px;
-  border: 1px dashed color-mix(in srgb, var(--credential-violet) 35%, transparent);
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.45;
-}
-
 .certs-locked-card__icon {
-  position: relative;
-  width: 72px;
-  height: 80px;
-  display: grid;
-  place-items: center;
-  margin: 0;
   color: var(--credential-violet);
-  font-size: 2.8rem;
-  background: transparent;
-  border: 0;
-  transition:
-    transform 220ms ease,
-    filter 220ms ease;
-}
-
-.certs-locked-card__icon::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(160deg, color-mix(in srgb, var(--credential-violet) 22%, transparent), color-mix(in srgb, var(--credential-cyan) 10%, transparent));
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  box-shadow: 0 0 18px color-mix(in srgb, var(--credential-violet) 28%, transparent);
-  pointer-events: none;
-}
-
-.certs-locked-card__icon::after {
-  content: "";
-  position: absolute;
-  inset: 6px;
-  background: var(--credential-surface);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  pointer-events: none;
-}
-
-.certs-locked-card__icon i {
-  position: relative;
-  z-index: 1;
+  background: color-mix(in srgb, var(--credential-violet) 7%, var(--credential-badge-surface));
 }
 
 .certs-locked-card:focus-within .certs-locked-card__icon {
   transform: translateY(-2px);
-  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--credential-violet) 55%, transparent));
 }
 
 @media (hover: hover) and (pointer: fine) {
   .certs-locked-card:hover .certs-locked-card__icon {
-  transform: translateY(-2px);
-  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--credential-violet) 55%, transparent));
+    transform: translateY(-2px);
   }
-}
-
-.certs-locked-card__code {
-  margin: 0;
-  font-size: 1.7rem;
-  font-weight: 800;
-}
-
-.certs-locked-card__name {
-  margin: 0.35rem 0 0;
-  font-size: 1.18rem;
-  line-height: 1.35;
-  color: var(--credential-muted);
-  overflow-wrap: anywhere;
 }
 
 .certs-locked-card__meta {
@@ -649,21 +573,14 @@ body.lightmode .certs-archive-page::after {
 }
 
 .certs-locked-card__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin: 0;
-  padding: 0.22rem 0.65rem;
-  border-radius: 999px;
-  font-size: 1.15rem;
-  font-weight: 700;
   color: var(--credential-violet);
   border: 1px solid color-mix(in srgb, var(--credential-violet) 40%, transparent);
+  background: color-mix(in srgb, var(--credential-violet) 9%, transparent);
 }
 
 .certs-locked-card__focus {
-  margin: 0.55rem 0 0;
-  font-size: 1.08rem;
+  margin: 0.8rem 0 0;
+  font-size: 1.5rem;
   line-height: 1.45;
   color: var(--credential-muted);
   overflow-wrap: anywhere;
@@ -678,9 +595,10 @@ body.lightmode .certs-archive-page::after {
   gap: 0.45rem;
   margin-top: 0.35rem;
   color: var(--credential-cyan);
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   font-weight: 650;
   text-decoration: none;
+  text-shadow: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -758,10 +676,6 @@ body[data-page="certifications"] .chatbox-form input:focus-visible {
     grid-template-columns: 104px minmax(0, 1fr);
     column-gap: 0.75rem;
   }
-
-  .certs-locked-card__visual {
-    width: 104px;
-  }
 }
 
 @media (max-width: 760px) {
@@ -802,22 +716,6 @@ body[data-page="certifications"] .chatbox-form input:focus-visible {
     padding: 1rem;
   }
 
-  .certs-locked-card__visual {
-    width: 104px;
-    min-height: 96px;
-  }
-
-  .certs-locked-card__icon {
-    width: 60px;
-    height: 68px;
-    font-size: 2.35rem;
-  }
-
-  .certs-locked-card__orbit {
-    inset: 20% 0 auto;
-    height: 58px;
-  }
-
   .certs-archive__inner::before,
   .certs-archive__constellation {
     display: none;
@@ -825,12 +723,12 @@ body[data-page="certifications"] .chatbox-form input:focus-visible {
 }
 
 @media (max-width: 380px) {
-  .certs-locked-card {
-    grid-template-columns: 72px minmax(0, 1fr);
+  .certs-archive-page {
+    --credential-badge-size: 72px;
   }
 
-  .certs-locked-card__visual {
-    width: 72px;
+  .certs-locked-card {
+    grid-template-columns: 72px minmax(0, 1fr);
   }
 }
 
@@ -859,11 +757,5 @@ body[data-page="certifications"] .chatbox-form input:focus-visible {
   .certs-locked-card:hover .certs-locked-card__icon,
   .certs-locked-card:focus-within .certs-locked-card__icon {
     transform: none;
-    filter: none;
   }
-}
-
-.certs-vault-card__badge-img[src$="/ccna.png"] {
-  background: #fff;
-  border-radius: 8px;
 }

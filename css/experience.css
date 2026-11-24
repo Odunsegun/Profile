@@ -42,10 +42,13 @@
   z-index: 2;
   max-width: none;
   padding: 1.35rem 1.6rem;
+  border-color: var(--shell-border);
+  box-shadow: 0 4px 12px rgba(8, 20, 40, 0.16);
 }
 
 #experience .timeline-text-box:hover {
   transform: none;
+  box-shadow: 0 5px 14px rgba(8, 20, 40, 0.2);
 }
 
 #experience .left-timeline-container-arrow,
@@ -183,8 +186,7 @@
 }
 
 #experience .timeline-entry.is-active .timeline-text-box {
-  border-color: rgba(0, 216, 231, 0.45);
-  box-shadow: 0 0 18px rgba(128, 105, 255, 0.28);
+  border-color: color-mix(in srgb, var(--shell-accent) 35%, var(--shell-border));
 }
 
 .timeline-entry__org {
@@ -221,6 +223,15 @@
   display: none;
   margin-top: 0.75rem;
   font-size: 1.2rem;
+}
+
+#experience .timeline-entry--work-evidence-pending .timeline-evidence {
+  display: none;
+}
+
+/* Reserve the closed disclosure's space on mobile to keep the cards in place. */
+#experience .timeline-entry--work-evidence-pending .timeline-evidence-mobile {
+  visibility: hidden;
 }
 
 .timeline-evidence-mobile summary {

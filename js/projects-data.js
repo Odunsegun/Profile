@@ -3,7 +3,7 @@ window.PROJECT_ARCHIVE = [
     slug: "azure-fitness-tracker",
     title: "Azure Fitness Tracker",
     summary:
-      "A fitness dashboard I built to turn daily activity into clear streaks, trends, and progress views, backed by Azure Functions and Cosmos DB.",
+      "Log activity and track streaks and progress in a React fitness dashboard.",
     image: "assets/fitness-tracker.png",
     imageAlt: "Azure Fitness Tracker dashboard showing activity streaks and progress charts",
     categories: ["software", "cloud"],
@@ -30,7 +30,7 @@ window.PROJECT_ARCHIVE = [
     slug: "football-tracking",
     title: "Football Tracking",
     summary:
-      "Tracks players and the ball from match footage using YOLO and OpenCV to produce useful movement and performance data.",
+      "YOLO and OpenCV track players and the ball in match footage.",
     image: "assets/ML-photos.png",
     imageAlt: "Football match footage with player and ball tracking overlays",
     categories: ["ai-ml"],
@@ -56,7 +56,7 @@ window.PROJECT_ARCHIVE = [
     slug: "enterprise-network-security-lab",
     title: "Enterprise Network Security Lab",
     summary:
-      "A multi-vendor EVE-NG lab for practising VLANs, routing, firewalls, high availability, and real-world troubleshooting.",
+      "An EVE-NG lab explores VLANs, routing, firewall policies, and high availability.",
     image: null,
     imageAlt: "",
     categories: ["network-security"],
@@ -82,7 +82,7 @@ window.PROJECT_ARCHIVE = [
     slug: "interstellar-cannon",
     title: "Interstellar Cannon",
     summary:
-      "A physics-based space simulator where you launch a projectile and watch gravity reshape its path.",
+      "Launch a projectile and explore gravity in a 3D physics simulation.",
     image: "assets/interstellar-cannon.png",
     imageAlt: "Interstellar Cannon 3D physics simulation with a launched projectile",
     categories: ["simulation"],
@@ -108,7 +108,7 @@ window.PROJECT_ARCHIVE = [
     slug: "hotel-management-system",
     title: "Hotel Management System",
     summary:
-      "Spring Boot web app for room bookings, customer records, and invoice generation.",
+      "A Spring Boot app manages room bookings, customer records, and invoices.",
     image: null,
     imageAlt: "",
     categories: ["software"],
@@ -127,7 +127,7 @@ window.PROJECT_ARCHIVE = [
     slug: "vacation-finder",
     title: "Vacation Finder",
     summary:
-      "Flutter trip planner with Firebase auth, Google Maps, and saved travel spots.",
+      "A Flutter trip planner uses Firebase authentication, maps, and saved travel spots.",
     image: null,
     imageAlt: "",
     categories: ["mobile", "software"],
@@ -146,7 +146,7 @@ window.PROJECT_ARCHIVE = [
     slug: "web-ctf",
     title: "Web CTF",
     summary:
-      "Hands-on web security CTF with cache, storage, and script-related challenges.",
+      "A web security CTF explores caching, client-side storage, and script challenges.",
     image: null,
     imageAlt: "",
     categories: ["network-security"],
@@ -164,7 +164,7 @@ window.PROJECT_ARCHIVE = [
     slug: "r-internet-analysis",
     title: "R Internet Analysis",
     summary:
-      "R data project with ggplot2 for exploring global internet and broadband trends.",
+      "An R project explores internet and broadband trends with ggplot2.",
     image: null,
     imageAlt: "",
     categories: ["data"],

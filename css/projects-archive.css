@@ -231,6 +231,7 @@ body[data-page="projects"]:not([data-project-slug]) .project-filter:focus-visibl
 
 body[data-page="projects"]:not([data-project-slug]) .projects-grid {
   box-sizing: border-box;
+  container-type: inline-size;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
@@ -291,6 +292,19 @@ body[data-page="projects"]:not([data-project-slug]) .archive-project-card__media
   filter: none;
   transform: scale(1);
   transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body[data-page="projects"]:not([data-project-slug]) .archive-project-card__media img[src$="/fitness-tracker.png"] {
+  object-fit: contain;
+  background: #f8f9fa;
+}
+
+body[data-page="projects"]:not([data-project-slug]) .archive-project-card__media img[src$="/ML-photos.png"] {
+  object-position: center bottom;
+}
+
+body[data-page="projects"]:not([data-project-slug]) .archive-project-card__media img[src$="/interstellar-cannon.png"] {
+  object-position: right bottom;
 }
 
 body[data-page="projects"]:not([data-project-slug]) .archive-project-card:hover .archive-project-card__media img,
@@ -412,34 +426,6 @@ body[data-page="projects"]:not([data-project-slug]) .archive-project-card__place
   font-size: 1.5rem;
 }
 
-body[data-page="projects"]:not([data-project-slug]) .archive-project-card__placeholder-title {
-  max-width: 15rem;
-  color: var(--archive-text);
-  font-size: 0.76rem;
-  font-weight: 750;
-  line-height: 1.2;
-  text-align: center;
-}
-
-body[data-page="projects"]:not([data-project-slug]) .archive-project-card__placeholder-label {
-  color: var(--archive-muted);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-body[data-page="projects"]:not([data-project-slug]) .archive-project-card__placeholder-stack {
-  max-width: 14rem;
-  margin-top: -0.42rem;
-  color: var(--archive-muted);
-  font-size: 0.64rem;
-  font-weight: 600;
-  line-height: 1.25;
-  text-align: center;
-}
-
 body[data-page="projects"]:not([data-project-slug]) .archive-project-card__body {
   display: flex;
   min-width: 0;
@@ -491,15 +477,13 @@ body[data-page="projects"]:not([data-project-slug]) .archive-project-card__body 
 }
 
 body[data-page="projects"]:not([data-project-slug]) .archive-project-card__summary {
-  display: -webkit-box;
+  display: block;
   min-height: 0;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
   color: var(--archive-muted);
-  font-size: 1.08rem;
+  font-size: 1.2rem;
   line-height: 1.5;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
 }
 
 body[data-page="projects"]:not([data-project-slug]) .archive-project-card__tags {
@@ -665,16 +649,17 @@ body[data-page="projects"]:not([data-project-slug]) .upcoming-card__chevron {
 @media (min-width: 761px) {
   body[data-page="projects"]:not([data-project-slug]) .archive-project-card {
     display: flex;
-    min-height: 0;
-    aspect-ratio: 1 / 1;
+    /* Retain the original square minimum while allowing complete descriptions. */
+    min-height: calc((100cqi - 3 * 18px) / 4);
+    aspect-ratio: auto;
     flex-direction: column;
   }
 
   body[data-page="projects"]:not([data-project-slug]) .archive-project-card__media {
     width: 100%;
     min-height: 0;
-    flex: 0 0 50%;
-    aspect-ratio: auto;
+    flex: 0 0 auto;
+    aspect-ratio: 2 / 1;
   }
 
   body[data-page="projects"]:not([data-project-slug]) .archive-project-card__media img,
@@ -683,8 +668,8 @@ body[data-page="projects"]:not([data-project-slug]) .upcoming-card__chevron {
   }
 
   body[data-page="projects"]:not([data-project-slug]) .archive-project-card__body {
-    min-height: 0;
-    flex: 1 1 50%;
+    min-height: auto;
+    flex: 1 0 auto;
   }
 }
 
@@ -696,7 +681,11 @@ body[data-page="projects"]:not([data-project-slug]) .upcoming-card__chevron {
 
 @media (min-width: 761px) and (max-width: 1199px) {
   body[data-page="projects"]:not([data-project-slug]) .archive-project-card {
-    aspect-ratio: 1 / 0.78;
+    min-height: calc((100cqi - 18px) / 2 * 0.78);
+  }
+
+  body[data-page="projects"]:not([data-project-slug]) .archive-project-card__media {
+    aspect-ratio: 100 / 39;
   }
 }
 

@@ -7,6 +7,7 @@ window.EXPERIENCE_MILESTONES = [
     year: "Jan 2026 – Aug 2026",
     icon: "bx-briefcase",
     iconSrc: "../assets/helping.svg",
+    timelineSummary: "Tested ERP workflows and documented APIs.",
     summary:
       "Software development internship within an established ERP environment, focused on REST API contracts, automated testing, import/export workflows, debugging, and reusable technical documentation.",
     focusAreas: [
@@ -60,6 +61,7 @@ window.EXPERIENCE_MILESTONES = [
     year: "Sep 2021 – Jun 2025",
     icon: "bxs-graduation",
     iconSrc: "../assets/graduation-cap.svg",
+    timelineSummary: "Earned a BSc in CS with a physics minor.",
     summary:
       "Completed a Bachelor of Science in Computer Science with a Physics minor, combining software engineering, data structures, algorithms, artificial intelligence, cybersecurity, and technical modelling.",
     focusAreas: [
@@ -108,6 +110,7 @@ window.EXPERIENCE_MILESTONES = [
     year: "Current",
     icon: "bx-medal",
     iconSrc: "../assets/cloud.svg",
+    timelineSummary: "Earned cloud, AI, data, and security credentials.",
     summary:
       "Earned five Microsoft credentials covering Azure cloud and data fundamentals, artificial intelligence, security and compliance, and identity administration with Microsoft Entra ID.",
     focusAreas: [
@@ -151,6 +154,7 @@ window.EXPERIENCE_MILESTONES = [
     year: "2024",
     icon: "bx-code-block",
     iconSrc: "../assets/programmer.svg",
+    timelineSummary: "Built web and dashboard features with React.",
     summary:
       "Full-stack internship delivering dashboard and web features with React and REST APIs, with C contributions where the stack required lower-level integration.",
     focusAreas: [
@@ -173,10 +177,9 @@ window.EXPERIENCE_MILESTONES = [
     chips: ["React", "REST APIs", "C"],
     evidence: {
       title: "Company context",
-      text: "This public devSEAL website capture identifies the company context; it is not presented as proof of the internship contributions described here.",
       image: "../assets/devseal-page.png",
       alt: "Public devSEAL website shown as company context",
-      caption: "Public company-page context, not a contribution or product-work capture."
+      caption: "Public company website, shown for context—not internship work."
     },
     previewKind: "work",
     previewRows: [
@@ -202,6 +205,7 @@ window.EXPERIENCE_MILESTONES = [
     year: "2019",
     icon: "bx-support",
     iconSrc: "../assets/rocket.svg",
+    timelineSummary: "Helped users troubleshoot hardware.",
     summary:
       "IT support internship assisting users with hardware troubleshooting in a telecom environment, with exposure to Linux and ServiceNow-related support workflows.",
     focusAreas: [
@@ -250,6 +254,7 @@ window.EXPERIENCE_MILESTONES = [
     year: "Sep 2025 - Aug 2026",
     icon: "bx-network-chart",
     iconSrc: "../assets/eveng-original.svg",
+    timelineSummary: "Built a network security lab through mentorship.",
     summary:
       "Mentorship-style network and security training with a professional through Maroof Ltd. led to the Enterprise Network Security Lab portfolio project.",
     focusAreas: [
@@ -304,8 +309,6 @@ window.CONSTELLATION_RECORD = {
   dates: "Jan 2026 – Aug 2026",
   summary:
     "Worked within an existing enterprise software environment on API documentation, automated testing, workflow verification, debugging, and import/export automation. The work required understanding established contracts, reproducing defects, validating behaviour across multiple layers, and creating reusable technical evidence.",
-  confidentiality:
-    "Examples are sanitized; no internal code or customer data is shown.",
   sections: [
     {
       id: "overview",
@@ -370,11 +373,11 @@ window.CONSTELLATION_RECORD = {
       ],
       paragraphs: [
         "Automated and verified import, export, and session workflows across supported create, update, and delete scenarios.",
-        "Publicly, that includes blank-template export, selected-record export, current-view export, and import-session checks for completed and error states. Internal entity names and customer data stay out of this write-up."
+        "That includes blank-template export, selected-record export, current-view export, and import-session checks for completed and error states."
       ],
       bullets: [
         "Azure DevOps tracked the work around these flows; it is not the runtime that performed the import/export.",
-        "File-limit and multi-file cases were validated only at the level that stays portfolio-safe."
+        "Workflow validation included file-limit and multi-file cases."
       ]
     },
     {
@@ -388,7 +391,7 @@ window.CONSTELLATION_RECORD = {
       ],
       paragraphs: [
         "Defects were reproduced against current application behaviour first, then documented so the next person did not have to rediscover the path.",
-        "Azure DevOps tracked the work. Notes stayed at the level of contracts, workflows, and validation evidence — nothing internal is reproduced here."
+        "Azure DevOps tracked the work. Notes covered contracts, workflows, and validation evidence."
       ],
       bullets: [
         "Follow existing behaviour before changing it.",

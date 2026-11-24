@@ -218,16 +218,14 @@ body.lightmode .experience-planet {
     box-shadow 200ms ease;
 }
 
-.flight-log__item:hover,
-.flight-log__item:focus-visible {
-  transform: translateY(-3px);
-  border-color: rgba(18, 220, 230, 0.45);
-  background:
-    color-mix(
-      in srgb,
-      var(--project-cyan, #12dce6) 7%,
-      color-mix(in srgb, var(--project-violet, #7757ff) 5%, var(--project-surface, rgba(4, 13, 22, 0.86)))
-    );
+#flight-log .flight-log__item:hover {
+  color: inherit;
+  text-shadow: none;
+}
+
+#flight-log .flight-log__item[aria-expanded="false"]:hover {
+  border-color: color-mix(in srgb, var(--project-muted, #9ca9b6) 20%, var(--project-border, rgba(132, 174, 192, 0.23)));
+  background: color-mix(in srgb, var(--project-text, #f4f7fa) 3%, var(--project-surface, rgba(4, 13, 22, 0.86)));
 }
 
 .flight-log__item:focus-visible {
@@ -269,8 +267,6 @@ body.lightmode .flight-log__icon-image {
   filter: brightness(0) saturate(100%) invert(20%) sepia(31%) saturate(2917%) hue-rotate(205deg) brightness(89%) contrast(94%);
 }
 
-.flight-log__item:hover .flight-log__icon,
-.flight-log__item:focus-visible .flight-log__icon,
 .flight-log__item[aria-expanded="true"] .flight-log__icon,
 .flight-log__record.is-open .flight-log__icon {
   color: var(--project-cyan, #12dce6);
@@ -365,16 +361,12 @@ body.lightmode .flight-log__item > .flight-log__icon {
 }
 
 .experience-item__summary {
-  display: -webkit-box;
+  display: block;
   margin-top: 0.12rem;
-  overflow: hidden;
   color: var(--project-muted, #9ca9b6);
   font-size: 1.12rem;
   line-height: 1.5;
-  min-height: 3em;
-  max-height: 4.5em;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  overflow-wrap: anywhere;
 }
 
 .flight-log__chevron {
@@ -406,8 +398,6 @@ body.lightmode .flight-log__item > .flight-log__icon {
   transform: rotate(45deg) translate(-1px, -1px);
 }
 
-.flight-log__item:hover .flight-log__chevron,
-.flight-log__item:focus-visible .flight-log__chevron,
 .flight-log__item[aria-expanded="true"] .flight-log__chevron,
 .flight-log__record.is-open .flight-log__chevron {
   color: var(--project-cyan, #12dce6);
@@ -1368,18 +1358,6 @@ body[data-page="experience"] :is(.site-topnav__link, .site-topnav__name, .site-t
 .experience-preview__evidence-copy p {
   font-size: 14.5px;
   line-height: 1.55;
-}
-
-.flight-log__record:not(.is-open) .flight-log__summary {
-  min-height: 0;
-  max-height: 1.55em;
-  -webkit-line-clamp: 1;
-}
-
-.flight-log__record.is-open .flight-log__summary {
-  min-height: 0;
-  max-height: 4.65em;
-  -webkit-line-clamp: 3;
 }
 
 .experience-preview__overview {

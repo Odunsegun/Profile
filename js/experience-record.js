@@ -21,6 +21,9 @@
       });
     })
     .filter(Boolean);
+  const technologyBrands = new Map(
+    sections.flatMap((section) => section.technologies.map((tech) => [tech.name, tech.brand]))
+  );
   const mobileLayout = window.matchMedia("(max-width: 760px)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const initialSection = sections.some(function (section) {
@@ -68,7 +71,8 @@
       <ul>
         ${tools
           .map(function (tool) {
-            return `<li>${escapeHtml(tool)}</li>`;
+            const brand = technologyBrands.get(tool);
+            return `<li${brand ? ` style="--tech-brand: ${escapeHtml(brand)}"` : ""}>${escapeHtml(tool)}</li>`;
           })
           .join("")}
       </ul>
@@ -82,12 +86,11 @@
           <p class="record-evidence__eyebrow">${escapeHtml(view.eyebrow)}</p>
           <h2 id="experience-evidence-title">${escapeHtml(view.title)}</h2>
         </div>
-        <span class="record-evidence__badge">${escapeHtml(view.badge)}</span>
+        <span class="record-evidence__badge">Illustrative example</span>
       </div>
       <p class="record-evidence__intro">${escapeHtml(view.intro)}</p>
       <div class="record-evidence__visual">${view.visual}</div>
       ${renderTools(view.tools || [])}
-      <p class="record-evidence__privacy"><i class="bx bx-shield-quarter" aria-hidden="true"></i> Sanitized conceptual evidence—no internal code, routes, customer data, or private system details.</p>
     </div>`;
   }
 
@@ -110,10 +113,9 @@
 
     return {
       eyebrow: isDefault ? "Record overview" : "Selected work area",
-      title: isDefault ? "Evidence · Internship scope" : "Evidence · Contribution map",
-      badge: "Sanitized overview",
+      title: isDefault ? "Internship scope" : "Contribution map",
       intro: isDefault
-        ? "Select a work area to inspect a portfolio-safe representation of that contribution."
+        ? "Select a work area to see an example of that contribution."
         : "A high-level view of how API, service, testing, and documentation work supported reliable behaviour in an existing product.",
       visual,
       tools: ["REST APIs", "Automated testing", "Workflow automation", "Documentation"],
@@ -121,7 +123,7 @@
   }
 
   function apiEvidence() {
-    const visual = `<div class="record-api" aria-label="Sanitized generic API contract example">
+    const visual = `<div class="record-api" aria-label="Generic API contract example">
       <div class="record-api__examples">
         <article class="record-request">
           <div class="record-request__topline">
@@ -140,8 +142,8 @@
             <div>
               <h3>Example success response</h3>
               <pre><code>{
-  "items": [
-    { "id": "item_123", "name": "Item" }
+  <span class="record-code__key">"items"</span>: [
+    { <span class="record-code__key">"id"</span>: <span class="record-code__string">"item_123"</span>, <span class="record-code__key">"name"</span>: <span class="record-code__string">"Item"</span> }
   ]
 }</code></pre>
             </div>
@@ -157,16 +159,16 @@
             <div>
               <h3>Example request body</h3>
               <pre><code>{
-  "name": "Item",
-  "status": "active"
+  <span class="record-code__key">"name"</span>: <span class="record-code__string">"Item"</span>,
+  <span class="record-code__key">"status"</span>: <span class="record-code__string">"active"</span>
 }</code></pre>
             </div>
             <div>
               <h3>Example success response</h3>
               <pre><code>{
-  "id": "item_123",
-  "name": "Item",
-  "status": "active"
+  <span class="record-code__key">"id"</span>: <span class="record-code__string">"item_123"</span>,
+  <span class="record-code__key">"name"</span>: <span class="record-code__string">"Item"</span>,
+  <span class="record-code__key">"status"</span>: <span class="record-code__string">"active"</span>
 }</code></pre>
             </div>
           </div>
@@ -185,8 +187,7 @@
 
     return {
       eyebrow: "Selected work area",
-      title: "Evidence · API contracts",
-      badge: "Sanitized example",
+      title: "API contracts",
       intro: "A generic contract view showing the request, response, validation, and handler relationships used when reasoning about API behaviour.",
       visual,
       tools: ["Swagger / OpenAPI", "NestJS", "REST APIs"],
@@ -213,8 +214,7 @@
 
     return {
       eyebrow: "Selected work area",
-      title: "Evidence · Verification flow",
-      badge: "Sanitized workflow",
+      title: "Verification flow",
       intro: "Verification moved from focused logic checks through connected workflows, with failed checks investigated before conclusions were recorded.",
       visual,
       tools: ["Jest", "Playwright", "Unit testing", "Integration testing", "End-to-end testing"],
@@ -250,9 +250,8 @@
 
     return {
       eyebrow: "Selected work area",
-      title: "Evidence · Import/export workflow",
-      badge: "Sanitized workflow",
-      intro: "A conceptual view of the supported operation, validation, processing, and session-review stages without exposing records or internal filenames.",
+      title: "Import/export workflow",
+      intro: "A conceptual view of the supported operation, validation, processing, and session-review stages.",
       visual,
       tools: ["REST APIs", "Reusable workflows", "Session validation"],
     };
@@ -273,14 +272,13 @@
       <div class="record-debugging__notes">
         <div><span aria-hidden="true"><i class="bx bx-list-check"></i></span><p><strong>Reproduction notes</strong> keep the investigation repeatable.</p></div>
         <div><span aria-hidden="true"><i class="bx bx-git-compare"></i></span><p><strong>Contract comparison</strong> separates expected behaviour from assumptions.</p></div>
-        <div><span aria-hidden="true"><i class="bx bx-book-open"></i></span><p><strong>Technical documentation</strong> records validation steps without exposing private details.</p></div>
+        <div><span aria-hidden="true"><i class="bx bx-book-open"></i></span><p><strong>Technical documentation</strong> records validation steps.</p></div>
       </div>
     </div>`;
 
     return {
       eyebrow: "Selected work area",
-      title: "Evidence · Reproducible debugging",
-      badge: "Sanitized sequence",
+      title: "Reproducible debugging",
       intro: "A repeatable investigation path for understanding application behaviour, isolating issues, validating changes, and documenting the result.",
       visual,
       tools: ["Azure DevOps", "Swagger / OpenAPI", "Automated tests", "Documentation"],
@@ -417,7 +415,7 @@
     evidence.classList.remove("is-changing");
 
     if (announce && evidenceStatus) {
-      evidenceStatus.textContent = `Evidence updated: ${view.title.replace(/^Evidence · /, "")}.`;
+      evidenceStatus.textContent = `Example updated: ${view.title}.`;
     }
   }
 

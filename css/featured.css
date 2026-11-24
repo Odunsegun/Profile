@@ -80,6 +80,37 @@ body.lightmode .featured-card {
     opacity 220ms ease;
 }
 
+/* Frame the original screenshots inside the existing homepage media boxes. */
+#featured-projects .featured-card__desc {
+  -webkit-line-clamp: unset;
+}
+
+#featured-projects .featured-card__image--fitness {
+  object-position: center bottom;
+}
+
+#featured-projects .featured-card__image--football {
+  object-position: center bottom;
+}
+
+#featured-projects .featured-card__image--network {
+  object-fit: contain;
+  background: #fff;
+}
+
+#featured-projects .featured-card__image--simulation {
+  object-position: right bottom;
+}
+
+@media (max-width: 760px) {
+  #featured-projects .featured-card__image--fitness,
+  #featured-projects .featured-card__image--football,
+  #featured-projects .featured-card__image--simulation {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
 .featured-card__placeholder {
   display: grid;
   place-items: center;

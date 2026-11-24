@@ -36,10 +36,7 @@
         ${eager ? 'fetchpriority="high"' : 'loading="lazy"'}
       >`;
     }
-    return `<span class="certs-vault-card__badge-placeholder" role="img" aria-label="Official badge artwork not supplied">
-      <i class="bx ${escapeHtml(cert.icon || "bx-badge-check")}" aria-hidden="true"></i>
-      <span aria-hidden="true">Badge pending</span>
-    </span>`;
+    return `<i class="bx ${escapeHtml(cert.icon || "bx-badge-check")}" aria-hidden="true"></i>`;
   }
 
   function renderSkills(cert) {
@@ -112,9 +109,8 @@
       : "";
     return `<article class="certs-locked-card" aria-labelledby="prep-${escapeHtml(cert.id)}-code prep-${escapeHtml(cert.id)}-name">
       <div class="certs-locked-card__visual" aria-hidden="true">
-        <div class="certs-locked-card__orbit"></div>
         <div class="certs-locked-card__icon">
-          <i class="bx bx-lock-alt"></i>
+          ${renderBadge(cert, false)}
         </div>
       </div>
       <div class="certs-locked-card__content">

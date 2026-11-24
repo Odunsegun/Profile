@@ -127,7 +127,7 @@
                   <span class="flight-log__year" id="${ids.year}">${escapeHtml(item.year)}</span>
                 </span>
                 ${category}
-                <span class="experience-item__summary flight-log__summary" id="${ids.summary}">${escapeHtml(item.summary)}</span>
+                <span class="experience-item__summary flight-log__summary" id="${ids.summary}">${escapeHtml(item.timelineSummary || item.summary)}</span>
               </span>
               <span class="flight-log__chevron" aria-hidden="true"><i class="bx bx-chevron-down"></i></span>
             </button>
@@ -179,6 +179,7 @@
     const image = evidence.image
       ? `<img class="experience-preview__evidence-image" src="${escapeHtml(evidence.image)}" alt="${escapeHtml(evidence.alt || "")}" loading="lazy">`
       : `<span class="experience-preview__evidence-icon" aria-hidden="true"><i class="bx bx-check-shield"></i></span>`;
+    const description = evidence.text ? `<p>${escapeHtml(evidence.text)}</p>` : "";
     const caption = evidence.caption
       ? `<p class="experience-preview__evidence-caption">${escapeHtml(evidence.caption)}</p>`
       : "";
@@ -187,7 +188,7 @@
       ${image}
       <div class="experience-preview__evidence-copy">
         <h3 id="${ids.evidenceTitle}">${escapeHtml(evidence.title)}</h3>
-        <p>${escapeHtml(evidence.text)}</p>
+        ${description}
         ${caption}
       </div>
     </section>`;

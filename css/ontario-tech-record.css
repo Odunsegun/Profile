@@ -13,7 +13,7 @@
   gap: .85rem;
   align-items: center;
   padding: .9rem;
-  border: 1px solid color-mix(in srgb, var(--project-cyan) 38%, var(--project-border));
+  border: 1px solid var(--project-border);
   border-radius: 12px;
   background: linear-gradient(115deg, color-mix(in srgb, var(--project-cyan) 11%, transparent), color-mix(in srgb, var(--project-violet) 9%, transparent));
 }
@@ -76,7 +76,6 @@
 .ontario-map__timeline i {
   height: 1px;
   background: linear-gradient(90deg, var(--project-cyan), var(--project-violet));
-  box-shadow: 0 0 8px color-mix(in srgb, var(--project-cyan) 35%, transparent);
 }
 
 .ontario-studio-card {
@@ -111,8 +110,8 @@
 .ontario-studio-card pre {
   flex: 1;
   margin: .6rem 0 0;
-  overflow: hidden;
-  color: color-mix(in srgb, var(--project-cyan) 68%, var(--project-text));
+  overflow: auto;
+  color: var(--project-text);
   font-family: Consolas, "SFMono-Regular", monospace;
   font-size: .74rem;
   line-height: 1.34;
@@ -141,6 +140,7 @@
   font-size: .8rem;
   font-weight: 700;
   text-decoration: none;
+  text-shadow: none;
 }
 
 .ontario-studio-card .ontario-studio-card__preview {
@@ -207,16 +207,15 @@
 .ontario-writing-preview img {
   width: 30px;
   height: 30px;
-  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--project-cyan) 28%, transparent));
 }
 
 body.darkmode.ontario-record .ontario-writing-preview img {
-  filter: invert(1) brightness(1.35) drop-shadow(0 0 8px color-mix(in srgb, var(--project-cyan) 34%, transparent));
+  filter: invert(1) brightness(1.35);
 }
 
 .ontario-writing-preview div {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 90px), 1fr));
   gap: .25rem;
 }
 
@@ -273,7 +272,7 @@ body.darkmode.ontario-record .ontario-writing-preview img {
 }
 
 .ontario-feature__media img { display: block; width: 100%; height: 218px; object-fit: cover; }
-.ontario-feature__media figcaption { padding: .55rem .7rem; color: var(--project-muted); background: color-mix(in srgb, var(--project-surface) 86%, transparent); font-size: .78rem; }
+.ontario-feature__media figcaption { padding: .55rem .7rem; color: var(--project-muted); background: var(--project-surface); font-size: .78rem; }
 
 .ontario-process,
 .ontario-synthesis__path { display: flex; gap: .35rem; align-items: stretch; }
@@ -320,6 +319,7 @@ body.darkmode.ontario-record .ontario-writing-preview img {
   color: var(--project-text);
   background: color-mix(in srgb, var(--project-surface) 78%, transparent);
   text-decoration: none;
+  text-shadow: none;
   transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
@@ -400,21 +400,21 @@ body.lightmode.ontario-record .ontario-studio-card__preview { background: #e9f0f
 .ontario-map__core small,
 .ontario-map__grid span,
 .ontario-map__timeline,
-.ontario-feature__media figcaption {
+.ontario-feature__media figcaption,
+.ontario-studio-card pre,
+.ontario-process strong,
+.ontario-synthesis__path strong {
   font-size: 13px;
   line-height: 1.5;
 }
 
 .ontario-studio-card__head small,
-.ontario-studio-card pre,
 .ontario-studio-card a,
 .ontario-feature__link,
 .ontario-studio-card__preview span,
 .ontario-writing-preview code,
 .ontario-mini-flow span,
 .ontario-studio-card__note,
-.ontario-process strong,
-.ontario-synthesis__path strong,
 .ontario-process small,
 .ontario-synthesis__path small,
 .ontario-artifact__body small,

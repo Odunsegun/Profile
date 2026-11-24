@@ -1,0 +1,81 @@
+/* Code samples and diagrams specific to Constellation Software. */
+.constellation-record {
+  --record-code-surface: #06101a;
+  --record-code-key: #8dc8ff;
+  --record-code-string: #f2c684;
+}
+
+body.lightmode .constellation-record {
+  --record-code-surface: #edf4fb;
+  --record-code-key: #215994;
+  --record-code-string: #805116;
+}
+
+.constellation-record .record-evidence__visual {
+  container-type: inline-size;
+  margin-bottom: 1rem;
+}
+
+.constellation-record :is(.record-request__topline code, .record-contract-list dt, .record-contract-list dd) {
+  font-size: 13px;
+}
+
+body .constellation-record .record-request pre {
+  color: var(--project-text);
+  background: var(--record-code-surface);
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-x: auto;
+  overflow-wrap: normal;
+}
+
+.constellation-record .record-code__key {
+  color: var(--record-code-key);
+}
+
+.constellation-record .record-code__string {
+  color: var(--record-code-string);
+}
+
+.constellation-record .record-flow__step :is(h3, p) {
+  max-width: 100%;
+  overflow-wrap: normal;
+  text-wrap: pretty;
+}
+
+@container (max-width: 415px) {
+  .constellation-record .record-request__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Stack diagrams whose labels need more room in the right panel. */
+@media (min-width: 761px) {
+  .constellation-record .record-flow {
+    flex-direction: var(--record-flow-direction, row);
+  }
+
+  .constellation-record .record-flow__step {
+    flex: var(--record-flow-step-size, 1 1 0);
+  }
+
+  .constellation-record .record-flow__connector {
+    transform: rotate(var(--record-flow-arrow-angle, 0deg));
+  }
+
+  @container (max-width: 415px) {
+    .constellation-record .record-flow {
+      --record-flow-direction: column;
+      --record-flow-step-size: auto;
+      --record-flow-arrow-angle: 90deg;
+    }
+  }
+
+  @container (max-width: 510px) {
+    .constellation-record .record-flow--debugging {
+      --record-flow-direction: column;
+      --record-flow-step-size: auto;
+      --record-flow-arrow-angle: 90deg;
+    }
+  }
+}

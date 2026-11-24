@@ -1,7 +1,7 @@
 // Certifications archive only; Home retains certifications-data.js.
 // Earned/preparation status is user-supplied. Skill/focus sources are recorded below.
 // Sources describe exam content; they are not personal credential or study-path actions.
-// Supply actual badge paths (relative to the site root) and credential URLs when available.
+// Badge artwork comes from the Microsoft Learn certification pages and Cisco's Credly badge listing.
 window.CERTIFICATIONS = [
   {
     "id": "az-900",
@@ -10,10 +10,10 @@ window.CERTIFICATIONS = [
     "shortName": "Azure Fundamentals",
     "issuer": "Microsoft",
     "status": "earned",
-    "badge": null,
-    "badgeAlt": "Microsoft Certified Azure Fundamentals badge",
+    "badge": "assets/certifications/microsoft-certified-fundamentals-badge.svg",
+    "badgeAlt": "Microsoft Certified Fundamentals badge",
     "icon": "bx-cloud",
-    "credentialUrl": null,
+    "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/IsraelOdunaiya-1522/E192DB1BACD254ED?sharingId=A2B2F27E4D9843F7",
     "skills": ["Core Azure cloud concepts", "Azure services", "Governance"]
   },
   {
@@ -23,8 +23,8 @@ window.CERTIFICATIONS = [
     "shortName": "Azure Data Fundamentals",
     "issuer": "Microsoft",
     "status": "earned",
-    "badge": null,
-    "badgeAlt": "Microsoft Certified Azure Data Fundamentals badge",
+    "badge": "assets/certifications/microsoft-certified-fundamentals-badge.svg",
+    "badgeAlt": "Microsoft Certified Fundamentals badge",
     "icon": "bx-data",
     "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/IsraelOdunaiya-1522/6D06E0598F8C930B?sharingId=A2B2F27E4D9843F7",
     "skills": [
@@ -41,8 +41,8 @@ window.CERTIFICATIONS = [
     "shortName": "Azure AI Fundamentals",
     "issuer": "Microsoft",
     "status": "earned",
-    "badge": null,
-    "badgeAlt": "Microsoft Certified Azure AI Fundamentals badge",
+    "badge": "assets/certifications/microsoft-certified-fundamentals-badge.svg",
+    "badgeAlt": "Microsoft Certified Fundamentals badge",
     "icon": "bx-brain",
     "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/IsraelOdunaiya-1522/BB13F025F7A4A8E8?sharingId=A2B2F27E4D9843F7",
     "skills": [
@@ -58,8 +58,8 @@ window.CERTIFICATIONS = [
     "shortName": "Security, Compliance, and Identity Fundamentals",
     "issuer": "Microsoft",
     "status": "earned",
-    "badge": null,
-    "badgeAlt": "Microsoft Certified Security, Compliance, and Identity Fundamentals badge",
+    "badge": "assets/certifications/microsoft-certified-fundamentals-badge.svg",
+    "badgeAlt": "Microsoft Certified Fundamentals badge",
     "icon": "bx-shield-quarter",
     "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/IsraelOdunaiya-1522/DD62F10DE4A821A?sharingId=A2B2F27E4D9843F7",
     "skills": [
@@ -76,17 +76,16 @@ window.CERTIFICATIONS = [
     "shortName": "Identity and Access Administrator Associate",
     "issuer": "Microsoft",
     "status": "earned",
-    "badge": null,
-    "badgeAlt": "Microsoft Certified Identity and Access Administrator Associate badge",
+    "badge": "assets/certifications/microsoft-certified-associate-badge.svg",
+    "badgeAlt": "Microsoft Certified Associate badge",
     "icon": "bx-id-card",
-    "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/IsraelOdunaiya-1522/E192DB1BACD254ED?sharingId=A2B2F27E4D9843F7",
+    "credentialUrl": null,
     "skills": [
       "Microsoft Entra ID",
       "Conditional Access",
       "Identity governance"
     ],
-    "contentSourceUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-300",
-    "credentialActionLabel": "View Azure Fundamentals credential"
+    "contentSourceUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-300"
   },
   {
     "id": "ccna-200-301",
@@ -95,7 +94,7 @@ window.CERTIFICATIONS = [
     "shortName": "Cisco Certified Network Associate",
     "issuer": "Cisco",
     "status": "earned",
-    "badge": "assets/certifications/ccna.png",
+    "badge": "assets/certifications/cisco-ccna-badge.png",
     "badgeAlt": "Cisco Certified CCNA badge",
     "icon": "bx-network-chart",
     "credentialUrl": "https://www.credly.com/badges/c1f20475-a393-41e4-a4c4-476701bb523f/public_url",

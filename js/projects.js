@@ -49,21 +49,12 @@
     const prefix = document.documentElement.dataset.assetPrefix || "";
     const titleId = "project-" + project.slug + "-title";
     const detailsUrl = project.caseStudyUrl || "/projects/" + project.slug + "/";
-    const visualTechnologyLabel = (project.technologies || [])
-      .slice(0, 2)
-      .map(function (technology) {
-        return technology.name;
-      })
-      .join(" + ");
     const media = project.image
       ? `<img src="${escapeHtml(prefix + project.image)}" alt="${escapeHtml(project.imageAlt)}" width="640" height="360" decoding="async" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} />`
-      : `<div class="archive-project-card__placeholder" role="img" aria-label="${escapeHtml(project.title)} project visual">
+      : `<div class="archive-project-card__placeholder" role="img" aria-label="Illustrative cover for ${escapeHtml(project.title)}">
            <span class="archive-project-card__placeholder-icon" aria-hidden="true">
              <i class="bx ${escapeHtml(project.placeholderIcon || "bx-code-alt")}"></i>
            </span>
-           <span class="archive-project-card__placeholder-title">${escapeHtml(project.title)}</span>
-           <span class="archive-project-card__placeholder-label">${escapeHtml(categoryLabel)}</span>
-           <span class="archive-project-card__placeholder-stack">${escapeHtml(visualTechnologyLabel)}</span>
          </div>`;
 
     const tags = (project.technologies || [])

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/featured.css">
   <link rel="stylesheet" href="css/experience.css">
   <link rel="stylesheet" href="css/certs.css">
-  <link rel="stylesheet" href="css/arsenal.css">
+  <link rel="stylesheet" href="css/arsenal.css?v=2">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/hero.css">
@@ -259,7 +259,7 @@
                     <!-- Flagship -->
                     <article class="featured-card featured-card--flagship">
                         <div class="featured-card__media">
-                            <img src="assets/fitness-tracker.png" alt="Azure Fitness Tracker dashboard screenshot">
+                            <img class="featured-card__image--fitness" src="assets/fitness-tracker.png" alt="Azure Fitness Tracker dashboard showing streaks and activity totals">
                             <ul class="featured-card__features" aria-hidden="true">
                                 <li>Activity logging and streak tracking</li>
                                 <li>Progress charts with Recharts</li>
@@ -271,7 +271,7 @@
                         <div class="featured-card__body">
                             <p class="featured-card__eyebrow">FULL-STACK · CLOUD</p>
                             <h2 class="featured-card__title">Azure Fitness Tracker</h2>
-                            <p class="featured-card__desc">A fitness dashboard I built to turn daily activity into clear streaks, trends, and progress views, backed by Azure Functions and Cosmos DB.</p>
+                            <p class="featured-card__desc">Track activity, streaks, and progress with a React dashboard backed by Azure Functions and Cosmos DB.</p>
                             <div class="featured-card__actions">
                                 <a href="https://wonderful-forest-08c0abc0f.1.azurestaticapps.net/" class="featured-card__btn featured-card__btn--primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
                                 <a href="https://github.com/Odunsegun/azure-fitness-tracker" class="featured-card__btn" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -297,7 +297,7 @@
                     <!-- Football Tracking -->
                     <article class="featured-card">
                         <div class="featured-card__media">
-                            <img src="assets/ML-photos.png" alt="Football tracking computer vision overlay">
+                            <img class="featured-card__image--football" src="assets/ML-photos.png" alt="Football match footage with player tracking overlays">
                             <ul class="featured-card__features" aria-hidden="true">
                                 <li>YOLOv8 player detection</li>
                                 <li>DeepSORT multi-object tracking</li>
@@ -308,7 +308,7 @@
                         <div class="featured-card__body">
                             <p class="featured-card__eyebrow">AI · COMPUTER VISION</p>
                             <h2 class="featured-card__title">Football Tracking</h2>
-                            <p class="featured-card__desc">Tracks players and the ball from match footage using YOLO and OpenCV to produce useful movement and performance data.</p>
+                            <p class="featured-card__desc">Tracks players and the ball with YOLO and OpenCV.</p>
                             <div class="featured-card__actions">
                                 <a href="https://github.com/Odunsegun/football-tracking" class="featured-card__btn" target="_blank" rel="noopener noreferrer">GitHub</a>
                             </div>
@@ -331,10 +331,7 @@
                     <!-- Enterprise Network Security Lab -->
                     <article class="featured-card">
                         <div class="featured-card__media">
-                            <div class="featured-card__placeholder" role="img" aria-label="Network lab screenshot placeholder">
-                                <i class='bx bx-network-chart' aria-hidden="true"></i>
-                                <span>Screenshot coming in Stop 12</span>
-                                </div>
+                            <img class="featured-card__image--network" src="assets/projects/enterprise-network-security-lab/topology-overview-sanitized.png" alt="Sanitized EVE-NG topology showing HQ, branch, and partner networks with VLANs, switches, and firewalls">
                             <ul class="featured-card__features" aria-hidden="true">
                                 <li>Multi-vendor VLAN design</li>
                                 <li>Routing and firewall policies</li>
@@ -345,7 +342,7 @@
                         <div class="featured-card__body">
                             <p class="featured-card__eyebrow">NETWORK · SECURITY</p>
                             <h2 class="featured-card__title">Enterprise Network Security Lab</h2>
-                            <p class="featured-card__desc">A multi-vendor EVE-NG lab for practising VLANs, routing, firewalls, high availability, and real-world troubleshooting.</p>
+                            <p class="featured-card__desc">An EVE-NG lab for VLANs, routing, and firewall policies.</p>
                             <div class="featured-card__actions">
                                 <a href="https://github.com/Odunsegun/enterprise-network-security-lab" class="featured-card__btn" target="_blank" rel="noopener noreferrer">GitHub</a>
                                     </div>
@@ -369,7 +366,7 @@
                     <!-- Interstellar Cannon -->
                     <article class="featured-card">
                         <div class="featured-card__media">
-                            <img src="assets/interstellar-cannon.png" alt="Interstellar Cannon physics simulation">
+                            <img class="featured-card__image--simulation" src="assets/interstellar-cannon.png" alt="Interstellar Cannon simulation showing the Sun, planets, and a launched rocket">
                             <ul class="featured-card__features" aria-hidden="true">
                                 <li>RK4 gravitational integration</li>
                                 <li>Elastic collision physics</li>
@@ -380,7 +377,7 @@
                         <div class="featured-card__body">
                             <p class="featured-card__eyebrow">SIMULATION · PHYSICS</p>
                             <h2 class="featured-card__title">Interstellar Cannon</h2>
-                            <p class="featured-card__desc">A physics-based space simulator where you launch a projectile and watch gravity reshape its path.</p>
+                            <p class="featured-card__desc">Launch a projectile and explore gravity in 3D.</p>
                             <div class="featured-card__actions">
                                 <a href="https://github.com/Odunsegun/Interstellar-Cannon" class="featured-card__btn" target="_blank" rel="noopener noreferrer">GitHub</a>
                                     </div>
@@ -456,7 +453,7 @@
                                 </div>
         
                                 <!-- MTN 2019 -->
-                                <article class="timeline-container left-timeline-container timeline-entry">
+                                <article class="timeline-container left-timeline-container timeline-entry timeline-entry--work-evidence-pending">
                                     <div class="timeline-icon-circle left-icon-circle">
                                         <img src="assets/rocket.svg" class="timeline-icon-img" alt="">
                                     </div>
@@ -693,11 +690,14 @@
                     <span class="credentials-orbit__node credentials-orbit__node--6" aria-hidden="true"></span>
 
                     <article class="credential-card credentials-orbit__card credentials-orbit__card--1" role="listitem">
-                        <div class="credential-card__badge" aria-hidden="true">
-                            <span class="credential-card__shield"></span>
-                            <i class="bx bx-id-card credential-card__badge-icon"></i>
-                                        </div>
-                        <h3 class="credential-card__code">SC-300</h3>
+                        <div class="credential-card__identity">
+                            <div class="credential-card__badge" aria-hidden="true">
+                                <span class="credential-card__shield"></span>
+                                <i class="bx bx-id-card credential-card__badge-icon"></i>
+                            </div>
+                            <h3 class="credential-card__code">SC-300</h3>
+                            <p class="credential-card__short-name">Identity &amp; Access</p>
+                        </div>
                         <p class="credential-card__name">Identity and Access Administrator Associate</p>
                         <p class="credential-card__status">
                             <i class="bx bx-check" aria-hidden="true"></i>
@@ -706,11 +706,14 @@
                     </article>
 
                     <article class="credential-card credentials-orbit__card credentials-orbit__card--2" role="listitem">
-                        <div class="credential-card__badge" aria-hidden="true">
-                            <span class="credential-card__shield"></span>
-                            <i class="bx bx-data credential-card__badge-icon"></i>
-                                        </div>
-                        <h3 class="credential-card__code">DP-900</h3>
+                        <div class="credential-card__identity">
+                            <div class="credential-card__badge" aria-hidden="true">
+                                <span class="credential-card__shield"></span>
+                                <i class="bx bx-data credential-card__badge-icon"></i>
+                            </div>
+                            <h3 class="credential-card__code">DP-900</h3>
+                            <p class="credential-card__short-name">Azure Data</p>
+                        </div>
                         <p class="credential-card__name">Azure Data Fundamentals</p>
                         <p class="credential-card__status">
                             <i class="bx bx-check" aria-hidden="true"></i>
@@ -719,11 +722,14 @@
                     </article>
 
                     <article class="credential-card credentials-orbit__card credentials-orbit__card--3" role="listitem">
-                        <div class="credential-card__badge" aria-hidden="true">
-                            <span class="credential-card__shield"></span>
-                            <i class="bx bx-brain credential-card__badge-icon"></i>
-                                        </div>
-                        <h3 class="credential-card__code">AI-900</h3>
+                        <div class="credential-card__identity">
+                            <div class="credential-card__badge" aria-hidden="true">
+                                <span class="credential-card__shield"></span>
+                                <i class="bx bx-brain credential-card__badge-icon"></i>
+                            </div>
+                            <h3 class="credential-card__code">AI-900</h3>
+                            <p class="credential-card__short-name">Azure AI</p>
+                        </div>
                         <p class="credential-card__name">Azure AI Fundamentals</p>
                         <p class="credential-card__status">
                             <i class="bx bx-check" aria-hidden="true"></i>
@@ -732,11 +738,14 @@
                     </article>
 
                     <article class="credential-card credentials-orbit__card credentials-orbit__card--4" role="listitem">
-                        <div class="credential-card__badge" aria-hidden="true">
-                            <span class="credential-card__shield"></span>
-                            <i class="bx bx-shield-quarter credential-card__badge-icon"></i>
-                                        </div>
-                        <h3 class="credential-card__code">SC-900</h3>
+                        <div class="credential-card__identity">
+                            <div class="credential-card__badge" aria-hidden="true">
+                                <span class="credential-card__shield"></span>
+                                <i class="bx bx-shield-quarter credential-card__badge-icon"></i>
+                            </div>
+                            <h3 class="credential-card__code">SC-900</h3>
+                            <p class="credential-card__short-name">Security &amp; Identity</p>
+                        </div>
                         <p class="credential-card__name">Security, Compliance, and Identity Fundamentals</p>
                         <p class="credential-card__status">
                             <i class="bx bx-check" aria-hidden="true"></i>
@@ -745,10 +754,13 @@
                     </article>
 
                     <article class="credential-card credentials-orbit__card credentials-orbit__card--5" role="listitem">
-                        <a class="credential-card__badge-link" href="https://www.credly.com/badges/c1f20475-a393-41e4-a4c4-476701bb523f/public_url" target="_blank" rel="noopener noreferrer" aria-label="View CCNA credential on Credly">
-                            <img class="credential-card__badge-image" src="assets/certifications/ccna.png" alt="Cisco Certified CCNA badge" width="56" height="56" loading="lazy">
-                        </a>
-                        <h3 class="credential-card__code">CCNA 200-301</h3>
+                        <div class="credential-card__identity credential-card__identity--linked">
+                            <a class="credential-card__badge credential-card__badge-link" href="https://www.credly.com/badges/c1f20475-a393-41e4-a4c4-476701bb523f/public_url" target="_blank" rel="noopener noreferrer" aria-label="View CCNA credential on Credly">
+                                <img class="credential-card__badge-image" src="assets/certifications/ccna.png" alt="Cisco Certified CCNA badge" width="56" height="56" loading="lazy">
+                            </a>
+                            <h3 class="credential-card__code">CCNA 200-301</h3>
+                            <p class="credential-card__short-name">Network Associate</p>
+                        </div>
                         <p class="credential-card__name">Cisco Certified Network Associate</p>
                         <p class="credential-card__status">
                             <i class="bx bx-check" aria-hidden="true"></i>
@@ -757,12 +769,15 @@
                     </article>
 
                     <article class="credential-card credential-card--locked credentials-orbit__card credentials-orbit__card--6" role="listitem">
-                        <div class="credential-card__badge" aria-hidden="true">
-                            <span class="credential-card__shield"></span>
-                            <i class="bx bx-cloud credential-card__badge-icon"></i>
-                            <span class="credential-card__lock"><i class="bx bx-lock-alt"></i></span>
-                                        </div>
-                        <h3 class="credential-card__code">AZ-500</h3>
+                        <div class="credential-card__identity">
+                            <div class="credential-card__badge" aria-hidden="true">
+                                <span class="credential-card__shield"></span>
+                                <i class="bx bx-cloud credential-card__badge-icon"></i>
+                                <span class="credential-card__lock"><i class="bx bx-lock-alt"></i></span>
+                            </div>
+                            <h3 class="credential-card__code">AZ-500</h3>
+                            <p class="credential-card__short-name">Azure Security</p>
+                        </div>
                         <p class="credential-card__name">Azure Security Engineer Associate</p>
                         <p class="credential-card__status">
                             <i class="bx bx-lock-alt" aria-hidden="true"></i>
@@ -792,27 +807,27 @@
                             <h3 class="arsenal-card__title">Languages</h3>
                         </header>
                         <ul class="arsenal-tech-list" aria-label="Languages">
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-python" style="--tech-brand: #3776ab;"><img src="assets/python-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-python" role="tooltip">Python</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-javascript" style="--tech-brand: #f7df1e;"><img src="assets/javascript-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-javascript" role="tooltip">JavaScript</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-typescript" style="--tech-brand: #3178c6;"><img src="assets/typescript-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-typescript" role="tooltip">TypeScript</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-java" style="--tech-brand: #007396;"><img src="assets/java-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-java" role="tooltip">Java</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-sql" style="--tech-brand: #336791;"><img src="assets/sql-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-sql" role="tooltip">SQL</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-c" style="--tech-brand: #a8b9cc;"><img src="assets/c.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-c" role="tooltip">C</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-cpp" style="--tech-brand: #00599c;"><img src="assets/cplusplus-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-cpp" role="tooltip">C++</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-r" style="--tech-brand: #276dc3;"><img src="assets/r-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-r" role="tooltip">R</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-html" style="--tech-brand: #e34f26;"><img src="assets/html5-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-html" role="tooltip">HTML</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-css" style="--tech-brand: #1572b6;"><img src="assets/css3-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-css" role="tooltip">CSS</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-dart" style="--tech-brand: #0175c2;"><img src="assets/dart-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-dart" role="tooltip">Dart</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-kotlin" style="--tech-brand: #7f52ff;"><img src="assets/kotlin-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-kotlin" role="tooltip">Kotlin</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-latex" style="--tech-brand: #008080;"><img src="assets/latex-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-latex" role="tooltip">LaTeX</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-powershell" style="--tech-brand: #5391fe;"><img src="assets/powershell-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-powershell" role="tooltip">PowerShell</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-bash" style="--tech-brand: #4eaa25;"><img src="assets/bash-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-bash" role="tooltip">Bash</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-react" style="--tech-brand: #61dafb;"><img src="assets/react-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-react" role="tooltip">React</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-redux" style="--tech-brand: #764abc;"><img src="assets/redux-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-redux" role="tooltip">Redux</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-tailwind" style="--tech-brand: #06b6d4;"><img src="assets/tailwindcss.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-tailwind" role="tooltip">Tailwind CSS</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-bootstrap" style="--tech-brand: #7952b3;"><img src="assets/bootstrap-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-bootstrap" role="tooltip">Bootstrap</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-gsap" style="--tech-brand: #88ce02;"><img src="assets/gsap-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-gsap" role="tooltip">GSAP</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-flutter" style="--tech-brand: #02569b;"><img src="assets/flutter-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-flutter" role="tooltip">Flutter</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-python" style="--tech-brand: #3776ab;"><span class="arsenal-tech__mark"><img src="assets/python-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Python</span><span class="arsenal-tech__tooltip" id="tt-python" role="tooltip">Python</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-javascript" style="--tech-brand: #f7df1e;"><span class="arsenal-tech__mark"><img src="assets/javascript-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">JavaScript</span><span class="arsenal-tech__tooltip" id="tt-javascript" role="tooltip">JavaScript</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-typescript" style="--tech-brand: #3178c6;"><span class="arsenal-tech__mark"><img src="assets/typescript-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">TypeScript</span><span class="arsenal-tech__tooltip" id="tt-typescript" role="tooltip">TypeScript</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-java" style="--tech-brand: #007396;"><span class="arsenal-tech__mark"><img src="assets/java-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Java</span><span class="arsenal-tech__tooltip" id="tt-java" role="tooltip">Java</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-sql" style="--tech-brand: #336791;"><span class="arsenal-tech__mark"><img src="assets/sql-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">SQL</span><span class="arsenal-tech__tooltip" id="tt-sql" role="tooltip">SQL</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-c" style="--tech-brand: #a8b9cc;"><span class="arsenal-tech__mark"><img src="assets/arsenal/c.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">C</span><span class="arsenal-tech__tooltip" id="tt-c" role="tooltip">C</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-cpp" style="--tech-brand: #00599c;"><span class="arsenal-tech__mark"><img src="assets/cplusplus-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">C++</span><span class="arsenal-tech__tooltip" id="tt-cpp" role="tooltip">C++</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-r" style="--tech-brand: #276dc3;"><span class="arsenal-tech__mark"><img src="assets/r-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">R</span><span class="arsenal-tech__tooltip" id="tt-r" role="tooltip">R</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-html" style="--tech-brand: #e34f26;"><span class="arsenal-tech__mark"><img src="assets/html5-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">HTML</span><span class="arsenal-tech__tooltip" id="tt-html" role="tooltip">HTML</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-css" style="--tech-brand: #1572b6;"><span class="arsenal-tech__mark"><img src="assets/css3-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">CSS</span><span class="arsenal-tech__tooltip" id="tt-css" role="tooltip">CSS</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-dart" style="--tech-brand: #0175c2;"><span class="arsenal-tech__mark"><img src="assets/dart-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Dart</span><span class="arsenal-tech__tooltip" id="tt-dart" role="tooltip">Dart</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-kotlin" style="--tech-brand: #7f52ff;"><span class="arsenal-tech__mark"><img src="assets/kotlin-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Kotlin</span><span class="arsenal-tech__tooltip" id="tt-kotlin" role="tooltip">Kotlin</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-latex" style="--tech-brand: #008080;"><span class="arsenal-tech__mark"><img src="assets/latex-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">LaTeX</span><span class="arsenal-tech__tooltip" id="tt-latex" role="tooltip">LaTeX</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-powershell" style="--tech-brand: #5391fe;"><span class="arsenal-tech__mark"><img src="assets/arsenal/powershell.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label arsenal-tech__label--compact">PowerShell</span><span class="arsenal-tech__tooltip" id="tt-powershell" role="tooltip">PowerShell</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-bash" style="--tech-brand: #4eaa25;"><span class="arsenal-tech__mark"><img src="assets/bash-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Bash</span><span class="arsenal-tech__tooltip" id="tt-bash" role="tooltip">Bash</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-react" style="--tech-brand: #61dafb;"><span class="arsenal-tech__mark"><img src="assets/react-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">React</span><span class="arsenal-tech__tooltip" id="tt-react" role="tooltip">React</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-redux" style="--tech-brand: #764abc;"><span class="arsenal-tech__mark"><img src="assets/redux-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Redux</span><span class="arsenal-tech__tooltip" id="tt-redux" role="tooltip">Redux</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-tailwind" style="--tech-brand: #06b6d4;"><span class="arsenal-tech__mark"><img src="assets/arsenal/tailwind.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Tailwind<span class="arsenal-tech__label-qualifier"> CSS</span></span><span class="arsenal-tech__tooltip" id="tt-tailwind" role="tooltip">Tailwind CSS</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-bootstrap" style="--tech-brand: #7952b3;"><span class="arsenal-tech__mark"><img src="assets/bootstrap-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Bootstrap</span><span class="arsenal-tech__tooltip" id="tt-bootstrap" role="tooltip">Bootstrap</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-gsap" style="--tech-brand: #88ce02;"><span class="arsenal-tech__mark"><img src="assets/gsap-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">GSAP</span><span class="arsenal-tech__tooltip" id="tt-gsap" role="tooltip">GSAP</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-flutter" style="--tech-brand: #02569b;"><span class="arsenal-tech__mark"><img src="assets/flutter-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Flutter</span><span class="arsenal-tech__tooltip" id="tt-flutter" role="tooltip">Flutter</span></span></li>
                         </ul>
                     </article>
 
@@ -822,16 +837,16 @@
                             <h3 class="arsenal-card__title">Backend &amp; APIs</h3>
                         </header>
                         <ul class="arsenal-tech-list" aria-label="Backend and APIs">
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-spring" style="--tech-brand: #6db33f;"><img src="assets/spring-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-spring" role="tooltip">Spring Boot</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-flask" style="--tech-brand: #000000;"><img src="assets/flask-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-flask" role="tooltip">Flask</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-node" style="--tech-brand: #339933;"><img src="assets/nodejs-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-node" role="tooltip">Node.js</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-express" style="--tech-brand: #000000;"><img src="assets/express-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-express" role="tooltip">Express</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-fastapi" style="--tech-brand: #009688;"><img src="assets/fastapi-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-fastapi" role="tooltip">FastAPI</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-rest" style="--tech-brand: #00d2c7;"><img src="assets/rest-api-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-rest" role="tooltip">REST APIs</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-mysql" style="--tech-brand: #4479a1;"><img src="assets/mysql.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-mysql" role="tooltip">MySQL</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-postgres" style="--tech-brand: #4169e1;"><img src="assets/postgresql-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-postgres" role="tooltip">PostgreSQL</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-sqlite" style="--tech-brand: #003b57;"><img src="assets/sqlite-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-sqlite" role="tooltip">SQLite</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-firebase" style="--tech-brand: #ffca28;"><img src="assets/firebase-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-firebase" role="tooltip">Firebase</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-spring" style="--tech-brand: #6db33f;"><span class="arsenal-tech__mark"><img src="assets/spring-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Spring Boot</span><span class="arsenal-tech__tooltip" id="tt-spring" role="tooltip">Spring Boot</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-flask" style="--tech-brand: #000000;"><span class="arsenal-tech__mark"><img src="assets/flask-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Flask</span><span class="arsenal-tech__tooltip" id="tt-flask" role="tooltip">Flask</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-node" style="--tech-brand: #339933;"><span class="arsenal-tech__mark"><img src="assets/nodejs-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Node.js</span><span class="arsenal-tech__tooltip" id="tt-node" role="tooltip">Node.js</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-express" style="--tech-brand: #000000;"><span class="arsenal-tech__mark"><img src="assets/express-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Express</span><span class="arsenal-tech__tooltip" id="tt-express" role="tooltip">Express</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-fastapi" style="--tech-brand: #009688;"><span class="arsenal-tech__mark"><img src="assets/fastapi-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">FastAPI</span><span class="arsenal-tech__tooltip" id="tt-fastapi" role="tooltip">FastAPI</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-rest" style="--tech-brand: #00d2c7;"><span class="arsenal-tech__mark"><img src="assets/rest-api-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">REST APIs</span><span class="arsenal-tech__tooltip" id="tt-rest" role="tooltip">REST APIs</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-mysql" style="--tech-brand: #4479a1;"><span class="arsenal-tech__mark"><img src="assets/arsenal/mysql.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">MySQL</span><span class="arsenal-tech__tooltip" id="tt-mysql" role="tooltip">MySQL</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-postgres" style="--tech-brand: #4169e1;"><span class="arsenal-tech__mark"><img src="assets/postgresql-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label arsenal-tech__label--compact">PostgreSQL</span><span class="arsenal-tech__tooltip" id="tt-postgres" role="tooltip">PostgreSQL</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-sqlite" style="--tech-brand: #003b57;"><span class="arsenal-tech__mark"><img src="assets/sqlite-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">SQLite</span><span class="arsenal-tech__tooltip" id="tt-sqlite" role="tooltip">SQLite</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-firebase" style="--tech-brand: #ffca28;"><span class="arsenal-tech__mark"><img src="assets/firebase-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Firebase</span><span class="arsenal-tech__tooltip" id="tt-firebase" role="tooltip">Firebase</span></span></li>
                         </ul>
                     </article>
 
@@ -841,16 +856,16 @@
                             <h3 class="arsenal-card__title">Cloud &amp; DevOps</h3>
                         </header>
                         <ul class="arsenal-tech-list" aria-label="Cloud and DevOps">
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-azure" style="--tech-brand: #0089d6;"><img src="assets/azure-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-azure" role="tooltip">Azure</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-cosmos" style="--tech-brand: #0078d4;"><img src="assets/cosmosdb-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-cosmos" role="tooltip">Cosmos DB</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-keyvault" style="--tech-brand: #0078d4;"><img src="assets/keyvault-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-keyvault" role="tooltip">Key Vault</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-swa" style="--tech-brand: #0078d4;"><img src="assets/staticwebapps-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-swa" role="tooltip">Static Web Apps</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-docker" style="--tech-brand: #2496ed;"><img src="assets/docker-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-docker" role="tooltip">Docker</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-k8s" style="--tech-brand: #326ce5;"><img src="assets/kubernetes-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-k8s" role="tooltip">Kubernetes</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-git" style="--tech-brand: #f05032;"><img src="assets/git-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-git" role="tooltip">Git</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-linux" style="--tech-brand: #fcc624;"><img src="assets/linux-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-linux" role="tooltip">Linux</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-vercel" style="--tech-brand: #000000;"><img src="assets/vercel-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-vercel" role="tooltip">Vercel</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-kql" style="--tech-brand: #0078d4;"><img src="assets/kql-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-kql" role="tooltip">KQL</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-azure" style="--tech-brand: #0089d6;"><span class="arsenal-tech__mark"><img src="assets/arsenal/azure.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Azure</span><span class="arsenal-tech__tooltip" id="tt-azure" role="tooltip">Azure</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-cosmos" style="--tech-brand: #0078d4;"><span class="arsenal-tech__mark"><img src="assets/arsenal/cosmosdb.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Cosmos DB</span><span class="arsenal-tech__tooltip" id="tt-cosmos" role="tooltip">Cosmos DB</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-keyvault" style="--tech-brand: #0078d4;"><span class="arsenal-tech__mark"><img src="assets/arsenal/keyvault.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Key Vault</span><span class="arsenal-tech__tooltip" id="tt-keyvault" role="tooltip">Key Vault</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-swa" style="--tech-brand: #0078d4;"><span class="arsenal-tech__mark"><img src="assets/arsenal/staticwebapps.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Static Web Apps</span><span class="arsenal-tech__tooltip" id="tt-swa" role="tooltip">Static Web Apps</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-docker" style="--tech-brand: #2496ed;"><span class="arsenal-tech__mark"><img src="assets/docker-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Docker</span><span class="arsenal-tech__tooltip" id="tt-docker" role="tooltip">Docker</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-k8s" style="--tech-brand: #326ce5;"><span class="arsenal-tech__mark"><img src="assets/kubernetes-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label arsenal-tech__label--compact">Kubernetes</span><span class="arsenal-tech__tooltip" id="tt-k8s" role="tooltip">Kubernetes</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-git" style="--tech-brand: #f05032;"><span class="arsenal-tech__mark"><img src="assets/git-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Git</span><span class="arsenal-tech__tooltip" id="tt-git" role="tooltip">Git</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-linux" style="--tech-brand: #fcc624;"><span class="arsenal-tech__mark"><img src="assets/linux-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Linux</span><span class="arsenal-tech__tooltip" id="tt-linux" role="tooltip">Linux</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-vercel" style="--tech-brand: #000000;"><span class="arsenal-tech__mark"><img src="assets/vercel-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Vercel</span><span class="arsenal-tech__tooltip" id="tt-vercel" role="tooltip">Vercel</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-kql" style="--tech-brand: #0078d4;"><span class="arsenal-tech__mark"><img src="assets/kql-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">KQL</span><span class="arsenal-tech__tooltip" id="tt-kql" role="tooltip">KQL</span></span></li>
                         </ul>
                     </article>
 
@@ -860,14 +875,14 @@
                             <h3 class="arsenal-card__title">AI / Computer Vision</h3>
                         </header>
                         <ul class="arsenal-tech-list" aria-label="AI and computer vision">
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-yolo" style="--tech-brand: #00c853;"><img src="assets/yolo.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-yolo" role="tooltip">YOLO</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-opencv" style="--tech-brand: #5c3ee8;"><img src="assets/opencv-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-opencv" role="tooltip">OpenCV</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-pytorch" style="--tech-brand: #ee4c2c;"><img src="assets/pytorch-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-pytorch" role="tooltip">PyTorch</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-tensorflow" style="--tech-brand: #ff6f00;"><img src="assets/tensorflow.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-tensorflow" role="tooltip">TensorFlow</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-langchain" style="--tech-brand: #1c9080;"><img src="assets/langchain-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-langchain" role="tooltip">LangChain</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-openai" style="--tech-brand: #10a37f;"><img src="assets/openai-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-openai" role="tooltip">OpenAI API</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-hf" style="--tech-brand: #ffbd00;"><img src="assets/huggingface-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-hf" role="tooltip">Hugging Face</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-vpython" style="--tech-brand: #3776ab;"><img src="assets/python-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-vpython" role="tooltip">VPython</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-yolo" style="--tech-brand: #00c853;"><span class="arsenal-tech__mark"><img src="assets/simple-icons--yolo.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">YOLO</span><span class="arsenal-tech__tooltip" id="tt-yolo" role="tooltip">YOLO</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-opencv" style="--tech-brand: #5c3ee8;"><span class="arsenal-tech__mark"><img src="assets/opencv-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">OpenCV</span><span class="arsenal-tech__tooltip" id="tt-opencv" role="tooltip">OpenCV</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-pytorch" style="--tech-brand: #ee4c2c;"><span class="arsenal-tech__mark"><img src="assets/pytorch-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">PyTorch</span><span class="arsenal-tech__tooltip" id="tt-pytorch" role="tooltip">PyTorch</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-tensorflow" style="--tech-brand: #ff6f00;"><span class="arsenal-tech__mark"><img src="assets/arsenal/tensorflow.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label arsenal-tech__label--compact">TensorFlow</span><span class="arsenal-tech__tooltip" id="tt-tensorflow" role="tooltip">TensorFlow</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-langchain" style="--tech-brand: #1c9080;"><span class="arsenal-tech__mark"><img src="assets/arsenal/langchain.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">LangChain</span><span class="arsenal-tech__tooltip" id="tt-langchain" role="tooltip">LangChain</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-openai" style="--tech-brand: #10a37f;"><span class="arsenal-tech__mark"><img src="assets/arsenal/openai.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">OpenAI<span class="arsenal-tech__label-qualifier"> API</span></span><span class="arsenal-tech__tooltip" id="tt-openai" role="tooltip">OpenAI API</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-hf" style="--tech-brand: #ffbd00;"><span class="arsenal-tech__mark"><img src="assets/huggingface-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Hugging Face</span><span class="arsenal-tech__tooltip" id="tt-hf" role="tooltip">Hugging Face</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-vpython" style="--tech-brand: #3776ab;"><span class="arsenal-tech__mark"><img src="assets/python-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">VPython</span><span class="arsenal-tech__tooltip" id="tt-vpython" role="tooltip">VPython</span></span></li>
                         </ul>
                     </article>
 
@@ -877,13 +892,13 @@
                             <h3 class="arsenal-card__title">Network &amp; Security</h3>
                         </header>
                         <ul class="arsenal-tech-list" aria-label="Network and security">
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-entra" style="--tech-brand: #0078d4;"><img src="assets/entra-id-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-entra" role="tooltip">Microsoft Entra ID</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-eveng" style="--tech-brand: #00a651;"><img src="assets/eveng-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-eveng" role="tooltip">EVE-NG</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-cisco" style="--tech-brand: #049fd9;"><img src="assets/cisco-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-cisco" role="tooltip">Cisco</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-forti" style="--tech-brand: #ee3124;"><img src="assets/fortigate-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-forti" role="tooltip">FortiGate</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-palo" style="--tech-brand: #fa582d;"><img src="assets/paloalto-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-palo" role="tooltip">Palo Alto</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-wireshark" style="--tech-brand: #1679a7;"><img src="assets/wireshark-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-wireshark" role="tooltip">Wireshark</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-burp" style="--tech-brand: #ff6633;"><img src="assets/burpsuite-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-burp" role="tooltip">Burp Suite</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-entra" style="--tech-brand: #0078d4;"><span class="arsenal-tech__mark"><img src="assets/arsenal/entra-id.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label"><span class="arsenal-tech__label-qualifier">Microsoft </span>Entra ID</span><span class="arsenal-tech__tooltip" id="tt-entra" role="tooltip">Microsoft Entra ID</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-eveng" style="--tech-brand: #00a651;"><span class="arsenal-tech__mark"><img src="assets/arsenal/eveng.png" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">EVE-NG</span><span class="arsenal-tech__tooltip" id="tt-eveng" role="tooltip">EVE-NG</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-cisco" style="--tech-brand: #049fd9;"><span class="arsenal-tech__mark"><img src="assets/arsenal/cisco.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Cisco</span><span class="arsenal-tech__tooltip" id="tt-cisco" role="tooltip">Cisco</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-forti" style="--tech-brand: #ee3124;"><span class="arsenal-tech__mark"><img src="assets/arsenal/fortigate.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">FortiGate</span><span class="arsenal-tech__tooltip" id="tt-forti" role="tooltip">FortiGate</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-palo" style="--tech-brand: #fa582d;"><span class="arsenal-tech__mark"><img src="assets/arsenal/paloalto.png" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Palo Alto</span><span class="arsenal-tech__tooltip" id="tt-palo" role="tooltip">Palo Alto</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-wireshark" style="--tech-brand: #1679a7;"><span class="arsenal-tech__mark"><img src="assets/wireshark-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Wireshark</span><span class="arsenal-tech__tooltip" id="tt-wireshark" role="tooltip">Wireshark</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-burp" style="--tech-brand: #ff6633;"><span class="arsenal-tech__mark"><img src="assets/arsenal/burpsuite.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Burp Suite</span><span class="arsenal-tech__tooltip" id="tt-burp" role="tooltip">Burp Suite</span></span></li>
                         </ul>
                     </article>
 
@@ -893,11 +908,11 @@
                             <h3 class="arsenal-card__title">Testing &amp; Automation</h3>
                         </header>
                         <ul class="arsenal-tech-list" aria-label="Testing and automation">
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-github" style="--tech-brand: #181717;"><img src="assets/github-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-github" role="tooltip">GitHub</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-git-test" style="--tech-brand: #f05032;"><img src="assets/git-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-git-test" role="tooltip">Git</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-bash-test" style="--tech-brand: #4eaa25;"><img src="assets/bash-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-bash-test" role="tooltip">Bash</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-ps-test" style="--tech-brand: #5391fe;"><img src="assets/powershell-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-ps-test" role="tooltip">PowerShell</span></span></li>
-                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-linux-test" style="--tech-brand: #fcc624;"><img src="assets/linux-original.svg" alt="" width="22" height="22" loading="lazy" /><span class="arsenal-tech__tooltip" id="tt-linux-test" role="tooltip">Linux</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-github" style="--tech-brand: #181717;"><span class="arsenal-tech__mark"><img src="assets/github-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">GitHub</span><span class="arsenal-tech__tooltip" id="tt-github" role="tooltip">GitHub</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-git-test" style="--tech-brand: #f05032;"><span class="arsenal-tech__mark"><img src="assets/git-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Git</span><span class="arsenal-tech__tooltip" id="tt-git-test" role="tooltip">Git</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-bash-test" style="--tech-brand: #4eaa25;"><span class="arsenal-tech__mark"><img src="assets/bash-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Bash</span><span class="arsenal-tech__tooltip" id="tt-bash-test" role="tooltip">Bash</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-ps-test" style="--tech-brand: #5391fe;"><span class="arsenal-tech__mark"><img src="assets/arsenal/powershell.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label arsenal-tech__label--compact">PowerShell</span><span class="arsenal-tech__tooltip" id="tt-ps-test" role="tooltip">PowerShell</span></span></li>
+                            <li><span class="arsenal-tech" tabindex="0" aria-describedby="tt-linux-test" style="--tech-brand: #fcc624;"><span class="arsenal-tech__mark"><img src="assets/linux-original.svg" alt="" width="22" height="22" loading="lazy" /></span><span class="arsenal-tech__label">Linux</span><span class="arsenal-tech__tooltip" id="tt-linux-test" role="tooltip">Linux</span></span></li>
                         </ul>
                     </article>
                                             </div>
