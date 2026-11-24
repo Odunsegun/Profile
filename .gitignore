@@ -3,3 +3,5 @@
 server.js
 .vercel
 node_modules
+
+/artifacts/
